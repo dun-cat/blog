@@ -70,6 +70,7 @@ curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compos
 chmod +x /usr/local/bin/docker-compose
 ```
 > Compose 的版本需要和 Docker 的版本一致。
+
 延伸阅读：
 
 \> [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)
