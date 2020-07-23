@@ -68,3 +68,12 @@ adduser demo
 #        Other []: 
 # Is the information correct? [Y/n] 
 ```
+
+### 查看在线的用户
+
+``` bash
+root@iZm5eehitkhg98sinqalalZ: w
+ 11:29:07 up 351 days, 23:44,  1 user,  load average: 0.13, 0.14, 0.10
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/0    115.236.67.42    10:17    0.00s  0.17s  0.17s -bash
+```
