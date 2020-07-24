@@ -19,7 +19,7 @@ tags: ["socket","tcp","网络编程"]
 
 基本Socket(既不考虑多线程和有线程池的情况)流程图如下：
 
-[![socket_flowchart](http://www.lumin.tech:12345/wp-content/uploads/2016/12/socket_flowchart.jpg)](socket_flowchart.jpg)
+[![socket_flowchart](/img/socket_flowchart.jpg)](/img/socket_flowchart.jpg)
 
 上面的关闭操作是大致流程，具体请看一下内容。
 
@@ -29,7 +29,7 @@ tags: ["socket","tcp","网络编程"]
 
  tcp所处位置和协议格式如下：
 
-![tcp_message_segment](tcp_message_segment.jpg)
+[![tcp_message_segment](/img/tcp_message_segment.jpg)](/img/tcp_message_segment.jpg)
 
 **几个基本概念**
 
@@ -63,17 +63,17 @@ tags: ["socket","tcp","网络编程"]
 
  客户端和服务器端TCP连接的建立也叫三次握手(three-way handshake)，通过三次数据传输完成。
 
-[![tcp_connect](http://www.lumin.tech:12345/wp-content/uploads/2016/12/TCP_connect.jpg)](TCP_connect.jpg)
+[![tcp_connect](/img/TCP_connect.jpg)](/img/TCP_connect.jpg)
 
  SYN会占用一个序列号
 
 #### TCP的数据传输
 
-[![tcp_translate](http://www.lumin.tech:12345/wp-content/uploads/2016/12/TCP_translate.jpg)](TCP_translate.jpg)
+[![tcp_translate](/img/TCP_translate.jpg)](/img/TCP_translate.jpg)
 
 #### TCP连接的关闭
 
-[![tcp_close](http://www.lumin.tech:12345/wp-content/uploads/2016/12/TCP_close.jpg)](TCP_close.jpg)
+[![tcp_close](/img/TCP_close.jpg)](/img/TCP_close.jpg)
 
  FIN也会占用一个序列号
  
