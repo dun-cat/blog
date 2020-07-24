@@ -23,7 +23,7 @@ HTTP（HyperTextTransferProtocol）协议处于网络七层模型（Open System 
 
 以下是在mac上使用`curl -i www.baidu.com`命令查看http协议的服务器`响应(response)消息`输出。
 
-![http_console](/img/http_console.png)
+[![http_console](/img/http_console.png)](/img/http_console.png)
 
 #### 请求行
 
