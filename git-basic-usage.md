@@ -7,7 +7,7 @@ tags: ["git","其它","命令"]
 
 ### 基本流程
 
-![git_base](git_base.png)
+![git_base](/img/git_base.png)
 
 ### 基本命令
 

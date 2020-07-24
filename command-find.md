@@ -11,7 +11,7 @@ find [path] [expression]
 
 查看详情请看man手册
 ``` bash
-    man find
+man find
 ```
 ### 默认
 
