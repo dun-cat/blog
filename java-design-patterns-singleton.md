@@ -136,7 +136,7 @@ public class RunMain {
 }
 ```
 
-> 说明：因为线程1被休眠类了50ms，所以导致线程2先实例化了单例类。于是在全局变量singleton和通过getInstance()对比中为true，本身就是赋值所以一样。而当线程1休眠结束后又创建了一个单例类的实例，这时其实存在两个单例，结果通过对比为false。出现了两个不同实例也就形成线程安全问题。
+> 因为线程1被休眠类了50ms，所以导致线程2先实例化了单例类。于是在全局变量singleton和通过getInstance()对比中为true，本身就是赋值所以一样。而当线程1休眠结束后又创建了一个单例类的实例，这时其实存在两个单例，结果通过对比为false。出现了两个不同实例也就形成线程安全问题。
 
 #### 多线程单例基本写法
 ``` java
@@ -200,7 +200,7 @@ public static Singleton getInstance() {
 
 在java5开始提供了一个修饰符 `volatile` 它可以解决这个问题。官方说明如下：
 
-> 说明：java编程语言允许线程访问共享变量，为了确保共享变量能被准确和一致的更新，线程应该确保通过排他锁单独获得这个变量。Java语言提供了volatile，在某些情况下比锁更加方便。如果一个字段被声明成volatile，java线程内存模型确保所有线程看到这个变量的值是一致的。于是我们继续改进：
+> java编程语言允许线程访问共享变量，为了确保共享变量能被准确和一致的更新，线程应该确保通过排他锁单独获得这个变量。Java语言提供了volatile，在某些情况下比锁更加方便。如果一个字段被声明成volatile，java线程内存模型确保所有线程看到这个变量的值是一致的。于是我们继续改进：
 
 带volatile的单例
 ``` java
@@ -310,7 +310,7 @@ class SingletonSubclass_One extends RegesitorSingleton {}// 子类1
 
 class SingletonSubclass_Two extends RegesitorSingleton {}// 子类2
 ```
-不清楚反射的使用，可以参考[Java反射机制](http://www.lumin.tech:12345/index.php/2016/11/01/java-reflection/)，当然以上最后还有一个被人认为是最好的方法就是枚举实现单例，看到代码如下：
+不清楚反射的使用，可以参考[Java反射机制](http://lumin.tech/blog/java-reflection/)，当然以上最后还有一个被人认为是最好的方法就是枚举实现单例，看到代码如下：
 
 ### 枚举单例
 ``` java

@@ -98,4 +98,4 @@ public class RunMain {
     }
 }
 ```
-> 说明：原型类必须实现 `Cloneable` 接口和 `override` 基类的 `clone()` 方法。否则会出现运行时异常和编译异常。
+> 原型类必须实现 `Cloneable` 接口和 `override` 基类的 `clone()` 方法。否则会出现运行时异常和编译异常。
