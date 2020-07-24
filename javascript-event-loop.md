@@ -11,7 +11,7 @@ javascript 运行在单线程上。该线程除了用业务逻辑的执行，也
 
 ### 基本执行示意图
 
-[![](https://i.loli.net/2019/02/20/5c6ce655cc2d1.jpg)](5c6ce655cc2d1.jpg)
+[![](/img/event-loop.png)](/img/event-loop.png)
 
 ### 阐述
 
