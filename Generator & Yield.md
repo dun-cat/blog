@@ -5,6 +5,7 @@ Generator 和 Yield 是 ES6 新引入的异步编程概念。
 生成器函数(Generator Function)：通过`function*` 可以定义一个生成器函数；
 生成器对象(Generaor Object)：生成器函数的返回一个生成器对象；
 yield 关键字：返回一个 IteratorResult 对象；
+
 #### 简单实例
 
 ```javascript
