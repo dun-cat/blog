@@ -1,4 +1,4 @@
-## 命令 ：grep 
+## 命令：grep 
 ###  grep
 
 文字检索工具。
@@ -14,5 +14,6 @@ grep -i anytext demo.txt  # 忽略大小写
 grep -v # 反选
 
 grep -c # 打印已匹配的个数
+
 ```
     
