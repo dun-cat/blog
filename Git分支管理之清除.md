@@ -56,9 +56,9 @@ demo 92e944d [origin/demo: gone] Merge branch 'xxx/1.0.0' into 'master'
 这里我们会配合本地分支删除命令，做多个无效的本地分支删除。
 
 会分为三步：
-1. `git branch --merged`：列出已经合并到当前分支的分支列表，确保删除安全；
-2. `egrep -v "(^\*|master|dev)"`：排除不想删除的关键分；
-3. `xargs git branch -d`：执行删除操作；
+1. `git branch --merged`：列出已经合并到`当前分支`的分支列表，确保删除安全；
+2. `egrep -v "(^\*|master|dev)"`：排除不想删除的关键分支；
+3. `xargs git branch -d`：执行多个删除操作；
 
 ``` bash
 git branch --merged | egrep -v "(^\*|master|rollback)" | xargs git branch -d
