@@ -7,7 +7,7 @@
 * #### [命令：find](./%E5%91%BD%E4%BB%A4%EF%BC%9Afind.md)
 * #### [命令：grep](./%E5%91%BD%E4%BB%A4%EF%BC%9Agrep.md)
 * #### [命令：ls](./%E5%91%BD%E4%BB%A4%EF%BC%9Als.md)
-* #### [解压缩命令：tar](./%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4%EF%BC%9Atar.md)
+* #### [命令：tar](./%E5%91%BD%E4%BB%A4%EF%BC%9Atar.md)
 ### 容器化
 * #### [Docker的基本使用](./Docker%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md)
 ### 工程化
