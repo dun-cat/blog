@@ -1,4 +1,4 @@
-## Java 反射机制 
+## Java：反射机制 
 ### 概念
 
 根据oracle中的一篇文章[Using Java Reflection](http://www.oracle.com/technetwork/articles/java/javareflection-1536171.html)中说明，还是98年发表的。
