@@ -16,7 +16,7 @@
 ### Javascript
 * #### [Generator & Yield](./Generator%20%26%20Yield.md)
 * #### [Import & Export 的使用](./Import%20%26%20Export%20%E7%9A%84%E4%BD%BF%E7%94%A8.md)
-* #### [javascript 事件循环机制](./javascript%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6.md)
+* #### [Javascript 事件循环机制](./Javascript%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6.md)
 * #### [Javascript中的类型判断、空判断](./Javascript%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD%E3%80%81%E7%A9%BA%E5%88%A4%E6%96%AD.md)
 * #### [Promise的几个知识点](./Promise%E7%9A%84%E5%87%A0%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9.md)
 ### 版本管理

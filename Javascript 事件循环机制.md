@@ -1,4 +1,4 @@
-## javascript 事件循环机制 
+## Javascript 事件循环机制 
 ### 简介
 
 javascript 运行在单线程上。该线程除了用业务逻辑的执行，也用作操作DOM，即UI的渲染。
