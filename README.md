@@ -44,6 +44,7 @@
 ### Linux
 * #### [Linux的权限命令](./Linux%E7%9A%84%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4.md)
 * #### [Linux的关机重启命令](./Linux%E7%9A%84%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4.md)
+* #### [Linux 的Top命令](./Linux%20%E7%9A%84Top%E5%91%BD%E4%BB%A4.md)
 * #### [Linux的用户和组](./Linux%E7%9A%84%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84.md)
 ### 数据库
 * #### [MySQL常用笔记](./MySQL%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0.md)
