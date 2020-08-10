@@ -5,7 +5,7 @@
 
 ### 基本命令
 
-#### 远程分支的删除
+#### 删除远程分支
 
 ``` bash
 git push origin --delete hotfix # 删除远程hotfix分支
