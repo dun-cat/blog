@@ -54,6 +54,13 @@ docker stop hello-world
 docker rm hello-world 
 ```
 
+#### 查看启动容器日志
+
+``` bash
+docker logs root_commento_1
+```
+* `root_commento_1`：容器名称
+
 ### Docker Compose 工具
 
 Compose是一个用于定义和运行多容器 Docker 应用程序的工具，通过YAML文件配置。
@@ -64,6 +71,15 @@ curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compos
 chmod +x /usr/local/bin/docker-compose
 ```
 > Compose 的版本需要和 Docker 的版本一致。
+
+#### Docker Compose 的运行
+
+``` bash
+docker-compose -f docker-compose.demo.yml up -d 
+```
+* `up`：启动
+* `-d`：在后台运行
+* `-f`：指定运行配置文件，无指定时`默认：docker-compose.yml`
 
 延伸阅读：
 
