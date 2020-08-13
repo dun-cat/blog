@@ -61,6 +61,22 @@ docker logs root_commento_1
 ```
 * `root_commento_1`：容器名称
 
+#### 进入正在运行的容器
+
+``` bash
+docker exec -it postgresql /bin/bash
+```
+
+* `exec`：执行
+* `-it`：以交互的方式
+* `postgresql`：运行的容器名称或容器ID
+* `/bin/bash`：执行的shell
+
+#### 退出容器
+``` bash
+exit
+```
+
 ### Docker Compose 工具
 
 Compose是一个用于定义和运行多容器 Docker 应用程序的工具，通过YAML文件配置。
