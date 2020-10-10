@@ -88,6 +88,52 @@ release 信息可以标记上报事件对应的发布版本信息。在处理完
 
 [![sentry_demo_tracking_detail](/img/sentry_demo_tracking_detail.png)](/img/sentry_demo_tracking_detail.png)
 
+### 手动自定义事件上报
+
+除了默认的全局自动事件上报，我们也可以自定义错误消息上报，这点在监控网络请求错误会比较有用。
+
+``` javascript
+import axios from 'axios';
+
+function foo() {
+  console.log('开始制造网络请求异常');
+  const requestUrl = 'http://localhost:9000/api/0/projects/sentry/demo/events/';
+  const requestParams = {
+    name: 'demo',
+    age: 18
+  };
+  return axios.get(requestUrl, requestParams);
+}
+
+function uploadNetErrorEvent(error) {
+  Sentry && Sentry.withScope(function (scope) {
+    // 设置请求信息
+    scope.setExtra('request headers', error.config.headers);
+    scope.setExtra('request data', error.config.data);
+
+    // 设置响应信息
+    if (error.response) {
+      scope.setExtra('response status', error.response.status);
+      scope.setExtra('response headers', error.response.headers);
+      scope.setExtra('response data', error.response.data);
+    }
+    // 创建异常描述
+    let err = new Error('接口地址：' + error.config.url);
+    err.name = '接口请求错误'
+    // 手动捕获异常
+    Sentry.captureException(err);
+  });
+}
+
+foo().catch(error => {
+  uploadNetErrorEvent(error);
+});
+```
+下面是错误信息以及邮件通知：
+
+[![sentry_self_error1](/img/sentry_self_error1.png)](/img/sentry_self_error1.png)
+[![sentry_self_error](/img/sentry_self_error.png)](/img/sentry_self_error.png)
+
 延伸阅读:
 
 \> [https://docs.sentry.io/platforms/javascript/install/cdn/](https://docs.sentry.io/platforms/javascript/install/cdn/)
