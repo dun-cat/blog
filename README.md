@@ -1,6 +1,8 @@
 ## 博客地址：[www.lumin.tech](http://www.lumin.tech)
 ### 目录
-[代码设计](#代码设计) | [命令](#命令) | [容器化](#容器化) | [版本管理](#版本管理) | [网络编程](#网络编程) | [Javascript](#Javascript) | [设计模式](#设计模式) | [Java](#Java) | [Linux](#Linux) | [数据库](#数据库) | [Node](#Node) | [服务器](#服务器) | [其它](#其它) | [前端监控](#前端监控) | [未分类](#未分类)
+[Javascript 算法](#Javascript 算法) | [代码设计](#代码设计) | [命令](#命令) | [容器化](#容器化) | [版本管理](#版本管理) | [网络编程](#网络编程) | [Javascript](#Javascript) | [设计模式](#设计模式) | [Java](#Java) | [Linux](#Linux) | [数据库](#数据库) | [Node](#Node) | [服务器](#服务器) | [其它](#其它) | [前端监控](#前端监控) | [未分类](#未分类)
+### Javascript 算法
+* #### [算法：树的两种搜索方式-深度优先（DFS）& 广度优先（BFS）](./%E7%AE%97%E6%B3%95%EF%BC%9A%E6%A0%91%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%90%9C%E7%B4%A2%E6%96%B9%E5%BC%8F-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88DFS%EF%BC%89%26%20%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88BFS%EF%BC%89.md)
 ### 代码设计
 * #### [设计模式的七大原则](./%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99.md)
 * #### [设计模式之谈](./%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%B0%88.md)
@@ -59,7 +61,6 @@
 * #### [前端监控之Sentry(三) - 异常捕获](./%E5%89%8D%E7%AB%AF%E7%9B%91%E6%8E%A7%E4%B9%8BSentry(%E4%B8%89)%20-%20%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7.md)
 * #### [前端监控之Sentry(四) - Source Map](./%E5%89%8D%E7%AB%AF%E7%9B%91%E6%8E%A7%E4%B9%8BSentry(%E5%9B%9B)%20-%20Source%20Map.md)
 ### 未分类
-* #### [算法：树的两种搜索方式-深度优先（DFS）& 广度优先（BFS）](./%E7%AE%97%E6%B3%95%EF%BC%9A%E6%A0%91%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%90%9C%E7%B4%A2%E6%96%B9%E5%BC%8F-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88DFS%EF%BC%89%26%20%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88BFS%EF%BC%89.md)
 * #### [Postgres的基本使用](./Postgres%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md)
 * #### [Fiber 如何解决 React 中动画掉帧问题](./Fiber%20%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%20React%20%E4%B8%AD%E5%8A%A8%E7%94%BB%E6%8E%89%E5%B8%A7%E9%97%AE%E9%A2%98.md)
 * #### [RequestIdleCallback](./RequestIdleCallback.md)
