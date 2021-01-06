@@ -23,6 +23,15 @@ docker image inspect fce289e99eb9
 docker build . -t service-auth:1.11
 ```
 
+#### 删除镜像
+``` bash
+# 删除单个镜像
+docker image rm service-auth:1.11
+
+# 删除未使用镜像
+docker image prune -a
+```
+
 ### 容器（ Container ）
 
 #### 查看容器
@@ -38,11 +47,11 @@ docker container ls -aq
 ``` bash
 # 在新的容器运行``
 docker run hello-world # 简单的启动镜像
-dokcer run —name hellowrold -d -p 12345:80 hello-world
-# -name hellowrold 指定新容器的名称为 hellowrold。
+dokcer run —-name hellowrold -d -p 12345:80 hello-world
+# --name hellowrold 指定新容器的名称为 hellowrold。
 # -d 后台运行
 # -p 12345：80 把容器内部 12345 端口暴露给主机 80 端口。
-# nginx:lastest 镜像名称
+# hello-world 镜像名称
 
 # 启动 hello-world 镜像的容器(启动已被停止的容器)
 docker start hello-world
