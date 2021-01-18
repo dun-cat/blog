@@ -1,4 +1,4 @@
-## 异常监控之Sentry(一) - 安装 
+## 异常监控之Sentry（一）- 安装 
 ### 简介
 
 Sentry 是一套系统的前端监控服务，包含众多依赖服务，比如：邮件、数据库 Postgres、Snuba(快速事件搜索，筛选和聚合的服务)、Redis、Kafka等等。所以推荐使用 Docker 来安装。只要你网络够快，分分钟就可搭建完成。
@@ -19,6 +19,7 @@ cd onpremise
 ./install.sh
 ```
 #### 运行
+
 ``` bash
 docker-compose up -d
 ```
