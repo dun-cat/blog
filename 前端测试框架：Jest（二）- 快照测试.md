@@ -51,7 +51,7 @@ Demo 的具体地址可以在 https://github.com/dun-cat/jest 获取。
 
 #### 第一次输出
 
-![](./img/snap_test.png)
+![](snap_test.png)
 
 修改后：
 
@@ -70,13 +70,13 @@ it('renders correctly', () => {
 
 #### 第二次输出
 
-![](./img/snap_test_incorrect.png)
+![](snap_test_incorrect.png)
 
 这里标记处两次快照的不同点。
 
 #### 更新快照
 
-![](./img/snap_test_update.png)
+![](snap_test_update.png)
 
 
 ### 快照测试的弱点

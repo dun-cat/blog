@@ -37,11 +37,11 @@ module.exports = {
 
 打包控制台输出：
 
-[![sentry_sourcemap_build](/img/sentry_sourcemap_build.png)](/img/sentry_sourcemap_build.png)
+[![sentry_sourcemap_build](sentry_sourcemap_build.png)](sentry_sourcemap_build.png)
 
 上传成功后，可以在 Sentry 管理平台上看见对应项目的 Source Maps。
 
-[![sentry_source_map_view](/img/sentry_source_map_view.png)](/img/sentry_source_map_view.png)
+[![sentry_source_map_view](sentry_source_map_view.png)](sentry_source_map_view.png)
 
 
 ### 模拟异常捕获（Error Tracking）
@@ -82,7 +82,7 @@ foo();
 
 Sentry 上的捕获信息：
 
-[![sentry_source_map_result](/img/sentry_source_map_result.png)](/img/sentry_source_map_result.png)
+[![sentry_source_map_result](sentry_source_map_result.png)](sentry_source_map_result.png)
 
 ### 持续集成环境(CI)下的设置
 在 CI 环境下，可以通过`~/.sentryclirc`文件来存储公共信息（例如：authToken、org、url等等cli配置项）。

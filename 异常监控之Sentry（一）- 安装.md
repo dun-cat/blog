@@ -23,10 +23,10 @@ cd onpremise
 ``` bash
 docker-compose up -d
 ```
-[![sentry-install](/img/sentry-install.png)](/img/sentry-install.png)
+![sentry-install](sentry-install.png)
 
 #### 校验
 浏览器输入 localhost:9000，然后输入之前安装时输入的账号密码即可进入。
 
-[![sentry-install-check](/img/sentry-install-check.png)](/img/sentry-install-check.png)
+![sentry-install-check](sentry-install-check.png)
 

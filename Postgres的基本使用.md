@@ -19,7 +19,7 @@ psql -h localhost -d gitlabhq_production -U myuser
 gitlabhq_production=# \?
 ```
 
-[![help](/img/postgres-help.png)](postgres-help.png)
+[![help](postgres-help.png)](postgres-help.png)
 
 > 回车键（enter）查看更多
 
@@ -27,7 +27,7 @@ gitlabhq_production=# \?
 ``` bash
 gitlabhq_production=# \l
 ```
-[![help](/img/postgres-list-databases.png)](postgres-list-databases.png)
+[![help](postgres-list-databases.png)](postgres-list-databases.png)
 
 
 #### 列出表（Tables）
@@ -36,7 +36,7 @@ gitlabhq_production=# \l
 gitlabhq_production=# \dt
 ```
 
-[![tables](/img/postgres-list-tables.png)](postgres-list-tables.png)
+[![tables](postgres-list-tables.png)](postgres-list-tables.png)
 
 #### 列出用户及权限
 

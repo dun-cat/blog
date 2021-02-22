@@ -12,7 +12,7 @@ top命令已经成为衡量设备运行状况的关键指标。
 ``` bash
 top
 ```
-[![top](/img/top.png)](/img/top.png)
+[![top](top.png)](top.png)
 
 ### 前5行的统计信息
 
@@ -130,7 +130,7 @@ KiB Swap:        0 total,        0 free,        0 used.   438744 avail Mem
 #### 终止进程
 * `k`: 弹出一个提示，用来杀掉进程。
 
-[![top](/img/top-k.png)](/img/top-k.png)
+[![top](top-k.png)](top-k.png)
 
 提示输入进程的`进程ID`，如果此处留空白，默认选择最顶层的进程 ID。
 然后按 `Enter` 键会提示输入用于`终止进程的信号(SIGNAL)`，如果此处留空白，默认会使用 `SIGTERM` 信号。
@@ -152,7 +152,7 @@ KiB Swap:        0 total,        0 free,        0 used.   438744 avail Mem
 ``` bash
 top -H
 ```
-[![top](/img/top-h.png)](/img/top-h.png)
+[![top](top-h.png)](top-h.png)
 
 你会发现第2行的 `Tasks:` 变成了 `Threads:`。在Linux内核内部，线程和进程`使用相同的数据结构`进行处理。因此，每个线程都有其自己的ID，状态等。
 
@@ -163,7 +163,7 @@ top -H
 ``` bash
 top -c
 ```
-[![top](/img/top-c.png)](/img/top-c.png)
+[![top](top-c.png)](top-c.png)
 在显示`完整路径`的情况下，top 展示上也会区分`内核空间进程`和`用户空间进程`。内核空间进程周围带有`方括号[]`标记。
 
 
@@ -171,7 +171,7 @@ top -c
 
 * `V`：查看流程的子级父级。可以看到启动的层级视图。
 
-[![top](/img/top-v.png)](/img/top-v.png)
+[![top](top-v.png)](top-v.png)
 
 #### 列出某个用户的所有进程
 
@@ -181,14 +181,14 @@ top -c
 ``` bash
 top -u root # 列出 root 用户所有的进程
 ```
-[![top](/img/top-u.png)](/img/top-u.png)
+[![top](top-u.png)](top-u.png)
 
 #### 改变统计信息的样式
 
 * `t`：反复按下，可以切换顶部统计信息 CPU 的显示样式
 * `m`：反复按下，可以切换顶部统计信息 Mem和 Swap 的显示样式
 
-[![top](/img/top-tm.png)](/img/top-tm.png)
+[![top](top-tm.png)](top-tm.png)
 
 #### 保存设置
 

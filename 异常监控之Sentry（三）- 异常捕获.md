@@ -54,7 +54,7 @@ release 信息可以标记上报事件对应的发布版本信息。在处理完
 
 浏览器控制台的初始化信息：
 
-[![sentry_sdk_initlog](/img/sentry_sdk_initlog.png)](/img/sentry_sdk_initlog.png)
+[![sentry_sdk_initlog](sentry_sdk_initlog.png)](sentry_sdk_initlog.png)
 
 初始化还有其它选项，可以参考：[https://docs.sentry.io/platforms/javascript/configuration/options/](https://docs.sentry.io/platforms/javascript/configuration/options/)
 
@@ -82,11 +82,11 @@ release 信息可以标记上报事件对应的发布版本信息。在处理完
 ```
 在选择的项目 Issues 列表就有会出现上报事件，包含基本错误类型和错误消息。
 
-[![sentry_demo_tracking](/img/sentry_demo_tracking.png)](/img/sentry_demo_tracking.png)
+[![sentry_demo_tracking](sentry_demo_tracking.png)](sentry_demo_tracking.png)
 
 点进去可以通过面包屑(Breadcrumb)，来定位问题。
 
-[![sentry_demo_tracking_detail](/img/sentry_demo_tracking_detail.png)](/img/sentry_demo_tracking_detail.png)
+[![sentry_demo_tracking_detail](sentry_demo_tracking_detail.png)](sentry_demo_tracking_detail.png)
 
 ### 手动自定义事件上报
 
@@ -131,8 +131,8 @@ foo().catch(error => {
 ```
 下面是错误信息以及邮件通知：
 
-[![sentry_self_error1](/img/sentry_self_error1.png)](/img/sentry_self_error1.png)
-[![sentry_self_error](/img/sentry_self_error.png)](/img/sentry_self_error.png)
+[![sentry_self_error1](sentry_self_error1.png)](sentry_self_error1.png)
+[![sentry_self_error](sentry_self_error.png)](sentry_self_error.png)
 
 延伸阅读:
 
