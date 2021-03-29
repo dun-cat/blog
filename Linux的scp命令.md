@@ -1,4 +1,4 @@
-## Linux的SCP命令 
+## Linux的scp命令 
 ### 简介
 
 `SCP` --secure copy （远程文件拷贝程序）是用于主机之间的文件拷贝，使用 `SSH`（Secure Shell）来作为数据传输协议（[IETF](https://tools.ietf.org/html/rfc4253)制定），这意味你需要通过`key`或者`密码`来做与远程主机认证。
@@ -42,7 +42,9 @@ scp -r -C ./public/* root@101.125.45.5:/remote_dir/
 
 如果拷贝指定目录下所有内容，记得加`*`号，不然会连同`public`拷贝到服务器。
 
-### 使用 key 来传输
+### 自动化环境
+
+#### 使用 key 来传输
 
 使用 key 来传输，即把本地的公钥提供给远程主机，使其能信任复制源，从而`避免手动密码输入`，这需要有一下几个步骤。
 
@@ -80,31 +82,33 @@ ssh -T remote_username@host
 
 这样就完成了 key 的配置。
 
-### 自动化环境
+#### 优化上传
 
-由于 SCP 是一个接一个（one by one）的上传方式，在上传效率方面会比较差。所以通常我们需要进行整体`打包压缩传输`。
+由于 SCP 是一个接一个（one by one）的上传方式，在上传效率方面会比较差。所以可以通过进行`打包压缩传输`来加快传输速度。
 
 这里会分几个操作：
 
-1. 压缩打包源文件到一个临时目录
-2. 上传压缩包到服务器临时目录
-3. 移除老的 target 目录
-4. 创建 target 目录
-5. 解压压缩包到 target 目录
-6. 删除压缩包
+1. 压缩打包源文件到本地临时目录
+2. 创建服务器压缩包临时目录
+3. 上传压缩包到服务器临时目录
+4. 移除老的 target 目录
+5. 创建新的 target 目录
+6. 解压压缩包到 target 目录
+7. 删除服务器临时目录
 
-于是我们会有一个这样的 shell 脚本：
+于是会以下几个步骤命令：
 
-``` shell
-#! /bin/sh
-
-tar -cf /tmp/upload.tar -C ./
-scp -r -C /tmp/upload.tar root@101.125.45.5:/temp_dir/
-ssh root@101.125.45.5 "rm -rf /target_dir"
-ssh root@101.125.45.5 "mkdir -p /target_dir"
-tar -xf /temp_dir/upload.tar -C /target_dir
-rm -rf /temp_dir/upload.tar
+``` bash
+tar --exclude=.git -czvf /tmp/upload.tar -C ./ .
+ssh demo@lumin.tech "mkdir -p ~/temp_dir"
+scp -r -C /tmp/upload.tar demo@lumin.tech:~/temp_dir/
+ssh demo@lumin.tech "rm -rf ~/target_dir"
+ssh demo@lumin.tech "mkdir -p ~/target_dir"
+ssh demo@lumin.tech "tar -xzvf ~/temp_dir/upload.tar -C ~/target_dir ."
+ssh demo@lumin.tech "rm -rf ~/temp_dir"
 ```
+
+放在`tmp`的压缩包跟随系统清除规则走，打包时排除不需要的目录(.git)。以上的删除操作无提示，虽然是自动化，但是通常需要通过脚本来做安全性操作检测，否者容易出现人为失误导致的不可逆事故（例如：误删目录）。
 
 扩展阅读：
 

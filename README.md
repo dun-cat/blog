@@ -61,8 +61,8 @@
 * #### [异常监控之Sentry（三）- 异常捕获](./%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E4%B9%8BSentry%EF%BC%88%E4%B8%89%EF%BC%89-%20%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7.md)
 * #### [异常监控之Sentry（四）- Source Map](./%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E4%B9%8BSentry%EF%BC%88%E5%9B%9B%EF%BC%89-%20Source%20Map.md)
 ### 未分类
-* #### [Babel Ast Custom Plugin](./Babel%20Ast%20Custom%20Plugin.md)
-* #### [Linux的SCP命令](./Linux%E7%9A%84SCP%E5%91%BD%E4%BB%A4.md)
+* #### [让我们一步一步的自定义Babel插件](./%E8%AE%A9%E6%88%91%E4%BB%AC%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89Babel%E6%8F%92%E4%BB%B6.md)
+* #### [Linux的scp命令](./Linux%E7%9A%84scp%E5%91%BD%E4%BB%A4.md)
 * #### [如何在移动端的调试中更加舒适？](./%E5%A6%82%E4%BD%95%E5%9C%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%AD%E6%9B%B4%E5%8A%A0%E8%88%92%E9%80%82%EF%BC%9F.md)
 * #### [Nginx 常用配置](./Nginx%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE.md)
 * #### [如何发布一个 npm 包](./%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E4%B8%80%E4%B8%AA%20npm%20%E5%8C%85.md)
