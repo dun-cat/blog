@@ -199,7 +199,7 @@ top -u root # 列出 root 用户所有的进程
 
 top 还有很多其它设置，上面只涉及常用的几个操作。更多操作请用 `man top` 在系统上运行查看手册页。
 
-延伸阅读：
+扩展阅读：
 
 \> [https://www.site24x7.com/blog/load-average-what-is-it-and-whats-the-best-load-average-for-your-linux-servers](https://www.site24x7.com/blog/load-average-what-is-it-and-whats-the-best-load-average-for-your-linux-servers)
 

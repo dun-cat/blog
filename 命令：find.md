@@ -141,7 +141,7 @@ find . -name "a.*" -exec rm {} \;
 find . -name "a.*" -ok rm {} \;
 ```
 
-延伸阅读：
+扩展阅读：
 
 \> [https://blog.csdn.net/MrDongShiYi/article/details/81625172](https://blog.csdn.net/MrDongShiYi/article/details/81625172)
 

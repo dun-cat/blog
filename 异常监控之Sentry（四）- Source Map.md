@@ -106,7 +106,7 @@ sentry-cli --auth-token your-auth-token
 
 
 
-延伸阅读:
+扩展阅读:
 
 \> [https://docs.sentry.io/platforms/javascript/install/cdn/](https://docs.sentry.io/platforms/javascript/install/cdn/)
 

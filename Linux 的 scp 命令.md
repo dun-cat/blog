@@ -1,4 +1,4 @@
-## Linux的scp命令 
+## Linux 的 scp 命令 
 ### 简介
 
 `SCP` --secure copy （远程文件拷贝程序）是用于主机之间的文件拷贝，使用 `SSH`（Secure Shell）来作为数据传输协议（[IETF](https://tools.ietf.org/html/rfc4253)制定），这意味你需要通过`key`或者`密码`来做与远程主机认证。

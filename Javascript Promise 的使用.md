@@ -1,4 +1,4 @@
-## Promise的几个知识点 
+## Javascript Promise 的使用 
 ### 使用
 
 让多个异步任务的代码更加优雅简洁；

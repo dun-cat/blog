@@ -106,6 +106,6 @@ docker-compose -f docker-compose.demo.yml up -d
 * `-d`：在后台运行
 * `-f`：指定运行配置文件，无指定时`默认：docker-compose.yml`
 
-延伸阅读：
+扩展阅读：
 
 \> [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)

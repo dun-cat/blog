@@ -134,7 +134,7 @@ foo().catch(error => {
 [![sentry_self_error1](sentry_self_error1.png)](sentry_self_error1.png)
 [![sentry_self_error](sentry_self_error.png)](sentry_self_error.png)
 
-延伸阅读:
+扩展阅读:
 
 \> [https://docs.sentry.io/platforms/javascript/install/cdn/](https://docs.sentry.io/platforms/javascript/install/cdn/)
 
