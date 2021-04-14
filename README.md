@@ -62,6 +62,7 @@
 * #### [异常监控之Sentry（四）- Source Map](./%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E4%B9%8BSentry%EF%BC%88%E5%9B%9B%EF%BC%89-%20Source%20Map.md)
 ### 未分类
 * #### [让我们一步一步得自定义 Babel 插件](./%E8%AE%A9%E6%88%91%E4%BB%AC%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E5%BE%97%E8%87%AA%E5%AE%9A%E4%B9%89%20Babel%20%E6%8F%92%E4%BB%B6.md)
+* #### [何为 λ 演算（Lambda Calculus）](./%E4%BD%95%E4%B8%BA%20%CE%BB%20%E6%BC%94%E7%AE%97%EF%BC%88Lambda%20Calculus%EF%BC%89.md)
 * #### [Linux 的 scp 命令](./Linux%20%E7%9A%84%20scp%20%E5%91%BD%E4%BB%A4.md)
 * #### [如何在移动端的调试中更加舒适？](./%E5%A6%82%E4%BD%95%E5%9C%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%AD%E6%9B%B4%E5%8A%A0%E8%88%92%E9%80%82%EF%BC%9F.md)
 * #### [Nginx 常用配置](./Nginx%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE.md)
