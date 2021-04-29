@@ -7,6 +7,9 @@
 
 λ 演算由数学家[阿隆佐·邱奇（Alonzo Church）](https://zh.wikipedia.org/wiki/阿隆佐·邱奇)在20世纪30年代首次发表，即发明者。值得一提的是他也是[阿兰·图灵](https://zh.wikipedia.org/wiki/艾伦·图灵)的博士生导师，图灵则是被誉为计算机之父。
 
+<img src='church.png' />  <img src='turing.png' />，第一张为邱奇，第二张是图灵。
+
+
 λ 演算包含两块内容是：`语法`和`规则集`。语法用于组建表达式，即构建`λ 项`。而规则集就是对表达式进行[规约](https://zh.wikipedia.org/wiki/歸約)操作，符号化地操纵表达式。
 
 ### 数学函数 VS λ 演算函数
@@ -254,40 +257,30 @@ let λ2 = y => (x => y(y(x)))
 
 ##### 布尔定义
 
+我们将`TRUE`和`FALSE`值表示为对其参数执行一个`if-then-else`操作的函数：
 习惯上，下述两个定义（称为邱奇布尔值）被用作`TRUE`和`FALSE`这样的布尔值：
 
 TRUE := $λx.λy.x$
 
 FALSE := $λx.λy.y$
 
-我还是通过`β规约`操作来理解上面的表达式。可以看到上面表达式有两个参数：$x$和$y$，无论$x$是什么值，第一个表达式总是输出$x$，而第二个表达式总是输出 $y$。
+通过`β规约`操作来理解上面的表达式，上面表达式有两个参数：$x$ 和 $y$，无论 $x$ 是什么值，第一个表达式总是输出 $x$，而第二个表达式总是输出 $y$。
 
-考虑把`TRUE`和`FALSE`应用到两个变量`a`和`b`，并对其进行`β规约`操作：
+考虑把`TRUE`和`FALSE`应用到两个实参`a`和`b`：
 
 $λx.λy.x\ a\ b = a$
 
 $λx.λy.y\ a\ b = b$
 
-所以可以直观看到表达式两个参数，第一个参数被选作为`TRUE`，而第二参数被选作为`FALSE`。
+可以看到第一个表达式两个实参被应用时，第一个表达式`永远`选择第一个输入作为输出。而第二个表达式`永远`选择第二输入作为输出。
 
-有意思的是 $λx.λy.y$ 也是自然数`0`的定义，而计算机编程中的语言通常把`0`作为`false`来处理。
-
-##### 逻辑运算符
-
-AND := $λp.λq.p\ q\ p$
-
-OR = $λp.λq.p\ p\ q$
-
-NOT = $λp.λa.λb.p\ b\ a$
-
-IF = $λp.λa.λb.p\ a\ b$
+> 有意思的是 $λx.λy.y$ 也是自然数`0`的定义，而计算机编程中的语言通常把`0`作为`false`来处理。
 
 ##### 谓词
 
-有了**真**和**假**的定义，可以考虑`if else`这样的运算：
 假设我们要得到`ifelse TRUE 10 20`这样的运算，即`如果是真那么输出10，如果是假输出20`，那么λ演算运算写法如下：
 
-$ifelse\ true\ 42\ 58 = true\ 42\ 58$
+$ifelse\ TRUE\ 42\ 58 = TRUE\ 42\ 58$
 
 $→ (λx.λy.x)\ 42\ 58$
 
@@ -295,16 +288,52 @@ $→ (λy.42)\ 58$
 
 $→42$
 
+λ 演算的`TRUE`在`应用`时，只是选择了第一个实参作为输出，它只是个选择问题而已。
 
-λp.λq.p q p
+##### 逻辑运算符
 
-and
-λp.λq.p false true
-λp.λq.p true false
+我们来看看如何构造一个 `AND` 逻辑运算符，基本形式 $λx.λy.?$。x 和 y 是参数，即被操作的变量。? 是函数体，是实现 AND 逻辑的。
 
-#### 加法定义
+二元函数 AND 我们形式化表示其逻辑如下：
 
-#### 乘法定义
+1. $(x = FALSE,\ ∀y∈\\{TRUE,\ FALSE\\})\ →\ ? = TRUE$
+2. $(x = TRUE,\ y = FALSE)\ →\ ? = FALSE$
+3. $(x = TRUE,\ y = TRUE)\ →\ ? = TRUE$
+
+上面的逻辑下，通过`x y x`的 λ 演算形式就可以表示以上逻辑：
+
+1. 若 $x$ = FALSE，则选第二个实参 $x$ 输出。而 $x$ = FALSE，运算结果是 FALSE；
+2. 若 $x$ = TRUE，则选第一个实参 $y$ 输出；
+   * 若 $y$ = TRUE，运算结果是 TRUE；
+   * 若 $y$ = FALSE，运算结果是 FALSE。
+
+
+所以我们可以得到 AND := $λx.λy.x\ y\ x$，为最终的表达式。
+
+
+上面的 AND 逻辑处理和 Javascript 语言里的`&&`二元操作符的逻辑是一样的，看下面的代码：
+
+``` javascript
+let a = 0, b = 2;
+let output = a && b;
+console.log(output);
+// => 0
+
+a = 1;
+output = a && b;
+console.log(output);
+// => 2
+```
+
+在 Javascript 解析器里，a 的值是 0 被看作是 false，所以当进行 AND 操作时，选择第一个变量 a 返回，反之当 a 为 true 时，解析器则不会解析 b 的值的真假，而直接选择第二个变量 b 返回。
+
+同样我们可以构造其它逻辑运算符：
+
+OR := $λx.λy.x\ x\ y$
+
+NOT := $λz.λx.λy.z\ y\ x$
+
+IFTHENELSE := $λz.λy.λx.z\ y\ x$
 
 扩展阅读：
 
@@ -325,3 +354,8 @@ and
 \> [http://www.cs.columbia.edu/~sedwards/classes/2012/w4115-fall/lambda.pdf](http://www.cs.columbia.edu/~sedwards/classes/2012/w4115-fall/lambda.pdf)
 
 \> [https://code.iamkate.com/lambda-calculus/boolean-logic/](https://code.iamkate.com/lambda-calculus/boolean-logic/)
+
+\> [https://www.jianshu.com/p/e7db2f50b012](https://www.jianshu.com/p/e7db2f50b012)
+
+
+\> [https://plato.stanford.edu/entries/lambda-calculus/](https://plato.stanford.edu/entries/lambda-calculus/)
