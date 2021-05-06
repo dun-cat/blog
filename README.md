@@ -61,6 +61,7 @@
 * #### [异常监控之Sentry（三）- 异常捕获](./%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E4%B9%8BSentry%EF%BC%88%E4%B8%89%EF%BC%89-%20%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7.md)
 * #### [异常监控之Sentry（四）- Source Map](./%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E4%B9%8BSentry%EF%BC%88%E5%9B%9B%EF%BC%89-%20Source%20Map.md)
 ### 未分类
+* #### [调度（Scheduling）](./%E8%B0%83%E5%BA%A6%EF%BC%88Scheduling%EF%BC%89.md)
 * #### [让我们一步一步得自定义 Babel 插件](./%E8%AE%A9%E6%88%91%E4%BB%AC%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E5%BE%97%E8%87%AA%E5%AE%9A%E4%B9%89%20Babel%20%E6%8F%92%E4%BB%B6.md)
 * #### [IOS 项目包管理工具 CocoaPods](./IOS%20%E9%A1%B9%E7%9B%AE%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%20CocoaPods.md)
 * #### [何为 λ 演算（Lambda Calculus）](./%E4%BD%95%E4%B8%BA%20%CE%BB%20%E6%BC%94%E7%AE%97%EF%BC%88Lambda%20Calculus%EF%BC%89.md)
@@ -80,7 +81,7 @@
 * #### [Lerna 多包管理工具的萌新探索](./Lerna%20%E5%A4%9A%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E8%90%8C%E6%96%B0%E6%8E%A2%E7%B4%A2.md)
 * #### [多项目管理策略：monorepo](./%E5%A4%9A%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5%EF%BC%9Amonorepo.md)
 * #### [Postmessage 的探索](./Postmessage%20%E7%9A%84%E6%8E%A2%E7%B4%A2.md)
-* #### [让我们来深入探索 Javascript 里的 Promise](./%E8%AE%A9%E6%88%91%E4%BB%AC%E6%9D%A5%E6%B7%B1%E5%85%A5%E6%8E%A2%E7%B4%A2%20Javascript%20%E9%87%8C%E7%9A%84%20Promise.md)
+* #### [探索 Javascript 里的 Promise](./%E6%8E%A2%E7%B4%A2%20Javascript%20%E9%87%8C%E7%9A%84%20Promise.md)
 * #### [Codesandbox-client 之源码拆解：codesandbox-api](./Codesandbox-client%20%E4%B9%8B%E6%BA%90%E7%A0%81%E6%8B%86%E8%A7%A3%EF%BC%9Acodesandbox-api.md)
 * #### [前端测试框架：Jest（一）- 介绍](./%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%EF%BC%9AJest%EF%BC%88%E4%B8%80%EF%BC%89-%20%E4%BB%8B%E7%BB%8D.md)
 * #### [前端测试框架：Jest（二）- 快照测试](./%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%EF%BC%9AJest%EF%BC%88%E4%BA%8C%EF%BC%89-%20%E5%BF%AB%E7%85%A7%E6%B5%8B%E8%AF%95.md)
