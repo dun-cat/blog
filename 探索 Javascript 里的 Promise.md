@@ -130,7 +130,7 @@ promise.then(onFulfilled, onRejected)
 
 ### Javascript 语言的 Promise 实现
 
-下面的代码以 ES6 以及提案中的语法实现 Promise，我们将根据[官方测试套件](https://github.com/promises-aplus/promises-tests)的来测试我们的 Promise。
+下面的代码以 ES6 语法实现 Promise，我们将根据[官方测试套件](https://github.com/promises-aplus/promises-tests)的来测试我们的 Promise。
 
 #### 创建 Promise
 
@@ -168,7 +168,6 @@ new Promise((resolve, reject) => resolve("done"));
 所以在构造函数里，我们加入此参数：
 
 ```javascript
-...
 class Promise {
   constructor(executor) {
     if (typeof executor !== "function") {
@@ -233,7 +232,13 @@ class Promise {
   }
 
   then(onFulfilled, onRejected) {
-    let newPromise = new Promise()
+    let newPromise = new Promise((resolve, reject) => {
+      if (this.state === FULFILLED && typeof onFulfilled !== "function") {
+        resolve(this.value);
+      } else if (this.state === REJECTED && typeof onRejected !== "function") {
+        reject(this.value);
+      }
+    })
 
     if (typeof onFulfilled === "function") {
       newPromise.handler.onFulfilled = onFulfilled
@@ -336,7 +341,7 @@ promise.then(undefined, undefined).then(undefined, r => console.log(r));
 // => reason
 ```
 
-所以，当 onFulfilled 或 onRejected 不是一个函数类型，我们需要把当前 promise
+所以，当 onFulfilled 或 onRejected 不是一个函数类型，我们需要把当前值交由 resolvePromise 处理：
 
 ``` javascript
 function processNextTick(promise) {
@@ -434,7 +439,7 @@ Promise.resolve = (value) => {
 
 ### 使用 Promises-aplus-tests 测试
 
-最后，我们通过官方的测试脚本对我们的库进行合格检验，在 package.json 我们如下配置：
+最后，我们通过官方的测试脚本对我们的库进行合格检验，在`package.json`我们如下配置：
 
 #### 安装
 
@@ -451,7 +456,7 @@ Promise.resolve = (value) => {
 
 #### 测试编写
 
-[promises-aplus-tests](https://github.com/promises-aplus/promises-tests) 要求我们提供一个 adpter 对象，该对象包含一个 pending 状态 promise 实例，一个静态方法 resolve() 以及一个静态方法 reject()。
+[promises-aplus-tests](https://github.com/promises-aplus/promises-tests) 要求我们提供一个 adpter 对象，该对象包含一个 pending 状态 promise 实例的`deferred`方法，一个静态方法`resolve`以及一个静态方法`reject`。
 
 所以我们编写的 test.js 文件如下：
 
