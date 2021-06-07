@@ -56,6 +56,25 @@ lerna bootstrap
 
 忽略某些依赖的安装，可以指定命令 `--ignore` 项，当然也可以配置在 `lerna.json` 更为通用。
 
+#### 添加依赖
+
+``` bash
+lerna add <package>[@version] [--dev] [--exact] [--peer]
+```
+
+添加操作可以使用所有过滤标签
+
+``` bash
+# Adds the module-1 package to the packages in the 'prefix-' prefixed folders
+lerna add module-1 packages/prefix-*
+
+# Install module-1 to module-2 in devDependencies
+lerna add module-1 --scope=module-2 --dev
+
+# Install module-1 to module-2 in peerDependencies
+lerna add module-1 --scope=module-2 --peer
+```
+
 #### 提升安装依赖 Hoisting
 
 每个包都有自己的 `package.json`，安装依赖时都会在每个包里生成 `node_modules` 目录，通常这些包会有`很多重复的依赖`。Hoisting 的解决方法是把`依赖关系提升到最顶层`的 `node_modules` 目录，以此减少开发和构建副本包带来的额外时间和空间。
@@ -125,6 +144,8 @@ packages/xxx-pk2/package.json
 ``` shell
 lerna run start --scope xxx-pk1 # 只执行 xxx-pk1 里的 start 脚本
 ```
+
+> 这里需要注意的是`xxx-pk1`需要和`package.json`里的`name`字段一致，不然在目前的版本会运行错误。
 
 ##### 并行执行标记：`--parallel`
 
