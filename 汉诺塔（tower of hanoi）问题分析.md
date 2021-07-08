@@ -86,3 +86,5 @@ hanoi(4, A, C, B)
 扩展阅读：
 
 \> [https://www.youtube.com/watch?v=1QgJEcnsqsQ&ab_channel=李永乐老师](https://www.youtube.com/watch?v=1QgJEcnsqsQ&ab_channel=李永乐老师)
+
+\> [https://en.wikipedia.org/wiki/Tower_of_Hanoi#Solution](https://en.wikipedia.org/wiki/Tower_of_Hanoi#Solution)
