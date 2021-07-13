@@ -25,14 +25,14 @@
 
 <img src='heapify-2.svg' />
 
-3. 找一个起始节点索引（index），该 index 通过 $n/2 - 1$ 获取；
+3. 找一个非叶子节点起始索引（index），给定一个$n$ 长度的完全二叉树的数组，那么该 index 可以通过 $n/2 - 1$ 获取；
 
 <img src='heapify-3.svg' />
 
-4. 设置当前元素`i`作为`larget`；
-5. 当前元素`左孩子`的 index 为：$2i + 1$，而`右孩子` index 为：$2i + 2$；
-   1. 若`leftChild` $>$ `currentElement`，则设置`leftChildIndex`为`larget`；
-   2. 若`rightChild` $>$ `larget`中元素，则设置`rightChildIndex`为`larget`。
+4. 设置当前元素索引`i`作为`largest`；
+5. 当前元素`左孩子`的 index 则为：$2i + 1$，而`右孩子` index 则为：$2i + 2$；
+   1. 若`leftChild` $>$ `currentElement`，则设置`leftChildIndex`为`largest`；
+   2. 若`rightChild` $>$ `largest`中元素，则设置`rightChildIndex`为`largest`。
 6. 交换`largest`和`currentElement`；
 
 <img src='heapify-4.svg' />
