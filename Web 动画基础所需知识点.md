@@ -308,13 +308,14 @@ ball.y = line.y + y1
 
 $$
 \displaystyle v_1 = \frac{ (m_1 - m_2) \times v_{01} + 2\times m_2 \times v_{02} } {m_1 + m_2}
-= \left({\frac {m_{1}-m_{2}}{m_{1}+m_{2}}}\right)v_{01}+\left({\frac {2m_{2}}{m_{1}+m_{2}}}\right)v_{02}\
+= \left({\frac {m_{1}-m_{2}}{m_{1}+m_{2}}}\right)v_{01}+\left({\frac {2m_{2}}{m_{1}+m_{2}}}\right)v_{02}
 $$
 
 $$
 \displaystyle v_2 = \frac{ (m_2 - m_1) \times v_{02} + 2\times m_1 \times v_{01} } {m_1 + m_2}
 =\left({\frac {m_{2}-m_{1}}{m_{1}+m_{2}}}\right)v_{02}+\left({\frac {2m_{1}}{m_{1}+m_{2}}}\right)v_{01}
 $$
+
 
 通过以上两个公式，我们可以在提前知道两个物体的`速度`和`质量`的情况下，计算出碰撞后各自在单轴上的速度。
 
@@ -334,7 +335,7 @@ $$
 
 $$
 \displaystyle v_1 = \frac{ (m_1 - m_2) \times v_{01} + 2\times m_2 \times v_{02} } {m_1 + m_2}
-= \left({\frac {m_{1}-m_{2}}{m_{1}+m_{2}}}\right)v_{01}+\left({\frac {2m_{2}}{m_{1}+m_{2}}}\right)v_{02}\
+= \left({\frac {m_{1}-m_{2}}{m_{1}+m_{2}}}\right)v_{01}+\left({\frac {2m_{2}}{m_{1}+m_{2}}}\right)v_{02}
 $$
 
 $\displaystyle v_2 = (v_{01} - v_{02}) + v_1$
