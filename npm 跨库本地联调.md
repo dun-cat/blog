@@ -11,6 +11,12 @@
 yarn link
 ```
 
+当然，你可以通过下面命令删除改符号链接：
+
+``` bash
+yarn unlink
+```
+
 对于引用`business`的项目：
 
 ``` bash
@@ -31,13 +37,20 @@ npm i yalc -g
 yarn global add yalc
 ```
 
-### 需要对外发布的项目
-
-**1.第一步：需要通过`publish`命令发布 npm 到本地**
+`@lumin/mobile-ui`的项目：
 
 ``` bash
 yalc publish
 ```
-**第二步：如果需**
 
-### 需要引用 npm 包的项目
+之后如果有更新，你需要重新推送到本地：
+
+``` bash
+yalc push
+```
+
+### `bussiness`项目
+
+``` bash
+yalc push
+```

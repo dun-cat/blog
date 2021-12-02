@@ -30,7 +30,7 @@ flush privileges; # 刷新系统权限表
 ``` bash
 create database test;
 # 指定字符集来创建数据库；
-create database publish_system DEFAULT CHARACTER SET utf8mb4;
+create database publish_system_test DEFAULT CHARACTER SET utf8mb4;
 
 insert into mysql.user(Host,User,Password) values("localhost","test",password("123")); # 添加用户
 ```
