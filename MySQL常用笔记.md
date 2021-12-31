@@ -40,6 +40,10 @@ insert into mysql.user(Host,User,Password) values("localhost","test",password("1
 ``` bash
 drop databases test
 delete from test
+
+# 删除记录
+delete from table_name [WHERE Clau
+
 ```
 
 ### 查
