@@ -32,9 +32,9 @@
 
 MySQL 本身不提供获取文件系统快照的能力。它可通过 Veritas、LVM 或 ZFS 等第三方解决方案获得。
 
-#### 完全备份 vs 增量备份
+#### 全量备份 vs 增量备份
 
-`完整备份`（full backup）包括在给定`时间点`由 MySQL 服务器管理的所有数据。MySQL 有不同的方法来执行完整备份，例如本节前面描述的那些。
+`全量备份`（full backup）包括在给定`时间点`由 MySQL 服务器管理的所有数据。MySQL 有不同的方法来执行全量备份，例如本节前面描述的那些。
 
 `增量备份`（incremental backup）包括在给定`时间跨度`内（从一个时间点到另一个时间点）对数据所做的更改。通过启用服务器的`二进制日志`（binary log）来实现增量备份，服务器使用它来记录数据更改。
 
@@ -177,7 +177,7 @@ FLUSH TABLES WITH READ LOCK
 
 ### 备份策略
 
-这里我们将介绍`逻辑备份`，并采用`完全备份 + 增量备份`的备份策略。后面的备份都将使用 **mysqldump** 工具实现，该工具也是官方提供的。
+这里我们将介绍`逻辑备份`，并采用`全量备份 + 增量备份`的备份策略。后面的备份都将使用 **mysqldump** 工具实现，该工具也是官方提供的。
 
 #### 全量备份
 
@@ -188,6 +188,31 @@ mysqldump [options] db_name [tbl_name ...]
 mysqldump [options] --databases db_name ...
 mysqldump [options] --all-databases
 ```
+
+#### 例子
+
+假如有一个数据库叫`publish_system_test`，我们对其进行全量备份，那么可以写如下命令：
+
+``` sh
+mysqldump --databases publish_system_test > publish_system_test_full_backup.sql;
+```
+
+### 恢复备份
+
+恢复备份首先要做的是恢复最后一个全量备份，再根据最后一个全量备份的时间点找到`大于`该时间点并`小于`故障发生之前的时间点之间的所有增量备份。
+
+首先，进行完全备份的恢复：
+
+``` sh
+mysql < full_backup_sunday_1_PM.sql
+```
+
+而后，我们通过找到的二进制日志文件，通过`mysqlbinlog`工具进行恢复：
+
+``` sh
+mysqlbinlog gbichot2-bin.000007 gbichot2-bin.000008 | mysql
+```
+
 
 扩展阅读：
 
