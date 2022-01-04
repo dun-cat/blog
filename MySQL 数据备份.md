@@ -204,15 +204,14 @@ mysqldump --databases publish_system_test > publish_system_test_full_backup.sql;
 首先，进行完全备份的恢复：
 
 ``` sh
-mysql < full_backup_sunday_1_PM.sql
+mysql --host=host_name -u root -p < full_backup_sunday_1_PM.sql
 ```
 
-而后，我们通过找到的二进制日志文件，通过`mysqlbinlog`工具进行恢复：
+而后，我们通过找到的二进制日志文件，通过[mysqlbinlog](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html)工具进行恢复：
 
 ``` sh
 mysqlbinlog gbichot2-bin.000007 gbichot2-bin.000008 | mysql
 ```
-
 
 扩展阅读：
 
