@@ -63,3 +63,4 @@ update user set authentication_string=PASSWORD("123") where User='root'; # æ›´æ–
 update user set Host='%' where user='test';
 flush privileges;
 ```
+
