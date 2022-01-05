@@ -1,4 +1,4 @@
-## MySQL 数据备份 
+## MySQL 数据备份与恢复 
 ### 备份的类型
 
 数据备份会分为两大类型：`物理（原始）备份`（physical (raw) backups）和`逻辑备份`（logical backups），你可以在[这里](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/backup-types.html)找到更多信息。
@@ -40,7 +40,7 @@ MySQL 本身不提供获取文件系统快照的能力。它可通过 Veritas、
 
 ### 备份前期工作
 
-下面是为`增量备份`的准备工作，增量备份将借助于 MySQL 提供的二进制日志功能配合实现。
+下面是为`增量备份`的准备工作，MySQL 二进制日志对于恢复很重要，因为它们构成了一组增量备份。如果你不准备采用`增量备份`，那么可以略过本小节。
 
 备份前，我们需要确认 MySQL 是否已经开启了二进制日志功能。若未开启，下面几个步骤将介绍如何开启它。
 
@@ -169,7 +169,7 @@ DELIMITER ;
 
 进行备份时，我们不希望还有客户端对数据库进行`写操作`，则需要获取表的`读锁`，此时所有会话都只能进行`读`访问。在进行恢复时，需要获取表的`写锁`，此时只有持有锁的会话可以读写表，其它会话都不能访问。（本段只提到表锁，你可以在[这里](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)获取更多锁相关信息）
 
-通过下面的命令，关闭所有打开的表并使用`全局读锁`锁定`所有数据库`的`所有表`。
+通过下面的命令，关闭所有打开的表并使用`全局读锁`锁定`所有数据库`的`所有表`。在下一节内容，使用 **mysqldump** 备份时，内部首先也会执行该命令。
 
 ``` sql
 FLUSH TABLES WITH READ LOCK
@@ -177,7 +177,7 @@ FLUSH TABLES WITH READ LOCK
 
 ### 备份策略
 
-这里我们将介绍`逻辑备份`，并采用`全量备份 + 增量备份`的备份策略。后面的备份都将使用 **mysqldump** 工具实现，该工具也是官方提供的。
+这里我们将介绍`逻辑备份`，并采用`全量备份 + 增量备份`的备份策略。后面的备份都将使用[mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)工具，该工具由是官方提供的并可以 CSV 格式输出以及其他分隔符的文本或 XML 格式。
 
 #### 全量备份
 
@@ -189,22 +189,62 @@ mysqldump [options] --databases db_name ...
 mysqldump [options] --all-databases
 ```
 
+`mysqldump`允许一张[组]表或者一个[组]数据库以及整个 MySQL 服务器进行备份，也可以叫做`转储`。
+
 #### 例子
 
 假如有一个数据库叫`publish_system_test`，我们对其进行全量备份，那么可以写如下命令：
 
 ``` sh
-mysqldump --databases publish_system_test > publish_system_test_full_backup.sql;
+mysqldump -u root -p -h localhost --master-data --single-transaction --databases publish_system_test > "publish_system_test_backup_$(date +"%Y%m%d_%H%M%S").sql";
 ```
+
+在导出的文件名称命名上，我们使用`date`命令在文件尾部添加备份日期，这方便在恢复时能快速识别备份日期。`.sql`文件也被叫做`转储文件`（dump file）。
+
+上面的执行，会对所有该数据库的表加上`读锁`，然后导出 SQL 语句，这意味着在备份期间客户端对该数据库只有读取访问能力。
+
+我们可以看到以下部分内容：
+
+``` mysql
+LOCK TABLES `project` WRITE;
+/*!40000 ALTER TABLE `project` DISABLE KEYS */;
+INSERT INTO `project` VALUES (1,'hello','good','我是项目描述',NULL,'weapp,web',685,'卢敏','http://xxx.xxx.com.cn/lumin/mypa222th','porjecsasaa',NULL,'2022-01-04 07:37:33.735181','卢敏',1221,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `project` ENABLE KEYS */;
+UNLOCK TABLES;
+```
+
+从 SQL 语句可以看到，当执行该脚本时，在执行插入（INSERT）语句之前会先进行`锁写表`，完成插入任务之后再进行`解锁`。
+
+[--master-data](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_master-data)参数，该参数将在导出文件里记录转储服务器的二进制日志坐标（文件名和位置），这个选项要求 RELOAD 权限，并且二进制日志功能必须是启用状态。
+
+你可以看到下面的因为该参数导出的语句：
+
+``` sql
+--
+-- Position to start replication or point-in-time recovery from
+--
+
+CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=154; 
+```
+
+注释代码已经解释了它的用处，用于二进制日志`副本复制`或[时间点恢复](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/point-in-time-recovery-binlog.html)(point-in-time)
+
+`--master-data`默认参数值为 1，当指定为 2 时，上面的语句会以注释状态输出。
+
+[--single-transaction](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction)参数，该参数会把`事务隔离模式`（transaction isolation mode）设置为`可重复读取`（REPEATABLE READ），并且在转储之前发送`START TRANSACTION` SQL 语句给服务器，表示即将启动一个事务。
+
+通过这个参数，能够保证转储时上数据库的`一致性`。该参数只对事务性表起作用，例如：InnoDB 表，而像 MyISAM 或者 MEMORY 表转储时状态可能发生改变。
+
+当有一个包含`--single-transaction`选项的转储进行中，为了确保输出一个有效的转储文件（正确的表内容和二进制日志坐标），不应该有其它数据库连接执行以下语句： `ALTER TABLE`, `CREATE TABLE`, `DROP TABLE`, `RENAME TABLE`, `TRUNCATE TABLE`，一致读不会隔离这些语句。
 
 ### 恢复备份
 
 恢复备份首先要做的是恢复最后一个全量备份，再根据最后一个全量备份的时间点找到`大于`该时间点并`小于`故障发生之前的时间点之间的所有增量备份。
 
-首先，进行完全备份的恢复：
+完全备份的恢复方式是把转储文件通过`mysql`命令载入，并且你还可以指定一个 host 使数据载入到另一台远程 SQL 服务器。
 
 ``` sh
-mysql --host=host_name -u root -p < full_backup_sunday_1_PM.sql
+mysql --host=host_name -u root -p < publish_system_test_backup_20220105_030044.sql
 ```
 
 而后，我们通过找到的二进制日志文件，通过[mysqlbinlog](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html)工具进行恢复：
