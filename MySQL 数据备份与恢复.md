@@ -177,9 +177,11 @@ FLUSH TABLES WITH READ LOCK
 
 ### 备份策略
 
-这里我们将介绍`逻辑备份`，并采用`全量备份 + 增量备份`的备份策略。后面的备份都将使用[mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)工具，该工具由是官方提供的并可以 CSV 格式输出以及其他分隔符的文本或 XML 格式。
+这里我们将介绍`逻辑备份`，并采用`全量备份 + 增量备份`的备份策略。
 
 #### 全量备份
+
+全量备份都将使用[mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)工具，该工具由是官方提供的并可以 CSV 格式输出以及其他分隔符的文本或 XML 格式。
 
 如果我们要对某个数据库进行全量备份，使用以下语法：
 
@@ -196,7 +198,7 @@ mysqldump [options] --all-databases
 假如有一个数据库叫`publish_system_test`，我们对其进行全量备份，那么可以写如下命令：
 
 ``` sh
-mysqldump -u root -p -h localhost --master-data --single-transaction --databases publish_system_test > "publish_system_test_backup_$(date +"%Y%m%d_%H%M%S").sql";
+mysqldump -u root -p -h localhost --flush-logs --master-data=2 --single-transaction --databases publish_system_test > "publish_system_test_backup_$(date +"%Y%m%d_%H%M%S").sql"
 ```
 
 在导出的文件名称命名上，我们使用`date`命令在文件尾部添加备份日期，这方便在恢复时能快速识别备份日期。`.sql`文件也被叫做`转储文件`（dump file）。
@@ -224,18 +226,44 @@ UNLOCK TABLES;
 -- Position to start replication or point-in-time recovery from
 --
 
-CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=154; 
+-- CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.000002', MASTER_LOG_POS=4; 
 ```
 
 注释代码已经解释了它的用处，用于二进制日志`副本复制`或[时间点恢复](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/point-in-time-recovery-binlog.html)(point-in-time)
 
-`--master-data`默认参数值为 1，当指定为 2 时，上面的语句会以注释状态输出。
+`--master-data`默认参数值为 1，当指定为 2 时，会以注释状态输出。
 
 [--single-transaction](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction)参数，该参数会把`事务隔离模式`（transaction isolation mode）设置为`可重复读取`（REPEATABLE READ），并且在转储之前发送`START TRANSACTION` SQL 语句给服务器，表示即将启动一个事务。
 
 通过这个参数，能够保证转储时上数据库的`一致性`。该参数只对事务性表起作用，例如：InnoDB 表，而像 MyISAM 或者 MEMORY 表转储时状态可能发生改变。
 
 当有一个包含`--single-transaction`选项的转储进行中，为了确保输出一个有效的转储文件（正确的表内容和二进制日志坐标），不应该有其它数据库连接执行以下语句： `ALTER TABLE`, `CREATE TABLE`, `DROP TABLE`, `RENAME TABLE`, `TRUNCATE TABLE`，一致读不会隔离这些语句。
+
+[--flush-logs](https://dev.mysql.com/doc/refman/8.0/en/flush.html#flush-logs)参数，该参数会使数据目录包含一个新的二进制日志文件。也就是说日志文件`mysql-bin.000002`是新创建的，后面的对数据库更改的日志都将从该文件开始写入。
+
+#### 增量备份
+
+要进行增量备份，我们需要保存增量更改。在 MySQL 中，这些更改在二进制日志中表示，因此 MySQL 服务器应始终使用`--log-bin`选项启动。启用二进制日志记录后，服务器的每个数据更改都会写入日志文件。
+
+增量备份的本质是创建一个新的日志文件，后续的更改都将从新的日志文件开始写入。所以我们可以定期执行刷新日志操作来创建增量备份。
+
+通过下面的`mysqladmin`命令执行刷新日志操作：
+
+``` sh
+mysqladmin flush-logs
+```
+
+或者使用 [FLUSH](https://dev.mysql.com/doc/refman/8.0/en/flush.html#flush-logs) SQL语句：
+
+``` sql
+flush logs;
+```
+
+并且你可以通过以下命令获取当前记录的日志状态：
+
+``` sql
+show master status;
+```
 
 ### 恢复备份
 
