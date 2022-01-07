@@ -29,15 +29,15 @@ crontab -d
 # * * * * * <command to execute>
 ```
 
-例如如果我们要每分钟执行`ls`命令可以如下写法：
+例如如果我们要每分钟执行`echo`命令可以如下写法：
 
 ``` sh
- * * * * * /bin/ls
+ * * * * * echo hi
 ```
 
 ### 表达式
 
-* 逗号（`,`）表示列举，例如： 1,3,4,7 * * * * echo hello world 表示，在每小时的1、3、4、7分时，打印"hello world"。
-* 连词符（`-`）表示范围，例如：1-6 * * * * echo hello world ，表示，每小时的1到6分钟内，每分钟都会打印"hello world"。
+* 逗号（`,`）表示列举，例如： `1,3,4,7 * * * * echo hello world` 表示，在每小时的 1、3、4、7 分时，打印"hello world"。
+* 连词符（`-`）表示范围，例如：`1-6 * * * * echo hello world` ，表示，每小时的 1 到 6 分钟内，每分钟都会打印"hello world"。
 * 星号（`*`）代表任何可能的值。例如：在“小时域”里的星号等于是“每一个小时”。
-* 百分号(`%`) 表示“每"。例如：*%10 * * * * echo hello world 表示，每10分钟打印一回"hello world"。
+* 百分号(`%`) 表示“每"。例如：`*%10 * * * * echo hello world` 表示，每 10 分钟打印一回"hello world"。

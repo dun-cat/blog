@@ -278,7 +278,7 @@ mysql --host=host_name -u root -p < publish_system_test_backup_20220105_030044.s
 而后，我们通过找到的二进制日志文件，通过[mysqlbinlog](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html)工具进行恢复：
 
 ``` sh
-mysqlbinlog gbichot2-bin.000007 gbichot2-bin.000008 | mysql
+mysqlbinlog mysql-bin.000001 mysql-bin.000001 | mysql
 ```
 
 扩展阅读：
