@@ -104,6 +104,17 @@ git tag v1.0
 git merge hotfix # 合并hotfix 分支到当前分支去
 ```
 
+#### rm
+
+移除对文件的追踪
+
+``` bash
+git rm readme.txt # 删除对 readme.txt 文件的跟踪，保留本地文件。
+git rm -f readme.txt # 删除对 readme.txt 文件的跟踪，并删除本地文件。
+
+git rm -r subdir #  删除对 subdir 文件夹的跟踪，并执行递归。
+```
+
 ### 更换远程仓库
 
 **1. 查看远程仓库配置**
@@ -163,6 +174,36 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
 上面使用了`--all`选项表示所有分支，而`-u, --set-stream`对于每个分支保证最新的，并且跟踪（tracking）分支引用，这使得后续的`pull`操作无障碍。
+
+### 子模块 
+
+如果需要把另外一个仓库，作为主仓库的一个目录，可以使用 git 的子模块功能。
+
+你可能会有几个疑问：
+
+Q: 直接在主仓库的目录，执行依赖仓库的克隆可以么？
+A：这个操作只使用于本地，提交主仓库内容时，只会提交依赖仓库的内容，主仓库不会关联依赖仓库的地址。这意味着拉取主仓库并不会同时拉取子仓库。
+
+
+#### 添加子模块
+
+``` bash
+git submodule add git@github.com:dun-cat/door-cli.git dep_dir
+```
+
+如果 dep_dir 已经是被主仓库跟踪，你需要移除它：
+
+``` bash
+git rm -rf dep_dir
+```
+
+当执行完成后，在项目根目录下会生成`.gitmoduels`文件，它的内容如下：
+
+``` conf
+[submodule "door-cli"]
+  path = dep_dir
+  url =git@github.com:dun-cat/door-cli.git
+```
 
 ### 默认简写
 
