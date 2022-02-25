@@ -197,7 +197,20 @@ git submodule add git@github.com:dun-cat/door-cli.git dep_dir
 git rm -rf dep_dir
 ```
 
-当执行完成后，在项目根目录下会生成`.gitmoduels`文件，它的内容如下：
+如果远程主仓库包含`dep_dir`目录，那么 git 会给出以下提示：
+
+``` bash
+A git directory for 'dep_dir' is found locally with remote(s):
+  origin        git@github.com:dun-cat/door-cli.git
+If you want to reuse this local git directory instead of cloning again from
+  git@github.com:dun-cat/door-cli.git
+use the '--force' option. If the local git directory is not the correct repo
+or you are unsure what this means choose another name with the '--name' option.
+```
+
+如果你想重用本地目录，那么可以使用`--force`选项。否则，可以指定`--name`选项选择另一个目录名称。
+
+当执行完成无问题后，在项目根目录下会生成`.gitmoduels`文件，它的内容如下：
 
 ``` conf
 [submodule "door-cli"]
