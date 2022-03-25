@@ -2,8 +2,11 @@
 ### 字段设计
 
 minAndroidVersion
+
 minIOSVersion
+
 minBaseRN
+
 forceUpdate
 
 更新模式：`静默模式`（Silent mode）和`活动模式`（Active mode）。
@@ -13,7 +16,7 @@ forceUpdate
 
 ### JavaScript API
 
-sync()
+sync()  
 
 
 
@@ -23,5 +26,7 @@ sync()
 静态方法
 
 
+### 灰度
 
+### 回滚
 
