@@ -3,6 +3,17 @@
 
 ![git_base](git_base.png)
 
+
+### 常见命令时序图
+
+#### Git 数据传输
+
+<img src='git-transport.png' style="max-width:100%" />
+
+#### Git workflow
+
+<img src='git-workflow.png' style="max-width:100%" />
+
 ### 基本命令
 
 #### pull
@@ -227,3 +238,8 @@ or you are unsure what this means choose another name with the '--name' option.
 * gm = git merge
 * ga =  git add
 * gb = git branch
+
+
+参考文献：
+
+\> [https://blog.osteele.com/2008/05/my-git-workflow/](https://blog.osteele.com/2008/05/my-git-workflow/)

@@ -7,7 +7,7 @@ curl 是个多功能命令行工具，它的常见功能有：
 
 ### 下载文件
 
-```
+``` bash
 curl -O "https://curl.se/logo/curl-logo.svg"
 ```
 
