@@ -24,6 +24,6 @@ nest 有个全局的异常过滤器，一个没被识别成 http 异常的 excep
 
 mysql 不支持 Array 类型
 
-扩展阅读：
+参考文献：
 
 \> [https://bluehorn07.github.io/2020/09/05/How-to-save-JSON-array-in-MySQL-with-TypeORM.html](https://bluehorn07.github.io/2020/09/05/How-to-save-JSON-array-in-MySQL-with-TypeORM.html)

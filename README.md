@@ -94,6 +94,7 @@
 * #### [MySQL 数据备份与恢复](./MySQL%20%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D.md)
 * #### [Nest.js 脚手架搭建](./Nest.js%20%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA.md)
 * #### [游戏中的网络同步](./%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5.md)
+* #### [Nginx 基础知识](./Nginx%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
 * #### [Nginx 常用配置](./Nginx%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE.md)
 * #### [如何发布一个 npm 包](./%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E4%B8%80%E4%B8%AA%20npm%20%E5%8C%85.md)
 * #### [OAuth 2.0 的授权设计](./OAuth%202.0%20%E7%9A%84%E6%8E%88%E6%9D%83%E8%AE%BE%E8%AE%A1.md)

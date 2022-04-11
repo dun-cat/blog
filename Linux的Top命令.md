@@ -121,7 +121,7 @@ KiB Swap:        0 total,        0 free,        0 used.   438744 avail Mem
 
 * `PID`：进程ID。它是标识进程的唯一正整数。我们可以通过 `kill 命令` 带上 PID 来杀掉进程。
 * `USER`：启动该进程的“有效”用户名。Linux为进程分配一个`真实的用户ID`和一个`有效的用户ID`。后者允许进程代表另一个用户执行操作。（例如，非root用户可以提升为root用户才能安装软件包。）
-扩展阅读：
+参考文献：
 * `NI`：NI 字段显示进程的 nice 值，负值表示高优先级，正值表示低优先级。
 * `PR`：PR 字段从内核的角度显示了进程的调度优先级。nice 值会影响进程的优先级。
 * `VIRT`：进程消耗的内存总量。这包括程序的代码、进程存储在内存中的数据以及 Swap 的任何内存区域，即`包含(RAM 和 Swap)`。
@@ -217,7 +217,7 @@ top -u root # 列出 root 用户所有的进程
 
 top 还有很多其它设置，上面只涉及常用的几个操作。更多操作请用 `man top` 在系统上运行查看手册页。
 
-扩展阅读：
+参考文献：
 
 \> [https://www.site24x7.com/blog/load-average-what-is-it-and-whats-the-best-load-average-for-your-linux-servers](https://www.site24x7.com/blog/load-average-what-is-it-and-whats-the-best-load-average-for-your-linux-servers)
 

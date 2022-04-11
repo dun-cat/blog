@@ -336,7 +336,7 @@ ok，这就是全部了！
 
 还有一个[babel 的插件手册](https://github.com/jamiebuilds/babel-handbook/tree/master/translations/zh-Hans)，强烈建议大家去看看。
 
-扩展阅读：
+参考文献：
 
 \> [https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/plugin-handbook.md](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/plugin-handbook.md)
 

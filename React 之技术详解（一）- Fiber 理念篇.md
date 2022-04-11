@@ -352,7 +352,7 @@ Fiber 渲染分成两个阶：`render 阶段`和 `commit 阶段`。
 ```
 
 
-扩展阅读：
+参考文献：
 
 \> [https://github.com/acdlite/react-fiber-architecture](https://github.com/acdlite/react-fiber-architecture)
 

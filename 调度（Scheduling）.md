@@ -13,7 +13,7 @@
 
 特点：
 
-扩展阅读：
+参考文献：
 
 \> [https://zh.wikipedia.org/wiki/调度_(计算机)](https://zh.wikipedia.org/wiki/调度_(计算机))
 

@@ -109,7 +109,7 @@ public class RunMain {
 ```
 还有比如可以实现接口，成为接口成员等类似于普通类的操作。
 
-扩展阅读：
+参考文献：
 
 \> 概念参考依据 orcale 中 tutorial 里的[Enum Types](http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)文章
 

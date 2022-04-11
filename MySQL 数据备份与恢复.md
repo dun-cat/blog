@@ -281,7 +281,7 @@ mysql --host=host_name -u root -p < publish_system_test_backup_20220105_030044.s
 mysqlbinlog mysql-bin.000001 mysql-bin.000001 | mysql
 ```
 
-扩展阅读：
+参考文献：
 
 \> [https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/backup-types.html](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/backup-types.html)
 

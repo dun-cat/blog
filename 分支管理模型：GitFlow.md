@@ -144,7 +144,7 @@ Deleted branch hotfix-1.2.1 (was abbe5d6).
 release 分支、 hotfix 分支、feature 分支命名可以是：
 release-_or release/_ 、 hotfix-_or hotfix/_  、 feature-_or feature/_
 
-扩展阅读：
+参考文献：
 
 \> [https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/)
 

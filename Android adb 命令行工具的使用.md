@@ -137,6 +137,6 @@ adb shell ls /system/bin
 adb install path_to_apk
 ```
 
-扩展阅读：
+参考文献：
 
 \> [https://developer.android.google.cn/studio/command-line/adb](https://developer.android.google.cn/studio/command-line/adb)

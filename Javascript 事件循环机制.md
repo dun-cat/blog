@@ -47,7 +47,7 @@ Task Queue 也被称为 `Macro Task`，有些地方的示意图还会以`Callbac
 - Object.observe
 - MutationObserver
 
-扩展阅读：
+参考文献：
 
 \> [https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 

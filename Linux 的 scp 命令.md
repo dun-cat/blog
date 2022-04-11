@@ -110,7 +110,7 @@ ssh demo@lumin.tech "rm -rf ~/temp_dir"
 
 放在`tmp`的压缩包跟随系统清除规则走，打包时排除不需要的目录(.git)。以上的删除操作无提示，虽然是自动化，但是通常需要通过脚本来做安全性操作检测，否者容易出现人为失误导致的不可逆事故（例如：误删目录）。
 
-扩展阅读：
+参考文献：
 
 \> [https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/)
 

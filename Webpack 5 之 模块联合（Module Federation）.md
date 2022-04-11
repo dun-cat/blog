@@ -289,7 +289,7 @@ npm run start
 
 <img src="mf_routing.svg" />
 
-扩展阅读：
+参考文献：
 
 \> [https://webpack.docschina.org/concepts/module-federation/](https://webpack.docschina.org/concepts/module-federation/)
 

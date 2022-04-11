@@ -25,6 +25,6 @@ function advanceTimers(currentTime) {}
 
 #### flushWork
 
-扩展阅读：
+参考文献：
 
 \> [https://wicg.github.io/scheduling-apis/](https://wicg.github.io/scheduling-apis/)
