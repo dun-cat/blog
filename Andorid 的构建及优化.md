@@ -1,10 +1,19 @@
 ## Andorid 的构建及优化 
 ### 构建任务
 
+
 构建指定任务：
 
 ``` bash
 ./gradlew task-name
+```
+
+通常 android gradle 插件会帮你生成主工程的构建任务，被命名为`assemble`。
+
+所以你可以执行以下命令去构建主工程：
+
+``` bash
+./gradlew assemble
 ```
 
 ### Gradle 增量构建（Incrementtal Build）
