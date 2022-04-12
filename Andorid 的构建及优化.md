@@ -1,7 +1,6 @@
 ## Andorid 的构建及优化 
 ### 构建任务
 
-
 构建指定任务：
 
 ``` bash
@@ -84,3 +83,5 @@ Could not initialize class org.codehaus.groovy.runtime.InvokerHelper
 \> [https://docs.gradle.org/current/userguide/more_about_tasks.html#sec:up_to_date_checks](https://docs.gradle.org/current/userguide/more_about_tasks.html#sec:up_to_date_checks)
 
 \> [https://developer.android.com/studio/build/optimize-your-build](https://developer.android.com/studio/build/optimize-your-build)
+
+\> [https://docs.gradle.org/current/userguide/build_lifecycle.html](https://docs.gradle.org/current/userguide/build_lifecycle.html)
