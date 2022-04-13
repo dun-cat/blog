@@ -65,7 +65,7 @@
 * #### [调度（Scheduling）](./%E8%B0%83%E5%BA%A6%EF%BC%88Scheduling%EF%BC%89.md)
 * #### [回溯算法用例：八皇后疑惑](./%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%94%A8%E4%BE%8B%EF%BC%9A%E5%85%AB%E7%9A%87%E5%90%8E%E7%96%91%E6%83%91.md)
 * #### [分支定界算法用例：旅行推销员问题问题（TSP）](./%E5%88%86%E6%94%AF%E5%AE%9A%E7%95%8C%E7%AE%97%E6%B3%95%E7%94%A8%E4%BE%8B%EF%BC%9A%E6%97%85%E8%A1%8C%E6%8E%A8%E9%94%80%E5%91%98%E9%97%AE%E9%A2%98%E9%97%AE%E9%A2%98%EF%BC%88TSP%EF%BC%89.md)
-* #### [Andorid 的构建及优化](./Andorid%20%E7%9A%84%E6%9E%84%E5%BB%BA%E5%8F%8A%E4%BC%98%E5%8C%96.md)
+* #### [Andorid 的 Gradle 构建及优化](./Andorid%20%E7%9A%84%20Gradle%20%E6%9E%84%E5%BB%BA%E5%8F%8A%E4%BC%98%E5%8C%96.md)
 * #### [Android adb 命令行工具的使用](./Android%20adb%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8.md)
 * #### [非对称加密及 keytool 的使用](./%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%8F%8A%20keytool%20%E7%9A%84%E4%BD%BF%E7%94%A8.md)
 * #### [让我们一步一步得自定义 Babel 插件](./%E8%AE%A9%E6%88%91%E4%BB%AC%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E5%BE%97%E8%87%AA%E5%AE%9A%E4%B9%89%20Babel%20%E6%8F%92%E4%BB%B6.md)
