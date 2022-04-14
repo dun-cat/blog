@@ -384,9 +384,42 @@ Task 类型需要使用[@CacheableTask](https://docs.gradle.org/current/javadoc/
 
 将文件从一个位置 Copy 到另一个位置的 Task 使用缓存是没有意义的。不产生输出或没有 Action 的 Task 也是没有缓存意义的。
 
+##### 启用不可缓存任务的缓存
+
+举一个具体的例子：构建脚本使用通用任务通过委托给 NPM（并运行）NpmTask来创建 JavaScript 包。执行一个`npm run **`的 node 任务，默认情况下无法缓存。
+
+这个任务的输入和输出很容易弄清楚。输入是包含 JavaScript 文件和 npm 配置文件的目录。输出是此任务生成的捆绑文件。
+
+在 build.gradle 中:
+
+``` groovy
+task installReactNativeDeps(type:Exec) {
+    workingDir "../../"
+    commandLine 'npm', 'install'
+
+    outputs.cacheIf { true }
+
+    inputs.dir(new File(rootDir.parentFile,"./rn-deps"))
+            .withPropertyName("rninput")
+            .withPathSensitivity(PathSensitivity.RELATIVE)
+
+    outputs.dirs(new File(rootDir.parentFile,"./node_modules"))
+            .withPropertyName("rnoutpus")
+
+    doFirst {
+        println "开始安装"
+    }
+    doLast {
+        println "结束安装"
+    }
+}
+
+ preBuild.dependsOn installReactNativeDeps
+```
+
 ### 配置缓存
 
-`配置缓存`是一项通过缓存[配置阶段](#构建阶段)的结果并将其重用于后续构建来显着提高构建性能的功能。使用配置缓存，Gradle 可以在没有影响构建配置的任何内容（例如构建脚本）发生更改时完全`跳过配置阶段`。Gradle 还对任务执行进行了一些性能改进。
+[配置缓存](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:usage)是一项通过缓存[配置阶段](#构建阶段)的结果并将其重用于后续构建来显着提高构建性能的功能。使用配置缓存，Gradle 可以在没有影响构建配置的任何内容（例如构建脚本）发生更改时完全`跳过配置阶段`。Gradle 还对任务执行进行了一些性能改进。
 
 配置缓存在概念上类似于构建缓存，但缓存不同的信息。
 
@@ -394,7 +427,21 @@ Task 类型需要使用[@CacheableTask](https://docs.gradle.org/current/javadoc/
 
 > 此功能目前正在孵化中，默认情况下未启用。
 
-> 并非所有核心 Gradle 插件都受支持。您的构建和您依赖的插件可能需要更改才能满足要求。一些 Gradle 功能尚未实现。配置缓存尚未改进在 IDE 中导入和同步 Gradle 构建。
+> 并非所有核心[Gradle 插件](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:plugins:core)都受支持。您的构建和您依赖的插件可能需要更改才能满足要求。一些 Gradle 功能尚未实现。配置缓存尚未改进在 IDE 中导入和同步 Gradle 构建。
+
+#### 开启配置缓存
+
+默认情况下，配置缓存未启用。它可以从命令行启用：
+
+``` bash
+gradle --configuration-cache
+```
+
+也可以在gradle.properties文件中永久启用：
+
+``` bash
+org.gradle.unsafe.configuration-cache=true
+```
 
 ### Android 插件构建缓存
 
@@ -422,13 +469,6 @@ Could not initialize class org.codehaus.groovy.runtime.InvokerHelper
 ```
 
 请确认 Gradle 版本在`6.3-rc-4`以上，你可以在[这里](https://github.com/gradle/gradle/issues/12599)找到该问题的讨论。
-
-### 构建速度优化
-
-高构建速度的一般过程如下：
-
-1. 采取一些可以使大多数 Android Studio 项目立即受益的措施，`优化构建配置`；
-2. 对构建进行`性能剖析`，确定并诊断一些对您的项目或工作站来说比较棘手的瓶颈问题。
 
 参考文献：
 
