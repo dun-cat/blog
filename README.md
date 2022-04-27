@@ -83,6 +83,7 @@
 * #### [数据结构：队列](./%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E9%98%9F%E5%88%97.md)
 * #### [数据结构：树（Tree）](./%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%91%EF%BC%88Tree%EF%BC%89.md)
 * #### [前端包管理工具](./%E5%89%8D%E7%AB%AF%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7.md)
+* #### [前端性能指标及常见优化技术](./%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E5%8F%8A%E5%B8%B8%E8%A7%81%E4%BC%98%E5%8C%96%E6%8A%80%E6%9C%AF.md)
 * #### [模块映射（Import Maps）](./%E6%A8%A1%E5%9D%97%E6%98%A0%E5%B0%84%EF%BC%88Import%20Maps%EF%BC%89.md)
 * #### [何为 λ 演算（Lambda Calculus）](./%E4%BD%95%E4%B8%BA%20%CE%BB%20%E6%BC%94%E7%AE%97%EF%BC%88Lambda%20Calculus%EF%BC%89.md)
 * #### [Linux 的 crontab](./Linux%20%E7%9A%84%20crontab.md)
