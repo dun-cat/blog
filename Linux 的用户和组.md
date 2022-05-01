@@ -1,10 +1,11 @@
-## Linux的用户和组 
+## Linux 的用户和组 
 ### 简介
 
 Linux 上做事要用到用户。初始系统默认只有一个 `root` 用户，该用户拥有`最高权限`。运维上，通常会开通不同的用户服务于不同的服务软件，在对待root用户及密码都应该极为谨慎。
 通过查看 `/etc/passwd` 文件可以`列出所有用户`，通过查看 `/etc/group`文件可以`列出所有组`
 
 ### 查看用户
+
 ``` bash
 # 查看主机用户列表
 cat /etc/passwd 
@@ -19,7 +20,9 @@ cat /etc/passwd
 # lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
 # ...
 ```
+
 ### 查看组
+
 ``` bash
 # 查看主机组列表
 cat /etc/group
@@ -34,13 +37,16 @@ cat /etc/group
 # lp:x:7:
 # ...
 ```
+
 ### 添加用户
 
 添加用户会用到两个命令: `adduser` 和 `useradd`，这两个会有一些区别：
+
 1. `useradd` 不会在`/home`目录创建用户目录，不会自动选择shell版本，也不会提示设置密码。所以也就不能直接登录。可以使用`passwd`命令修改密码。
 2. `adduser` 则会创建用户目录，选择shell版本，提示设置密码。完成步骤之后可直接登录。
 
 > 在 CentOS 系统下 useradd 与 adduser 一样。
+
 ``` bash
 # 添加用户
 adduser demo

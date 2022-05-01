@@ -1,20 +1,24 @@
-## Linux的权限命令 
+## Linux 的权限命令 
 ### chgrp 命令（change group）
 
 把test.log文件所在的用户组改为users。
 
 修改文件所在的用户组
+
 ``` bash
 chgrp users test.log
 ```
+
 ### chown 命令（change owner）
 
 把test.log文件所有者改为lumin。
 
 修改文件的所有者
+
 ``` bash
 chown lumin test.log
 ```
+
 ### chmod 命令（change mode）
 
 权限有三种类型：`read(r`)可读、`write(w)`可写、`execute(e)`可执行。
@@ -33,6 +37,7 @@ chown lumin test.log
 
 让 test.log 文件的的权限改变为：user 拥有全部权限、group 只有 read 权限、other 只有 write 权限。
 修改权限：
+
 ``` bash
 # 每一位数字分别设置一个对象：user group other
 chmod 742 test.log
@@ -42,10 +47,12 @@ chmod 742 test.log
 #修改后的test.log文件属性
 -rwxr---w- 1 lumin520 lumin520 0 Nov 20 23:16 test.log
 ```
+
 #### 符号写法
 
 让 test.log 文件的的权限改变为：user 去掉执行权限、group 添加 write 权限、other 只有执行权限。
 修改权限：
+
 ``` bash
 # user (u) 去掉(-) 执行(x)权限
 chmod u-x test.log
@@ -59,14 +66,17 @@ chmod o=x test.log
 #修改后的test.log文件属性
 -rw-rw---x 1 lumin520 lumin520 0 Nov 20 23:16 test.log
 ```
+
 应用到子目录的文件或文件夹
 
 使用 `-R` 符号。`R = recursive = 递归`
+
 ``` bash
 chgrp -R lumin testDir
 chown -R lumin testDir
 chmod -R 755 lumin testDir
 ```
+
 ### 权限对于文件和目录的区别
 
 #### 文件的权限
