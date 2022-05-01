@@ -1,4 +1,4 @@
-## Java设计模式：建造者模式 
+## Java设计模式（三）：建造者模式 
 ### 概念
 
 建造者模式也是实例化对象的一类设计模式。它不像同类的工厂模式一样抽象化类之后去创建，而是另建一个`Builder`帮助类去构建初始化参数而后创建，显然创建类关注的焦点不同。
@@ -8,6 +8,7 @@
 拿披萨举例
 
 内建Builder类的Pizza类
+
 ``` java
 public class Pizza {
     private int size;
@@ -53,7 +54,9 @@ public class Pizza {
     }
 }
 ```
+
 执行类
+
 ``` java
 public class RunMain {
     public static void main(String[] args) {
@@ -69,6 +72,7 @@ public class RunMain {
 android自带弹框也是此种设计模式
 
 弹框调用
+
 ``` java
 AlertDialog.Builder builder =new AlertDialog.Builder(this)
         .setTitle("弹框标题")

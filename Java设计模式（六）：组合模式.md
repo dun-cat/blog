@@ -1,4 +1,4 @@
-## Java设计模式：组合模式 
+## Java设计模式（六）：组合模式 
 ### 概念
 
 GOF 的《设计模式》一书中对使用组合模式的意图描述如下：将对象组合成树形结构以表示"部分 - 整体"的层次结构。Composite 使得用户对单个对象和组合对象的使用具有一致性。
@@ -14,6 +14,7 @@ Leaf类：继承了 Component 抽象了，并 override 其行为；
 Composite类：继承了 Component 的部件，override 其行为，并且维护一个用于存储子部件的列表；
 
 抽象组件类
+
 ``` java
 abstract class Component {
     protected String name;
@@ -28,6 +29,7 @@ abstract class Component {
 ```
 
 叶子类
+
 ``` java
 class Leaf extends Component {
 
@@ -51,6 +53,7 @@ class Leaf extends Component {
 ```
 
 部件类
+
 ``` java
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +91,7 @@ public class Composite extends Component {
 ```
 
 执行类：RunMain
+
 ``` java
 public class RunMain {
     public static void main(String[] asgs){
@@ -122,4 +126,3 @@ public class RunMain {
 - - - - - Leaf E
 - - - - - Leaf F
 ```
-    

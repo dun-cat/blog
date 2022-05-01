@@ -1,6 +1,6 @@
 ## 博客地址：[www.lumin.tech](http://www.lumin.tech)
 ### 目录
-[Javascript算法](#Javascript算法) | [代码设计](#代码设计) | [命令](#命令) | [容器化](#容器化) | [版本管理](#版本管理) | [网络编程](#网络编程) | [Javascript](#Javascript) | [设计模式](#设计模式) | [Java](#Java) | [Linux](#Linux) | [数据库](#数据库) | [Node](#Node) | [服务器](#服务器) | [其它](#其它) | [前端监控](#前端监控) | [未分类](#未分类)
+[Javascript算法](#Javascript算法) | [代码设计](#代码设计) | [命令](#命令) | [容器化](#容器化) | [版本管理](#版本管理) | [网络编程](#网络编程) | [Javascript](#Javascript) | [Java](#Java) | [Linux](#Linux) | [数据库](#数据库) | [Node](#Node) | [服务器](#服务器) | [其它](#其它) | [设计模式](#设计模式) | [前端监控](#前端监控) | [未分类](#未分类)
 ### Javascript算法
 * #### [算法：树的两种搜索方式-深度优先（DFS）& 广度优先（BFS）](./%E7%AE%97%E6%B3%95%EF%BC%9A%E6%A0%91%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%90%9C%E7%B4%A2%E6%96%B9%E5%BC%8F-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88DFS%EF%BC%89%26%20%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88BFS%EF%BC%89.md)
 ### 代码设计
@@ -26,18 +26,6 @@
 * #### [Javascript 事件循环机制](./Javascript%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6.md)
 * #### [Javascript中的类型判断、空判断](./Javascript%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD%E3%80%81%E7%A9%BA%E5%88%A4%E6%96%AD.md)
 * #### [Javascript Promise 的使用](./Javascript%20Promise%20%E7%9A%84%E4%BD%BF%E7%94%A8.md)
-### 设计模式
-* #### [Java设计模式：适配器模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：建造者模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：原型模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：命令模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：组合模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：装饰者模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：工厂模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：观察者模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：代理模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：单例模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
-* #### [Java设计模式：策略模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.md)
 ### Java
 * #### [Java：枚举的使用](./Java%EF%BC%9A%E6%9E%9A%E4%B8%BE%E7%9A%84%E4%BD%BF%E7%94%A8.md)
 * #### [Java：反射机制](./Java%EF%BC%9A%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6.md)
@@ -55,6 +43,18 @@
 ### 其它
 * #### [常用工具的注册码](./%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E6%B3%A8%E5%86%8C%E7%A0%81.md)
 * #### [Vim的基本使用](./Vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md)
+### 设计模式
+* #### [Java设计模式（一）：单例模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（十）：代理模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9A%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（十一）：策略模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%EF%BC%9A%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（二）：适配器模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（三）：建造者模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（四）：原型模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（五）：命令模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（六）：组合模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（七）：装饰者模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（八）：工厂模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md)
+* #### [Java设计模式（九）：观察者模式](./Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md)
 ### 前端监控
 * #### [异常监控之Sentry（一）- 安装](./%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E4%B9%8BSentry%EF%BC%88%E4%B8%80%EF%BC%89-%20%E5%AE%89%E8%A3%85.md)
 * #### [异常监控之Sentry（二）- 配置](./%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E4%B9%8BSentry%EF%BC%88%E4%BA%8C%EF%BC%89-%20%E9%85%8D%E7%BD%AE.md)
@@ -109,6 +109,7 @@
 * #### [权限访问设计 RBAC & ABAC](./%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE%E8%AE%BE%E8%AE%A1%20RBAC%20%26%20ABAC.md)
 * #### [React Native Hot Update](./React%20Native%20Hot%20Update.md)
 * #### [响应式编程](./%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B.md)
+* #### [响应式编程之 ReactiveX](./%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B9%8B%20ReactiveX.md)
 * #### [Reat Native Errors Records](./Reat%20Native%20Errors%20Records.md)
 * #### [RequestIdleCallback](./RequestIdleCallback.md)
 * #### [SQL 查询语言](./SQL%20%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80.md)

@@ -1,4 +1,4 @@
-## Java设计模式：原型模式 
+## Java设计模式（四）：原型模式 
 ### 概念
 
 原型模式通过抽象克隆行为，实现 copy 对象的目的。
@@ -14,6 +14,7 @@
 把克隆行为抽象出来，然后让自定义对象(原型)实现克隆接口。
 
 克隆接口：Cloneable
+
 ``` java
 public interface ICopying {
     Object copy();
@@ -21,6 +22,7 @@ public interface ICopying {
 ```
 
 原型类：A
+
 ``` java
 public class A implements ICopying{
 
@@ -45,6 +47,7 @@ public class A implements ICopying{
 ```
 
 执行类：RunMain
+
 ``` java
 public class RunMain {
     public static void main(String[] args) {
@@ -53,24 +56,30 @@ public class RunMain {
     }
 }
 ```
+
 显然上面的 copy() 函数不太灵活，每次 copy 都要自己手动把原型的值复制过去。但是在java中不用担心这类问题。在基类 Object 类中有个 `native` 的 `clone()` 方法，它是浅拷贝。在 java 的原型接口（`Cloneable`）中的没有任何接口函数。
 
 #### Java中的原型
 
 Cloneable 接口
+
 ``` java
 package java.lang;
 public interface Cloneable {
 }
 ```
+
 基类：Object
+
 ``` java
 package java.lang;
     ... // 其它代码
     protected native Object clone() throws CloneNotSupportedException;
     ... // 其它代码
 ```
+
 原型类：B
+
 ``` java
 public class B implements Cloneable{
     @Override
@@ -79,7 +88,9 @@ public class B implements Cloneable{
     }
 }
 ```
+
 执行类：RunMain
+
 ``` java
 public class RunMain {
     public static void main(String[] args) {
@@ -92,4 +103,5 @@ public class RunMain {
     }
 }
 ```
+
 > 原型类必须实现 `Cloneable` 接口和 `override` 基类的 `clone()` 方法。否则会出现运行时异常和编译异常。

@@ -1,4 +1,4 @@
-## Java设计模式：装饰者模式 
+## Java设计模式（七）：装饰者模式 
 ### 概念
 
 装饰模式处理两种类：装饰类和被装饰类。为了让多个装饰类装饰一个对象，让装饰类的 `interface` 去 `extends` 被装饰类的 `interface` ，保持实例类型一致。
@@ -8,6 +8,7 @@
 #### 例子
 
 面条接口
+
 ``` java
 //显示面条信息的接口
 public interface INoodles {
@@ -16,12 +17,14 @@ public interface INoodles {
 ```
 
 装饰面条的接口
+
 ``` java
 //继承装饰者接口实现实例的组合
 public interface INoodlesDecorator extends INoodles{}
 ```
 
 裸面类
+
 ``` java
 public class Noodles implements INoodles{
     @Override
@@ -32,6 +35,7 @@ public class Noodles implements INoodles{
 ```
 
 荷包蛋类
+
 ``` java
 public class PoachedEggsDecorator implements INoodlesDecorator{
     private INoodles iNoodles;
@@ -47,6 +51,7 @@ public class PoachedEggsDecorator implements INoodlesDecorator{
 ```
 
 卷心菜类
+
 ``` java
 public class CabbageDecorator implements INoodlesDecorator{
     private INoodles iNoodles;
@@ -62,6 +67,7 @@ public class CabbageDecorator implements INoodlesDecorator{
 ```
 
 执行类：RunMain
+
 ``` java
 public class RunMain {
     public static void main(String[] args){
@@ -78,4 +84,3 @@ public class RunMain {
 ``` bash
 裸面 + 荷包蛋 + 卷心菜
 ```
-    

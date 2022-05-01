@@ -1,4 +1,4 @@
-## Java设计模式：命令模式 
+## Java设计模式（五）：命令模式 
 ### 概念
 
 简单来说就是任务执行的细分。分别得设置了任务请求对象和任务执行对象。而关联它们的方法就是设置一个接口，让实现接口的实例包裹被执行的任务，然后它再把自己送到执行者那里去执行。
@@ -8,6 +8,7 @@
 #### 举例
 
 需要执行的任务
+
 ``` java
 public class Receiver {
     public void task(){
@@ -17,6 +18,7 @@ public class Receiver {
 ```
 
 桥梁作用的任务接口
+
 ``` java
 public interface ITask {
     void execute();
@@ -24,6 +26,7 @@ public interface ITask {
 ```
 
 把任务包裹在实现接口的任务体里
+
 ``` java
 public class MyTask implements ITask{
     private Receiver receiver;
@@ -40,6 +43,7 @@ public class MyTask implements ITask{
 ```
 
 任务的执行者
+
 ``` java
 public class Invoker {
     private ITask task;
@@ -54,6 +58,7 @@ public class Invoker {
 ```
 
 执行类：RunMain
+
 ``` java
 public class RunMain {
     public static void main(String[] args){
