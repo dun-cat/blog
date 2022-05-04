@@ -46,9 +46,9 @@ public class Proxy implements ISubject{
 ``` java
 public class RunMain {
     public static void main(String[] args){
-        ConcretSubject concretSubject = new ConcretSubject();//被访问对象
-        Proxy proxy = new Proxy(concretSubject);//设置代理类作为控制访问的过度类
-        proxy.operate(); //操作
+        ConcretSubject concretSubject = new ConcretSubject(); // 被访问对象
+        Proxy proxy = new Proxy(concretSubject); // 设置代理类作为控制访问的过度类
+        proxy.operate(); // 操作
     }
 }
 ```

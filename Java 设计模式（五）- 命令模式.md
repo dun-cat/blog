@@ -35,7 +35,7 @@ public class MyTask implements ITask{
     }
     @Override
     public void execute() {
-        if (receiver!=null) {
+        if (receiver != null) {
             receiver.task();
         }
     }
@@ -62,11 +62,11 @@ public class Invoker {
 ``` java
 public class RunMain {
     public static void main(String[] args){
-        Receiver receiver = new Receiver();// 需要执行的任务
+        Receiver receiver = new Receiver(); // 需要执行的任务
 
         ITask iTask = new MyTask(receiver); // 把任务封装到一个接口里
 
-        Invoker invoker = new Invoker();// 任务的执行者只需要包含接口，然后执行
+        Invoker invoker = new Invoker(); // 任务的执行者只需要包含接口，然后执行
         invoker.setTask(iTask);
         invoker.run();
     }

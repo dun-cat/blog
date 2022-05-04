@@ -51,8 +51,8 @@ public class A implements ICopying{
 ``` java
 public class RunMain {
     public static void main(String[] args) {
-        A prototypeA=new A();//原型
-        A copiedA = (A) prototypeA.copy();//复制后的对象
+        A prototypeA=new A(); // 原型
+        A copiedA = (A) prototypeA.copy(); // 复制后的对象
     }
 }
 ```

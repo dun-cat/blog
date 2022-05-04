@@ -30,7 +30,7 @@ public class ClassicSingleton {
 
 这个例子也是懒加载概念的一种体现，只有在用得着的时候才去做对应的工作。这个单例类只有在需要的时候才被实例化，分配内存空间。
 
-一般情况下，都会加入同步(synchronized)代码，来解决多线程编程中有可能让单例丧失唯一性。
+一般情况下，都会加入同步（synchronized）代码，来解决多线程编程中有可能让单例丧失唯一性的问题。
 
 ### 模拟多线程问题
 
@@ -103,13 +103,13 @@ public class RunMain {
                 singleton = s;
             }
 
-            //检测单例类实例是否唯一
-            boolean isUnique=true;
+            // 检测单例类实例是否唯一
+            boolean isUnique = true;
             if (s!=singleton) {
                 isUnique=false;
             }
 
-            System.out.println("线程1中检测实例是否唯一："+isUnique);
+            System.out.println("线程1中检测实例是否唯一：" + isUnique);
         }
     }
 
@@ -129,7 +129,7 @@ public class RunMain {
                 isUnique=false;
             }
 
-            System.out.println("线程2中检测实例是否唯一："+isUnique);
+            System.out.println("线程2中检测实例是否唯一：" + isUnique);
         }
     }
 
@@ -151,7 +151,7 @@ public synchronized static Singleton getInstance() {
 
 机智的你一定发现这里存在的问题。因为一个同步方法执行一百次也有可能比不上这个方法的非同步方法的资源开销，所以每次调用函数getInstance 都得进行一次同步操作是不合算的。我们只是需要在第一次实例化的赋值阶段给予同步即可。
 
-#### 多线程单例写法思考1
+#### 多线程单例写法思考 1
 
 ``` java
 public static Singleton getInstance() {
@@ -166,7 +166,7 @@ public static Singleton getInstance() {
 
 但是这样的缺失去了线程安全。我们来发挥脑力想象一下，当线程1进入到同步语块时，线程1被占用。此时假如有线程2进入到if语句，那么线程2将会等待线程1执行结束。但是这样线程2又会调用 new instance() 实例化，而产生两个不同的实例。于是我们要使用名叫（Double-checked locking）的双重锁定技术(本身技术简单，但是依然需要记住专业名词)，代码如下：
 
-#### 多线程单例写法思考2
+#### 多线程单例写法思考 2
 
 ``` java
 public static Singleton getInstance() {
@@ -203,13 +203,13 @@ public static Singleton getInstance() {
 
 所以结合上面代码的来说，在单例的构造函数被调用之前，编译器可以随便访问的单例的成员变量。如果发生这样的情况，虽然线程1在 singleton 赋值后已被占用，但是在 singleton 被初始化之前，线程2依然可以得到一个未初始化的 singleton。
 
-#### Volatile修饰符
+#### Volatile 修饰符
 
 在java5开始提供了一个修饰符 `volatile` 它可以解决这个问题。官方说明如下：
 
-> java编程语言允许线程访问共享变量，为了确保共享变量能被准确和一致的更新，线程应该确保通过排他锁单独获得这个变量。Java语言提供了volatile，在某些情况下比锁更加方便。如果一个字段被声明成volatile，java线程内存模型确保所有线程看到这个变量的值是一致的。于是我们继续改进：
+> Java 编程语言允许线程访问共享变量，为了确保共享变量能被准确和一致的更新，线程应该确保通过`排他锁`单独获得这个变量。Java 语言提供了 volatile，在某些情况下比锁更加方便。如果一个字段被声明成 volatile，java 线程内存模型确保所有线程看到这个变量的值是一致的。于是我们继续改进：
 
-带volatile的单例
+带 volatile 的单例
 
 ``` java
 public class Singleton {

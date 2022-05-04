@@ -15,9 +15,9 @@
 
 ``` java
 public class Adaptee {
-        //需要被对接的行为
+        // 需要被对接的行为
     public void specificRequest(){
-        //业务代码
+        // 业务代码
     }
 }
 ```
@@ -56,9 +56,9 @@ public class Adapter implements Target{
 ``` java
 public class RunMain {
     public static void main(String[] args){
-        Adaptee adaptee =new Adaptee();//被适配对象
-        Target targetAction = new Adapter(adaptee);//适配器
-        targetAction.request();//按照目标接口去执行所需功能
+        Adaptee adaptee =new Adaptee(); // 被适配对象
+        Target targetAction = new Adapter(adaptee); // 适配器
+        targetAction.request(); // 按照目标接口去执行所需功能
     }
 }
 ```

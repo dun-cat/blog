@@ -10,7 +10,7 @@
 * #### [命令：find](./%E5%91%BD%E4%BB%A4%EF%BC%9Afind.md)
 * #### [命令：grep](./%E5%91%BD%E4%BB%A4%EF%BC%9Agrep.md)
 * #### [命令：ls](./%E5%91%BD%E4%BB%A4%EF%BC%9Als.md)
-* #### [Linux 的归档工具 tar 命令](./Linux%20%E7%9A%84%E5%BD%92%E6%A1%A3%E5%B7%A5%E5%85%B7%20tar%20%E5%91%BD%E4%BB%A4.md)
+* #### [Linux 的 tar 命令](./Linux%20%E7%9A%84%20tar%20%E5%91%BD%E4%BB%A4.md)
 ### 容器化
 * #### [Docker的基本使用](./Docker%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md)
 * #### [认识 Docker](./%E8%AE%A4%E8%AF%86%20Docker.md)
@@ -32,7 +32,7 @@
 ### Linux
 * #### [Linux 的权限命令](./Linux%20%E7%9A%84%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4.md)
 * #### [Linux 的关机重启命令](./Linux%20%E7%9A%84%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4.md)
-* #### [Linux的Top命令](./Linux%E7%9A%84Top%E5%91%BD%E4%BB%A4.md)
+* #### [Linux 的 top 命令](./Linux%20%E7%9A%84%20top%20%E5%91%BD%E4%BB%A4.md)
 * #### [Linux 的用户和组](./Linux%20%E7%9A%84%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84.md)
 ### 数据库
 * #### [MySQL常用笔记](./MySQL%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0.md)
@@ -87,8 +87,8 @@
 * #### [前端性能指标及常见优化技术](./%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E5%8F%8A%E5%B8%B8%E8%A7%81%E4%BC%98%E5%8C%96%E6%8A%80%E6%9C%AF.md)
 * #### [模块映射（Import Maps）](./%E6%A8%A1%E5%9D%97%E6%98%A0%E5%B0%84%EF%BC%88Import%20Maps%EF%BC%89.md)
 * #### [何为 λ 演算（Lambda Calculus）](./%E4%BD%95%E4%B8%BA%20%CE%BB%20%E6%BC%94%E7%AE%97%EF%BC%88Lambda%20Calculus%EF%BC%89.md)
-* #### [Linux 的 crontab](./Linux%20%E7%9A%84%20crontab.md)
-* #### [Linux Curl](./Linux%20Curl.md)
+* #### [Linux 的 crontab 命令](./Linux%20%E7%9A%84%20crontab%20%E5%91%BD%E4%BB%A4.md)
+* #### [Linux 的 curl 命令](./Linux%20%E7%9A%84%20curl%20%E5%91%BD%E4%BB%A4.md)
 * #### [Linux 的 scp 命令](./Linux%20%E7%9A%84%20scp%20%E5%91%BD%E4%BB%A4.md)
 * #### [常用的数学公式](./%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F.md)
 * #### [常见数学术语](./%E5%B8%B8%E8%A7%81%E6%95%B0%E5%AD%A6%E6%9C%AF%E8%AF%AD.md)

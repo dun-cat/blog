@@ -95,22 +95,22 @@ public class Composite extends Component {
 ``` java
 public class RunMain {
     public static void main(String[] asgs){
-        Composite root = new Composite("root");//根部件
+        Composite root = new Composite("root"); // 根部件
 
         root.Add(new Leaf("Leaf A"));
         root.Add(new Leaf("Leaf B"));
 
-        Composite compX = new Composite("Composite X");//子部件
+        Composite compX = new Composite("Composite X"); // 子部件
         compX.Add(new Leaf("Leaf C"));
         compX.Add(new Leaf("Leaf D"));
-        root.Add(compX);//添加到根部件里
+        root.Add(compX); // 添加到根部件里
 
-        Composite compXY = new Composite("Composite Y");//子部件
+        Composite compXY = new Composite("Composite Y"); // 子部件
         compXY.Add(new Leaf("Leaf E"));
         compXY.Add(new Leaf("Leaf F"));
-        root.Add(compXY);//添加到根部件里
+        root.Add(compXY); // 添加到根部件里
 
-        root.Display(1);//显示结构
+        root.Display(1); // 显示结构
     }
 }
 ```

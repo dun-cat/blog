@@ -1,4 +1,4 @@
-## Linux Curl 
+## Linux 的 curl 命令 
 ### 介绍
 
 基本使用：
@@ -16,7 +16,6 @@ curl www.baidu.com -H 'Content-Type: application/json'
 curl 是个多功能命令行工具，它的常见功能有：
 
 * 下载
-
 
 ### 下载文件
 

@@ -1,4 +1,4 @@
-## Linux 的归档工具 tar 命令 
+## Linux 的 tar 命令 
 ### 简介
 
 tar 是 Unix 和类 Unix 系统上的`归档打包工具`，tar 代表未压缩的 tar 文件。已压缩的 tar 文件则附加数据压缩格式的扩展名，如经过 `gzip` 压缩后的  tar 文件，扩展名为`.tar.gz`。

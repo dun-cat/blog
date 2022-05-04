@@ -71,12 +71,12 @@ public class CabbageDecorator implements INoodlesDecorator{
 ``` java
 public class RunMain {
     public static void main(String[] args){
-        Noodles noodles =new Noodles();                                                //创建裸面
+        Noodles noodles =new Noodles();                                                // 创建裸面
 
-        PoachedEggsDecorator poachedEggsDecorator =new PoachedEggsDecorator(noodles);  //加入荷包蛋，成为了被装饰者
-        CabbageDecorator cabbageDecorator =new CabbageDecorator(poachedEggsDecorator); //加入卷心菜
+        PoachedEggsDecorator poachedEggsDecorator =new PoachedEggsDecorator(noodles);  // 加入荷包蛋，成为了被装饰者
+        CabbageDecorator cabbageDecorator =new CabbageDecorator(poachedEggsDecorator); // 加入卷心菜
 
-        System.out.println(cabbageDecorator.info());                                   //打印点菜信息
+        System.out.println(cabbageDecorator.info());                                   // 打印点菜信息
     }
 }
 ```

@@ -21,7 +21,7 @@ public interface IObserver {
 public class Observer0 implements IObserver{
     @Override
     public void update(String info) {
-        System.out.println("我是订阅者0号，我收到了信息："+info);
+        System.out.println("我是订阅者0号，我收到了信息：" + info);
     }
 }
 ```
@@ -32,7 +32,7 @@ public class Observer0 implements IObserver{
 public class Observer1 implements IObserver{
     @Override
     public void update(String info) {
-        System.out.println("我是订阅者1号，我收到了信息："+info);
+        System.out.println("我是订阅者1号，我收到了信息：" + info);
     }
 }
 ```
@@ -44,21 +44,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Subject {
-    List<IObserver> observers;//用列表存储订阅者
+    List<IObserver> observers; // 用列表存储订阅者
     public Subject() {
         observers =new ArrayList<>();
     }
-    //一旦发布者有消息就可以通知订阅者
+    // 一旦发布者有消息就可以通知订阅者
     public void notifyObserver() {
         for(IObserver observer:observers){
             observer.update("ui had changed");
         }
     }
-    //提供一个公开方法让订阅者可以订阅
+    // 提供一个公开方法让订阅者可以订阅
     public void register(IObserver observer){
         observers.add(observer);
     }
-    //提供一个公开方法让订阅者取消订阅
+    // 提供一个公开方法让订阅者取消订阅
     public void unRegister(IObserver observer){
         observers.remove(observer);
     }
