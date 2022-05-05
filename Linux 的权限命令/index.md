@@ -1,7 +1,7 @@
 ## Linux 的权限命令 
 ### chgrp 命令（change group）
 
-把test.log文件所在的用户组改为users。
+把 test.log 文件所在的用户组改为users。
 
 修改文件所在的用户组
 
@@ -11,7 +11,7 @@ chgrp users test.log
 
 ### chown 命令（change owner）
 
-把test.log文件所有者改为lumin。
+把 test.log 文件所有者改为 lumin。
 
 修改文件的所有者
 
