@@ -1,0 +1,22 @@
+@startuml
+
+!$client = "客户端(Client)"
+!$authServer = "授权服务器(Authorization Server)"
+!$resServer = "资源服务器(Resource Server)"
+
+"$client" -> "$authServer": 请求刷新访问令牌（access token）
+note left
+client_id
+client_secret
+refresh_token
+scope
+grant_type: Refresh token
+end note
+
+"$client" <- "$authServer": 返回 access token
+
+"$client" -> "$resServer" : 请求获取资源(携带 access token)
+"$client" <- "$resServer" : 返回资源
+
+
+@enduml

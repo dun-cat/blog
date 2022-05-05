@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="546px" preserveAspectRatio="none" style="width:1008px;height:546px;" version="1.1" viewBox="0 0 1008 546" width="1008px" zoomAndPan="magnify"><defs><filter height="300%" id="f1m6dxd3kbmvtm" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke:#AFBAC4;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="228" x2="228" y1="40.4883" y2="502.7676"/><line style="stroke:#AFBAC4;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="446" x2="446" y1="40.4883" y2="502.7676"/><line style="stroke:#AFBAC4;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="678" x2="678" y1="40.4883" y2="502.7676"/><line style="stroke:#AFBAC4;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="894" x2="894" y1="40.4883" y2="502.7676"/><rect fill="#394248" filter="url(#f1m6dxd3kbmvtm)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="106" x="173" y="5"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="180" y="25.5352">客户端(Client)</text><rect fill="#394248" filter="url(#f1m6dxd3kbmvtm)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="106" x="173" y="501.7676"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="180" y="522.3027">客户端(Client)</text><rect fill="#394248" filter="url(#f1m6dxd3kbmvtm)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="236" x="326" y="5"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="333" y="25.5352">授权服务器(Authorization Server)</text><rect fill="#394248" filter="url(#f1m6dxd3kbmvtm)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="236" x="326" y="501.7676"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="333" y="522.3027">授权服务器(Authorization Server)</text><rect fill="#394248" filter="url(#f1m6dxd3kbmvtm)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="200" x="576" y="5"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="583" y="25.5352">授权同意页(Consent screen)</text><rect fill="#394248" filter="url(#f1m6dxd3kbmvtm)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="200" x="576" y="501.7676"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="583" y="522.3027">授权同意页(Consent screen)</text><rect fill="#394248" filter="url(#f1m6dxd3kbmvtm)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="204" x="790" y="5"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="797" y="25.5352">资源服务器(Resource Server)</text><rect fill="#394248" filter="url(#f1m6dxd3kbmvtm)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="204" x="790" y="501.7676"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="797" y="522.3027">资源服务器(Resource Server)</text><polygon fill="#5AC7C3" points="434,103.4199,444,107.4199,434,111.4199,438,107.4199" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="228" x2="440" y1="107.4199" y2="107.4199"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="26" x="324" y="102.6777">跳转</text><path d="M6,60.4883 L6,136.4883 A5,5 0 0 0 11,141.4883 L214,141.4883 A5,5 0 0 0 219,136.4883 L219,65.4883 L209,55.4883 L11,55.4883 A5,5 0 0 0 6,60.4883 " fill="#F43655" filter="url(#f1m6dxd3kbmvtm)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M209,55.4883 L209,62.9883 A2.5,2.5 0 0 0 211.5,65.4883 L219,65.4883 L209,55.4883 " fill="#F43655" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="12" y="73.0566">client_id</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="192" x="12" y="88.3672">redirect_uri: abc.com/callback</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129" x="12" y="103.6777">response_type: code</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="12" y="118.9883">scope:Profile,contact</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="31" x="12" y="134.2988">state</text><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="446" x2="488" y1="172.3516" y2="172.3516"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="488" x2="488" y1="172.3516" y2="185.3516"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="447" x2="488" y1="185.3516" y2="185.3516"/><polygon fill="#5AC7C3" points="457,181.3516,447,185.3516,457,189.3516,453,185.3516" style="stroke:#5AC7C3;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="208" x="453" y="167.6094">没有登录情况下，需要账号密码登录</text><polygon fill="#5AC7C3" points="666,210.6621,676,214.6621,666,218.6621,670,214.6621" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="446" x2="672" y1="214.6621" y2="214.6621"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39" x="542.5" y="209.9199">重定向</text><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="678" x2="720" y1="243.9727" y2="243.9727"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="720" x2="720" y1="243.9727" y2="256.9727"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="679" x2="720" y1="256.9727" y2="256.9727"/><polygon fill="#5AC7C3" points="689,252.9727,679,256.9727,689,260.9727,685,256.9727" style="stroke:#5AC7C3;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="685" y="239.2305">点击确认授权按钮</text><polygon fill="#5AC7C3" points="239,287.2832,229,291.2832,239,295.2832,235,291.2832" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="233" x2="677" y1="291.2832" y2="291.2832"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="358" x="274" y="286.541">重定向到 abc.com/callback(code=&lt;Authorization Code&gt;)</text><path d="M683,274.9727 L683,289.9727 A5,5 0 0 0 688,294.9727 L821,294.9727 A5,5 0 0 0 826,289.9727 L826,279.9727 L816,269.9727 L688,269.9727 A5,5 0 0 0 683,274.9727 " fill="#F43655" filter="url(#f1m6dxd3kbmvtm)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M816,269.9727 L816,277.4727 A2.5,2.5 0 0 0 818.5,279.9727 L826,279.9727 L816,269.9727 " fill="#F43655" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="689" y="287.541">Authorization Code</text><polygon fill="#5AC7C3" points="434,357.2148,444,361.2148,434,365.2148,438,361.2148" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="228" x2="440" y1="361.2148" y2="361.2148"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="194" x="240" y="356.4727">请求获取访问令牌(access token)</text><path d="M5,314.2832 L5,390.2832 A5,5 0 0 0 10,395.2832 L214,395.2832 A5,5 0 0 0 219,390.2832 L219,319.2832 L209,309.2832 L10,309.2832 A5,5 0 0 0 5,314.2832 " fill="#F43655" filter="url(#f1m6dxd3kbmvtm)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M209,309.2832 L209,316.7832 A2.5,2.5 0 0 0 211.5,319.2832 L219,319.2832 L209,309.2832 " fill="#F43655" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="11" y="326.8516">code</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="11" y="342.1621">client_id</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="11" y="357.4727">client_secret</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="11" y="372.7832">redirect_uri</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="11" y="388.0938">grant_type: authorization code</text><polygon fill="#5AC7C3" points="239,422.1465,229,426.1465,239,430.1465,235,426.1465" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="233" x2="445" y1="426.1465" y2="426.1465"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="168" x="253" y="421.4043">返回访问令牌(access token)</text><polygon fill="#5AC7C3" points="882,451.457,892,455.457,882,459.457,886,455.457" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="228" x2="888" y1="455.457" y2="455.457"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="198" x="462" y="450.7148">请求获取资源(携带 access token)</text><polygon fill="#5AC7C3" points="239,480.7676,229,484.7676,239,488.7676,235,484.7676" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="233" x2="893" y1="484.7676" y2="484.7676"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="535" y="480.0254">返回资源</text><!--MD5=[54f73734e4ff1afcb6f21ecf04aa67e9]
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+!$client = "客户端(Client)"
+!$authServer = "授权服务器(Authorization Server)"
+!$consent = "授权同意页(Consent screen)"
+!$resServer = "资源服务器(Resource Server)"
+
+"$client" -> "$authServer": 跳转
+note left
+client_id
+redirect_uri: abc.com/callback
+response_type: code
+scope:Profile,contact
+state
+end note
+
+"$authServer"-> "$authServer": 没有登录情况下，需要账号密码登录
+
+"$authServer" -> "$consent": 重定向
+"$consent" -> "$consent": 点击确认授权按钮
+"$consent" -> "$client":重定向到 abc.com/callback(code=<Authorization Code>)
+note right
+Authorization Code
+end note
+
+"$client" -> "$authServer": 请求获取访问令牌(access token)
+note left
+code
+client_id
+client_secret
+redirect_uri
+grant_type: authorization code
+end note
+
+"$client" <- "$authServer": 返回访问令牌(access token)
+"$client" -> "$resServer" : 请求获取资源(携带 access token)
+"$client" <- "$resServer" : 返回资源
+
+
+@enduml
+
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+
+"客户端(Client)" -> "授权服务器(Authorization Server)": 跳转
+note left
+client_id
+redirect_uri: abc.com/callback
+response_type: code
+scope:Profile,contact
+state
+end note
+
+"授权服务器(Authorization Server)"-> "授权服务器(Authorization Server)": 没有登录情况下，需要账号密码登录
+
+"授权服务器(Authorization Server)" -> "授权同意页(Consent screen)": 重定向
+"授权同意页(Consent screen)" -> "授权同意页(Consent screen)": 点击确认授权按钮
+"授权同意页(Consent screen)" -> "客户端(Client)":重定向到 abc.com/callback(code=<Authorization Code>)
+note right
+Authorization Code
+end note
+
+"客户端(Client)" -> "授权服务器(Authorization Server)": 请求获取访问令牌(access token)
+note left
+code
+client_id
+client_secret
+redirect_uri
+grant_type: authorization code
+end note
+
+"客户端(Client)" <- "授权服务器(Authorization Server)": 返回访问令牌(access token)
+"客户端(Client)" -> "资源服务器(Resource Server)" : 请求获取资源(携带 access token)
+"客户端(Client)" <- "资源服务器(Resource Server)" : 返回资源
+
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 18:25:05 CST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: US-ASCII
+Language: en
+Country: CN
+--></g></svg>

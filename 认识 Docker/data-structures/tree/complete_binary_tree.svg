@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" stroke-linecap="round">
+<path fill="none" stroke="#059" stroke-width="5" d="m70,420
+80-120 150-120 225-125 225,125-100,120-70,120M150,300l80
+120m90,0 80-120 80,120M300,180l99,120M750,180l80,120"/>
+<path stroke="#000" stroke-width="60" d="m70
+420h0m80-120h0m150-120h0m225-125h0m225,125h0m-100,120h0m-70
+120h0m250-120h0M150,300h0m80,120h0m90,0h0m80-120h0m80,120h0"/>
+<path stroke="#089" stroke-width="57" d="m70
+420h0m80-120h0m150-120h0m225-125h0m225,125h0m-100,120h0m-70
+120h0m250-120h0M150,300h0m80,120h0m90,0h0m80-120h0m80,120h0"/>
+</svg>

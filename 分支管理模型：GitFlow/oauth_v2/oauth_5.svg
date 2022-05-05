@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="292px" preserveAspectRatio="none" style="width:781px;height:292px;" version="1.1" viewBox="0 0 781 292" width="781px" zoomAndPan="magnify"><defs><filter height="300%" id="f3qhrg3oea4ln" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke:#AFBAC4;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="197" x2="197" y1="40.4883" y2="248.9727"/><line style="stroke:#AFBAC4;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="433" x2="433" y1="40.4883" y2="248.9727"/><line style="stroke:#AFBAC4;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="667" x2="667" y1="40.4883" y2="248.9727"/><rect fill="#394248" filter="url(#f3qhrg3oea4ln)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="106" x="142" y="5"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="149" y="25.5352">客户端(Client)</text><rect fill="#394248" filter="url(#f3qhrg3oea4ln)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="106" x="142" y="247.9727"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="149" y="268.5078">客户端(Client)</text><rect fill="#394248" filter="url(#f3qhrg3oea4ln)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="236" x="313" y="5"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="320" y="25.5352">授权服务器(Authorization Server)</text><rect fill="#394248" filter="url(#f3qhrg3oea4ln)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="236" x="313" y="247.9727"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="320" y="268.5078">授权服务器(Authorization Server)</text><rect fill="#394248" filter="url(#f3qhrg3oea4ln)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="204" x="563" y="5"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="570" y="25.5352">资源服务器(Resource Server)</text><rect fill="#394248" filter="url(#f3qhrg3oea4ln)" height="30.4883" rx="5" ry="5" style="stroke:#394248;stroke-width:1.5;" width="204" x="563" y="247.9727"/><text fill="#57CC8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="570" y="268.5078">资源服务器(Resource Server)</text><polygon fill="#5AC7C3" points="421,103.4199,431,107.4199,421,111.4199,425,107.4199" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="197" x2="427" y1="107.4199" y2="107.4199"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="212" x="209" y="102.6777">请求刷新访问令牌（access token）</text><path d="M5,60.4883 L5,136.4883 A5,5 0 0 0 10,141.4883 L183,141.4883 A5,5 0 0 0 188,136.4883 L188,65.4883 L178,55.4883 L10,55.4883 A5,5 0 0 0 5,60.4883 " fill="#F43655" filter="url(#f3qhrg3oea4ln)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M178,55.4883 L178,62.9883 A2.5,2.5 0 0 0 180.5,65.4883 L188,65.4883 L178,55.4883 " fill="#F43655" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="11" y="73.0566">client_id</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="11" y="88.3672">client_secret</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="11" y="103.6777">refresh_token</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="37" x="11" y="118.9883">scope</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="11" y="134.2988">grant_type: Refresh token</text><polygon fill="#5AC7C3" points="208,168.3516,198,172.3516,208,176.3516,204,172.3516" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="202" x2="432" y1="172.3516" y2="172.3516"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112" x="259" y="167.6094">返回 access token</text><polygon fill="#5AC7C3" points="655,197.6621,665,201.6621,655,205.6621,659,201.6621" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="197" x2="661" y1="201.6621" y2="201.6621"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="198" x="333" y="196.9199">请求获取资源(携带 access token)</text><polygon fill="#5AC7C3" points="208,226.9727,198,230.9727,208,234.9727,204,230.9727" style="stroke:#5AC7C3;stroke-width:1.0;"/><line style="stroke:#5AC7C3;stroke-width:1.0;" x1="202" x2="666" y1="230.9727" y2="230.9727"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="406" y="226.2305">返回资源</text><!--MD5=[cd57ad198c0b8f1455d2a91ebd5821c0]
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+!$client = "客户端(Client)"
+!$authServer = "授权服务器(Authorization Server)"
+!$resServer = "资源服务器(Resource Server)"
+
+"$client" -> "$authServer": 请求刷新访问令牌（access token）
+note left
+client_id
+client_secret
+refresh_token
+scope
+grant_type: Refresh token
+end note
+
+"$client" <- "$authServer": 返回 access token
+
+"$client" -> "$resServer" : 请求获取资源(携带 access token)
+"$client" <- "$resServer" : 返回资源
+
+
+@enduml
+
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+
+"客户端(Client)" -> "授权服务器(Authorization Server)": 请求刷新访问令牌（access token）
+note left
+client_id
+client_secret
+refresh_token
+scope
+grant_type: Refresh token
+end note
+
+"客户端(Client)" <- "授权服务器(Authorization Server)": 返回 access token
+
+"客户端(Client)" -> "资源服务器(Resource Server)" : 请求获取资源(携带 access token)
+"客户端(Client)" <- "资源服务器(Resource Server)" : 返回资源
+
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 18:25:05 CST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: US-ASCII
+Language: en
+Country: CN
+--></g></svg>

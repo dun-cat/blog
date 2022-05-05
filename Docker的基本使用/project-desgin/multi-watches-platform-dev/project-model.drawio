@@ -1,0 +1,80 @@
+<mxfile>
+    <diagram id="4qZOpfe7cYS4-pnakL7x" name="Page-1">
+        <mxGraphModel dx="1281" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="小米手表应用" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="309" y="190" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="华为手表应用" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="309" y="90" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="branch1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="8">
+                    <mxGeometry x="0.506" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="branch2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9">
+                    <mxGeometry x="0.5578" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="版本控制库" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="小米手表应用" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="180" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="华为手表应用" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="90" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="18" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="版本控制库1" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="80" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="19" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="版本控制库2" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="170" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="小米手表应用" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="529" y="475" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="华为手表应用" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="529" y="385" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="24" target="22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="版本控制库1" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="309" y="375" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="26" target="21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="版本控制库2" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="309" y="465" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="27" target="28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="多版本控制库管理工具" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="425" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="330" width="460" height="230" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
