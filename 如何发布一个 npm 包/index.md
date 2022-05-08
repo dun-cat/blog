@@ -148,7 +148,6 @@ Tip：每次发布 `package.json` 里的 `version` 版本号必须进行`累加`
 npm --no-git-tag-version version patch
 ```
 
-
 ### CI/CD 环境下的自动发布
 
 #### 使用 automation token
