@@ -1,4 +1,4 @@
-## 非对称加密及 keytool 的使用 
+## 非对称加密及 Keytool 工具 
 ### 介绍
 
 在`密码学`里的非对称加密（Asymmetric cryptography）被称为`公开密钥加密`（Public-key cryptography），由于`加密`和`解密`需要两个不同的密钥，故被称为非对称加密。
