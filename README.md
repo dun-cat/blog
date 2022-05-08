@@ -1,6 +1,6 @@
 ## 博客地址：[www.lumin.tech](http://www.lumin.tech)
 ### 目录
-[Javascript算法](#Javascript算法) | [代码设计](#代码设计) | [命令](#命令) | [容器化](#容器化) | [版本管理](#版本管理) | [网络编程](#网络编程) | [Javascript](#Javascript) | [Java](#Java) | [Linux](#Linux) | [数据库](#数据库) | [Node](#Node) | [服务器](#服务器) | [其它](#其它) | [设计模式](#设计模式) | [前端监控](#前端监控) | [未分类](#未分类)
+[Javascript算法](#Javascript算法) | [代码设计](#代码设计) | [命令](#命令) | [容器化](#容器化) | [版本管理](#版本管理) | [网络编程](#网络编程) | [Javascript](#Javascript) | [Java](#Java) | [linux](#linux) | [Linux](#Linux) | [数据库](#数据库) | [Node](#Node) | [服务器](#服务器) | [其它](#其它) | [设计模式](#设计模式) | [前端监控](#前端监控) | [未分类](#未分类)
 ### Javascript算法
 * #### [算法：树的两种搜索方式-深度优先（DFS）& 广度优先（BFS）](./%E7%AE%97%E6%B3%95%EF%BC%9A%E6%A0%91%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%90%9C%E7%B4%A2%E6%96%B9%E5%BC%8F-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88DFS%EF%BC%89%26%20%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88BFS%EF%BC%89/index.md)
 ### 代码设计
@@ -10,7 +10,6 @@
 * #### [命令：find](./%E5%91%BD%E4%BB%A4%EF%BC%9Afind/index.md)
 * #### [命令：grep](./%E5%91%BD%E4%BB%A4%EF%BC%9Agrep/index.md)
 * #### [命令：ls](./%E5%91%BD%E4%BB%A4%EF%BC%9Als/index.md)
-* #### [Linux 的 tar 命令](./Linux%20%E7%9A%84%20tar%20%E5%91%BD%E4%BB%A4/index.md)
 ### 容器化
 * #### [Docker的基本使用](./Docker%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.md)
 * #### [认识 Docker](./%E8%AE%A4%E8%AF%86%20Docker/index.md)
@@ -29,10 +28,14 @@
 ### Java
 * #### [Java：枚举的使用](./Java%EF%BC%9A%E6%9E%9A%E4%B8%BE%E7%9A%84%E4%BD%BF%E7%94%A8/index.md)
 * #### [Java：反射机制](./Java%EF%BC%9A%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/index.md)
+### linux
+* #### [Linux 的 crontab 命令](./Linux%20%E7%9A%84%20crontab%20%E5%91%BD%E4%BB%A4/index.md)
+* #### [Linux 的 scp 命令](./Linux%20%E7%9A%84%20scp%20%E5%91%BD%E4%BB%A4/index.md)
+* #### [Linux 的 tar 命令](./Linux%20%E7%9A%84%20tar%20%E5%91%BD%E4%BB%A4/index.md)
+* #### [Linux 的 top 命令](./Linux%20%E7%9A%84%20top%20%E5%91%BD%E4%BB%A4/index.md)
 ### Linux
 * #### [Linux 的权限命令](./Linux%20%E7%9A%84%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4/index.md)
 * #### [Linux 的关机重启命令](./Linux%20%E7%9A%84%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4/index.md)
-* #### [Linux 的 top 命令](./Linux%20%E7%9A%84%20top%20%E5%91%BD%E4%BB%A4/index.md)
 * #### [Linux 的用户和组](./Linux%20%E7%9A%84%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/index.md)
 ### 数据库
 * #### [MySQL常用笔记](./MySQL%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0/index.md)
@@ -87,9 +90,7 @@
 * #### [前端性能指标及常见优化技术](./%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E5%8F%8A%E5%B8%B8%E8%A7%81%E4%BC%98%E5%8C%96%E6%8A%80%E6%9C%AF/index.md)
 * #### [模块映射（Import Maps）](./%E6%A8%A1%E5%9D%97%E6%98%A0%E5%B0%84%EF%BC%88Import%20Maps%EF%BC%89/index.md)
 * #### [何为 λ 演算（Lambda Calculus）](./%E4%BD%95%E4%B8%BA%20%CE%BB%20%E6%BC%94%E7%AE%97%EF%BC%88Lambda%20Calculus%EF%BC%89/index.md)
-* #### [Linux 的 crontab 命令](./Linux%20%E7%9A%84%20crontab%20%E5%91%BD%E4%BB%A4/index.md)
 * #### [Linux 的 curl 命令](./Linux%20%E7%9A%84%20curl%20%E5%91%BD%E4%BB%A4/index.md)
-* #### [Linux 的 scp 命令](./Linux%20%E7%9A%84%20scp%20%E5%91%BD%E4%BB%A4/index.md)
 * #### [常用的数学公式](./%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/index.md)
 * #### [常见数学术语](./%E5%B8%B8%E8%A7%81%E6%95%B0%E5%AD%A6%E6%9C%AF%E8%AF%AD/index.md)
 * #### [Maze Generation](./Maze%20Generation/index.md)
