@@ -91,6 +91,7 @@
 * #### [非对称加密及 Keytool 工具](./%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%8F%8A%20Keytool%20%E5%B7%A5%E5%85%B7/index.md)
 * #### [何为 λ 演算（Lambda Calculus）](./%E4%BD%95%E4%B8%BA%20%CE%BB%20%E6%BC%94%E7%AE%97%EF%BC%88Lambda%20Calculus%EF%BC%89/index.md)
 * #### [Linux 的 curl 命令](./Linux%20%E7%9A%84%20curl%20%E5%91%BD%E4%BB%A4/index.md)
+* #### [Linux 的 wc 命令](./Linux%20%E7%9A%84%20wc%20%E5%91%BD%E4%BB%A4/index.md)
 * #### [Linux 的 xargs 命令](./Linux%20%E7%9A%84%20xargs%20%E5%91%BD%E4%BB%A4/index.md)
 * #### [常用的数学公式](./%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/index.md)
 * #### [常见数学术语](./%E5%B8%B8%E8%A7%81%E6%95%B0%E5%AD%A6%E6%9C%AF%E8%AF%AD/index.md)
