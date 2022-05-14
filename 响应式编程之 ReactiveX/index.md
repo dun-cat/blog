@@ -173,7 +173,7 @@ Observable 通过向观察者发出的项目不超过观察者请求的项目数
 
 ### 操作符
 
-操作符（operator）本质上是一个`纯函数` (pure function)，它接收一个 Observable 作为输入，并生成一个新的 Observable 作为输出。它将一个 observable（`源`）作为其`第一个参数`并返回另一个 observable（`目标`或`外部`可观察对象）。
+Reactive X 里的操作符（operator）本质上是一个`纯函数` (pure function)，它`接收一个 Observable 作为入参`，并生成一个`新的 Observable 作为出参`。它将一个 observable（`源`）作为其`第一个参数`并返回另一个 observable（`目标`或`外部`可观察对象）。
 
 ``` js
 function myOperator(observable) {
@@ -269,7 +269,46 @@ sourceObservable.pipe(
 done
 ```
 
-> 将 Observable 和操作符分离，从而可以按需加载操作符，减少构建后的包体积。
+`pipe`是 observable 的一个方法，我们看下源码实现：
+
+``` js
+  ...
+  pipe(...operations) {
+      if (operations.length === 0) {
+          return this;
+      }
+      return pipeFromArray(operations)(this);
+  }
+  ...
+```
+
+我们发现`pipeFromArray`是一个`柯里化函数`，这是函数式编程的一个特征。
+
+接下来，在`es6/util/pipe.js`中，我们找到`pipeFromArray`的实现：
+
+``` js
+import { noop } from './noop';
+/* tslint:enable:max-line-length */
+export function pipe(...fns) {
+    return pipeFromArray(fns);
+}
+/* @internal */
+export function pipeFromArray(fns) {
+    if (!fns) {
+        return noop;
+    }
+    if (fns.length === 1) {
+        return fns[0];
+    }
+    return function piped(input) {
+        return fns.reduce((prev, fn) => fn(prev), input);
+    };
+}
+```
+
+`piped`是个函数，它的入参`input`也是我们的`sourceObservable`，出参也是个 observable，所以也是个操作符。
+
+`map(function(number) { return number * 2; })`和`reduce(function(sum, number) { return sum + number; }, 0)`都会返回一个操作符（函数），同样他们以 observable 作为入参，并返回一个新 observable。
 
 #### 创建 observable
 
