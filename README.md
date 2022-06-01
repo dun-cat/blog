@@ -87,7 +87,7 @@
 * #### [数据结构：树（Tree）](./%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%91%EF%BC%88Tree%EF%BC%89/index.md)
 * #### [前端包管理工具](./%E5%89%8D%E7%AB%AF%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/index.md)
 * #### [前端性能指标及常见优化技术](./%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E5%8F%8A%E5%B8%B8%E8%A7%81%E4%BC%98%E5%8C%96%E6%8A%80%E6%9C%AF/index.md)
-* #### [Functional Programing in Js](./Functional%20Programing%20in%20Js/index.md)
+* #### [Javascript 中的函数式编程](./Javascript%20%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/index.md)
 * #### [模块映射（Import Maps）](./%E6%A8%A1%E5%9D%97%E6%98%A0%E5%B0%84%EF%BC%88Import%20Maps%EF%BC%89/index.md)
 * #### [非对称加密及 Keytool 工具](./%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%8F%8A%20Keytool%20%E5%B7%A5%E5%85%B7/index.md)
 * #### [何为 λ 演算（Lambda Calculus）](./%E4%BD%95%E4%B8%BA%20%CE%BB%20%E6%BC%94%E7%AE%97%EF%BC%88Lambda%20Calculus%EF%BC%89/index.md)
