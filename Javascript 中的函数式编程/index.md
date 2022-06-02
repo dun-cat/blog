@@ -22,6 +22,14 @@
 
 除此之前，通俗的副作用可以理解为函数应用不会发生输入异变、日志输出、Http 请求、输出流写入文件等操作。
 
+一个简单的纯函数如下：
+
+``` ts
+function add(a, b) {
+  return a + b
+}
+```
+
 #### 非纯函数示例
 
 下面这些函数是不纯（impure）的。
@@ -73,7 +81,7 @@ console.log({
 });
 ```
 
-我们可以净化它：
+不过我们可以净化它，使它成为一个纯函数：
 
 ``` ts
 const pureAssoc = (key, value, object) => {
@@ -99,6 +107,44 @@ console.log({
 改变你的输入可能很危险，但改变它的副本是没有问题的。我们的最终结果仍然是一个可测试、可预测的函数，无论何时何地调用它都可以工作。
 
 注意这里是深度克隆，这可能在复杂的引用类型结构引发性能问题。所以有些库会通过`结构共享`来优化它。
+
+### 记忆化
+
+`记忆化`（memoization）是一种通用的函数式编程技术，它适用于任何纯函数，这意味着没有任何副作用的函数，如果使用相同的参数调用它总是会产生相同的结果。
+
+记忆一个函数会产生一个`新函数`，该函数将在内部检查先前计算值的缓存，如果在那里找到所需的结果，它将被返回而无需任何进一步的工作。
+
+如果在缓存中没有找到该值，则所有需要的工作都将完成，但在返回给调用者之前，结果将存储在缓存中，以便将来使用来电。
+
+可以通过下面函数来实现一个记忆化的函数：
+
+``` ts
+const memoize = (fn) => {
+  const cache = new Map();
+  return (...args) => {
+    const strX = JSON.stringify(args);
+    if (!cache.has(strX)) {
+      cache.set(strX, fn(...args));
+    }
+    return cache.get(strX);
+  };
+};
+```
+
+可以再优化下，用于接收上下文：
+
+``` ts
+const memoize = function(fn, context) {
+  const cache = new Map();
+  return function(...args) {
+    const strX = JSON.stringify(args);
+    if (!cache.has(strX)) {
+      cache.set(strX, fn.call(context || this, ...args));
+    }
+    return cache.get(strX);
+  };
+};
+```
 
 * 不可变性
 * 记忆化
