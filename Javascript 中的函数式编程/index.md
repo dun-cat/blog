@@ -43,7 +43,7 @@ function add(a, b) {
 
 下面这些函数是不纯（impure）的。
 
-1.`console.log()`改变了函数外部的应用状态：
+1\. `console.log()`改变了函数外部的应用状态：
 
 ``` ts
 function add(a, b) {
@@ -52,7 +52,7 @@ function add(a, b) {
 }
 ```
 
-2.相同的输入，每次输出是不同的：
+2\. 相同的输入，每次输出是不同的：
 
 ``` ts
 function add(a, b) {
@@ -61,7 +61,7 @@ function add(a, b) {
 }
 ```
 
-3.以下是引用非透明的函数，它的输出并非完全取决于它的输入：
+3\. 以下是引用非透明的函数，它的输出并非完全取决于它的输入：
 
 ``` js
 let g = 0;
@@ -71,7 +71,7 @@ function foo(x) {
 }
 ```
 
-3.可变引用参数的改变，改变了函数外部程序状态：
+4\. 可变引用参数的改变，改变了函数外部程序状态：
 
 ``` ts
 const impureAssoc = (key, value, object) => {
