@@ -121,7 +121,7 @@
 * #### [SQL 查询语言](./SQL%20%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/index.md)
 * #### [团队管理规范](./%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83/index.md)
 * #### [汉诺塔（tower of hanoi）问题分析](./%E6%B1%89%E8%AF%BA%E5%A1%94%EF%BC%88tower%20of%20hanoi%EF%BC%89%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/index.md)
-* #### [Typescript 使用技巧](./Typescript%20%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.md)
+* #### [Typescript 高级使用技巧](./Typescript%20%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.md)
 * #### [用户空间模型](./%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/index.md)
 * #### [Webpack 5 之 模块联合（Module Federation）](./Webpack%205%20%E4%B9%8B%20%E6%A8%A1%E5%9D%97%E8%81%94%E5%90%88%EF%BC%88Module%20Federation%EF%BC%89/index.md)
 * #### [一步一步搭建 Webpack 脚手架](./%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%90%AD%E5%BB%BA%20Webpack%20%E8%84%9A%E6%89%8B%E6%9E%B6/index.md)
