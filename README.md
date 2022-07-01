@@ -38,7 +38,7 @@
 * #### [Linux 的关机重启命令](./Linux%20%E7%9A%84%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4/index.md)
 * #### [Linux 的用户和组](./Linux%20%E7%9A%84%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/index.md)
 ### 数据库
-* #### [MySQL常用笔记](./MySQL%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0/index.md)
+* #### [MySQL 常用笔记](./MySQL%20%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0/index.md)
 ### Node
 * #### [Node包语义化版本号控制](./Node%E5%8C%85%E8%AF%AD%E4%B9%89%E5%8C%96%E7%89%88%E6%9C%AC%E5%8F%B7%E6%8E%A7%E5%88%B6/index.md)
 ### 服务器
@@ -122,6 +122,7 @@
 * #### [团队管理规范](./%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83/index.md)
 * #### [汉诺塔（tower of hanoi）问题分析](./%E6%B1%89%E8%AF%BA%E5%A1%94%EF%BC%88tower%20of%20hanoi%EF%BC%89%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/index.md)
 * #### [Typescript 高级使用技巧](./Typescript%20%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.md)
+* #### [UML 系统建模基础](./UML%20%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1%E5%9F%BA%E7%A1%80/index.md)
 * #### [用户空间模型](./%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/index.md)
 * #### [Webpack 5 之 模块联合（Module Federation）](./Webpack%205%20%E4%B9%8B%20%E6%A8%A1%E5%9D%97%E8%81%94%E5%90%88%EF%BC%88Module%20Federation%EF%BC%89/index.md)
 * #### [一步一步搭建 Webpack 脚手架](./%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%90%AD%E5%BB%BA%20Webpack%20%E8%84%9A%E6%89%8B%E6%9E%B6/index.md)
