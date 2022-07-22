@@ -118,6 +118,7 @@
 * #### [响应式编程](./%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B/index.md)
 * #### [响应式编程之 ReactiveX](./%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B9%8B%20ReactiveX/index.md)
 * #### [RequestIdleCallback](./RequestIdleCallback/index.md)
+* #### [软件工程（Software Engineering）](./%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%EF%BC%88Software%20Engineering%EF%BC%89/index.md)
 * #### [SQL 查询语言](./SQL%20%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/index.md)
 * #### [团队管理规范](./%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83/index.md)
 * #### [汉诺塔（tower of hanoi）问题分析](./%E6%B1%89%E8%AF%BA%E5%A1%94%EF%BC%88tower%20of%20hanoi%EF%BC%89%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/index.md)
