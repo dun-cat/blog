@@ -118,6 +118,7 @@
 * #### [响应式编程](./%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B/index.md)
 * #### [响应式编程之 ReactiveX](./%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B9%8B%20ReactiveX/index.md)
 * #### [RequestIdleCallback](./RequestIdleCallback/index.md)
+* #### [为什么每个人都想去服务化（Serverless）](./%E4%B8%BA%E4%BB%80%E4%B9%88%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%83%B3%E5%8E%BB%E6%9C%8D%E5%8A%A1%E5%8C%96%EF%BC%88Serverless%EF%BC%89/index.md)
 * #### [软件工程（Software Engineering）](./%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%EF%BC%88Software%20Engineering%EF%BC%89/index.md)
 * #### [SQL 查询语言](./SQL%20%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/index.md)
 * #### [团队管理规范](./%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83/index.md)
