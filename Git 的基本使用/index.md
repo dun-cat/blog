@@ -1,8 +1,7 @@
-## Git基本使用 
+## Git 的基本使用 
 ### 基本流程
 
 ![git_base](git_base.png)
-
 
 ### 常见命令时序图
 
@@ -186,7 +185,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 上面使用了`--all`选项表示所有分支，而`-u, --set-stream`对于每个分支保证最新的，并且跟踪（tracking）分支引用，这使得后续的`pull`操作无障碍。
 
-### 子模块 
+### 子模块
 
 如果需要把另外一个仓库，作为主仓库的一个目录，可以使用 git 的子模块功能。
 
@@ -194,7 +193,6 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 Q: 直接在主仓库的目录，执行依赖仓库的克隆可以么？
 A：这个操作只使用于本地，提交主仓库内容时，只会提交依赖仓库的内容，主仓库不会关联依赖仓库的地址。这意味着拉取主仓库并不会同时拉取子仓库。
-
 
 #### 添加子模块
 
@@ -238,7 +236,6 @@ or you are unsure what this means choose another name with the '--name' option.
 * gm = git merge
 * ga =  git add
 * gb = git branch
-
 
 参考文献：
 
