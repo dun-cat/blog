@@ -1,17 +1,17 @@
-## 基于TCP协议的Socket 
- ### 简介
+## 基于 TCP 协议的 Socket 
+### 简介
 
- Socket是一套用来执行符合TCP/IP协议标准的网络编程接口。有时一个IP地址和一个端口号也可以叫做插口(socket),这个术语最早出现在TCP规范RFC793里面。对于网络I/O来说就是用来建立tcp链接的工具，它是一个统称，不同操作系统原理相同，但接口函数却不太一样。上面是广义，狭义上术语翻译过来就叫套接字，是定义一个具备Internet通信的基本单位(例如：我们可以说建立一个套接字)。
+ Socket 是一套用来执行符合 TCP/IP 协议标准的网络编程接口。有时一个IP地址和一个端口号也可以叫做插口（socket）,这个术语最早出现在 TCP 规范 RFC793 里面。对于网络I/O来说就是用来建立tcp链接的工具，它是一个统称，不同操作系统原理相同，但接口函数却不太一样。上面是广义，狭义上术语翻译过来就叫套接字，是定义一个具备Internet通信的基本单位(例如：我们可以说建立一个套接字)。
 
-但基本思路按照Unix/Linux系统的哲学"一切皆文件"来实现的。也就是说它的过程类似本地文件读写操作：
+但基本思路按照 Unix/Linux 系统的哲学"一切皆文件"来实现的。也就是说它的过程类似本地文件读写操作：
 
-"打开open -> 读写write/read -> 关闭close"
+"打开open -> 读写 write/read -> 关闭 close"
 
-通过Socket提供的函数在创建一个连接时，会返回一个短整数类型的描述符(Descriptor)来表示当前这个套接字。在windoes系统叫做句柄。后面的操作也都将把这个套接字的标识作为参数带入函数中。
+通过 Socket 提供的函数在创建一个连接时，会返回一个短整数类型的`描述符`（Descriptor）来表示当前这个套接字。在 Windoes 系统叫做`句柄`。后面的操作也都将把这个套接字的标识作为参数带入函数中。
 
 ### 基本流程
 
-基本Socket(既不考虑多线程和有线程池的情况)流程图如下：
+基本 Socket（既不考虑多线程和有线程池的情况）流程图如下：
 
 [![socket_flowchart](/img/socket_flowchart.jpg)](/img/socket_flowchart.jpg)
 
@@ -21,13 +21,13 @@
 
 #### TCP协议详情
 
- tcp所处位置和协议格式如下：
+ TCP 所处位置和协议格式如下：
 
 [![tcp_message_segment](/img/tcp_message_segment.jpg)](/img/tcp_message_segment.jpg)
 
 ##### 几个基本概念
 
-`报文段(message segment)`：在网络层逻辑划分上，每一次传输的包含TCP的消息内容，叫做TCP报文段。这一段会被继续往下被封装到IP数据报里面。我们做TCP协议分析都是基于报文段来分析的。
+`报文段(message segment)`：在网络层逻辑划分上，每一次传输的包含 TCP 的消息内容，叫做 TCP 报文段。这一段会被继续往下被封装到 IP 数据报里面。我们做 TCP 协议分析都是基于报文段来分析的。
 
 报文段划分为两部分：一个是`首部`，一个是`数据`。
 
@@ -52,22 +52,20 @@
 | SYN  | (Synchronization) 同步位，在建立连接时使用，当SYN=1而ACK=0时，表明这是一个连接请求报文段。对方若同意建立连接，在发回的报文段中使SYN=1和ACK=1 |
 | FIN  | 结束位，为1时，表示发送方完成了数据发送 |
 
+#### TCP连接的建立
 
- #### TCP连接的建立
-
- 客户端和服务器端TCP连接的建立也叫三次握手(three-way handshake)，通过三次数据传输完成。
+ 客户端和服务器端 TCP 连接的建立也叫三次握手(three-way handshake)，通过三次数据传输完成。
 
 [![tcp_connect](/img/TCP_connect.jpg)](/img/TCP_connect.jpg)
 
- SYN会占用一个序列号
+ SYN 会占用一个序列号
 
-#### TCP的数据传输
+#### TCP 的数据传输
 
 [![tcp_translate](/img/TCP_translate.jpg)](/img/TCP_translate.jpg)
 
-#### TCP连接的关闭
+#### TCP 连接的关闭
 
 [![tcp_close](/img/TCP_close.jpg)](/img/TCP_close.jpg)
 
- FIN也会占用一个序列号
- 
+ FIN 也会占用一个序列号

@@ -1,4 +1,4 @@
-## Vim的基本使用 
+## Vim 的基本使用 
 ### 常用命令
 
 #### 光标操作
@@ -13,11 +13,9 @@
 * `gg`：去首行的第一个位置
 * `dG`：重当前位置开始，删除下面所有内容
 
-
 ### 游戏玩法
 
 也许你需要一个欢快的学习路径，这边有个游戏来提升你vim水平。
 地址：[https://vim-adventures.com/](https://vim-adventures.com/)
 
 [![game](/img/vim-game.png)](/img/vim-game.png)
-
