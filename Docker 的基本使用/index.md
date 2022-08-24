@@ -1,6 +1,24 @@
 ## Docker 的基本使用 
 ### 镜像（ Image ）
 
+#### 拉取镜像
+
+从远程仓库拉取镜像。
+
+语法如下：
+
+``` bash
+docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+```
+
+例如从远程仓库拉取 nginx 镜像：
+
+``` bash
+docker pull nginx
+```
+
+> 具体使用文档，请查看[这里](https://docs.docker.com/engine/reference/commandline/pull/)。
+
 #### 查看镜像
 
 ``` bash
