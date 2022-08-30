@@ -103,6 +103,7 @@
 * #### [游戏中的网络同步](./%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5/index.md)
 * #### [Nginx 基础知识](./Nginx%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.md)
 * #### [Nginx 常用配置](./Nginx%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/index.md)
+* #### [Node 依赖包管理](./Node%20%E4%BE%9D%E8%B5%96%E5%8C%85%E7%AE%A1%E7%90%86/index.md)
 * #### [如何发布一个 npm 包](./%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E4%B8%80%E4%B8%AA%20npm%20%E5%8C%85/index.md)
 * #### [OAuth 2.0 的授权设计](./OAuth%202.0%20%E7%9A%84%E6%8E%88%E6%9D%83%E8%AE%BE%E8%AE%A1/index.md)
 * #### [Java 中的面向对象编程（OOP）](./Java%20%E4%B8%AD%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%EF%BC%88OOP%EF%BC%89/index.md)
