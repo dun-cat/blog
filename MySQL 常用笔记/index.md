@@ -17,22 +17,22 @@ mysql -h 114.55.136.250 -P 3306 -u test -p
 
 ### 授权
 
-``` bash
-grant all privileges on testDB.* to test@localhost identified by '1234';
-grant select,update on testDB.* to test@localhost identified by '1234';
-grant select,delete,update,create,drop on *.* to test@"%" identified by "1234";
-flush privileges; # 刷新系统权限表
+``` mysql
+GRANT ALL PRIVILEGES ON testDB.* to test@localhost IDENTIFIED BY '1234';
+GRANT select,update on testDB.* to test@localhost IDENTIFIED BY '1234';
+GRANT select,delete,update,create,drop on *.* TO test@"%" IDENTIFIED BY "1234";
+FLUSH privileges; # 刷新系统权限表
 # 格式：grant 权限 on 数据库.* to 用户名@登录主机 identified by "密码";
 ```
 
 ### 增
 
-``` bash
-create database test;
+``` mysql
+CREATE DATABASE test;
 # 指定字符集来创建数据库；
-create database publish_system_test DEFAULT CHARACTER SET utf8mb4;
+CREATE DATABASE publish_system_test DEFAULT CHARACTER SET utf8mb4;
 
-insert into mysql.user(Host,User,Password) values("localhost","test",password("123")); # 添加用户
+INSERT INTO mysql.user(Host,User,Password) VALUES("localhost","test",password("123")); # 添加用户
 ```
 
 #### 添加表字段
@@ -44,29 +44,41 @@ insert into mysql.user(Host,User,Password) values("localhost","test",password("1
 
 ### 删
 
-``` bash
-drop databases test
-delete from test
+``` mysql
+DROP DATABASES test;
+DELETE FROM test;
 
 # 删除记录
-delete from table_name [WHERE Clau
-
+DELETE FROM table_name;
 ```
 
 ### 查
 
-``` bash
-show databases
-show tables
+``` mysql
+SHOW DATABASES;
+SHOW TABLES;
 ```
 
 ### 改
 
-``` bash
-update user set password=PASSWORD("123") where User='root'; # 更新密码
-# or 
-update user set authentication_string=PASSWORD("123") where User='root'; # 更新密码
+#### 更新用户密码
 
-update user set Host='%' where user='test';
+``` mysql
+
+UPDATE user SET password=PASSWORD("123") WHERE User='root'; # 更新密码
+# or 
+UPDATE user SET authentication_string=PASSWORD("123") WHERE User='root'; # 更新密码
+
+UPDATE user SET Host='%' WHERE user='test';
 flush privileges;
 ```
+
+#### 修改表字段
+
+``` mysql
+ALTER TABLE test CHANGE project_id p_id int(11) NOT NULL COMMENT '项目 id';
+```
+
+参考文献：
+
+\> [https://dev.mysql.com/doc/refman/8.0/en/](https://dev.mysql.com/doc/refman/8.0/en/)
