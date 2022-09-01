@@ -15,6 +15,14 @@
 
 ### 基本命令
 
+#### fetch
+
+拉取远程分支到本地一个指定分支上：
+
+``` bash
+git fetch origin feat/test:feat/test
+```
+
 #### pull
 
 从服务器更新
@@ -80,7 +88,11 @@ git checkout somebranch
 
 git checkout -b somebranch  # 创建 somebranch 分支并切换到 somebranch 分支
 
-git checkout HEAD^ #切换HEAD到上一个commit。
+git checkout HEAD^ # 切换 HEAD 到上一个 commit。
+
+git checkout feat/test -- path/dir # 从其它分支迁出指定文件目录
+
+git checkout HEAD -- my-file.txt # 从最新 commit 恢复一个文件
 ```
 
 #### branch
