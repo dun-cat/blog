@@ -1,6 +1,6 @@
 ## 博客地址：[www.lumin.tech](http://www.lumin.tech)
 ### 目录
-[Javascript算法](#Javascript算法) | [代码设计](#代码设计) | [命令](#命令) | [容器化](#容器化) | [版本管理](#版本管理) | [网络编程](#网络编程) | [Javascript](#Javascript) | [Java](#Java) | [linux](#linux) | [Linux](#Linux) | [数据库](#数据库) | [Node](#Node) | [服务器](#服务器) | [其它](#其它) | [设计模式](#设计模式) | [前端监控](#前端监控) | [未分类](#未分类)
+[Javascript算法](#Javascript算法) | [代码设计](#代码设计) | [命令](#命令) | [容器化](#容器化) | [版本管理](#版本管理) | [网络编程](#网络编程) | [Javascript](#Javascript) | [Java](#Java) | [linux](#linux) | [Linux](#Linux) | [数据库](#数据库) | [Node](#Node) | [服务器](#服务器) | [其它](#其它) | [编辑器](#编辑器) | [设计模式](#设计模式) | [前端监控](#前端监控) | [未分类](#未分类)
 ### Javascript算法
 * #### [算法：树的两种搜索方式-深度优先（DFS）& 广度优先（BFS）](./%E7%AE%97%E6%B3%95%EF%BC%9A%E6%A0%91%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%90%9C%E7%B4%A2%E6%96%B9%E5%BC%8F-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88DFS%EF%BC%89%26%20%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88BFS%EF%BC%89/index.md)
 ### 代码设计
@@ -46,6 +46,8 @@
 ### 其它
 * #### [常用工具的注册码](./%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E6%B3%A8%E5%86%8C%E7%A0%81/index.md)
 * #### [Vim 的基本使用](./Vim%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.md)
+### 编辑器
+* #### [Visual Studio Code 工作台配置](./Visual%20Studio%20Code%20%E5%B7%A5%E4%BD%9C%E5%8F%B0%E9%85%8D%E7%BD%AE/index.md)
 ### 设计模式
 * #### [Java 设计模式（一）- 单例模式](./Java%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%B8%80%EF%BC%89-%20%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/index.md)
 * #### [Java 设计模式（十）- 代理模式](./Java%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8D%81%EF%BC%89-%20%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.md)
