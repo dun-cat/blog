@@ -56,7 +56,7 @@ code -a path/of/youProject
 
 通过`Word Wrap Column`来设置最大换行列数，这项配置只是在视觉上的换行，并不表示真正意义上在源文件插入换行控制符，所以不必担心它会改变源文件。
 
-你可以更加你的屏幕大小，自行调配列数。
+你可以根据你的屏幕大小，自行调配列数。
 
 ``` yaml
 "editor.wordWrapColumn": 260,
@@ -64,7 +64,7 @@ code -a path/of/youProject
 
 #### 自动保存
 
-自动保存文件，会是一个很好辅助点，它免去手动保存的动作。同时保存在 git 提交时，不会因为未保存而导致提交的遗漏。
+自动保存文件，会是一个很好辅助点，它免去手动保存的动作。同时保证在 git 提交时，不会因为未保存而导致提交的遗漏。
 
 ``` yaml
 "files.autoSave": "onFocusChange",
@@ -102,11 +102,11 @@ code -a path/of/youProject
 
 #### 文件图标主题
 
-VSCode 默认的字体图标主题有些暗淡，色彩偏淡，不够鲜明。我个人喜欢的 [Material Icon Theme]( https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 这套主题。
+VSCode 默认的字体图标主题有些暗淡，色彩偏淡，不够鲜明。我个人喜欢 [Material Icon Theme]( https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 这套主题。
 
 #### 颜色主题
 
-整个 vscode 的颜色主题，我选择 [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) ，这套主题在众多主题中个人觉得在视觉上比较舒服的一套。
+整个 vscode 的颜色主题，我选择 [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) ，这套主题在众多主题中在视觉上是较为舒服的一套。
 
 <img src="color-theme.png" width="60%" />
 

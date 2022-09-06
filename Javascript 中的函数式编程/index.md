@@ -27,7 +27,7 @@
 
 1. 纯函数不会改变外部状态；
 2. 无论函数应用了多少次，每次输入（input）相同时，它的输出（output）也一定是相同的；
-3. 纯函数都是[引用透明](https://en.wikipedia.org/wiki/Referential_transparency)（referential> transparency）的，函数是可以被它的输出所取代，而不影响程序的行为。
+3. 纯函数都是[引用透明](https://en.wikipedia.org/wiki/Referential_transparency)（referential transparency）的，函数是可以被它的输出所取代，而不影响程序的行为。
 
 > 函数式编程的一个定义特征是它只允许`引用透明`的函数，引用透明性是定义纯函数的一种更正式的方式。
 
