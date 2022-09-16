@@ -241,9 +241,7 @@ Gitlens 有项比较不错的收费功能是`Git Graph`，无论 UI 来说，还
 
 #### SCSS Everywhere
 
-[SCSS Everywhere](https://marketplace.visualstudio.com/items?itemName=gencer.html-slim-scss-css-class-completion)是一款用于 scss 样式的`自动补全`功能。
-
-例如：如果样式有层级的`&`连字符，它能候选补全子样式。
+[SCSS Everywhere](https://marketplace.visualstudio.com/items?itemName=gencer.html-slim-scss-css-class-completion)是一款用于 scss 样式的`自动补全`功能插件。例如：如果样式有层级的`&`连字符，它能提供完整样式名称候选：
 
 ``` scss
 .btn {
