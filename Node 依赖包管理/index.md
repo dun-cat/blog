@@ -24,6 +24,12 @@ yarn install
 yarn
 ```
 
+全局安装：
+
+``` bash
+yarn global add nodemon
+```
+
 对于锁版本文件`yarn.lock`的生成规则如下：
 
 * 若`yarn.lock`文件已提供，并能够满足在`package.json`下的所有依赖，则`yarn.lock`记录的精确版本号会被安装，并且`yarn.lock`文件不发生改变，Yarn 并不会去检查新的版本号；

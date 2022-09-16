@@ -1,7 +1,7 @@
 ## 编程模式之集合管道（Collection pipelines） 
 ### 简介
 
-集合管道（Collection pipelines）是一种`编程模式`，它让把一些计算（computation）组织成一些`有序的`的操作（operations）。这些操作通过将`集合`作为一个操作的输出（output）并将其送入到下一个操作来组成。常见的操作有`filter`、`map=`和`reduce`。
+集合管道（Collection pipelines）是一种`编程模式`，它让把一些计算（computation）组织成一些`有序的`的操作（operations）。这些操作通过将`集合`作为一个操作的输出（output）并将其送入到下一个操作来组成。常见的操作有`filter`、`map`和`reduce`。
 
 这种模式在`函数式编程`中很常见，在具有`lambda`的面向对象语言中也很常见。
 

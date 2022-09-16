@@ -239,6 +239,22 @@ Gitlens 有项比较不错的收费功能是`Git Graph`，无论 UI 来说，还
 
 [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)是一款用于 markdown 文档`格式化`的插件，它遵循[CommonMark Spec](https://spec.commonmark.org/)写作规范。在协作编写 markdown 文档的时候，可以确保文档格式的一致性。
 
+#### SCSS Everywhere
+
+[SCSS Everywhere](https://marketplace.visualstudio.com/items?itemName=gencer.html-slim-scss-css-class-completion)是一款用于 scss 样式的`自动补全`功能。
+
+例如：如果样式有层级的`&`连字符，它能候选补全子样式。
+
+``` scss
+.btn {
+  &-block {}
+  &-danger {}
+  // ...
+}
+```
+
+<img src="scss.gif" />
+
 ### 结束语
 
 个人使用的配置基本都在这了，有些插件并没有列举出来，因为它们并不是通用型插件。
