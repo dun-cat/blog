@@ -24,6 +24,14 @@ yarn install
 yarn
 ```
 
+默认安装的是`dependencies`依赖，你可以通过`-D`或者`--dev`来添加`devDependencies`依赖：
+
+``` bash
+yarn add -D tailwindcss
+# 或
+yarn add --dev tailwindcss
+```
+
 全局安装：
 
 ``` bash
