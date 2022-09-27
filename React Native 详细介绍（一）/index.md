@@ -1,7 +1,7 @@
 ## React Native 详细介绍（一） 
 ### 简介
 
-React Native 是有 Facebook（已改名：Meta）创建的一种实现跨端技术框架。与[Cordova](https://cordova.apache.org/)（前身：PhoneGap）或[ionic](https://ionicframework.com/)这种在`Webview 中嵌套网页`App的跨端不同。React Native 最终提供给用户的视图是`原生视图`，这让用户能体验到原生应用的感觉。
+React Native 是有 Facebook（已改名：Meta）创建的一种实现跨端技术框架。与[Cordova](https://cordova.apache.org/)（前身：PhoneGap）或[ionic](https://ionicframework.com/)这种在`Webview 中嵌套网页`App 的跨端技术不同。React Native 最终提供给用户的视图是`原生视图`，这让用户能体验到原生应用的感觉。
 
 > App 使用网页方式，有可能因为应用执行速度慢或使用不够“原生”而`被苹果拒绝上架`。
 
@@ -113,11 +113,11 @@ Flutter 使用内置渲染器：[Skia](https://skia.org/docs/)，它是一个 2D
 
 #### 生态
 
-由于 Flutter 发布时间相对 React Native 要晚两年。React Native 先发优势，我想这是 Flutter 没有足够的三方库来未满足一些应用场景的主要原因。
+由于 Flutter 发布时间相对 React Native 要晚两年。React Native 先发优势，我想这是 Flutter 没有足够的三方库来未满足一些应用场景的主要原因。当然，公司若以技术为主导的价值观，相信团队有足够信心能做的很好。
 
 #### 热更新
 
-热更新的技术基础是 JIT 编译。Flutter 使用的 Dart 支持 JIT，也就是说它支持动态执行代码，但是由于 Apple 对动态执行代码的不可预料的限制，官方没有足够信心提供开箱即用的稳定方案，你这可以在[这里](https://github.com/flutter/flutter/issues/14330)查看 Flutter 对热更新的讨论。
+热更新的技术基础是 JIT 编译。Flutter 使用的 Dart 支持 JIT，也就是说它支持动态执行代码，但是由于 Apple 对动态执行代码的不可预料的限制，官方并没有提供开箱即用的热更新相关的解决方案，你这可以在[这里](https://github.com/flutter/flutter/issues/14330)查看 Flutter 对热更新的讨论。
 
 > iOS 生态系统只允许 Javascript 语言的动态执行。显然不允许 Dart VM 运行在 iOS 系统上。
 
@@ -126,6 +126,68 @@ Flutter 使用内置渲染器：[Skia](https://skia.org/docs/)，它是一个 2D
 **总结**：React Native 因为其支持双平台的热更新，所以可以支撑非常频繁的业务迭代。React Native 使用的 JavaScript 语言和 ReactJs 技术，对前端同学而言有得天独厚的优势。同时，其生态库更完善，能快速支撑更为丰富的应用场景研发。
 
 反过来说，以上就是 Flutter 的缺点。但是可以看出 Flutter 有着绝对的性能优势。
+
+**值得关注的**是 React Native 在 68 版本及之后，开始可选新架构。新的架构会带来很大的性能提升。和老的架构不同的点是新架构也开始使用 C++ 实现的渲染器：[Fabric](https://reactnative.dev/architecture/fabric-renderer)，并且和 Javascript 的交互由原来的 JSON 序列化，变成了[JSI（JavaScript Interfaces）](https://reactnative.dev/architecture/glossary#javascript-interfaces-jsi)，这会大大提高渲染性能。
+
+> 你可以在[这里](https://github.com/react-native-community/discussions-and-proposals/issues/91)了解更多 JSI 的内容讨论。
+
+### React Native 组成部分及生态
+
+#### Metro Bundler
+
+[Metro](https://facebook.github.io/metro/)是专为 React Native 开发提供的 Javascript 捆包器（bundler），可以理解为打包器。它为 React Native 提供`开发服务`和`打包`功能，开箱即用。
+
+初始化 React Native 项目后，可以在 node_modules 里找到`metro-*`相关的依赖包。虽然作为内置依赖项，但是它是可以独立`CLI`或`编程方式`运行。独立的编程方式利于三方框架执行 React Native 的集成打包，例如跨端框架：[Taro](https://taro-docs.jd.com/taro/docs)。
+
+Metro 打包进程中有以下三个独立的阶段：
+
+1. `解决`（Resolution）：从入口点开始，构建模块依赖图，解决各个模块的文件路径；
+2. `转换`（Transformation）：可并行的处理模块文件转义，Metro 提供了配置项：[Transformer.babelTransformerPath](https://facebook.github.io/metro/docs/configuration#babeltransformerpath)，可以自定义`babel transformer`来转义模块；
+3. `序列化`（Serialization）：生成一个或多个 bundle 包。
+
+Metro 有个到目前为止仍然 Open 的一个[symlinks](https://github.com/facebook/metro/issues/1)问题，即 Metro 不能支持项目根目录之外的符号链接依赖项。
+
+#### React Native Community
+
+[React Native Community](https://github.com/react-native-community)是支持 React Native 生态系统的多个仓库，有些仓库需要我们特别了解的。
+
+##### react-native-community/cli
+
+[react-native-community/cli](https://github.com/react-native-community/cli)为 React Native 提供了`命令行工具`和`客户端集成 React Native 生态库的脚本`。常用的命令有以下几个：
+
+* `构建打包命令`：react-native bundle
+* `运行 Android 设备`：react-native run-android
+* `运行 iOS 设备`：react-native run-ios
+* `启动开发服务`：react-native start
+
+你可以在[这里](https://github.com/react-native-community/cli/blob/main/docs/commands.md)获取所有可用命令。
+
+> Metro 被内置在 react-native 命令行工具中，你可以在[源码](https://github.com/react-native-community/cli/blob/main/packages/cli-plugin-metro/src/commands/start/runServer.ts#L9)中看到其具体集成位置。
+
+除了作为命令行工具之外，它有两个子包：[@react-native-community/cli-platform-android](https://github.com/react-native-community/cli/tree/main/packages/cli-platform-android)和[@react-native-community/cli-platform-ios](https://github.com/react-native-community/cli/tree/main/packages/cli-platform-ios)。
+
+它们分别用于 Android 端和 iOS 端的`React Native 生态的三方库（react-native-*）的集成`。在 Android 和 iOS 的各自的依赖管理方式下，使用脚本来完成对 React Native 生态库的自动化集成，这种集成方式被称为[Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md)。
+
+在 `android/settings.gradle`文件中可以 Android 平台集成的脚本应用：
+
+``` groovy
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+```
+
+在 `ios/Podfile`文件中也可以看到相同 iOS 平台的集成脚本应用：
+
+``` ruby
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+```
+
+> **注意**：React Native 的生态库`包名`**必须**以`react-native-*`开头，才能被自动化集成至客户端。并且目前不支持[scope](https://docs.npmjs.com/cli/v8/using-npm/scope)包（例：@lumin/react-native-image）。
+
+#### Expo
+
+[Expo](https://expo.dev/)是一个针对 React Native 项目的 npm 包和框架。虽然是三方库，但是对于开发 React Native 项目来说是**必要的**，它有以下有价值的几项功能：
+
+1. `Code Playground`：可以这点起始在官网的[组件](https://reactnative.dev/docs/flatlist)文档可以直接看到其应用；
+2. `提供了丰富 Native 功能的 SDK`：包括：`亮度控制`、`文件系统`、`字体`、`相机`，`震动`等等一系列必要的 Native 功能，这是它的核心价值。你可以在[这里](https://docs.expo.dev/versions/v46.0.0/sdk/accelerometer/)看到更多功能；
 
 参考文献：
 
