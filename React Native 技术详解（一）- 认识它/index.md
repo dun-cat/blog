@@ -1,7 +1,7 @@
 ## React Native 技术详解（一）- 认识它 
 ### 简介
 
-React Native 是有 Facebook（已改名：Meta）创建的一种实现跨端技术框架。与[Cordova](https://cordova.apache.org/)（前身：PhoneGap）或[ionic](https://ionicframework.com/)这种在`Webview 中嵌套网页`App 的跨端技术不同。React Native 最终提供给用户的视图是`原生视图`，这让用户能体验到原生应用的感觉。
+React Native 是由 Facebook（已改名：Meta）创建的一种实现跨端的技术。与[Cordova](https://cordova.apache.org/)（前身：PhoneGap）或[ionic](https://ionicframework.com/)这种在`Webview 中嵌套网页`App 的跨端技术不同。React Native 最终提供给用户的视图是`原生视图`，这让用户能体验到原生应用的感觉。
 
 > App 使用网页方式，有可能因为应用执行速度慢或使用不够“原生”而`被苹果拒绝上架`。
 
