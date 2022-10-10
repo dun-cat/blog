@@ -1,7 +1,7 @@
 ## React Native 技术详解（二）- Metro Bundler 
 ### Metro 介绍
 
-在[React Native 技术详解（一）- 认识它](../react-native-1-introduction/#metro-bundler)中，简单介绍过 Metro Bundler。Metro 是`构建 jsbundle 包`及提供`开发服务`的工具，默认被集成在`react-native`命令行工具内，你可以在[这里](https://github.com/react-native-community/cli/blob/main/packages/cli-plugin-metro/src/commands/start/runServer.ts#L9)找到其开发服务集成源码。
+在[React Native 技术详解（一）- 认识它](../react-native-1-introduction/#metro-bundler)中，简单介绍过 Metro Bundler。[Metro](https://github.com/facebook/metro) 是`构建 jsbundle 包`及提供`开发服务`的工具，默认被集成在`react-native`命令行工具内，你可以在[这里](https://github.com/react-native-community/cli/blob/main/packages/cli-plugin-metro/src/commands/start/runServer.ts#L9)找到其开发服务集成源码。
 
 `react-native`命令行工具源码是由[Lerna](https://lerna.js.org/docs/introduction)管理的 monorepo 仓库，每个子命令在单独的子包里。而 React Native 的打包由其`cli-plugin-metro`子包管理。
 
@@ -56,47 +56,63 @@ export interface AssetData {
 
 > 虽然 Metro 提供了 API，但是 react-native 并没有直接使用。
 
-### Babel 代码转义
+### 配置文件
 
-Metro 使用 Babel 作为转义工具，如果你使用`react-native init`初始化项目的话，可以在项目根目录看到`babel.config.js`配置文件，内容如下：
+Metro 通过项目根目录`metro.config.js`文件来对打包进行配置，metro.config.js 的配置结构如下：
 
 ``` js
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
+  /* general options */
+
+  resolver: {
+    /* resolver options */
+  },
+  transformer: {
+    /* transformer options */
+  },
+  serializer: {
+    /* serializer options */
+  },
+  server: {
+    /* server options */
+  },
+  watcher: {
+    /* watcher options */
+    watchman: {
+      /* Watchman-specific options */
+    }
+  }
 };
 ```
 
-Metro 提供了预设`metro-react-native-babel-preset`，该预设是 Metro 项目的一个子包，在[这里](https://github.com/facebook/metro/blob/main/packages/metro-react-native-babel-preset/src/configs/main.js)可以看到其具体预设内容。
+你可以在[这里](https://facebook.github.io/metro/docs/configuration)获取全部配置项详情。其中，`resolver`、`transformer`、`serializer`三个配置项是值得我们去关注的，下面将详细介绍。
 
-其内置的一些默认插件：
+Metro 项目的子包`metro-config`可以找到其[默认配置](https://github.com/facebook/metro/blob/main/packages/metro-config/src/defaults/index.js)选项，有几个默认配置需要关注的：
 
-* `@babel/plugin-syntax-flow`：用于支持 Facebook 自家的[Flow](https://flow.org/en/docs/getting-started/)静态类型文件（.flow.js）。 Flow 和 Typescript 类似，却并未推广开；
-* `@babel/plugin-transform-block-scoping`：支持作用块（let）；
-* `@babel/plugin-transform-typescript`：支持 typescript 的转义；
-* `@babel/plugin-transform-arrow-functions`：对箭头函数的支持；
-* `@babel/plugin-syntax-dynamic-import`：模块的`异步加载`支持；
-* ...
+* **projectRoot**
+  
+  指定 React Native 项目的根目录。如果未指定，默认通过`node_modules/metro-config`的位置解析。若指定的 projectRoot 不正确，那么在 Metro 的解析阶段将直接报错。
 
-预设提供了实验性设置选项`unstable_transformProfile`。如果`unstable_transformProfile`的值为`hermes-stable`或`hermes-canary`其中之一，并且项目中采用`Hermes`作为 Javascript 引擎，那么下面的一些插件会被忽略：
+  ``` js
+  projectRoot: projectRoot || path.resolve(__dirname, '../../..'),
+  ```
 
-* @babel/plugin-transform-computed-properties
-* @babel/plugin-transform-parameters
-* @babel/plugin-transform-shorthand-properties
-* @babel/plugin-proposal-optional-catch-binding
-* @babel/plugin-transform-function-name
-* @babel/plugin-transform-literals
-* @babel/plugin-transform-sticky-regex
+* **cacheStores**
+  
+  提供转换后的缓存文件的存储目录，默认存储至`系统临时目录`。
 
-在 React Native 0.70 之后， Hermes 作为默认内置引擎，实现了很多标准，这带来了些许好处：
+  ```js
+  cacheStores: [
+    new FileStore({
+      root: path.join(os.tmpdir(), 'metro-cache'),
+    }),
+  ],
+  ```
 
-1. 无需 Babel 额外的转义代码，最终打包的 jsbundle 体积变小；
-2. 由于原生语法支持，对这些语法代码执行性能得到一定的提升。
+* **resetCache**
 
-虽然目前为止该设置还处于实验性设置，相信后续 Hermes 会实现更多的语法标准，进一步提升 Javascript 引擎执行效率和用户的开发体验。
-
-### 配置文件
-
-Metro 通过项目根目录`metro.config.js`文件来对打包进行配置。你可以在 Metro 项目的子包`metro-config`找到其[默认配置](https://github.com/facebook/metro/blob/main/packages/metro-config/src/defaults/index.js)选项。
+  每次编译模块是否忽略缓存重新执行转换，默认值为`false`，即使用缓存。
+  > 有时候缓存文件未必是正确的可用文件，此时可以在 react-native 命令后面指定`--reset-cache`参数或设置改选项为 true 来修复问题。
 
 ### Metro 打包的三个阶段
 
@@ -106,7 +122,7 @@ Metro 的打包过程有三个阶段：**Resolution（解析）**、**Transforma
 
 #### Resolution（解析）
 
-该阶段用于解决文件路径。
+该阶段用于解析模块文件及垫片文件的路径。
 
 Resolution 阶段会去从`入口文件`开始，寻找模块的文件路径，构建一张所有模块的图，它的具体执行位置在`IncrementalBundler.js`文件的[buildGraph()](https://github.com/facebook/metro/blob/main/packages/metro/src/IncrementalBundler.js#L186)方法，该函数有两个返回值：`prepend`和`graph`。
 
@@ -212,7 +228,7 @@ AppRegistry.registerComponent(appName, () => App);
 }
 ```
 
-2.`prepend`的值为一些`垫片（Polyfill）`依赖文件的路径数组：
+2.`prepend`的值为一些`垫片（Polyfill）`文件路径组成的数组：
 
 ``` ts
 [
@@ -260,12 +276,50 @@ AppRegistry.registerComponent(appName, () => App);
 
 该阶段用于转义文件至目标平台能够理解的代码。
 
+##### Babel 代码转义
+
+Metro 使用 Babel 作为转义工具，如果你使用`react-native init`初始化项目的话，可以在项目根目录看到`babel.config.js`配置文件，内容如下：
+
+``` js
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+};
+```
+
+Metro 提供了预设`metro-react-native-babel-preset`，该预设是 Metro 项目的一个子包，在[这里](https://github.com/facebook/metro/blob/main/packages/metro-react-native-babel-preset/src/configs/main.js)可以看到其具体预设内容。
+
+其内置的一些默认插件：
+
+* `@babel/plugin-syntax-flow`：用于支持 Facebook 自家的[Flow](https://flow.org/en/docs/getting-started/)静态类型文件（.flow.js）。 Flow 和 Typescript 类似，却并未推广开；
+* `@babel/plugin-transform-block-scoping`：支持作用块（let）；
+* `@babel/plugin-transform-typescript`：支持 typescript 的转义；
+* `@babel/plugin-transform-arrow-functions`：对箭头函数的支持；
+* `@babel/plugin-syntax-dynamic-import`：模块的`异步加载`支持；
+* ...
+
+预设提供了实验性设置选项`unstable_transformProfile`。如果`unstable_transformProfile`的值为`hermes-stable`或`hermes-canary`其中之一，并且项目中采用`Hermes`作为 Javascript 引擎，那么下面的一些插件会被忽略：
+
+* @babel/plugin-transform-computed-properties
+* @babel/plugin-transform-parameters
+* @babel/plugin-transform-shorthand-properties
+* @babel/plugin-proposal-optional-catch-binding
+* @babel/plugin-transform-function-name
+* @babel/plugin-transform-literals
+* @babel/plugin-transform-sticky-regex
+
+在 React Native 0.70 之后， Hermes 作为默认内置引擎，实现了很多标准，这带来了些许好处：
+
+1. 无需 Babel 额外的转义代码，最终打包的 jsbundle 体积变小；
+2. 由于原生语法支持，对这些语法代码执行性能得到一定的提升。
+
+虽然目前为止该设置还处于实验性设置，相信后续 Hermes 会实现更多的语法标准，进一步提升 Javascript 引擎执行效率和用户的开发体验。
+
 ##### 多个 Worker 的并行转换
 
 Metro 在转换文件时，使用 Worker 来并行执行。Worker 的执行文件为：`Worker.flow.js`，并暴露的执行的函数为[transform(...)](https://github.com/facebook/metro/blob/main/packages/metro/src/DeltaBundler/Worker.flow.js#L72)。
 
 Metro 使用 Facebook 自家 Jest 测试框架的[jest-worker](https://github.com/facebook/jest/blob/main/packages/jest-worker/README.md)来创建多个 worker，你可以[这里](https://github.com/facebook/metro/blob/main/packages/metro/src/DeltaBundler/WorkerFarm.js#L120)看到 jest-worker 的实例化。
 
-你可以通过[maxworkers](https://facebook.github.io/metro/docs/configuration#maxworkers)选项，来指定多少个 worker 一起并行执行模块转换工作。不过通常不需要进行设置，[默认配置](https://github.com/facebook/metro/blob/main/packages/metro/src/lib/getMaxWorkers.js)会根据 cpu 核数来进行合理配置。
+通过[maxworkers](https://facebook.github.io/metro/docs/configuration#maxworkers)选项，可以指定多少个 worker 一起并行执行模块转换工作。不过通常不需要进行设置，[默认配置](https://github.com/facebook/metro/blob/main/packages/metro/src/lib/getMaxWorkers.js)会根据 cpu 核数来进行合理配置。
 
 #### Serialization（序列化）

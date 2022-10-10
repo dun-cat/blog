@@ -145,7 +145,7 @@ function App() {
 
 对应的 Fiber 树：
 
-<img src='fiber-tree.svg' />
+![fiber-tree.svg](fiber-tree.svg)
 
 > 为什么父级指针叫做 return 而不是 parent 或者 father 呢？因为作为一个工作单元，return 指节点执行完 completeWork 后会返回的下一个节点。`子 Fiber 节点`及其`兄弟节点`完成工作后会返回其父级节点，所以用 return 指代父级节点。
 
@@ -250,7 +250,7 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 fiberRootNode 的`current`会指向当前页面上已渲染内容对应对 Fiber 树，被称为`current Fiber 树`。
 
-<img src='fiber-mount.svg' />
+![fiber-mount.svg](fiber-mount.svg)
 
 ``` javascript
 fiberRootNode.current = rootFiber;
@@ -266,7 +266,7 @@ fiberRootNode.current = rootFiber;
 
 下图中`左侧`为页面显示的树，`右侧`为内存中构建的树：
 
-<img src='fiber-render.svg' />
+![fiber-render.svg](fiber-render.svg)
 
 **3.提交阶段**
 
@@ -274,7 +274,7 @@ fiberRootNode.current = rootFiber;
 
 此时 DOM 更新为`右侧树`对应的样子。fiberRootNode 的 current 指针指向`workInProgress Fiber 树`使其变为`current Fiber 树`。
 
-<img src='fiber-render-result.svg' />
+![fiber-render-result.svg](fiber-render-result.svg)
 
 #### update 时
 
@@ -282,7 +282,7 @@ fiberRootNode.current = rootFiber;
 
 接下来我们点击 p 节点触发状态改变，这会开启一次`新的 render 阶段`并构建一棵新的 workInProgress Fiber 树。
 
-<img src='fiber-update.svg' />
+![fiber-update.svg](fiber-update.svg)
 
 和 mount 时一样，workInProgress fiber 的创建可以`复用` current Fiber 树对应的节点数据。
 
@@ -290,9 +290,9 @@ fiberRootNode.current = rootFiber;
 
 **2.渲染之后，提交**
 
-workInProgress Fiber 树在` render 阶段`完成构建后进入`commit 阶段`渲染到页面上。渲染完毕后，workInProgress Fiber 树变为current Fiber 树。
+workInProgress Fiber 树在`render 阶段`完成构建后进入`commit 阶段`渲染到页面上。渲染完毕后，workInProgress Fiber 树变为current Fiber 树。
 
-<img src='fiber-update-result.svg' />
+![fiber-update-result.svg](fiber-update-result.svg)
 
 #### 源码中的术语
 
@@ -350,7 +350,6 @@ Fiber 渲染分成两个阶：`render 阶段`和 `commit 阶段`。
 | commitAllWork(flush side effects computed in the above to the host) |
 -----------------------------------------------------------------------
 ```
-
 
 参考文献：
 
