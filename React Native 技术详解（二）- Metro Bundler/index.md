@@ -232,13 +232,11 @@ AppRegistry.registerComponent(appName, () => App);
 
 ``` js
   serializer: {
-    experimentalSerializerHook: (graph) => {
-      return graph
-    }
+    experimentalSerializerHook: (graph) => {}
   }
 ```
 
-通过`graph`，我使用 D3.js 构建了一张依赖图，如下面展示那样：
+通过[graph](https://github.com/dun-cat/code-snippets/blob/main/metro.config.js)，我使用 D3.js 构建了一张依赖图，如下面展示那样：
 
 <iframe width="100%" height="1084" frameborder="0"
   src="https://observablehq.com/embed/@dun-cat/mobile-patent-suits?cells=chart"></iframe>
