@@ -56,7 +56,7 @@ export interface AssetData {
 
 > 虽然 Metro 提供了 API，但是 react-native 并没有直接使用。
 
-### 配置文件
+### 配置
 
 Metro 通过项目根目录`metro.config.js`文件来对打包进行配置，metro.config.js 的配置结构如下：
 
@@ -227,6 +227,22 @@ AppRegistry.registerComponent(appName, () => App);
   output: [ { data: [Object], type: 'js/module' } ]
 }
 ```
+
+`metro.config.js`暴露了一个实验性的勾子`experimentalSerializerHook`选项，你可以对`graph`进行调整。
+
+``` js
+  serializer: {
+    experimentalSerializerHook: (graph) => {
+      return graph
+    }
+  }
+```
+
+通过`graph`，我使用 D3.js 构建了一张依赖图，如下面展示那样：
+
+<iframe width="100%" height="1084" frameborder="0"
+  src="https://observablehq.com/embed/@dun-cat/mobile-patent-suits?cells=chart"></iframe>
+
 
 2.`prepend`的值为一些`垫片（Polyfill）`文件路径组成的数组：
 
