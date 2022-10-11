@@ -85,9 +85,17 @@ module.exports = {
 };
 ```
 
-你可以在[这里](https://facebook.github.io/metro/docs/configuration)获取全部配置项详情。其中，`resolver`、`transformer`、`serializer`三个配置项是值得我们去关注的，下面将详细介绍。
+从[源码](https://github.com/facebook/metro/blob/main/packages/metro-config/src/loadConfig.js#L84)中得知，Metro 使用[cosmiconfig](https://github.com/davidtheclark/cosmiconfig)来加载配置文件的，`metro.config.js`配置也允许是一个函数，并且接收一个默认配置的实例，因此你也可以直接对已有配置进行修改。
 
-Metro 项目的子包`metro-config`可以找到其[默认配置](https://github.com/facebook/metro/blob/main/packages/metro-config/src/defaults/index.js)选项，有几个默认配置需要关注的：
+``` js
+module.exports = (defaultConfig) => {
+  return defaultConfig;
+}
+```
+
+你可以在[这里](https://facebook.github.io/metro/docs/configuration)获取全部配置项详情。其中，`resolver`、`transformer`、`serializer`三个配置项下面将详细介绍。
+
+在 Metro 项目的子包`metro-config`可以找到其[默认配置](https://github.com/facebook/metro/blob/main/packages/metro-config/src/defaults/index.js)选项，有几个默认配置需要关注的：
 
 * **projectRoot**
   
@@ -114,6 +122,15 @@ Metro 项目的子包`metro-config`可以找到其[默认配置](https://github.
   每次编译模块是否忽略缓存重新执行转换，默认值为`false`，即使用缓存。
   > 有时候缓存文件未必是正确的可用文件，此时可以在 react-native 命令后面指定`--reset-cache`参数或设置改选项为 true 来修复问题。
 
+#### 加载逻辑
+
+若你使用`react-native`作为执行 jsbundle 的打包命令工具，那么它将有三个主要配置主体：`react-native cli`、`metro-config`、`metro.config.js`。
+
+他们的执行关系如下图：
+
+![react-native-metro-config](react-native-metro-config.svg)
+
+
 ### Metro 打包的三个阶段
 
 Metro 的打包过程有三个阶段：**Resolution（解析）**、**Transformation（转换）**、**Serialization（序列化）**。
@@ -122,9 +139,9 @@ Metro 的打包过程有三个阶段：**Resolution（解析）**、**Transforma
 
 #### Resolution（解析）
 
-该阶段用于解析模块文件及垫片文件的路径。
+该阶段用于解析`模块文件`的路径。
 
-Resolution 阶段会去从`入口文件`开始，寻找模块的文件路径，构建一张所有模块的图，它的具体执行位置在`IncrementalBundler.js`文件的[buildGraph()](https://github.com/facebook/metro/blob/main/packages/metro/src/IncrementalBundler.js#L186)方法，该函数有两个返回值：`prepend`和`graph`。
+从`入口文件`开始，寻找模块的文件路径，构建一张所有模块的图，它的具体执行位置在`IncrementalBundler.js`文件的[buildGraph()](https://github.com/facebook/metro/blob/main/packages/metro/src/IncrementalBundler.js#L186)方法，该函数有两个返回值：`prepend`和`graph`。
 
 1.当打印`graph`时，它的结构如下：
 
@@ -236,7 +253,7 @@ AppRegistry.registerComponent(appName, () => App);
   }
 ```
 
-通过[graph](https://github.com/dun-cat/code-snippets/blob/main/metro.config.js)，我使用 D3.js 构建了一张依赖图，如下面展示那样：
+通过[graph](https://github.com/dun-cat/code-snippets/blob/main/metro.config.js)，我使用 D3.js 构建了一张 Android 平台下的模块依赖图，如下面展示那样：
 
 <iframe width="100%" height="1084" frameborder="0"
   src="https://observablehq.com/embed/@dun-cat/mobile-patent-suits?cells=chart"></iframe>
