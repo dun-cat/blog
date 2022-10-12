@@ -40,6 +40,8 @@ console.log(output.code); // 'const x = 1;'
 
 `解析（parse）`-> `转换（transform）`-> `生成(generate)`，三个明确的步骤完成代码转换操作。
 
+![babel-stage](babel-stage.png)
+
 
 > 你可以直接安装[@babel/core](https://www.npmjs.com/package/@babel/core)完成以上操作，*@babel/parser*、*@babel/traverse*、*@babel/generator* 都是 @babel/core 的依赖，所以直接安装 @babel/core 即可。
 
