@@ -157,7 +157,7 @@ module.exports = {
 1. 用户执行`react-native bundle`打包命令，携带命令行参数`args`；
 2. `react-native cli`内置一份默认部分配置`defaultConfigOverrides`，将其与`metro-config`包内的`defaults`进行合并生成新的一份`defaultConfig`；
 3. 读取用户的`metro.config.js`文件获取配置`configModule`与`defaultConfig`进行合并生成`config`，返回给`react-native cli`；
-4. 命令行的参数优先级要高于配置。因此，`args`若与`config`配置重复，`args`会覆盖它。
+4. 命令行的参数优先级要高于配置。因此，若`args`与`config`配置重复，`args`会覆盖它。
 
 ### Metro 打包的三个阶段
 
@@ -378,6 +378,8 @@ Metro 使用 Facebook 自家 Jest 测试框架的[jest-worker](https://github.co
 
 通过[maxworkers](https://facebook.github.io/metro/docs/configuration#maxworkers)选项，可以指定多少个 worker 一起并行执行模块转换工作。不过通常不需要进行设置，[默认配置](https://github.com/facebook/metro/blob/fa103665c9cd555e3f78e6ed3ef6c54df92687fa/packages/metro/src/lib/getMaxWorkers.js)会根据 cpu 核数来进行合理配置。
 
+![react-native-metro-worker-pool](react-native-metro-worker-pool.svg)
+
 ##### metro-transform-worker
 
 做模块转换前，Metro 会通过`metro-transform-worker`子包来`指定对应模块类型的转换器`，它暴露一个`transform`方法。
@@ -461,3 +463,20 @@ module.exports = {
   }
 }
 ```
+
+### 缓存
+
+Metro 为构建提供了缓存（cache）功能。在上面我们提到过通过设置`cacheStores`可以设置多个缓存存储位置，它的缓存功能实现由子包`metro-cache`和`metro-cache-key`提供。
+
+#### metro-cache
+
+`metro-cache`为实现多层级缓存系统的一个子包，目前包括两种存储类型：`FileStore`和`HttpStore`。
+
+* FileStore：文件系统的持久化缓存；
+* HttpStore：基于 Http 协议的网络存储缓存。目前没有提供鉴权相关的复杂实现，只需要提供一个简单的静态资源服务器。
+
+Metro 开放了`cacheStores`配置项，那就说明你可以自定义一个缓存存储实现的 store。
+
+### 总结
+
+通常，我们遇到一个包含编译功能的工具时。正常考量的功能点有：`构建缓存`、`构建任务的并行执行`、`构建定制的配置化`， Metro 在设计上通过分包实现这些功能是一种不错的代码组织结构。
