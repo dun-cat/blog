@@ -281,10 +281,7 @@ AppRegistry.registerComponent(appName, () => App);
   }
 ```
 
-通过[graph](https://github.com/dun-cat/code-snippets/blob/main/metro.config.js)，我使用 D3.js 构建了一张 Android 平台下的模块依赖图，如下面展示那样：
-
-<iframe width="100%" height="1084" frameborder="0"
-  src="https://observablehq.com/embed/@dun-cat/mobile-patent-suits?cells=chart"></iframe>
+通过[graph](https://github.com/dun-cat/code-snippets/blob/main/metro.config.js)，我使用 D3.js 构建了一张 Android 平台下的[模块依赖图](https://observablehq.com/embed/@dun-cat/mobile-patent-suits?cells=chart)。
 
 
 2.`prepend`的值为一些`垫片（Polyfill）`文件路径组成的数组：
