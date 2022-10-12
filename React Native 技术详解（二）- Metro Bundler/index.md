@@ -169,7 +169,7 @@ Metro 的打包过程有三个阶段：**Resolution（解析）**、**Transforma
 
 该阶段用于解析`模块文件`的路径。
 
-从`入口文件`开始，寻找模块的文件路径，构建一张所有模块的图，它的具体执行位置在`IncrementalBundler.js`文件的[buildGraph()](https://github.com/facebook/metro/blob/fa103665c9cd555e3f78e6ed3ef6c54df92687fa/packages/metro/src/IncrementalBundler.js#L186)方法，该函数有两个返回值：`prepend`和`graph`。
+从`入口文件`开始，寻找依赖模块的文件路径，构建一张所有模块的图，它的具体执行位置在`IncrementalBundler.js`文件的[buildGraph()](https://github.com/facebook/metro/blob/fa103665c9cd555e3f78e6ed3ef6c54df92687fa/packages/metro/src/IncrementalBundler.js#L186)方法，该函数有两个返回值：`prepend`和`graph`。
 
 1.当打印`graph`时，它的结构如下：
 
