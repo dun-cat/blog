@@ -468,6 +468,8 @@ module.exports = {
 
 Metro 为构建提供了缓存（cache）功能。在上面我们提到过通过设置`cacheStores`可以设置多个缓存存储位置，它的缓存功能实现由子包`metro-cache`和`metro-cache-key`提供。
 
+目前为止，`metro-cache-key`还是只是个很简单的工具库。
+
 #### metro-cache
 
 `metro-cache`为实现多层级缓存系统的一个子包，目前包括两种存储类型：`FileStore`和`HttpStore`。
