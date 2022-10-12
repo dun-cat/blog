@@ -120,7 +120,7 @@ module.exports = {
 
 * **cacheStores**
   
-  提供转换后的缓存文件的存储目录，默认存储至`系统临时目录`。
+  提供转换后的缓存文件的存储位置，默认存储至`系统临时目录`。
 
   ```js
   cacheStores: [
@@ -129,6 +129,17 @@ module.exports = {
     }),
   ],
   ```
+
+  除了默认存储至本地文件系统，你还添加一个`服务器存储`：
+
+  ``` js
+  cacheStores: [
+    new FileStore({/*opts*/}),
+    new HttpStore({/*opts*/})
+  ]
+  ```
+
+  这种缓存设计是分层的（multi-layered cache），让构建`缓存共享`变成可能。
 
 * **resetCache**
 
@@ -421,4 +432,35 @@ module.exports = {
 
 #### Serialization（序列化）
 
-序列化阶段会把各个模块按照一定顺序组合到单个或者多个 jsbundle。通常它是单一的 jsbundle 文件输出。
+序列化阶段会把各个模块按照一定顺序组合到单个或者多个 jsbundle。通常它是单一的 jsbundle 文件输出。相对解析和转换，序列化的任务则少很多。
+
+##### 自定义模块 ID
+
+默认情况模块 id 会自动被分配为整数类型。Metro 允许你对每一个模块分配一个自定义 id 标识，你可以通过[createModuleIdFactory](https://facebook.github.io/metro/docs/configuration#createmoduleidfactory)选项来进行修改。
+
+``` js
+{
+  serializer: {
+    createModuleIdFactory: function () {
+        return function (absoluteModulePath: string) {
+          const customModuleId = crypto.randomUUID()
+          return customModuleId;
+        }
+      }
+    }
+}
+```
+
+##### 忽略指定模块的打包
+
+如果你要对 jsbundle 进行`代码分割`（Code Splitting），那[processModuleFilter](https://facebook.github.io/metro/docs/configuration#processmodulefilter)可以忽略对指定模块的打包。
+
+``` js
+{
+  serializer: {
+    processModuleFilter: function (modules) {
+        return true;
+    }
+  }
+}
+```
