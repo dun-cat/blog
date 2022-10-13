@@ -479,11 +479,10 @@ Metro 为构建提供了缓存（cache）功能。在上面我们提到过通过
 
 Metro 开放了`cacheStores`配置项，那就说明你可以自定义一个缓存存储实现的 store。
 
-
 ### Source Map
 
-Metro 提供了`metro-source-map`子包用于 source map 的生成。
+Metro 提供了`metro-source-map`子包用于 source map 的生成，source map 生成遵循[version 3 版本](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit#heading=h.qz3o9nc69um5)提议。
 
 ### 总结
 
-通常，我们遇到一个包含编译功能的工具时。正常考量的功能点有：`构建缓存`、`构建任务的并行执行`、`构建定制的配置化`， Metro 在设计上通过分包实现这些功能是一种不错的代码组织结构。
+Metro 作为构建工具可以看到常见的功能点：`构建缓存`、`构建任务的并行执行`、`构建定制的配置化`， Metro 分包实现这些功能也是一种不错的代码组织结构。
