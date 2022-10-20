@@ -11,9 +11,6 @@
 
 ### First-Come, First-Served Scheduling
 
-特点：
-
 参考文献：
 
 \> [https://zh.wikipedia.org/wiki/调度_(计算机)](https://zh.wikipedia.org/wiki/调度_(计算机))
-
