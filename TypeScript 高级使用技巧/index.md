@@ -71,7 +71,7 @@ function identity<T, U>(value: T, message: U): T {
 console.log(identity<number, string>(18, 'lumin'));
 ```
 
-### 常用工具类
+### 内置工具类型
 
 下面介绍 TypeScript 内置的工具类型，并展示他们源码实现。
 
@@ -227,3 +227,181 @@ type T1 = Extract<string | number | (()=> void), Function>;
  */
 type Extract<T, U> = T extends U ? T : never;
 ```
+
+#### Pick\<Type, Keys\>
+
+从 Type 中挑选属性集合 Keys 来构造类型。
+
+``` ts
+type User = {
+  name: string;
+  password: string;
+  address: string;
+  phone: string;
+};
+
+type PickUser = Pick<User, 'name' | 'address'>;
+
+```
+
+实现[源码](https://github.com/microsoft/TypeScript/blob/0993c017bace34cbcbf8a19b830b22db95676ca4/lib/lib.es5.d.ts#L1570)：
+
+``` ts
+/**
+ * From T, pick a set of properties whose keys are in the union K
+ */
+type Pick<T, K extends keyof T> = {
+    [P in K]: T[P];
+};
+```
+
+#### Omit\<Type, Keys\>
+
+构建从 Type 中剔除包含 Keys 属性之后的剩余类型。
+
+``` ts
+type User = {
+  name: string;
+  password: string;
+  address: string;
+  phone: string;
+};
+
+type OmitUser = Omit<User, 'password'| 'phone'>;
+```
+
+实现[源码](https://github.com/microsoft/TypeScript/blob/0993c017bace34cbcbf8a19b830b22db95676ca4/lib/lib.es5.d.ts#L1594)：
+
+``` ts
+/**
+ * Construct a type with the properties of T except for those in type K.
+ */
+type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
+```
+
+#### NonNullable\<Type\>
+
+从 Type 中构造类型，并且不包含`null`和`undefined`类型。
+
+``` ts
+type Value = string | string[] | number | boolean | null;
+
+type NonNullableValue = NonNullable<Value>;
+```
+
+实现[源码](https://github.com/microsoft/TypeScript/blob/0993c017bace34cbcbf8a19b830b22db95676ca4/lib/lib.es5.d.ts#L1599)：
+
+``` ts
+/**
+ * Exclude null and undefined from T
+ */
+type NonNullable<T> = T & {};
+```
+
+#### Parameters\<Type\>
+
+从类型为函数的 Type 参数中构建元组类型。
+
+``` ts
+function getUserInfo(id: number,name: stirng) {
+  return `User ID: ${id}, User Name: ${name}`
+}
+
+type FuncParams = Parameters<typeof getUserInfo>;
+// [id: number, name: string]
+
+type FirstParamter = Parameters<typeof getUserInfo>[0];
+// number
+
+```
+
+实现[源码](https://github.com/microsoft/TypeScript/blob/0993c017bace34cbcbf8a19b830b22db95676ca4/lib/lib.es5.d.ts#L1604)：
+
+``` ts
+/**
+ * Obtain the parameters of a function type in a tuple
+ */
+type Parameters<T extends (...args: any) => any> = T extends (...args: infer P) => any ? P : never;
+```
+
+#### ReturnType\<Type\>
+
+从函数类型的 Type 中，构建它的返回值类型。
+
+``` ts
+function getUserInfo(id: number,name: stirng) {
+  return `User ID: ${id}, User Name: ${name}`
+}
+
+type FuncReturnType = ReturnType<typeof getUserInfo>;
+// string
+
+type T0 = ReturnType<(s: string) => void>;
+// type T0 = void
+
+type T1 = ReturnType<any>; // any
+
+type T2 = ReturnType<never>; // never
+```
+
+实现[源码](https://github.com/microsoft/TypeScript/blob/0993c017bace34cbcbf8a19b830b22db95676ca4/lib/lib.es5.d.ts#L1614)：
+
+``` ts
+/**
+ * Obtain the return type of a function type
+ */
+type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
+```
+
+#### Uppercase\<StringType\>
+
+字符串字面类型转`大写`。
+
+``` ts
+type Method = 'get' | 'post' | 'put' | 'delete';
+
+type UppercaeMethod = Uppercase<Method>;
+// type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
+```
+
+#### Lowercase\<StringType\>
+
+字符串字面类型转`小写`。
+
+``` ts
+type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
+
+type LowercaseMethod = Lowercase<Method>;
+// type Method = 'get' | 'post' | 'put' | 'delete';
+```
+
+#### Capitalize\<StringType\>
+
+字符串字面类型转`首字母大写`。
+
+``` ts
+type Method = 'get' | 'post' | 'put' | 'delete';
+
+type CapitalizeMethod = Capitalize<Method>;
+
+// type Method = 'Get' | 'Post' | 'Put' | 'Delete';
+```
+
+#### Uncapitalize\<StringType\>
+
+字符串字面类型转`首字母小写`。
+
+``` ts
+type Method = 'Get' | 'Post' | 'Put' | 'Delete';
+
+type UncapitalizeMethod = Uncapitalize<Method>;
+// type Method = 'get' | 'post' | 'put' | 'delete';
+```
+
+除了上述这些实用类型之外，其他常用的 TypeScript 内置实用类型如下：
+
+`ConstructorParameters<Type>`：根据构造函数类型的类型构造元组或数组类型。它产生一个包含所有参数类型的元组类型（或者 never 如果 Type 不是函数的类型）。
+
+`InstanceType<Type>`：构造一个由构造函数的实例类型组成的类型 Type。
+
+`ThisParameterType<Type>`：为函数类型提取此参数的类型，如果函数类型没有参数，则为未知 this。
