@@ -1,4 +1,4 @@
-## 什么是设计系统（Design Systems）？ 
+## 构建高效体验技术团队之设计系统（Design System） 
 ### 什么是设计系统？
 
 设计系统并不是一个新观念，可以回溯于早期 2013 年 Brad Forst 提出的[Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)。Google[Material Design](https://m3.material.io/)在 2014 年大放异彩。2016 年[Airbnb](https://karrisaarinen.com/posts/building-airbnb-design-system/)开始进行创建设计系统。
@@ -19,7 +19,7 @@
 
 `扩张产品团队`：设计系统是由有清楚规范、一系列可重复利用的元素所组成，当产品`模块化`，可延展性就增加了。
 
-### 设计系统元素
+### 设计系统构成
 
 设计系统有两个重要部分：
 
@@ -64,7 +64,7 @@
 
 最后，考虑确保一个`执行发起人`（来自领导层）来协调设计系统的工作。虽然缺乏发起人不会成为阻碍，但发起人可以确保资金和资源，同时也将设计系统的战略重要性传达给组织的其他成员。
 
-### 设计系统团队组成
+一个成建的完备团队有以下角色：
 
 * 用户体验设计师 UX Designer
 * 视觉设计师 Visual Designer
@@ -134,13 +134,21 @@ module.exports = {
 }
 ```
 
-设计令牌通常被集成到组件库中及 UI 工具包里，并且它是`平台无关`的。设计令牌描述了设计中标准化的所有属性值，并且`不可细分`的。所以在一些定义中描述成`原子性`的值。
+设计令牌通常被集成到组件库中及 UI 工具包里，并且它是`平台无关`及`语言无关`的。设计令牌描述了设计中标准化的所有属性值，并且`不可细分`的。所以在一些定义中描述成`原子性`的值。
 
-![design-token](design-token.svg)
+![design-system-design-token](design-system-design-token.svg)
+
+以`material`设计系统为例，最终设计令牌通过 CLI 工具`格式化`生成对应终端的`属性样式`。
 
 #### 如何设计令牌？
 
-我们为了考虑设计令牌的完整度，会通过一些方法来快速决策如何较为完备得生成设计令牌。
+我们为了考虑设计令牌的完整度，会通过一些方法来快速决策如何较为完备得生成设计令牌。这里我们使用[style-dictionary](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item)结构化方法来定义设计令牌。
+
+首先，设计令牌名称会被组织成一个`层级树结构`来进行命名，和[BEM](https://getbem.com/naming/)命名这类语义化相似，这是我们对`令牌命名的约束`。
+
+![design-system-design-token-1](design-system-design-token-1.svg)
+
+通过 **category / type / item** 的命名方式方便理解，同时他们的`先后顺序并不严格要求`，你可以命名`button_color_error`或`error_button_color`。
 
 文献参考：
 
