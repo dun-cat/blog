@@ -21,14 +21,13 @@
 
 ### 设计系统构成
 
-设计系统有两个重要部分：
-
-* 设计仓库
-* 管理它的人
+设计系统有两个重要部分：`设计仓库`和`管理团队`。
 
 #### 设计仓库
 
 设计存储库可以采用多种形式，但它们通常包含`样式指南`（Style Guide）、`组件库`（Component Library）和`模式库`（Pattern Library）。
+
+![design-system-design-system](design-system-design-system.svg)
 
 ##### 样式指南
 
@@ -83,9 +82,9 @@
 
 在[designbetter 的设计系统手册](https://www.designbetter.co/design-systems-handbook)中，令牌描述为设计系统的实现基础，由名称和值组成的存储数据，用于抽象你需要管理的设计属性。
 
-令牌可以存储：`颜色`、`字体`、`间距`、`透明度`、`行高`、`阴影`、`圆角`、`网格`等值，我们可以通过表格描述他们：
+令牌可以存储：`颜色`、`字体`、`间距`、`透明度`、`行高`、`阴影`、`圆角`、`网格`等值。一个设计系统中，设计令牌是其关键组成部分，**非常的重要**。
 
-**颜色**：
+<!-- **颜色**：
 
 |令牌|值|描述|
 |--|--|--|
@@ -97,7 +96,7 @@
 |令牌|值|描述|
 |--|--|--|
 |$color-background|rgb(243, 243, 243)|整个 app 默认背景色|
-|$color-background-alt|rgb(255, 255, 255)|整个 app 第二默认背景色|
+|$color-background-alt|rgb(255, 255, 255)|整个 app 第二默认背景色| -->
 
 我们可以通过一个简单的 JSON 文件存储他们：
 
@@ -138,17 +137,25 @@ module.exports = {
 
 ![design-system-design-token](design-system-design-token.svg)
 
-以`material`设计系统为例，最终设计令牌通过 CLI 工具`格式化`生成对应终端的`属性样式`。
+#### 令牌的种类
+
+令牌也有不同的抽象级别：
+
+![design-system-type](design-system-type.svg)
+
+<!-- 以`material`设计系统为例，最终设计令牌通过 CLI 工具`格式化`生成对应终端的`属性样式`。 -->
 
 #### 如何设计令牌？
 
-我们为了考虑设计令牌的完整度，会通过一些方法来快速决策如何较为完备得生成设计令牌。这里我们使用[style-dictionary](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item)结构化方法来定义设计令牌。
+我们为了考虑设计令牌的完整度，会通过一些方法来快速决策如何较为完备得生成设计令牌。在[style-dictionary](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item)中，通过结构化方法来定义设计令牌。而我们在令牌命名时，也可以采用此思想。
 
 首先，设计令牌名称会被组织成一个`层级树结构`来进行命名，和[BEM](https://getbem.com/naming/)命名这类语义化相似，这是我们对`令牌命名的约束`。
 
 ![design-system-design-token-1](design-system-design-token-1.svg)
 
 通过 **category / type / item** 的命名方式方便理解，同时他们的`先后顺序并不严格要求`，你可以命名`button_color_error`或`error_button_color`。
+
+![design-token](design-token.jpeg)
 
 文献参考：
 
@@ -159,3 +166,9 @@ module.exports = {
 \> [https://m3.material.io/foundations/design-tokens/overview](https://m3.material.io/foundations/design-tokens/overview)
 
 \> [https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/tokens_standard_communities.htm](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/tokens_standard_communities.htm)
+
+\> [https://www.zhihu.com/topic/25449246/top-answers](https://www.zhihu.com/topic/25449246/top-answers)
+
+\> [https://www.gerireid.com/design-token-taxonomy.html](https://www.gerireid.com/design-token-taxonomy.html)
+
+\> [https://www.youtube.com/watch?v=Ka1I5TphDb0&ab_channel=IntoDesignSystems](https://www.youtube.com/watch?v=Ka1I5TphDb0&ab_channel=IntoDesignSystems)

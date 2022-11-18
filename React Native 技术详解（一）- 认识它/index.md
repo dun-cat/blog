@@ -252,6 +252,12 @@ Flipper 是开箱即用的，提供了包括：`网络`、`布局和属性样式
 1. `Code Playground`：这点在官网的[组件](https://reactnative.dev/docs/flatlist)文档可以直接看到其应用；
 2. `提供了丰富 Native 功能的 SDK`：包括：`亮度控制`、`文件系统`、`字体`、`相机`，`震动`等等一系列必要的 Native 功能，这是很多 React Native 钟爱它的原因。你可以在[这里](https://docs.expo.dev/versions/v46.0.0/sdk/accelerometer/)看到更多功能。
 
+### 总结
+
+React Native 的问题很多，比较突出的体现在开发体验以及缺乏性能监控及指标。今年是 2022 年，虽然新架构的发布，官方在社区展开了[我们如何改进 React Native ?](https://github.com/react-native-community/discussions-and-proposals/discussions/528)的讨论，并根据投票数对突出问题进行了[回复](https://github.com/react-native-community/discussions-and-proposals/discussions/546)。
+
+对于使用 React Native 的同学来说，该主题的讨论是很有参考价值的。
+
 参考文献：
 
 \> [https://www.devio.org/2016/09/30/React-Native-启动白屏问题解决方案,教程](https://www.devio.org/2016/09/30/React-Native-启动白屏问题解决方案,教程)
