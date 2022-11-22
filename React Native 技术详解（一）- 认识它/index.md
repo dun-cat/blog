@@ -254,7 +254,7 @@ Flipper 是开箱即用的，提供了包括：`网络`、`布局和属性样式
 
 ### 总结
 
-React Native 的问题很多，比较突出的体现在开发体验以及缺乏性能监控及指标。今年是 2022 年，虽然新架构的发布，官方在社区展开了[我们如何改进 React Native ?](https://github.com/react-native-community/discussions-and-proposals/discussions/528)的讨论，并根据投票数对突出问题进行了[回复](https://github.com/react-native-community/discussions-and-proposals/discussions/546)。
+React Native 的问题很多，比较突出的体现在开发体验以及缺乏性能监控及指标。今年是 2022 年，虽然新架构的发布，改善了很多性能问题，但也陡增了很多 issues。官方在社区展开了[我们如何改进 React Native ?](https://github.com/react-native-community/discussions-and-proposals/discussions/528)的讨论，并根据投票数对突出问题进行了[回复](https://github.com/react-native-community/discussions-and-proposals/discussions/546)。
 
 对于使用 React Native 的同学来说，该主题的讨论是很有参考价值的。
 
