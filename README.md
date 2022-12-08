@@ -105,6 +105,7 @@
 * #### [常用的数学公式](./%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/index.md)
 * #### [常见数学术语](./%E5%B8%B8%E8%A7%81%E6%95%B0%E5%AD%A6%E6%9C%AF%E8%AF%AD/index.md)
 * #### [Maze Generation](./Maze%20Generation/index.md)
+* #### [消息队列](./%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/index.md)
 * #### [如何在移动端的调试中更加舒适？](./%E5%A6%82%E4%BD%95%E5%9C%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%AD%E6%9B%B4%E5%8A%A0%E8%88%92%E9%80%82%EF%BC%9F/index.md)
 * #### [MySQL 数据备份与恢复](./MySQL%20%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/index.md)
 * #### [Nest.js 脚手架搭建](./Nest.js%20%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/index.md)

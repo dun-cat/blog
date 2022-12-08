@@ -250,7 +250,7 @@ Flipper 是开箱即用的，提供了包括：`网络`、`布局和属性样式
 [Expo](https://expo.dev/)是一个针对 React Native 项目的 npm 包和框架。虽然是三方库，但是对于开发 React Native 项目来说是**必要的**，它有以下几项有价值的功能：
 
 1. `Code Playground`：这点在官网的[组件](https://reactnative.dev/docs/flatlist)文档可以直接看到其应用；
-2. `提供了丰富 Native 功能的 SDK`：包括：`亮度控制`、`文件系统`、`字体`、`相机`，`震动`等等一系列必要的 Native 功能，这是很多 React Native 钟爱它的原因。你可以在[这里](https://docs.expo.dev/versions/v46.0.0/sdk/accelerometer/)看到更多功能。
+2. `提供了丰富 Native 功能的 SDK`：包括：`亮度控制`、`文件系统`、`字体`、`相机`，`震动`等等一系列必要的 Native 功能，这是很多 React Native 开发者钟爱它的原因。你可以在[这里](https://docs.expo.dev/versions/v46.0.0/sdk/accelerometer/)看到更多功能。
 
 ### 总结
 
