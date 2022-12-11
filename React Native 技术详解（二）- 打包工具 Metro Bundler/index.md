@@ -1,4 +1,4 @@
-## React Native 技术详解（二）- Metro Bundler 
+## React Native 技术详解（二）- 打包工具 Metro Bundler 
 ### Metro 介绍
 
 在[React Native 技术详解（一）- 认识它](../react-native-1-introduction/#metro-bundler)中，简单介绍过 Metro Bundler。[Metro](https://github.com/facebook/metro) 是`构建 jsbundle 包`及提供`开发服务`的工具，默认被集成在`react-native`命令行工具内，你可以在[这里](https://github.com/react-native-community/cli/blob/e89f296b1f1b27da23ffb77e3c8fc5bc2f4942ee/packages/cli-plugin-metro/src/commands/start/runServer.ts#L9)找到其开发服务集成源码。

@@ -157,7 +157,7 @@
 * #### [React 之技术详解（四）- 架构篇 [ 1 ] - Render 阶段](./React%20%E4%B9%8B%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%9B%9B%EF%BC%89-%20%E6%9E%B6%E6%9E%84%E7%AF%87%20%5B%201%20%5D%20-%20Render%20%E9%98%B6%E6%AE%B5/index.md)
 * #### [React 之技术详解（四）- 架构篇 [ 2 ] - Commit 阶段](./React%20%E4%B9%8B%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%9B%9B%EF%BC%89-%20%E6%9E%B6%E6%9E%84%E7%AF%87%20%5B%202%20%5D%20-%20Commit%20%E9%98%B6%E6%AE%B5/index.md)
 * #### [React Native 技术详解（一）- 认识它](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89-%20%E8%AE%A4%E8%AF%86%E5%AE%83/index.md)
-* #### [React Native 技术详解（二）- Metro Bundler](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89-%20Metro%20Bundler/index.md)
+* #### [React Native 技术详解（二）- 打包工具 Metro Bundler](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89-%20%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7%20Metro%20Bundler/index.md)
 * #### [React Native 技术详解（二）- 新架构](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89-%20%E6%96%B0%E6%9E%B6%E6%9E%84/index.md)
 * #### [React Native 技术详解（三）- 调试工具 Flipper](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%88%E4%B8%89%EF%BC%89-%20%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%20Flipper/index.md)
 * #### [Projects](./Projects/index.md)
