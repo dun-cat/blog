@@ -7,9 +7,9 @@
 * #### [设计模式的七大原则](./%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/index.md)
 * #### [设计模式之谈](./%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%B0%88/index.md)
 ### 命令
-* #### [命令：find](./%E5%91%BD%E4%BB%A4%EF%BC%9Afind/index.md)
 * #### [命令：grep](./%E5%91%BD%E4%BB%A4%EF%BC%9Agrep/index.md)
 * #### [命令：ls](./%E5%91%BD%E4%BB%A4%EF%BC%9Als/index.md)
+* #### [Linux 的 find 命令](./Linux%20%E7%9A%84%20find%20%E5%91%BD%E4%BB%A4/index.md)
 ### 容器化
 * #### [Docker 的基本使用](./Docker%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.md)
 * #### [认识 Docker](./%E8%AE%A4%E8%AF%86%20Docker/index.md)
