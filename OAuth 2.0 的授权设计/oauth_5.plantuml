@@ -4,7 +4,7 @@
 !$authServer = "授权服务器(Authorization Server)"
 !$resServer = "资源服务器(Resource Server)"
 
-"$client" -> "$authServer": 请求刷新访问令牌（access token）
+"$client" -> "$authServer": 请求刷新访问令牌 (access token) 
 note left
 client_id
 client_secret

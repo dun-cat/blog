@@ -13,11 +13,11 @@
 
 ##### 分数表
 
-| FCP time（以秒为单位）|颜色编码|
+| FCP time (以秒为单位) |颜色编码|
 |-|-|
-|0 - 1.8| 🟢 &nbsp; <span style="color:green">绿色（快速）</span>|
-|1.8 - 3| 🟠 &nbsp; <span style="color:orange">橙色（中等）</span>|
-| > 3| 🔴 &nbsp; <span style="color:red">红色（慢）</span>|
+|0 - 1.8| 🟢 &nbsp; <span style="color:green">绿色 (快速) </span>|
+|1.8 - 3| 🟠 &nbsp; <span style="color:orange">橙色 (中等) </span>|
+| > 3| 🔴 &nbsp; <span style="color:red">红色 (慢) </span>|
 
 #### TTI
 
@@ -27,11 +27,11 @@ TTI 很重要，因为一些网站以牺牲交互性为代价来优化内容可�
 
 ##### 分数表
 
-| TTI time（以秒为单位）|颜色编码|
+| TTI time (以秒为单位) |颜色编码|
 |-|-|
-|0 - 3.8| 🟢 &nbsp; <span style="color:green">绿色（快速）</span>|
-|3.9 – 7.3| 🟠 &nbsp; <span style="color:orange">橙色（中等）</span>|
-| > 7.3| 🔴 &nbsp; <span style="color:red">红色（慢）</span>|
+|0 - 3.8| 🟢 &nbsp; <span style="color:green">绿色 (快速) </span>|
+|3.9 – 7.3| 🟠 &nbsp; <span style="color:orange">橙色 (中等) </span>|
+| > 7.3| 🔴 &nbsp; <span style="color:red">红色 (慢) </span>|
 
 参考文献：
 

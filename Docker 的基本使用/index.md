@@ -1,5 +1,5 @@
 ## Docker 的基本使用 
-### 镜像（ Image ）
+### 镜像 ( Image )
 
 #### 拉取镜像
 
@@ -55,7 +55,7 @@ docker image rm service-auth:1.11
 docker image prune -a
 ```
 
-### 容器（ Container ）
+### 容器 ( Container )
 
 #### 查看容器
 

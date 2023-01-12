@@ -1,5 +1,5 @@
 ## Linux 的权限命令 
-### chgrp 命令（change group）
+### chgrp 命令 (change group)
 
 把 test.log 文件所在的用户组改为users。
 
@@ -9,7 +9,7 @@
 chgrp users test.log
 ```
 
-### chown 命令（change owner）
+### chown 命令 (change owner)
 
 把 test.log 文件所有者改为 lumin。
 
@@ -19,7 +19,7 @@ chgrp users test.log
 chown lumin test.log
 ```
 
-### chmod 命令（change mode）
+### chmod 命令 (change mode)
 
 权限有三种类型：`read(r`)可读、`write(w)`可写、`execute(e)`可执行。
 

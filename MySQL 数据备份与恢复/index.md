@@ -1,16 +1,16 @@
 ## MySQL 数据备份与恢复 
 ### 备份的类型
 
-数据备份会分为两大类型：`物理（原始）备份`（physical (raw) backups）和`逻辑备份`（logical backups），你可以在[这里](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/backup-types.html)找到更多信息。
+数据备份会分为两大类型：`物理 (原始) 备份` (physical (raw) backups) 和`逻辑备份` (logical backups) ，你可以在[这里](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/backup-types.html)找到更多信息。
 
 * `物理备份`由存储数据库内容的目录和文件的原始副本组成。这种类型的备份适用于需要在出现问题时，需要快速恢复的大型、重要的数据库。
-* `逻辑备份`保存以逻辑数据库结构（CREATE DATABASE、 CREATE TABLE 语句）和内容（INSERT 语句或分隔文本文件）表示的信息。这种类型的备份适用于较小的数据量，您可以在其中编辑数据值或表结构，或者在不同的机器架构上重新创建数据。
+* `逻辑备份`保存以逻辑数据库结构 (CREATE DATABASE、 CREATE TABLE 语句) 和内容 (INSERT 语句或分隔文本文件) 表示的信息。这种类型的备份适用于较小的数据量，您可以在其中编辑数据值或表结构，或者在不同的机器架构上重新创建数据。
 
-简单来讲，物理备份就是拷贝数据库原始文件，而逻辑备份通过工具（mysqldump）来把数据库内容通过`sql`语句导出来。
+简单来讲，物理备份就是拷贝数据库原始文件，而逻辑备份通过工具 (mysqldump) 来把数据库内容通过`sql`语句导出来。
 
 #### 在线 vs 离线
 
-根据导出的时，是否需要关闭 MySQL 服务，又出分`在线备份`（online backups）和`离线备份`（offline backups），这两种备份方式也被称为`热备份`（hot backups）和`冷备份`（cold backups）。
+根据导出的时，是否需要关闭 MySQL 服务，又出分`在线备份` (online backups) 和`离线备份` (offline backups) ，这两种备份方式也被称为`热备份` (hot backups) 和`冷备份` (cold backups) 。
 
 * 离线备份
   * 由于备份期间服务器不可用，客户端可能会受到不利影响。因此，此类备份通常取自可以脱机而不会损害副本可用性；
@@ -21,22 +21,22 @@
 
 #### 本地 vs 远程
 
-根据备份是否在同一台主机上执行，可以分为`本地备份`（local backup）和`远程备份`（remote backup）。
+根据备份是否在同一台主机上执行，可以分为`本地备份` (local backup) 和`远程备份` (remote backup) 。
 
 * 通常物理备份在主机上本地执行，同时方便执行主机离线操作，即便拷贝数据库原始文件的目的地在远端主机；
 * mysqldump 工具可以连接到本地或远程服务器，完成本地或远程转储。
 
 #### 快照备份
 
-`快照备份`（snapshot backups）指一些文件系统提供拍摄“快照”。它们在给定的时间点提供文件系统的逻辑副本，而不需要整个文件系统的物理副本。例如，实现可能使用写时复制技术，以便只需要复制在快照时间之后修改的文件系统的部分。
+`快照备份` (snapshot backups) 指一些文件系统提供拍摄“快照”。它们在给定的时间点提供文件系统的逻辑副本，而不需要整个文件系统的物理副本。例如，实现可能使用写时复制技术，以便只需要复制在快照时间之后修改的文件系统的部分。
 
 MySQL 本身不提供获取文件系统快照的能力。它可通过 Veritas、LVM 或 ZFS 等第三方解决方案获得。
 
 #### 全量备份 vs 增量备份
 
-`全量备份`（full backup）包括在给定`时间点`由 MySQL 服务器管理的所有数据。MySQL 有不同的方法来执行全量备份，例如本节前面描述的那些。
+`全量备份` (full backup) 包括在给定`时间点`由 MySQL 服务器管理的所有数据。MySQL 有不同的方法来执行全量备份，例如本节前面描述的那些。
 
-`增量备份`（incremental backup）包括在给定`时间跨度`内（从一个时间点到另一个时间点）对数据所做的更改。通过启用服务器的`二进制日志`（binary log）来实现增量备份，服务器使用它来记录数据更改。
+`增量备份` (incremental backup) 包括在给定`时间跨度`内 (从一个时间点到另一个时间点) 对数据所做的更改。通过启用服务器的`二进制日志` (binary log) 来实现增量备份，服务器使用它来记录数据更改。
 
 ### 备份前期工作
 
@@ -145,7 +145,7 @@ mysql> show binary logs;
 /*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/;
 DELIMITER /*!*/;
 # at 4
-#220104  9:03:29 server id 1  end_log_pos 123 CRC32 0x593c2727 	Start: binlog v 4, server v 5.7.35-log created 220104  9:03:29 at startup
+#220104  9:03:29 server id 1  end_log_pos 123 CRC32 0x593c2727  Start: binlog v 4, server v 5.7.35-log created 220104  9:03:29 at startup
 # Warning: this binlog is either in use or was not closed properly.
 ROLLBACK/*!*/;
 BINLOG '
@@ -154,7 +154,7 @@ AAAAAAAAAAAAAAAAAABhDdRhEzgNAAgAEgAEBAQEEgAAXwAEGggAAAAICAgCAAAACgoKKioAEjQA
 AScnPFk=
 '/*!*/;
 # at 123
-#220104  9:03:29 server id 1  end_log_pos 154 CRC32 0x7499a68e 	Previous-GTIDs
+#220104  9:03:29 server id 1  end_log_pos 154 CRC32 0x7499a68e  Previous-GTIDs
 # [empty]
 SET @@SESSION.GTID_NEXT= 'AUTOMATIC' /* added by mysqlbinlog */ /*!*/;
 DELIMITER ;
@@ -167,7 +167,7 @@ DELIMITER ;
 
 在执行备份时，通常需要进行`锁表`操作。
 
-进行备份时，我们不希望还有客户端对数据库进行`写操作`，则需要获取表的`读锁`，此时所有会话都只能进行`读`访问。在进行恢复时，需要获取表的`写锁`，此时只有持有锁的会话可以读写表，其它会话都不能访问。（本段只提到表锁，你可以在[这里](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)获取更多锁相关信息）
+进行备份时，我们不希望还有客户端对数据库进行`写操作`，则需要获取表的`读锁`，此时所有会话都只能进行`读`访问。在进行恢复时，需要获取表的`写锁`，此时只有持有锁的会话可以读写表，其它会话都不能访问。 (本段只提到表锁，你可以在[这里](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)获取更多锁相关信息)
 
 通过下面的命令，关闭所有打开的表并使用`全局读锁`锁定`所有数据库`的`所有表`。在下一节内容，使用 **mysqldump** 备份时，内部首先也会执行该命令。
 
@@ -201,7 +201,7 @@ mysqldump [options] --all-databases
 mysqldump -u root -p -h localhost --flush-logs --master-data=2 --single-transaction --databases publish_system_test > "publish_system_test_backup_$(date +"%Y%m%d_%H%M%S").sql"
 ```
 
-在导出的文件名称命名上，我们使用`date`命令在文件尾部添加备份日期，这方便在恢复时能快速识别备份日期。`.sql`文件也被叫做`转储文件`（dump file）。
+在导出的文件名称命名上，我们使用`date`命令在文件尾部添加备份日期，这方便在恢复时能快速识别备份日期。`.sql`文件也被叫做`转储文件` (dump file) 。
 
 上面的执行，会对所有该数据库的表加上`读锁`，然后导出 SQL 语句，这意味着在备份期间客户端对该数据库只有读取访问能力。
 
@@ -215,9 +215,9 @@ INSERT INTO `project` VALUES (1,'hello','good','我是项目描述',NULL,'weapp,
 UNLOCK TABLES;
 ```
 
-从 SQL 语句可以看到，当执行该脚本时，在执行插入（INSERT）语句之前会先进行`锁写表`，完成插入任务之后再进行`解锁`。
+从 SQL 语句可以看到，当执行该脚本时，在执行插入 (INSERT) 语句之前会先进行`锁写表`，完成插入任务之后再进行`解锁`。
 
-[--master-data](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_master-data)参数，该参数将在导出文件里记录转储服务器的二进制日志坐标（文件名和位置），这个选项要求 RELOAD 权限，并且二进制日志功能必须是启用状态。
+[--master-data](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_master-data)参数，该参数将在导出文件里记录转储服务器的二进制日志坐标 (文件名和位置) ，这个选项要求 RELOAD 权限，并且二进制日志功能必须是启用状态。
 
 你可以看到下面的因为该参数导出的语句：
 
@@ -233,11 +233,11 @@ UNLOCK TABLES;
 
 `--master-data`默认参数值为 1，当指定为 2 时，会以注释状态输出。
 
-[--single-transaction](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction)参数，该参数会把`事务隔离模式`（transaction isolation mode）设置为`可重复读取`（REPEATABLE READ），并且在转储之前发送`START TRANSACTION` SQL 语句给服务器，表示即将启动一个事务。
+[--single-transaction](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction)参数，该参数会把`事务隔离模式` (transaction isolation mode) 设置为`可重复读取` (REPEATABLE READ) ，并且在转储之前发送`START TRANSACTION` SQL 语句给服务器，表示即将启动一个事务。
 
 通过这个参数，能够保证转储时上数据库的`一致性`。该参数只对事务性表起作用，例如：InnoDB 表，而像 MyISAM 或者 MEMORY 表转储时状态可能发生改变。
 
-当有一个包含`--single-transaction`选项的转储进行中，为了确保输出一个有效的转储文件（正确的表内容和二进制日志坐标），不应该有其它数据库连接执行以下语句： `ALTER TABLE`, `CREATE TABLE`, `DROP TABLE`, `RENAME TABLE`, `TRUNCATE TABLE`，一致读不会隔离这些语句。
+当有一个包含`--single-transaction`选项的转储进行中，为了确保输出一个有效的转储文件 (正确的表内容和二进制日志坐标) ，不应该有其它数据库连接执行以下语句： `ALTER TABLE`, `CREATE TABLE`, `DROP TABLE`, `RENAME TABLE`, `TRUNCATE TABLE`，一致读不会隔离这些语句。
 
 [--flush-logs](https://dev.mysql.com/doc/refman/8.0/en/flush.html#flush-logs)参数，该参数会使数据目录包含一个新的二进制日志文件。也就是说日志文件`mysql-bin.000002`是新创建的，后面的对数据库更改的日志都将从该文件开始写入。
 

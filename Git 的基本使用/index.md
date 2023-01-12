@@ -13,7 +13,6 @@
 
 ![git-workflow.png](git-workflow.png)
 
-
 ### 基本命令
 
 #### fetch
@@ -41,7 +40,7 @@ git pull
 * 还能用于合并时把有冲突的文件标记为已解决状态
 
 ``` bash
-git add . # 新建文件的时候，用于跟踪当前目录下的所有文件（除去.gitignore）
+git add . # 新建文件的时候，用于跟踪当前目录下的所有文件 (除去.gitignore) 
 ```
 
 #### commit
@@ -200,7 +199,7 @@ Branch 'dev' set up to track remote branch 'dev' from 'origin'.
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-上面使用了`--all`选项表示所有分支，而`-u, --set-stream`对于每个分支保证最新的，并且跟踪（tracking）分支引用，这使得后续的`pull`操作无障碍。
+上面使用了`--all`选项表示所有分支，而`-u, --set-stream`对于每个分支保证最新的，并且跟踪 (tracking) 分支引用，这使得后续的`pull`操作无障碍。
 
 ### 子模块
 

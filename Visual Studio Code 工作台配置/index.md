@@ -25,9 +25,9 @@ code -a path/of/youProject
 
 ### Text Edtor 设置
 
-#### 字体 FiraCode（需安装字体）
+#### 字体 FiraCode (需安装字体)
 
-[FiraCode](https://github.com/tonsky/FiraCode) 是一款专门针对编程设计的字体，它的`连字`（ligatures）效果更符合人们阅读习惯。
+[FiraCode](https://github.com/tonsky/FiraCode) 是一款专门针对编程设计的字体，它的`连字` (ligatures) 效果更符合人们阅读习惯。
 
 在[这里](https://github.com/tonsky/FiraCode/wiki)可以查看它的安装方式，安装完成之后设置如下：
 

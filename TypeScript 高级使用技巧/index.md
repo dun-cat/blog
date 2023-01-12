@@ -400,7 +400,7 @@ type UncapitalizeMethod = Uncapitalize<Method>;
 
 除了上述这些实用类型之外，其他常用的 TypeScript 内置实用类型如下：
 
-`ConstructorParameters<Type>`：根据构造函数类型的类型构造元组或数组类型。它产生一个包含所有参数类型的元组类型（或者 never 如果 Type 不是函数的类型）。
+`ConstructorParameters<Type>`：根据构造函数类型的类型构造元组或数组类型。它产生一个包含所有参数类型的元组类型 (或者 never 如果 Type 不是函数的类型) 。
 
 `InstanceType<Type>`：构造一个由构造函数的实例类型组成的类型 Type。
 

@@ -23,7 +23,7 @@
 
 #### 远程网络调试
 
-需要移动端设置代理 host 和端口。这里的 host 指定`域名`或直接指定`目标 ip`（减少 DNS 解析时间）。不同于 GUI 代理软件，远程代理调试是代理到服务器上的，所以代理软件不会有GUI，但是可以由代理软件提供的 Web 程序查看请求内容。
+需要移动端设置代理 host 和端口。这里的 host 指定`域名`或直接指定`目标 ip` (减少 DNS 解析时间) 。不同于 GUI 代理软件，远程代理调试是代理到服务器上的，所以代理软件不会有GUI，但是可以由代理软件提供的 Web 程序查看请求内容。
 
 ![mobileproxy](mobileproxy.png)
 
@@ -43,7 +43,6 @@
 
 ### 调试工具
 
-
 #### Safari 浏览器环境下
 
 如果你的站点在 IOS 的 Safari 浏览器下运行，那么可以开启 Safari 提供的移动开发工具来调试。
@@ -61,9 +60,9 @@
 
 #### Chrome Dev Tool 远程调试
 
-在 chrome 的桌面端内置了[Dev Tools](https://developers.google.com/web/tools/chrome-devtools)开发工具，它也支持[远程调试（Remote Debugging）](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)。
+在 chrome 的桌面端内置了[Dev Tools](https://developers.google.com/web/tools/chrome-devtools)开发工具，它也支持[远程调试 (Remote Debugging)](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)。
 
-> 虽然是内置在 chrome 里，但其实是个独立应用程序，可以接入 chrome 开放的[远程调试协议](https://chromedevtools.github.io/devtools-protocol/)来单独使用该工具（例如：vscode、百度小程序IDE、微信小程序IDE等等）。
+> 虽然是内置在 chrome 里，但其实是个独立应用程序，可以接入 chrome 开放的[远程调试协议](https://chromedevtools.github.io/devtools-protocol/)来单独使用该工具 (例如：vscode、百度小程序IDE、微信小程序IDE等等) 。
 
 你需要几个简单步骤来开启调试：
 
@@ -76,7 +75,6 @@
 ![chromedevtool](chromedevtool.png)
 
 这个调试方法也具有局限性，它`只能在 Android 设备的 Chrome浏览器`内调试。
-
 
 #### Android Webview 环境
 
@@ -132,8 +130,8 @@ AndroidManifest.xml 配置网络权限：
 他具备几点功能：
 
 * 代理了 console 日志代理输出；
-* 展示本地缓存（cookies、localStorage、sessionStorage）；
-* 代理了网络请求（XMLHttpRequest、Fetch）；
+* 展示本地缓存 (cookies、localStorage、sessionStorage) ；
+* 代理了网络请求 (XMLHttpRequest、Fetch) ；
 * 支持控制台输入；
 * 展示了  DOM 树；
 
@@ -170,8 +168,6 @@ module.exports = {
     ...
 }
 ```
-
-
 
 参考文献：
 

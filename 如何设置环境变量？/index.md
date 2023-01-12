@@ -67,7 +67,7 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/flutter/bin:$PATH
 # more ...
 ```
 
-> 注意的是目录路径之间用英文冒号（`:`）隔开。
+> 注意的是目录路径之间用英文冒号 (`:`) 隔开。
 
 为了快速在当前 shell 生效，使用`source`命令重新读取文件配置：
 

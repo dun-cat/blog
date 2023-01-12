@@ -1,7 +1,7 @@
 ## 探索 Javascript 里的 Promise 
 ### 介绍
 
-在计算机科学中，`future`、`promise`、`delay`和`deferred`是指用于在某些并发编程语言中同步程序执行的构造。由于某些计算（或者网络请求）尚未结束，我们需要一个对象来代理这个未知的结果，于是就有了上述这些构造（future、promise等）。
+在计算机科学中，`future`、`promise`、`delay`和`deferred`是指用于在某些并发编程语言中同步程序执行的构造。由于某些计算 (或者网络请求) 尚未结束，我们需要一个对象来代理这个未知的结果，于是就有了上述这些构造 (future、promise等) 。
 
 Promise 一词在1976年就已提出，也有称之为 `eventual`，它的应用起源于[函数式编程](https://zh.wikipedia.org/wiki/函数式编程)和相关范例。
 
@@ -29,20 +29,19 @@ const p = new Promise((resolutionFunc, rejectionFunc) => {
 * 如果立即入列 `p.then(f, r)` 任务并且之后再调用 `r` 函数 ，那么 `p` 的状态是 `rejected`；
 * 如果 `p` 的状态不是 `fulfilled` 也不是 `rejected`，那么标记为 `pending` 状态。
 
-
 ### 解读 Promises/A+ 规范
 
 实现 Promise 代码普遍采用[Promises/A+ 规范](https://promisesaplus.com/)，通过它我们会得到一些基础概念。
 
-Promise 表示一个异步操作的最终结果，能和 promise 进行交互的只有它的`then`方法，`then`方法注册一个回调函数用于接收 promise 的结果值或拒绝（reject）的原因（reason）。
+Promise 表示一个异步操作的最终结果，能和 promise 进行交互的只有它的`then`方法，`then`方法注册一个回调函数用于接收 promise 的结果值或拒绝 (reject) 的原因 (reason) 。
 
 #### 术语
 
 1. `promise`：是一个对象或函数，它的行为符合本规范；
 2. `thenable`：是一个对象或函数，用于定义`then`方法；
-3. `value`：是一个合法的 Javascript 类的值（包括undefined，ableable 或 promise）；
+3. `value`：是一个合法的 Javascript 类的值 (包括undefined，ableable 或 promise) ；
 4. `exception`：是使用`throw`语句引发的值；
-5. `reason`：是表明拒绝承诺（reject promise）的原因的值。
+5. `reason`：是表明拒绝承诺 (reject promise) 的原因的值。
 
 #### 要求
 
@@ -55,12 +54,11 @@ Promise 表示一个异步操作的最终结果，能和 promise 进行交互的
    * 必须有一个值且不能发生改变。
 3. 若 promise 进入了 `rejected` 状态：
    * 禁止进入其它状态；
-   * 必须有一个原因（reason）且不能发生改变。
-
+   * 必须有一个原因 (reason) 且不能发生改变。
 
 #### then 方法
 
-一个 promise `必须`提供一个 `then`方法来访问最终值（eventual value）或原因（reason）。
+一个 promise `必须`提供一个 `then`方法来访问最终值 (eventual value) 或原因 (reason) 。
 
 Promise 的 then 方法接受两个参数：
 
@@ -80,7 +78,7 @@ promise.then(onFulfilled, onRejected)
    * 禁止在 **rejected** 之前被调用；
    * 禁止调用超过一次。
 4. 在[执行上下文](https://es5.github.io/#x10.3)堆栈里仅包含[平台代码](/articles/what-is-promise/#注释)之前，`onFulfilled`或`onRejected`禁止被调用。
-5. `onFulfilled` 和 `onRejected` 必须作为函数调用（即没有`this`值）。
+5. `onFulfilled` 和 `onRejected` 必须作为函数调用 (即没有`this`值) 。
 6. 同一个 promise，`then`可能被调用多次：
    * 无论何时，只要 promise 为 **fulfilled**，则所有`onFulfilled`回调必须按照他们原有的次序给`then`做调用；
    * 无论何时，只要 promise 为 **rejected**，则所有`onRejected`回调必须按照他们原有的次序给`then`做调用；
@@ -90,11 +88,11 @@ promise.then(onFulfilled, onRejected)
    * 若`onFulfilled`不是个函数并且 **promise1** 为 **fulfilled**，则 **promise2** 必须为 **fulfilled** 且和 **promise1** 有相同的值；
    * 若`onRejected`不是个函数并且 **promise1** 为 **rejected**，则 **promise2** 必须为 **rejected** 且和 **promise1** 有 reason 值；
 
-#### Promise 解决程序（Promise Resolution Procedure）
+#### Promise 解决程序 (Promise Resolution Procedure)
 
 **Promise Resolution Procedure** 是一个`抽象操作`，用来输入一个 promise 和一个 value，我们表示为`[[Resolve]](promise, x)`。
 
-若`x` 是一个`thenable`，则它尝试使 promise 采用`x`的状态，这建立在`x`的行为看起来像个 promise的假设下。否则，它满足（fulfills）x 为一个 promise。
+若`x` 是一个`thenable`，则它尝试使 promise 采用`x`的状态，这建立在`x`的行为看起来像个 promise的假设下。否则，它满足 (fulfills) x 为一个 promise。
 
 对于多个 thenables 的处理，只要他们暴露一个兼容`Promises/A+`的 then 方法，就允许 promise 之间的交互。它还允许多个` Promises/A+ `的实现去同化那些不兼容的实现。
 
@@ -118,15 +116,15 @@ promise.then(onFulfilled, onRejected)
    * 若`then`不是一个函数，则 fulfill promise 并返回 x；
 4. 若 x 不是一个对象或函数，则 fulfill promise 并返回 x。
 
-如果一个 promise 通过参与一个环形的 thenable 链解决（resolved），比如 `[[Resolve]](promise, thenable)`的递归，这最终导致[[Resolve]](promise, thenable) 无限执行。在 promise 的实现中，鼓励对这种递归的检测并抛出 TypeError 作为 reason，但不被要求必须这么做。
+如果一个 promise 通过参与一个环形的 thenable 链解决 (resolved) ，比如 `[[Resolve]](promise, thenable)`的递归，这最终导致[[Resolve]](promise, thenable) 无限执行。在 promise 的实现中，鼓励对这种递归的检测并抛出 TypeError 作为 reason，但不被要求必须这么做。
 
 #### 注释
 
-* `平台代码`：这里的**平台代码**（platform code）是指引擎（engine）、环境（environment）和实现 promise 的代码。实际上，此要求是为了在事件循环轮到 then 之后，确保 onFulfilled 和 onRejected 能异步得被执行并且使用新的堆栈。这可以通过`宏任务（macro-task）`机制（例如 setTimeout 或 setImmediate ）或`微任务（micro-task）`机制（例如MutationObserver 或 process.nextTick）来实现。 promise 的实现被视为平台代码，因此它本身可能包含`任务调度队列（task-scheduling queue）`或`蹦床（trampoline）`。
+* `平台代码`：这里的**平台代码** (platform code) 是指引擎 (engine) 、环境 (environment) 和实现 promise 的代码。实际上，此要求是为了在事件循环轮到 then 之后，确保 onFulfilled 和 onRejected 能异步得被执行并且使用新的堆栈。这可以通过`宏任务 (macro-task)`机制 (例如 setTimeout 或 setImmediate ) 或`微任务 (micro-task)`机制 (例如MutationObserver 或 process.nextTick) 来实现。 promise 的实现被视为平台代码，因此它本身可能包含`任务调度队列 (task-scheduling queue)`或`蹦床 (trampoline)`。
 * `x`: 通常，只有`x`来自当前的实现才能知道这是一个真正的 promise。本节允许采用已知符合 promise 的状态。
 * 对于 promise 的实现中，不应该对 thenable 链做任何深度限制。只有在循环的 thenable 才导致`TypeError`，若遇到一个有区别的无限thenables 链，那么递归永远是正确的行为。
 
-> micro-task （音标：['maikrəu]）与 macro-task（音标：[ˈmækroʊ]） 的区别是`执行顺序`，micro-task 优先于 macro-task 执行，在实现 Promise 的浏览器中，通常采用 micro-task 作为其异步执行机制。
+> micro-task  (音标：['maikrəu]) 与 macro-task (音标：[ˈmækroʊ])  的区别是`执行顺序`，micro-task 优先于 macro-task 执行，在实现 Promise 的浏览器中，通常采用 micro-task 作为其异步执行机制。
 
 ### Javascript 语言的 Promise 实现
 
@@ -329,7 +327,7 @@ const nextTick = (() => {
 
 上面有提到 then 函数会返回一个新的 promise，并把 onFulfilled 和 onRejected 暂存到该 promise 中，而 processNextTick() 即是用于执行 promsie 中的 onFulfilled() 或 onRejected()。
 
-同时依据规范要求，如果 onFulfilled 或 onRejected 不是一个函数类型，则必须把在 promise 中的值（value 或 reason）传到下一个 then() 中，如以下范例：
+同时依据规范要求，如果 onFulfilled 或 onRejected 不是一个函数类型，则必须把在 promise 中的值 (value 或 reason) 传到下一个 then() 中，如以下范例：
 
 ``` javascript
 let promise = new Promise(resolve => resolve("done"));

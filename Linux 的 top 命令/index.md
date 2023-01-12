@@ -33,7 +33,7 @@ top - 10:49:10 up 364 days, 23:04,  1 user,  load average: 0.13, 0.11, 0.09
 
 > load average 是Linux服务器在定义的时间段内的平均系统负载，换句话来说，一定时间内正在运行的线程和正在等待的线程之和。对于多核处理器，如果数值/核数 ≤ 1 ，那说明系统运行正常。如果数值/核数 > 1，那系统运行新任务就会放缓。
 
-有些 [APM（Application Performance Monitor）](https://baike.baidu.com/item/APM/18679992#viewPageContent)软件通常会提供 `load average` 指标，如果发现`数值 > 自己所设置的阈值`，就会触发上载服务器脚本或添加服务器命令以终止消耗最高CPU的进程，这样就可以实现自动化。列举一个软件：[site24x7](https://www.site24x7.com/help/overview.html)。
+有些 [APM (Application Performance Monitor)](https://baike.baidu.com/item/APM/18679992#viewPageContent)软件通常会提供 `load average` 指标，如果发现`数值 > 自己所设置的阈值`，就会触发上载服务器脚本或添加服务器命令以终止消耗最高CPU的进程，这样就可以实现自动化。列举一个软件：[site24x7](https://www.site24x7.com/help/overview.html)。
 
 ---
 
@@ -53,11 +53,11 @@ Tasks: 196 total,   1 running, 195 sleeping,   0 stopped,   0 zombie
 
 进程有下面几个状态标记：
 
-* `Runnable（R）`：处于此状态的进程正在CPU上执行，或者存在于运行队列中，可以执行。
-* `Interruptible sleep（S）`：处于此状态的进程正在等待事件完成。
-* `Uninterruptible sleep（D）`：在这种情况下，进程正在等待 I/O 操作完成。
-* `Stopped（T）`：这些进程可以被[作业控制信号](https://www.gnu.org/software/libc/manual/html_node/Job-Control-Signals.html)（例如，按Ctrl + Z）停止或已被跟踪停止。
-* `僵尸（Zombie，Z）`：内核在内存中维护各种数据结构，以跟踪进程。一个进程可能会创建多个子进程，并且它们可能在父进程仍然存在时退出。但是，必须保留这些数据结构，直到父级获得子进程的状态为止。这样已终止的数据结构却还在的进程称为“僵尸”。
+* `Runnable (R)`：处于此状态的进程正在CPU上执行，或者存在于运行队列中，可以执行。
+* `Interruptible sleep (S)`：处于此状态的进程正在等待事件完成。
+* `Uninterruptible sleep (D)`：在这种情况下，进程正在等待 I/O 操作完成。
+* `Stopped (T)`：这些进程可以被[作业控制信号](https://www.gnu.org/software/libc/manual/html_node/Job-Control-Signals.html) (例如，按Ctrl + Z) 停止或已被跟踪停止。
+* `僵尸 (Zombie，Z)`：内核在内存中维护各种数据结构，以跟踪进程。一个进程可能会创建多个子进程，并且它们可能在父进程仍然存在时退出。但是，必须保留这些数据结构，直到父级获得子进程的状态为止。这样已终止的数据结构却还在的进程称为“僵尸”。
 
 ---
 
@@ -74,7 +74,7 @@ Tasks: 196 total,   1 running, 195 sleeping,   0 stopped,   0 zombie
 * `0.0 ni`：用户进程空间内改变过优先级的进程占用CPU百分比。
 * `92.2 id`：CPU保持空闲的时间比。大多数操作系统在空闲时都会将CPU置于省电模式。
 * `0.0 wa`：等待 I/O 的CPU时间百分比。
-* `0.0 hi`：硬中断（Hardware IRQ）占用CPU的百分比,CPU服务于硬中断所耗费的时间总额。
+* `0.0 hi`：硬中断 (Hardware IRQ) 占用CPU的百分比,CPU服务于硬中断所耗费的时间总额。
 * `0.2 si,  0.0 st`：CPU服务于软中断所耗费的时间总额、Steal Time。
 
 ---
@@ -120,7 +120,7 @@ KiB Swap:        0 total,        0 free,        0 used.   438744 avail Mem
 ```
 
 * `PID`：进程ID。它是标识进程的唯一正整数。我们可以通过 `kill 命令` 带上 PID 来杀掉进程。
-* `USER`：启动该进程的“有效”用户名。Linux为进程分配一个`真实的用户ID`和一个`有效的用户ID`。后者允许进程代表另一个用户执行操作。（例如，非root用户可以提升为root用户才能安装软件包。）
+* `USER`：启动该进程的“有效”用户名。Linux为进程分配一个`真实的用户ID`和一个`有效的用户ID`。后者允许进程代表另一个用户执行操作。 (例如，非root用户可以提升为root用户才能安装软件包。)
 参考文献：
 * `NI`：NI 字段显示进程的 nice 值，负值表示高优先级，正值表示低优先级。
 * `PR`：PR 字段从内核的角度显示了进程的调度优先级。nice 值会影响进程的优先级。

@@ -3,13 +3,13 @@
 
 这个子项目用于消息事件派发，以`订阅发布`的设计模式展开，可以理解为一个独立用于事件派发的SDK。
 
-在`编辑器`（Editor）和`沙箱`（sandbox）之间的`跨域`消息事件派发，通过浏览器的 postmessage 来实现。
+在`编辑器` (Editor) 和`沙箱` (sandbox) 之间的`跨域`消息事件派发，通过浏览器的 postmessage 来实现。
 
 codesanbox-api 分为几个模块：`actions`、`dispatcher`、`protocol`。
 
 #### actions
 
-`派发的消息`要指定为两种关键信息：`动作（action）` 和 `数据(data)`。codesandbox-api 通过`定义动作接口`来规范 `action` 的数据格式，而`数据`部分的格式平铺（flat）字段即可，这里需要注意的是数据部分的键名不能和 action 接口定义的键名相同。
+`派发的消息`要指定为两种关键信息：`动作 (action)` 和 `数据(data)`。codesandbox-api 通过`定义动作接口`来规范 `action` 的数据格式，而`数据`部分的格式平铺 (flat) 字段即可，这里需要注意的是数据部分的键名不能和 action 接口定义的键名相同。
 
 在 codesandbox-api 里的 actions 有：correction、`editor`、error、glyph、notifications。
 
@@ -74,4 +74,3 @@ function checkIsStandalone() {
   return !window.opener && window.parent === window;
 }
 ```
-
