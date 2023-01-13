@@ -127,6 +127,7 @@
 * #### [React Native Hot Update](./React%20Native%20Hot%20Update/index.md)
 * #### [响应式编程](./%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B/index.md)
 * #### [响应式编程之 ReactiveX](./%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B9%8B%20ReactiveX/index.md)
+* #### [正则表达式 (Regular Expression) 基础](./%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%20(Regular%20Expression)%20%E5%9F%BA%E7%A1%80/index.md)
 * #### [RequestIdleCallback](./RequestIdleCallback/index.md)
 * #### [为什么每个人都想去服务化 (Serverless) ](./%E4%B8%BA%E4%BB%80%E4%B9%88%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%83%B3%E5%8E%BB%E6%9C%8D%E5%8A%A1%E5%8C%96%20(Serverless)%20/index.md)
 * #### [软件工程 (Software Engineering) ](./%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%20(Software%20Engineering)%20/index.md)
