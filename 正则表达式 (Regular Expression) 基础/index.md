@@ -559,6 +559,8 @@ console.log(str.match(regexp)); // 打印 30, $
 ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
 ```
 
+<iframe frameborder="0" width="809" height="115" src="https://www.lumin.tech/tools/regulex/#!embed=true&flags=&re=%5E%5Cd%7B1%2C3%7D%5C.%5Cd%7B1%2C3%7D%5C.%5Cd%7B1%2C3%7D%5C.%5Cd%7B1%2C3%7D%24"></iframe>
+
 ##### 身份证号
 
 老的 15 位的身份证号目前各类公共场合的刷卡都`已经失效`，基本没人再用了。
@@ -567,11 +569,15 @@ console.log(str.match(regexp)); // 打印 30, $
 ^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$
 ```
 
+<iframe frameborder="0" width="933" height="291" src="https://www.lumin.tech/tools/regulex/#!embed=true&flags=&re=%5E%5B1-9%5D%5Cd%7B7%7D((0%5Cd)%7C(1%5B0-2%5D))((%5B0%7C1%7C2%5D%5Cd)%7C3%5B0-1%5D)%5Cd%7B3%7D%24"></iframe>
+
 目前所有身份证位数都已是 18 位，它的匹配正则如下：
 
 ``` text
 ^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$
 ```
+
+<iframe frameborder="0" width="1239" height="309" src="https://www.lumin.tech/tools/regulex/#!embed=true&flags=&re=%5E%5B1-9%5D%5Cd%7B5%7D%5B1-9%5D%5Cd%7B3%7D((0%5Cd)%7C(1%5B0-2%5D))((%5B0%7C1%7C2%5D%5Cd)%7C3%5B0-1%5D)((%5Cd%7B4%7D)%7C%5Cd%7B3%7D%5BXx%5D)%24"></iframe>
 
 ##### 邮箱
 
@@ -579,11 +585,15 @@ console.log(str.match(regexp)); // 打印 30, $
 ^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$
 ```
 
+<iframe frameborder="0" width="1378" height="244" src="https://www.lumin.tech/tools/regulex/#!embed=true&flags=&re=%5E%5Cw%2B(%5B.-%5D%3F%5Cw%2B)*%40%5Cw%2B(%5B.-%5D%3F%5Cw%2B)*(%5C.%5Cw%7B2%2C3%7D)%2B%24"></iframe>
+
 另一种等价表示：
 
 ``` text
 ^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$
 ```
+
+<iframe frameborder="0" width="705" height="252" src="https://www.lumin.tech/tools/regulex/#!embed=true&flags=&re=%5E%5B%5Cw%5C-%5C.%5C%2B%5D%2B%5C%40%5Ba-zA-Z0-9%5C.%5C-%5D%2B%5C.%5Ba-zA-z0-9%5D%7B2%2C4%7D%24"></iframe>
 
 ##### 手机号
 
@@ -596,6 +606,8 @@ console.log(str.match(regexp)); // 打印 30, $
 ``` text
 ^1[3-9][0-9]{9}$
 ```
+
+<iframe frameborder="0" width="436" height="147" src="https://www.lumin.tech/tools/regulex/#!embed=true&flags=&re=%5E1%5B3-9%5D%5B0-9%5D%7B9%7D%24"></iframe>
 
 ##### 密码
 
@@ -612,11 +624,17 @@ console.log(str.match(regexp)); // 打印 30, $
 ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,20}$
 ```
 
+<iframe frameborder="0" width="2574" height="222" src="https://www.lumin.tech/tools/regulex/#!embed=true&flags=&re=%5E(%3F%3D.*%5B0-9%5D)(%3F%3D.*%5Ba-z%5D)(%3F%3D.*%5BA-Z%5D)(%3F%3D.*%5B*.!%40%24%25%5E%26()%7B%7D%5B%5D%3A%3B%3C%3E%2C.%3F%2F~_%2B-%3D%7C%5C%5D).%7B8%2C20%7D%24"></iframe>
+
 #### 文本替换
 
 ### 正则工具
 
-这里有两款比较好用的正则验证工具：[regexr](https://regexr.com/)、[Regulex](https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24)。可以用来加深理解和学习正则。
+这里有几款比较好用的正则验证工具，可以用来对正则的学习和加深理解：
+
+* [regexr](https://regexr.com/)
+* [regulex](https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24)
+* [regex-vis](https://regex-vis.com/)
 
 参考文献：
 
