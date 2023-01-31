@@ -64,7 +64,7 @@ tsconfig.json 文件示例：
 
 ### 基本的 TSConfig
 
-根据你要在其中运行代码的不同的 JavaScript 运行时环境，你可以在[github.com/tsconfig/bases](https://github.com/tsconfig/bases/)上寻找一个合适的基本配置。你可以通过扩展这些已经处理过不同的 JavaScript 运行时环境的 tsconfig.json 文件来简化你项目中的 tsconfig.json。
+根据你要在其中运行代码的不同的 JavaScript 运行时环境，你可以在 [github.com/tsconfig/bases](https://github.com/tsconfig/bases/) 上寻找一个合适的基本配置。你可以通过扩展这些已经处理过不同的 JavaScript 运行时环境的 tsconfig.json 文件来简化你项目中的 tsconfig.json。
 
 举个例子，如果你的项目是基于`Node.js 12.x`写的，那么你可以使用 npm 模块：@tsconfig/node12：
 
