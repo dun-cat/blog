@@ -1,4 +1,4 @@
-## JavaScript 常用的开发工具库 
+## JavaScript 常用的开发库 
 ### 测试库
 
 #### fast-check

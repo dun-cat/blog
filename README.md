@@ -139,7 +139,7 @@
 * #### [TypeScript 高级使用技巧](./TypeScript%20%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.md)
 * #### [UML 系统建模基础](./UML%20%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1%E5%9F%BA%E7%A1%80/index.md)
 * #### [用户空间模型](./%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/index.md)
-* #### [JavaScript 常用的开发工具库](./JavaScript%20%E5%B8%B8%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%BA%93/index.md)
+* #### [JavaScript 常用的开发库](./JavaScript%20%E5%B8%B8%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E5%BA%93/index.md)
 * #### [Webpack 5 之 模块联合 (Module Federation) ](./Webpack%205%20%E4%B9%8B%20%E6%A8%A1%E5%9D%97%E8%81%94%E5%90%88%20(Module%20Federation)%20/index.md)
 * #### [一步一步搭建 Webpack 脚手架](./%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%90%AD%E5%BB%BA%20Webpack%20%E8%84%9A%E6%89%8B%E6%9E%B6/index.md)
 * #### [Webpack 构建常用配置](./Webpack%20%E6%9E%84%E5%BB%BA%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/index.md)
