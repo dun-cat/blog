@@ -86,7 +86,7 @@ Removed 1 token
 
 指定一个目标仓库，用于存储发布包，默认`npm registry`的值为：<https://registry.npmjs.org>。
 
-npm 的 `registry` 使用的是 [couch database](https://couchdb.apache.org/) 数据库，可以直接使用 RESTful API 方式访问数据。
+npm 的 `registry` 使用的是[couch database](https://couchdb.apache.org/)数据库，可以直接使用 RESTful API 方式访问数据。
 
 ##### 修改 registry
 

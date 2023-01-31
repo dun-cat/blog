@@ -52,7 +52,7 @@ echo $LUMIN
 
 #### Mac 配置文件
 
-在早期 mac 系统版本使用`用户目录`的`.bash_profile`或`.profile`文件。从 macOS `Catalina` 开始，Mac 使用[zsh](https://support.apple.com/zh-cn/HT208050)作为默认登录 Shell 和交互式 Shell。
+在早期 mac 系统版本使用`用户目录`的`.bash_profile`或`.profile`文件。从 macOS `Catalina` 开始，Mac 使用 [zsh](https://support.apple.com/zh-cn/HT208050) 作为默认登录 Shell 和交互式 Shell。
 
 所以它的配置文件是用户目录的`.zshrc`文件。
 

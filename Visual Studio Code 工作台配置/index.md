@@ -102,11 +102,11 @@ code -a path/of/youProject
 
 #### 文件图标主题
 
-VSCode 默认的字体图标主题有些暗淡，色彩偏淡，不够鲜明。我个人喜欢 [Material Icon Theme]( https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 这套主题。
+VSCode 默认的字体图标主题有些暗淡，色彩偏淡，不够鲜明。我个人喜欢[Material Icon Theme]( https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)这套主题。
 
 #### 颜色主题
 
-整个 vscode 的颜色主题，我选择 [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) ，这套主题在众多主题中在视觉上是较为舒服的一套。
+整个 vscode 的颜色主题，我选择[One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)，这套主题在众多主题中在视觉上是较为舒服的一套。
 
 ![color-theme.png](color-theme.png)
 
@@ -211,7 +211,7 @@ more...
 
 #### GitLens
 
-[Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)是个不错的 git 管理插件，有点可惜的是它的核心功能只支持开放仓库，并且高级功能需要收费。而这里之所以还介绍使用，是其免费功能特性。
+ [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) 是个不错的 git 管理插件，有点可惜的是它的核心功能只支持开放仓库，并且高级功能需要收费。而这里之所以还介绍使用，是其免费功能特性。
 
 Gitlens 可以展示代码文件每一行的最后一次修改由谁修改，哪一次 commit，如下图展示：
 
@@ -237,7 +237,7 @@ Gitlens 有项比较不错的收费功能是`Git Graph`，无论 UI 来说，还
 
 #### markdownlint
 
-[markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)是一款用于 markdown 文档`格式化`的插件，它遵循[CommonMark Spec](https://spec.commonmark.org/)写作规范。在协作编写 markdown 文档的时候，可以确保文档格式的一致性。
+ [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) 是一款用于 markdown 文档`格式化`的插件，它遵循[CommonMark Spec](https://spec.commonmark.org/)写作规范。在协作编写 markdown 文档的时候，可以确保文档格式的一致性。
 
 #### SCSS Everywhere
 

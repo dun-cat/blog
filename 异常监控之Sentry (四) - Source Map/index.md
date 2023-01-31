@@ -3,7 +3,7 @@
 
 Source Map 用于分析错误位置，对于被 minified 后的代码 (例如UglifyJS) 或从高级语言 (例如TypeScript和ES6) 中转译的代码特别有用。`通常在编译构建时，我们就可以上传了`。
 
-这里有个基于 webpack 插件的官方 [example](https://github.com/getsentry/sentry-webpack-plugin/tree/master/example) ，下面以此为基础进行设置。
+这里有个基于 webpack 插件的官方[example](https://github.com/getsentry/sentry-webpack-plugin/tree/master/example)，下面以此为基础进行设置。
 
 在 webpack.config.js 里的配置：
 

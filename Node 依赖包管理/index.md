@@ -63,7 +63,7 @@ yarn global add nodemon
 
 ### 切换依赖源 nrm
 
-使用[nrm](https://github.com/Pana/nrm)可以切换多个依赖源。
+使用 [nrm](https://github.com/Pana/nrm) 可以切换多个依赖源。
 
 #### 安装
 

@@ -20,7 +20,7 @@ import React from 'react';
 
 JSX 并不是只能被编译为 React.createElement 方法，你可以通过`@babel/plugin-transform-react-jsx`插件显式告诉 Babel 编译时需要将 JSX 编译成什么函数的调用 (默认为React.createElement) 。
 
-比如在[preact](https://github.com/preactjs/preact)这个类 React 库中，JSX 会被编译为一个名为`h`的函数调用。
+比如在 [preact](https://github.com/preactjs/preact) 这个类 React 库中，JSX 会被编译为一个名为`h`的函数调用。
 
 ``` jsx
 // 编译前

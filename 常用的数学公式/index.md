@@ -53,6 +53,6 @@ $y = 13\cos(t) - 5cos(2t) - 2cos(3t)-cos(4t)$
 
 $t$ 取值区域： $0< t < 2\pi$
 
-我们可以通过一个叫[fooplot](http://www.fooplot.com/#W3sidHlwZSI6MiwiZXF4IjoiMTZzaW4ocyleMyIsImVxeSI6IjEzY29zKHMpLTVjb3MoMnMpLTJjb3MoM3MpLWNvcyg0cykiLCJjb2xvciI6IiNmZjAwMDAiLCJzbWluIjoiMCIsInNtYXgiOiIycGkiLCJzc3RlcCI6Ii4wMSJ9LHsidHlwZSI6MTAwMCwid2luZG93IjpbIi00OC44MDEzMDI5MDk4NTA5MiIsIjcyLjI3MDYzMTc5MDE2MDg5IiwiLTQwLjA0Njg3MDcwODQ2NTQ1NSIsIjM0LjQ1ODkzNTI2MDc3MjYiXX1d)的在线工具，绘制出该曲线。
+我们可以通过一个叫 [fooplot](http://www.fooplot.com/#W3sidHlwZSI6MiwiZXF4IjoiMTZzaW4ocyleMyIsImVxeSI6IjEzY29zKHMpLTVjb3MoMnMpLTJjb3MoM3MpLWNvcyg0cykiLCJjb2xvciI6IiNmZjAwMDAiLCJzbWluIjoiMCIsInNtYXgiOiIycGkiLCJzc3RlcCI6Ii4wMSJ9LHsidHlwZSI6MTAwMCwid2luZG93IjpbIi00OC44MDEzMDI5MDk4NTA5MiIsIjcyLjI3MDYzMTc5MDE2MDg5IiwiLTQwLjA0Njg3MDcwODQ2NTQ1NSIsIjM0LjQ1ODkzNTI2MDc3MjYiXX1d) 的在线工具，绘制出该曲线。
 
 <img src='heart-curve.svg' style="max-width:80%" />

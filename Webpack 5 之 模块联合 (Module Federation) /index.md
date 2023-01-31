@@ -27,7 +27,7 @@
 
 通常在使用 webpack 构建产生的`模块`都存储在`本地`，直接被当前应用所使用。在 webpack 5 中提出了`远程模块`的概念，允许`运行时`把当前构建的应用作为`容器应用`，异步加载`远程模块`。下面将用简称`MF`指代模块联合。
 
-> webpack 的提供了`动态加载模块`的方式，你可以使用[import](https://webpack.docschina.org/api/module-methods/#import)或者较为陈旧的方法[require.ensure](https://webpack.docschina.org/api/module-methods/#requireensure)或`require([...])`。
+> webpack 的提供了`动态加载模块`的方式，你可以使用 [import](https://webpack.docschina.org/api/module-methods/#import) 或者较为陈旧的方法[require.ensure](https://webpack.docschina.org/api/module-methods/#requireensure)或`require([...])`。
 
 记得上面小节在我们说微前端中，容器应用做的事吗？其实通过`webpack`的`动态加载`，就已经实现了容器应用该做的事情。所以我们完全可以认为微应用本身可以具备容器应用的功能。
 
@@ -148,7 +148,7 @@ export { default as Text } from './text/index.jsx'
 
 不仅如此，MF 对共享模块做了`版本化`管理，你可以在[这个 PR 的交流](https://github.com/webpack/webpack/pull/10960)获取相关信息。
 
-同样我们使用`ModuleFederationPlugin`插件中的`shared 选项`来指定公共模块异步模块加载使用，它的功能和 webpack 的[externals](https://webpack.docschina.org/configuration/externals/#root)类似，允许在运行时加载外部依赖库。
+同样我们使用`ModuleFederationPlugin`插件中的`shared 选项`来指定公共模块异步模块加载使用，它的功能和 webpack 的 [externals](https://webpack.docschina.org/configuration/externals/#root) 类似，允许在运行时加载外部依赖库。
 
 ``` js
 new ModuleFederationPlugin({
@@ -212,7 +212,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 2.我们通过`requiredVersion 选项`来使用指定共享模块的版本。
 
-它有两个值：requiredVersion 为`string`类型的值时，表示遵循[semver](https://semver.org/lang/zh-CN/)规范的语义化版本号。
+它有两个值：requiredVersion 为`string`类型的值时，表示遵循 [semver](https://semver.org/lang/zh-CN/) 规范的语义化版本号。
 
 你可以直接用`package.json`里的`dependencies`字段中包名对应版本，这样做是为了共享模块的版本和`package.json`中的版本保持一致。如果不一致则会打印警告。
 

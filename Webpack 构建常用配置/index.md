@@ -1,7 +1,7 @@
 ## Webpack 构建常用配置 
 ### 加载器 (Loader)
 
-[Loader](https://webpack.docschina.org/concepts/loaders/) 用于对模块的源代码进行转换。loader 可以使你在 import 或 "load(加载)" 模块时预处理文件。
+ [Loader](https://webpack.docschina.org/concepts/loaders/) 用于对模块的源代码进行转换。loader 可以使你在 import 或 "load(加载) " 模块时预处理文件。
 
 因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的得力方式。
 

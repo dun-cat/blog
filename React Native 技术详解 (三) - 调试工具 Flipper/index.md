@@ -33,7 +33,7 @@ React Native 0.62 版本及以上，默认支持 Flipper，并且开箱即用，
 
 如果低于此版本，请参考[手动 Android 设置](https://fbflipper.com/docs/getting-started/react-native-android/)和[手动 iOS 设置](https://fbflipper.com/docs/getting-started/react-native-ios/)。默认，React Native 可能内置了一个过期的 Flipper SDK，你可以在[这里](https://github.com/facebook/flipper/tags)查看最新发布版本。
 
-最后一个版本的 Flipper 要求`react-native 0.69+`。如果你的`react-native < 0.69.0`，需要降级 `react-native-flipper`到`0.162.0` (查看该 GitHub [issue](https://github.com/facebook/flipper/issues/4240)详情) 。
+最后一个版本的 Flipper 要求`react-native 0.69+`。如果你的`react-native < 0.69.0`，需要降级 `react-native-flipper`到`0.162.0` (查看该 GitHub [issue](https://github.com/facebook/flipper/issues/4240) 详情)
 
 #### Android
 
@@ -111,7 +111,7 @@ public class MyApplication extends Application {
 
 #### iOS
 
-1.若 **react-native 版本 $\ge$ 0.69.0**，在 ios/Podfile 里可以指定一个 Flipper  版本，并通过`FlipperConfiguration.enabled`引入 Flipper。
+1.若 **react-native 版本 >= 0.69.0**，在 ios/Podfile 里可以指定一个 Flipper  版本，并通过`FlipperConfiguration.enabled`引入 Flipper。
 
 ``` ruby
 use_react_native!(
@@ -131,7 +131,7 @@ use_react_native!(
 
 ---
 
-1.若 **react-native 版本 $<$ 0.69.0**，在 ios/Podfile 里调用`use_flipper`引入 Flipper。
+1.若 **react-native 版本 < 0.69.0**，在 ios/Podfile 里调用`use_flipper`引入 Flipper。
 
 ``` ruby
 use_flipper!({ 'Flipper' => '0.174.0' })

@@ -181,7 +181,7 @@ FLUSH TABLES WITH READ LOCK
 
 #### 全量备份
 
-全量备份都将使用[mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)工具，该工具由是官方提供的并可以 CSV 格式输出以及其他分隔符的文本或 XML 格式。
+全量备份都将使用 [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) 工具，该工具由是官方提供的并可以 CSV 格式输出以及其他分隔符的文本或 XML 格式。
 
 如果我们要对某个数据库进行全量备份，使用以下语法：
 
@@ -275,7 +275,7 @@ show master status;
 mysql --host=host_name -u root -p < publish_system_test_backup_20220105_030044.sql
 ```
 
-而后，我们通过找到的二进制日志文件，通过[mysqlbinlog](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html)工具进行恢复：
+而后，我们通过找到的二进制日志文件，通过 [mysqlbinlog](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html) 工具进行恢复：
 
 ``` sh
 mysqlbinlog mysql-bin.000001 mysql-bin.000001 | mysql

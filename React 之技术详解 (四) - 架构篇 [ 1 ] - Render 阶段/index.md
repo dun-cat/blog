@@ -3,7 +3,7 @@
 
 ### render 阶段
 
-`render 阶段`开始于[performSyncWorkOnRoot](https://github.com/facebook/react/blob/970fa122d8188bafa600e9b5214833487fbf1092/packages/react-reconciler/src/ReactFiberWorkLoop.new.js#L997)或[performConcurrentWorkOnRoot](https://github.com/facebook/react/blob/970fa122d8188bafa600e9b5214833487fbf1092/packages/react-reconciler/src/ReactFiberWorkLoop.new.js#L728)方法的调用。这取决于本次更新是`同步更新`还是`异步更新`。
+`render 阶段`开始于 [performSyncWorkOnRoot](https://github.com/facebook/react/blob/970fa122d8188bafa600e9b5214833487fbf1092/packages/react-reconciler/src/ReactFiberWorkLoop.new.js#L997) 或 [performConcurrentWorkOnRoot](https://github.com/facebook/react/blob/970fa122d8188bafa600e9b5214833487fbf1092/packages/react-reconciler/src/ReactFiberWorkLoop.new.js#L728) 方法的调用。这取决于本次更新是`同步更新`还是`异步更新`。
 
 我们现在还不需要学习这两个方法，只需要知道在这两个方法中会调用如下两个方法：
 
@@ -108,7 +108,7 @@ function performUnitOfWork(fiber) {
 
 ### beginWork
 
-可以从源码这里看到[beginWork](https://github.com/facebook/react/blob/1fb18e22ae66fdb1dc127347e169e73948778e5a/packages/react-reconciler/src/ReactFiberBeginWork.new.js)的定义，整个方法大概有 500 行代码。
+可以从源码这里看到 [beginWork](https://github.com/facebook/react/blob/1fb18e22ae66fdb1dc127347e169e73948778e5a/packages/react-reconciler/src/ReactFiberBeginWork.new.js) 的定义，整个方法大概有 500 行代码。
 
 上面我们已经知道，beginWork 的工作是`传入当前 Fiber 节点，创建子 Fiber 节点`，我们从传参来看看具体是如何做的。
 
@@ -247,7 +247,7 @@ switch (workInProgress.tag) {
 }
 ```
 
-对于我们常见的组件类型，如 (FunctionComponent/ClassComponent/HostComponent) ，最终会进入[reconcileChildren](https://github.com/facebook/react/blob/1fb18e22ae66fdb1dc127347e169e73948778e5a/packages/react-reconciler/src/ReactFiberBeginWork.new.js#L233)方法。
+对于我们常见的组件类型，如 (FunctionComponent/ClassComponent/HostComponent) ，最终会进入 [reconcileChildren](https://github.com/facebook/react/blob/1fb18e22ae66fdb1dc127347e169e73948778e5a/packages/react-reconciler/src/ReactFiberBeginWork.new.js#L233) 方法。
 
 #### reconcileChildren
 

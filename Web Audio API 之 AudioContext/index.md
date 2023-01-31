@@ -1,7 +1,7 @@
 ## Web Audio API 之 AudioContext 
 ### 简介
 
-引用[mdn](https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext)的简介：
+引用 [mdn](https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext) 的简介：
 
 AudioContext 接口表示由链接在一起的音频模块构建的音频处理图，每个模块由一个 AudioNode 表示。音频上下文控制它包含的节点的创建和音频处理或解码的执行。
 

@@ -33,7 +33,7 @@ top - 10:49:10 up 364 days, 23:04,  1 user,  load average: 0.13, 0.11, 0.09
 
 > load average 是Linux服务器在定义的时间段内的平均系统负载，换句话来说，一定时间内正在运行的线程和正在等待的线程之和。对于多核处理器，如果数值/核数 ≤ 1 ，那说明系统运行正常。如果数值/核数 > 1，那系统运行新任务就会放缓。
 
-有些 [APM (Application Performance Monitor)](https://baike.baidu.com/item/APM/18679992#viewPageContent)软件通常会提供 `load average` 指标，如果发现`数值 > 自己所设置的阈值`，就会触发上载服务器脚本或添加服务器命令以终止消耗最高CPU的进程，这样就可以实现自动化。列举一个软件：[site24x7](https://www.site24x7.com/help/overview.html)。
+有些[APM (Application Performance Monitor)](https://baike.baidu.com/item/APM/18679992#viewPageContent)软件通常会提供 `load average` 指标，如果发现`数值 > 自己所设置的阈值`，就会触发上载服务器脚本或添加服务器命令以终止消耗最高CPU的进程，这样就可以实现自动化。列举一个软件： [site24x7](https://www.site24x7.com/help/overview.html)。
 
 ---
 

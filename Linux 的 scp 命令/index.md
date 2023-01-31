@@ -1,9 +1,9 @@
 ## Linux 的 scp 命令 
 ### 简介
 
-`SCP` --secure copy  (远程文件拷贝程序) 是用于主机之间的文件拷贝，使用 `SSH` (Secure Shell) 来作为数据传输协议 ([IETF](https://tools.ietf.org/html/rfc4253)制定) ，这意味你需要通过`key`或者`密码`来做与远程主机认证。
+`SCP` --secure copy  (远程文件拷贝程序) 是用于主机之间的文件拷贝，使用 `SSH` (Secure Shell) 来作为数据传输协议 ( [IETF](https://tools.ietf.org/html/rfc4253) 制定) ，这意味你需要通过`key`或者`密码`来做与远程主机认证。
 
-> 在没有特殊端口指定的情况下。SSH 使用 22 号端口，所以在使用的时候需要开放该端口，该端口已经在[IANA](https://www.iana.org/)里注册，并且官方分配给了 SSH。
+> 在没有特殊端口指定的情况下。SSH 使用 22 号端口，所以在使用的时候需要开放该端口，该端口已经在 [IANA](https://www.iana.org/) 里注册，并且官方分配给了 SSH。
 
 SCP的命令大纲：
 
@@ -13,7 +13,7 @@ scp [-346BCpqrTv] [-c cipher] [-F ssh_config] [-i identity_file]
     source ... target
 ```
 
-`source` 和 `target` 可以指定一个本地绝对或相对路径，也可以使用[URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)格式。
+`source` 和 `target` 可以指定一个本地绝对或相对路径，也可以使用 [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) 格式。
 URI的形式是`scp://[user@]host[:port][/path]`。
 
 > 通用的 URI 格式是：`[协议名]://[用户名]:[密码]@[主机名]:[端口]/[路径]?[查询参数]#[片段ID]`。

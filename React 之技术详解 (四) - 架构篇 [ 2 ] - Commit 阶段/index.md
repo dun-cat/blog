@@ -156,7 +156,7 @@ return null;
 * 性能追踪相关。
 源码里有很多和`interaction`相关的变量。他们都和追踪 React 渲染时间、性能相关，在 Profiler API 和 DevTools 中使用。
 
-你可以在这里看到[interaction](https://gist.github.com/bvaughn/8de925562903afd2e7a12554adcdda16)的定义。
+你可以在这里看到 [interaction](https://gist.github.com/bvaughn/8de925562903afd2e7a12554adcdda16) 的定义。
 
 在`commit 阶段`会触发一些生命周期钩子 (如 componentDidXXX) 和 hook (如 useLayoutEffect、useEffect) 。
 在这些回调方法中可能触发新的更新，新的更新会开启新的 render-commit 流程。考虑如下Demo：

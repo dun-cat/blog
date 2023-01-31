@@ -1,7 +1,7 @@
 ## 微前端 (三) - qiankun 和 single-spa 源码分析 
 ### 概览
 
-`qiankun`是一个基于 [single-spa](https://github.com/single-spa/single-spa) 的微前端实现库。接下来我们将通过源码透析其实现方式及技巧。相信通过前面两篇文章，你也能更容易明白源码实现。
+`qiankun`是一个基于[single-spa](https://github.com/single-spa/single-spa)的微前端实现库。接下来我们将通过源码透析其实现方式及技巧。相信通过前面两篇文章，你也能更容易明白源码实现。
 
 qiannkun 针对于`主应用`暴露了方法`registerMicroApps`和`start`以及`loadMicroApp`方法。这里的`主应用`就是上两篇里的`容器应用`，虽然个人更愿意使用`容器`术语，但是为了和文档统一，下面都将使用`主应用`指代`容器应用`。
 
@@ -519,7 +519,7 @@ export function reasonableTime(appOrParcel, lifecycle) {
     let finished = false;
     let errored = false;
 
-    appOrParcel[lifecycle](getProps(appOrParcel))
+    appOrParcel [lifecycle](getProps(appOrParcel) )
       .then((val) => {
         finished = true;
         resolve(val);
@@ -548,5 +548,5 @@ export function reasonableTime(appOrParcel, lifecycle) {
 同时，我们可以下面这里为真正执行生命周期勾子的地方：
 
 ``` javascript
-appOrParcel[lifecycle](getProps(appOrParcel))
+appOrParcel [lifecycle](getProps(appOrParcel) )
 ```

@@ -1,7 +1,7 @@
 ## 微前端 (二) - 实现篇 
 该演示全部使用 React.js 构建，React 并没有垄断该架构。你可以使用许多不同的工具或框架来实现微前端。我们选择 React 是因为它很受欢迎，也因为对它很熟悉。
 
-为了方便演示，使用[lerna](https://github.com/lerna/lerna)来管理多个项目，真实场景下他们都应该有`单独的版本控制库`来`单独开发`和`单独部署`。
+为了方便演示，使用 [lerna](https://github.com/lerna/lerna) 来管理多个项目，真实场景下他们都应该有`单独的版本控制库`来`单独开发`和`单独部署`。
 
 你可以在 Github 上获取所有演示代码：[https://github.com/dun-cat/micro-frontends](https://github.com/dun-cat/micro-frontends)。
 

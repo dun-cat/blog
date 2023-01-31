@@ -196,7 +196,7 @@ this.lanes = NoLanes;
 this.childLanes = NoLanes;
 ```
 
-> 在 2020 年 5 月，调度优先级策略经历了比较大的重构。以`expirationTime`属性为代表的优先级模型被`lane`取代，详见这个[PR](https://github.com/facebook/react/pull/18796)。
+> 在 2020 年 5 月，调度优先级策略经历了比较大的重构。以`expirationTime`属性为代表的优先级模型被`lane`取代，详见这个 [PR](https://github.com/facebook/react/pull/18796)
 
 > 如果你的源码中`fiber.expirationTime`仍存在，请参照章节获取最新代码。
 

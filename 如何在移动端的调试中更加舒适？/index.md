@@ -11,7 +11,7 @@
 
 #### 本地网络调试
 
-需要移动端设置代理 ip 和端口，并且保持移动端和代理主机在`同一网域下`，常用的 GUI 代理软件是[Charles](https://www.charlesproxy.com/)。
+需要移动端设置代理 ip 和端口，并且保持移动端和代理主机在`同一网域下`，常用的 GUI 代理软件是 [Charles](https://www.charlesproxy.com/)
 
 除了能够看到请求的发送接收信息，还可以对请求`设置断点`修改请求内容来达到调试的目的，也可映射本地脚本和文件内容，作为很好的 mock 工具。
 
@@ -37,7 +37,7 @@
 
 这种方式直接在移动端安装代理软件实行代理，相对于本地网络和远程网络代理，这种代理更为快捷。
 
-在IOS上可以使用[proxyman](https://proxyman.io/ios)来实现，不过免费版本受限只能使用两条过滤规则。
+在IOS上可以使用 [proxyman](https://proxyman.io/ios) 来实现，不过免费版本受限只能使用两条过滤规则。
 
 ![proxyman](proxyman.png)
 
@@ -125,7 +125,7 @@ AndroidManifest.xml 配置网络权限：
 
 #### vConsole
 
-[vConsole](https://github.com/Tencent/vConsole)是腾讯开源的一套在移动网页里开发调试的工具，提供了比较不错的调试体验。
+ [vConsole](https://github.com/Tencent/vConsole) 是腾讯开源的一套在移动网页里开发调试的工具，提供了比较不错的调试体验。
 
 他具备几点功能：
 
