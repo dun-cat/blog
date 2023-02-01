@@ -1,4 +1,4 @@
-## 异常监控之Sentry (四) - Source Map 
+## 异常监控之 Sentry (四) - Source Map 
 ### Source Maps 上传
 
 Source Map 用于分析错误位置，对于被 minified 后的代码 (例如UglifyJS) 或从高级语言 (例如TypeScript和ES6) 中转译的代码特别有用。`通常在编译构建时，我们就可以上传了`。

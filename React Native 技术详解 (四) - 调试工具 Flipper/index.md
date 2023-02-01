@@ -1,4 +1,4 @@
-## React Native 技术详解 (三) - 调试工具 Flipper 
+## React Native 技术详解 (四) - 调试工具 Flipper 
 ### 介绍
 
 [Flipper](https://fbflipper.com/) 是 Facebook 提供的一个移动端`调试工具`，它支持 iOS、Android、React Native，并提供桌面端 GUI 调试界面。
