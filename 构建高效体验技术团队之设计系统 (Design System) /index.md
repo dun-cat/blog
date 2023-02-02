@@ -1,7 +1,7 @@
 ## 构建高效体验技术团队之设计系统 (Design System)  
 ### 什么是设计系统？
 
-设计系统并不是一个新观念，可以回溯于早期 2013 年 Brad Forst 提出的[Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)。Google[Material Design](https://m3.material.io/)在 2014 年大放异彩。2016 年 [Airbnb](https://karrisaarinen.com/posts/building-airbnb-design-system/) 开始进行创建设计系统。
+设计系统并不是一个新观念，可以回溯于早期 2013 年 Brad Forst 提出的 [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)。Google [Material Design](https://m3.material.io/) 在 2014 年大放异彩。2016 年 [Airbnb](https://karrisaarinen.com/posts/building-airbnb-design-system/) 开始进行创建设计系统。
 
 陆陆续续，许多知名公司包含 [Salesforce](https://www.lightningdesignsystem.com/) , [Atlasssian](https://atlassian.design/) , [Shopify](https://polaris.shopify.com/) 对外公布产品的设计系统，让大众认识设计系统的概要及推广`设计规模化` (modularity) 。
 
@@ -68,7 +68,7 @@
 * 用户体验设计师 UX Designer
 * 视觉设计师 Visual Designer
 * 动效设计师 Motion Designer
-* 内容写手[Content Copy](https://zhuanlan.zhihu.com/p/33919842)
+* 内容写手 [Content Copy](https://zhuanlan.zhihu.com/p/33919842)
 * 前端工程师 Front End Engineer
 * 产品经理 Product Manger
 
@@ -150,7 +150,7 @@ module.exports = {
 
 #### 如何设计令牌？
 
-我们为了考虑设计令牌的完整度，会通过一些方法来快速决策如何较为完备得生成设计令牌。在[style-dictionary](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item)中，通过结构化方法来定义设计令牌。而我们在令牌命名时，也可以采用此思想。
+我们为了考虑设计令牌的完整度，会通过一些方法来快速决策如何较为完备得生成设计令牌。在 [style-dictionary](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item) 中，通过结构化方法来定义设计令牌。而我们在令牌命名时，也可以采用此思想。
 
 首先，设计令牌名称会被组织成一个`层级树结构`来进行命名，和 [BEM](https://getbem.com/naming/) 命名这类语义化相似，这是我们对`令牌命名的约束`。
 

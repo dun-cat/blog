@@ -1,7 +1,7 @@
 ## 微前端 (一) - 理念篇 
 ### 什么是微前端？
 
-微前端 (micro-frontends) 术语在 2016 年在[TECHNOLOGY RADAR](https://www.thoughtworks.com/cn/radar/techniques/micro-frontends)中被提及。
+微前端 (micro-frontends) 术语在 2016 年在 [TECHNOLOGY RADAR](https://www.thoughtworks.com/cn/radar/techniques/micro-frontends) 中被提及。
 
 > 该网站叫做 thoughtworks，有个叫`雷达` (radar) 的技术期刊，用于持续追踪有趣的技术是如何发展的，每种技术被称之为`条目`。
 
