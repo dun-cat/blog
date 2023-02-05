@@ -25,11 +25,11 @@
 
 ### 模块联合
 
-通常在使用 webpack 构建产生的`模块`都存储在`本地`，直接被当前应用所使用。在 webpack 5 中提出了`远程模块`的概念，允许`运行时`把当前构建的应用作为`容器应用`，异步加载`远程模块`。下面将用简称`MF`指代模块联合。
+通常在使用 webpack 构建产生的`模块`都存储在`本地`，直接被当前应用所使用。在 webpack 5 中提出了`远程模块`的概念，允许`运行时`把当前构建的应用作为`容器应用`，异步加载`远程模块`。下面将用简称 `MF` 指代模块联合。
 
-> webpack 的提供了`动态加载模块`的方式，你可以使用 [import](https://webpack.docschina.org/api/module-methods/#import) 或者较为陈旧的方法[require.ensure](https://webpack.docschina.org/api/module-methods/#requireensure)或`require([...])`。
+> webpack 的提供了`动态加载模块`的方式，你可以使用 [import](https://webpack.docschina.org/api/module-methods/#import) 或者较为陈旧的方法[require.ensure](https://webpack.docschina.org/api/module-methods/#requireensure)或 `require([...])` 。
 
-记得上面小节在我们说微前端中，容器应用做的事吗？其实通过`webpack`的`动态加载`，就已经实现了容器应用该做的事情。所以我们完全可以认为微应用本身可以具备容器应用的功能。
+记得上面小节在我们说微前端中，容器应用做的事吗？其实通过 `webpack` 的`动态加载`，就已经实现了容器应用该做的事情。所以我们完全可以认为微应用本身可以具备容器应用的功能。
 
 当我们把`微应用`作为`容器应用时`，那么它的架构模型就发生转变，于是会产生下面的模型：
 
@@ -67,17 +67,17 @@
 
 在上面的架构图中：
 
-* `APP A`、`APP B`、`APP C`都远程 (remote) 加载并使用`UI 组件库`中暴露的`Button`和`Text`组件，`Table`组件由于未稳定下来，我们不准备暴露给外部使用；
-* `APP B`和`APP C`中的`List`模块都共享给`APP A`所使用 (例如：业务 B 的订单列表和业务 C 的订单列表都可以直接被集成到业务 A 之中) ；
-* `身份验证`应用作为公共模块，被`APP A`、`APP B`和`APP C`，我们不需要单独给新应用添加额外的身份验证模块，它将作为基础服务。
+* `APP A`、`APP B`、`APP C` 都远程 (remote) 加载并使用 `UI 组件库` 中暴露的 `Button` 和 `Text` 组件，`Table` 组件由于未稳定下来，我们不准备暴露给外部使用；
+* `APP B` 和 `APP C` 中的 `List` 模块都共享给 `APP A` 所使用 (例如：业务 B 的订单列表和业务 C 的订单列表都可以直接被集成到业务 A 之中) ；
+* `身份验证`应用作为公共模块，被 `APP A`、`APP B` 和 `APP C`，我们不需要单独给新应用添加额外的身份验证模块，它将作为基础服务。
 
 <!-- 作为构建工具，webpack 5 提供的插件能很好的让我们划为模块， -->
 
 ### ModuleFederationPlugin
 
-Webpack 5 通过`ModuleFederationPlugin`来实现`模块接口暴露`和`远程模块声明`的工作。
+Webpack 5 通过 `ModuleFederationPlugin` 来实现`模块接口暴露`和`远程模块声明`的工作。
 
-`ModuleFederationPlugin`插件组合了`ContainerPlugin`和`ContainerReferencePlugin`。
+ `ModuleFederationPlugin` 插件组合了 `ContainerPlugin` 和 `ContainerReferencePlugin` 。
 
 ContainerPlugin 插件使用`指定`的公开模块来创建一个`额外`的`容器入口`，这意味除了配置的输出文件 (output) ，还会产生额外的`容器入口文件`。
 
@@ -91,7 +91,7 @@ module.exports = {
 
 ContainerReferencePlugin 插件允许我们在使用`远程模块`时，以 import 标准语法方式使用，所以需要我们提前声明远程模块。
 
-`ModuleFederationPlugin`允许构建一个作为`提供者`或`消费者`概念的`运行时独立模块`，每个应用都可以成为提供者或消费者。
+ `ModuleFederationPlugin` 允许构建一个作为`提供者`或`消费者`概念的`运行时独立模块`，每个应用都可以成为提供者或消费者。
 
 ``` typescript
 const { ModuleFederationPlugin } = require('webpack').container;
@@ -102,7 +102,7 @@ module.exports = {
 };
 ```
 
-你可以在[这里](https://github.com/webpack/webpack/blob/beb42c64f696584ef570d8f57df448ddd0ac7238/types.d.ts#L6427)看到所有`options`选项。
+你可以在[这里](https://github.com/webpack/webpack/blob/beb42c64f696584ef570d8f57df448ddd0ac7238/types.d.ts#L6427)看到所有 `options` 选项。
 
 #### 容器入口文件
 
@@ -115,15 +115,15 @@ new ModuleFederationPlugin({
 })
 ```
 
-你需要提供一个`唯一的`容器的`名称` (name) 和`文件名` (filename) ，若没有提供`filename`，那么构建生成的文件名与`容器名称`同名。
+你需要提供一个`唯一的`容器的`名称` (name) 和`文件名` (filename) ，若没有提供 `filename`，那么构建生成的文件名与`容器名称`同名。
 
-构建后，会在 dist 目录里产生`ui.js`的额外容器入口文件。
+构建后，会在 dist 目录里产生 `ui.js` 的额外容器入口文件。
 
 #### 暴露 (expose) 多个模块
 
-你可以暴露任何你想要分享出去的模块，它可以是`网络库`、`公用业务模块`、`UI 组件`、`路由`、`hooks`以及任何你觉得可以分享出去的任何东西，这听起来很振奋人心，而事实也确实如此。
+你可以暴露任何你想要分享出去的模块，它可以是`网络库`、`公用业务模块`、`UI 组件`、`路由`、`hooks` 以及任何你觉得可以分享出去的任何东西，这听起来很振奋人心，而事实也确实如此。
 
-我们通过`exposes 选项`来暴露模块：
+我们通过 `exposes 选项` 来暴露模块：
 
 ``` js
 new ModuleFederationPlugin({
@@ -135,7 +135,7 @@ new ModuleFederationPlugin({
 })
 ```
 
-假如我们的 UI 库的入口在项目`src/components/index.js`文件里，那么该文件应该是这样的：
+假如我们的 UI 库的入口在项目 `src/components/index.js` 文件里，那么该文件应该是这样的：
 
 ``` jsx
 export { default as Button } from './button/index.jsx'
@@ -148,7 +148,7 @@ export { default as Text } from './text/index.jsx'
 
 不仅如此，MF 对共享模块做了`版本化`管理，你可以在[这个 PR 的交流](https://github.com/webpack/webpack/pull/10960)获取相关信息。
 
-同样我们使用`ModuleFederationPlugin`插件中的`shared 选项`来指定公共模块异步模块加载使用，它的功能和 webpack 的 [externals](https://webpack.docschina.org/configuration/externals/#root) 类似，允许在运行时加载外部依赖库。
+同样我们使用 `ModuleFederationPlugin` 插件中的 `shared 选项` 来指定公共模块异步模块加载使用，它的功能和 webpack 的 [externals](https://webpack.docschina.org/configuration/externals/#root) 类似，允许在运行时加载外部依赖库。
 
 ``` js
 new ModuleFederationPlugin({
@@ -164,11 +164,11 @@ new ModuleFederationPlugin({
 })
 ```
 
-你可以在[这里](https://github.com/webpack/webpack/blob/beb42c64f696584ef570d8f57df448ddd0ac7238/declarations/plugins/container/ModuleFederationPlugin.d.ts#L265)看到所有`shared 选项`。
+你可以在[这里](https://github.com/webpack/webpack/blob/beb42c64f696584ef570d8f57df448ddd0ac7238/declarations/plugins/container/ModuleFederationPlugin.d.ts#L265)看到所有 `shared 选项` 。
 
 #### 注意点
 
-1.如果你想要在本地启动项目时使用`共享模块` (shared module) ，需要指定`eager: true`的选项，否则将会出现下面的错误。
+1.如果你想要在本地启动项目时使用`共享模块` (shared module) ，需要指定 `eager: true` 的选项，否则将会出现下面的错误。
 
 ``` text
 Uncaught Error: Shared module is not available for eager consumption
@@ -176,11 +176,11 @@ Uncaught Error: Shared module is not available for eager consumption
 
 该选项允许`共享模块`在初始化的时候直接使用，也就是说不会把它作为一个异步模块来加载。
 
-> 需要注意的是开启`eager 选项`，它会将模块直接打入容器文件中，作为同步模块加载并使用。
+> 需要注意的是开启 `eager 选项`，它会将模块直接打入容器文件中，作为同步模块加载并使用。
 
 你也可以通过下面的修改，修复上面的问题，即`手动异步加载`共享模块。
 
-首先，我们把原来的`src/index.js`文件做一些修改。
+首先，我们把原来的 `src/index.js` 文件做一些修改。
 
 以前的你入口文件像下面这样：
 
@@ -197,7 +197,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 import('./bootstrap');
 ```
 
-然后，我在同级目录下创建`bootstrap.js`的启动文件，把原来的`index.js`内容复制进来：
+然后，我在同级目录下创建 `bootstrap.js` 的启动文件，把原来的 `index.js` 内容复制进来：
 
 ``` jsx
 import React from 'react';
@@ -210,11 +210,11 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 ---
 
-2.我们通过`requiredVersion 选项`来使用指定共享模块的版本。
+2.我们通过 `requiredVersion 选项` 来使用指定共享模块的版本。
 
-它有两个值：requiredVersion 为`string`类型的值时，表示遵循 [semver](https://semver.org/lang/zh-CN/) 规范的语义化版本号。
+它有两个值：requiredVersion 为 `string` 类型的值时，表示遵循 [semver](https://semver.org/lang/zh-CN/) 规范的语义化版本号。
 
-你可以直接用`package.json`里的`dependencies`字段中包名对应版本，这样做是为了共享模块的版本和`package.json`中的版本保持一致。如果不一致则会打印警告。
+你可以直接用 `package.json` 里的 `dependencies` 字段中包名对应版本，这样做是为了共享模块的版本和 `package.json` 中的版本保持一致。如果不一致则会打印警告。
 
 ``` js
 const deps = require("./package.json").dependencies;
@@ -238,11 +238,11 @@ new ModuleFederationPlugin({
 })
 ```
 
-requiredVersion 为`boolean`类型的值时，表示是否启动版本号`自动推断`。当其为`true` (默认值) 时，请求的模块自动根据`package.json`中的`包名`对应的版本做推断。
+requiredVersion 为 `boolean` 类型的值时，表示是否启动版本号`自动推断`。当其为 `true` (默认值) 时，请求的模块自动根据 `package.json` 中的`包名`对应的版本做推断。
 
 ### 使用远程模块
 
-首先，同样我们使用`ModuleFederationPlugin`插件，提前`声明`哪些是远程模块，这里通过`remotes 选项`进行设置：
+首先，同样我们使用 `ModuleFederationPlugin` 插件，提前`声明`哪些是远程模块，这里通过 `remotes 选项` 进行设置：
 
 ``` js
 new ModuleFederationPlugin({

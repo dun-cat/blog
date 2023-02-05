@@ -55,16 +55,16 @@ pod update
 
 pod install 运行会发生的事：
 
-* 每次运行 `pod install` 命令时，都会把新的 pod 版本写入 `Podfile.lock`。
+* 每次运行 `pod install` 命令时，都会把新的 pod 版本写入 `Podfile.lock` 。
 * `pod install` 运行，会根据 `Podfile.lock` 锁定的版本去下载 pod，不会去校验是否有新的 pod 版本，也就是说对于已安装 pod 不会做任何处理。
 
 pod update 运行会发生的事：
 
 * 根据 `Podfile.lock` 的版本设定规则，尝试把 pod 更新到最新版本。
 
-所以如果不想更新已有的 pod ，而添加新的 pod  情况下，请使用 `pod install`。
+所以如果不想更新已有的 pod ，而添加新的 pod  情况下，请使用 `pod install` 。
 
-值得注意的是`pod install`会锁定`Podfile.lock`里的版本，所以仓库应该包含`Podfile.lock`文件，提供项目一个稳定的依赖版本配置，让团队其它成员能够确信无误的运行项目。
+值得注意的是 `pod install` 会锁定 `Podfile.lock` 里的版本，所以仓库应该包含 `Podfile.lock` 文件，提供项目一个稳定的依赖版本配置，让团队其它成员能够确信无误的运行项目。
 
 ### 指定安装源 source
 

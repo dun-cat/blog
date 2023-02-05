@@ -1,9 +1,9 @@
 ## TypeScript 配置详解 
 ### 简介
 
-当目录中出现了`tsconfig.json`文件，则说明该目录是 TypeScript 项目的`根目录`。tsconfig.json 文件指定了编译项目所需的根目录下的文件以及编译选项。
+当目录中出现了 `tsconfig.json` 文件，则说明该目录是 TypeScript 项目的`根目录`。tsconfig.json 文件指定了编译项目所需的根目录下的文件以及编译选项。
 
-JavaScript 项目可以使用`jsconfig.json`文件，它的作用与`tsconfig.json`基本相同，只是默认启用了一些 JavaScript 相关的编译选项。
+JavaScript 项目可以使用 `jsconfig.json` 文件，它的作用与 `tsconfig.json` 基本相同，只是默认启用了一些 JavaScript 相关的编译选项。
 
 ### 使用
 
@@ -16,7 +16,7 @@ JavaScript 项目可以使用`jsconfig.json`文件，它的作用与`tsconfig.js
 
 tsconfig.json 文件示例：
 
-* 使用`files`属性
+* 使用 `files` 属性
 
 ``` json
 {
@@ -45,7 +45,7 @@ tsconfig.json 文件示例：
 }
 ```
 
-* 使用`include`和`exclude`属性
+* 使用 `include` 和 `exclude` 属性
 
 ``` json
 {
@@ -66,7 +66,7 @@ tsconfig.json 文件示例：
 
 根据你要在其中运行代码的不同的 JavaScript 运行时环境，你可以在 [github.com/tsconfig/bases](https://github.com/tsconfig/bases/) 上寻找一个合适的基本配置。你可以通过扩展这些已经处理过不同的 JavaScript 运行时环境的 tsconfig.json 文件来简化你项目中的 tsconfig.json。
 
-举个例子，如果你的项目是基于`Node.js 12.x`写的，那么你可以使用 npm 模块：@tsconfig/node12：
+举个例子，如果你的项目是基于 `Node.js 12.x` 写的，那么你可以使用 npm 模块：@tsconfig/node12：
 
 ``` json
 {
@@ -91,7 +91,7 @@ tsconfig.json 文件示例：
 
 ### 细节
 
-当没有指定`compilerOptions`时，会使用编译器的`默认配置`。请参考我们支持的[编译器选项](https://www.typescriptlang.org/tsconfig)列表。
+当没有指定 `compilerOptions` 时，会使用编译器的`默认配置`。请参考我们支持的[编译器选项](https://www.typescriptlang.org/tsconfig)列表。
 
 ### TSConfig 参考
 
@@ -105,7 +105,7 @@ tsconfig.json 的协议可以在这里找到[the JSON Schema Store](http://json.
 
 #### include
 
-在编程中指定一组文件名或匹配模式来`包含` (include) 它们。这些文件名会以包含`tsconfig.json`的目录作为相对路径被解析。
+在编程中指定一组文件名或匹配模式来`包含` (include) 它们。这些文件名会以包含 `tsconfig.json` 的目录作为相对路径被解析。
 
 ``` json
 {
@@ -136,13 +136,13 @@ tsconfig.json 的协议可以在这里找到[the JSON Schema Store](http://json.
 └── yarn.lock
 ```
 
-`include`和`exclude`支持通配符形成`glob`匹配模式：
+ `include` 和 `exclude` 支持通配符形成 `glob` 匹配模式：
 
-* `\*`匹配 0 个或多个字符 (不包括目录分割符)；
-* `?`匹配任意一个字符 (不包括目录分割符)；
+*  `\*`匹配 0 个或多个字符 (不包括目录分割符)；
+* `?` 匹配任意一个字符 (不包括目录分割符)；
 * `**/`匹配任意包含嵌套层级的目录。
 
-如果`glob`匹配模式不包含文件后缀，那么只有支持的文件会包含进来 (例：`.ts`、`.tsx`以及默认的`.d.ts`，若`allowJs`为 true，那么也包含`.js`和`.jsx`)。
+如果 `glob` 匹配模式不包含文件后缀，那么只有支持的文件会包含进来 (例：`.ts`、`.tsx`以及默认的`.d.ts`，若 `allowJs` 为 true，那么也包含`.js`和`.jsx`)。
 
 #### compilerOptions
 
@@ -150,9 +150,9 @@ tsconfig.json 的协议可以在这里找到[the JSON Schema Store](http://json.
 
 ###### types
 
-默认情况下，所有`可见`的`@types`包都将包含在你的编译过程中。 在`node_modules/@types`中的任何包都被认为是`可见`的。 例如，这意味着包含`./node_modules/@types/``../node_modules/@types/`，`../../node_modules/@types/`中所有的包。
+默认情况下，所有`可见`的`@types`包都将包含在你的编译过程中。 在 `node_modules/@types` 中的任何包都被认为是`可见`的。 例如，这意味着包含`./node_modules/@types/``../node_modules/@types/`，`../../node_modules/@types/`中所有的包。
 
-当`types`被指定，则`只有`列出的包才会被包含在`全局范围`内。例如：
+当 `types` 被指定，则`只有`列出的包才会被包含在`全局范围`内。例如：
 
 ``` json
 {
@@ -162,24 +162,24 @@ tsconfig.json 的协议可以在这里找到[the JSON Schema Store](http://json.
 }
 ```
 
-这个 tsconfig.json 文件将`只会`包含`./node_modules/@types/node`，`./node_modules/@types/jest`和`./node_modules/@types/express`。其他在`node_modules/@types/*`下的包将`不会`被包含。
+这个 tsconfig.json 文件将`只会`包含`./node_modules/@types/node`，`./node_modules/@types/jest`和`./node_modules/@types/express`。其他在 `node_modules/@types/*` 下的包将`不会`被包含。
 
 ##### 互用约束
 
 ###### esModuleInterop
 
-默认情况下（未设置 `esModuleInterop` 或值为 false），TypeScript 像`ES6 模块`一样对待`CommonJS/AMD/UMD`。这样的行为有两个被证实的缺陷：
+默认情况下（未设置 `esModuleInterop` 或值为 false），TypeScript 像 `ES6 模块` 一样对待 `CommonJS/AMD/UMD` 。这样的行为有两个被证实的缺陷：
 
-* 形如`import * as moment from "moment"`这样的命名空间导入等价于`const moment = require("moment")`
-* 形如`import moment from "moment"`这样的默认导入等价于`const moment = require("moment").default`
+* 形如 `import * as moment from "moment"` 这样的命名空间导入等价于 `const moment = require("moment")` 
+* 形如 `import moment from "moment"` 这样的默认导入等价于 `const moment = require("moment").default` 
 
 这种错误的行为导致了这两个问题：
 
 * ES6 模块规范规定，`命名空间导入`（import * as x）`只能`是一个`对象`。TypeScript 把它处理成`= require("x")`的行为`允许`把导入`当作一个可调用的函数`，这样不符合规范。
 
-* 虽然 TypeScript 准确实现了 ES6 模块规范，但是大多数使用`CommonJS/AMD/UMD`模块的库`并没有`像 TypeScript 那样严格遵守。
+* 虽然 TypeScript 准确实现了 ES6 模块规范，但是大多数使用 `CommonJS/AMD/UMD` 模块的库`并没有`像 TypeScript 那样严格遵守。
 
-开启`esModuleInterop`选项将会修复 TypeScript 转译中的这两个问题。第一个问题通过改变编译器的行为来修复，第二个问题则由两个新的工具函数来解决，它们提供了确保生成的 JavaScript 兼容性的适配层：
+开启 `esModuleInterop` 选项将会修复 TypeScript 转译中的这两个问题。第一个问题通过改变编译器的行为来修复，第二个问题则由两个新的工具函数来解决，它们提供了确保生成的 JavaScript 兼容性的适配层：
 
 ``` ts
 import * as fs from "fs";

@@ -8,7 +8,7 @@ JSX 作为描述组件内容的数据结构，为 JS 赋予了更多视觉表现
 
 相信作为 React 的使用者，你已经接触过 JSX。如果你还不了解他，可以看下官网对[其的描述](https://react.docschina.org/docs/introducing-jsx.html)。
 
-JSX 在编译时会被 Babel 编译为`React.createElement 方法`。
+JSX 在编译时会被 Babel 编译为 `React.createElement 方法` 。
 
 这也是为什么在每个使用 JSX 的 JS 文件中，你必须显式的声明：
 
@@ -20,7 +20,7 @@ import React from 'react';
 
 JSX 并不是只能被编译为 React.createElement 方法，你可以通过`@babel/plugin-transform-react-jsx`插件显式告诉 Babel 编译时需要将 JSX 编译成什么函数的调用 (默认为React.createElement) 。
 
-比如在 [preact](https://github.com/preactjs/preact) 这个类 React 库中，JSX 会被编译为一个名为`h`的函数调用。
+比如在 [preact](https://github.com/preactjs/preact) 这个类 React 库中，JSX 会被编译为一个名为 `h` 的函数调用。
 
 ``` jsx
 // 编译前
@@ -84,7 +84,7 @@ const ReactElement = function(type, key, ref, self, source, owner, props) {
 
 ```
 
-我们可以看到，`React.createElement()`最终会调用`ReactElement()`返回一个包含组件数据的对象，该对象有个参数 $$typeof: REACT_ELEMENT_TYPE 标记了该对象是个`React Element`。
+我们可以看到，`React.createElement()` 最终会调用 `ReactElement()` 返回一个包含组件数据的对象，该对象有个参数 $$typeof: REACT_ELEMENT_TYPE 标记了该对象是个 `React Element` 。
 
 所以调用 React.createElement 返回的对象就是 React Element 么？
 
@@ -102,11 +102,11 @@ export function isValidElement(object) {
 
 可以看到，$$typeof === REACT_ELEMENT_TYPE 的 非 null object 就是一个合法的 React Element。换言之，在 React 中，所有 JSX 在运行时的返回结果 (即 React.createElement() 的返回值) 都是 React Element。
 
-那么`JSX`和`React Component`的关系呢?
+那么 `JSX` 和 `React Component` 的关系呢?
 
 ### React Component
 
-在 React 中，我们常使用`ClassComponent`与`FunctionComponent`构建组件。
+在 React 中，我们常使用 `ClassComponent` 与 `FunctionComponent` 构建组件。
 
 ``` jsx
 class AppClass extends React.Component {
@@ -124,7 +124,7 @@ console.log('这是 FunctionComponent：', AppFunc);
 console.log('这是 Element：', <AppFunc/>);
 ```
 
-我们可以从控制台打印的对象看出，`ClassComponent`对应的 Element 的 type 为`AppClass`自身。
+我们可以从控制台打印的对象看出，`ClassComponent` 对应的 Element 的 type 为 `AppClass` 自身。
 
 ``` jsx
 { 
@@ -137,7 +137,7 @@ console.log('这是 Element：', <AppFunc/>);
 }
 ```
 
-FunctionComponent 对应的 Element 的 type 为`AppFunc`自身，如下所示：
+FunctionComponent 对应的 Element 的 type 为 `AppFunc` 自身，如下所示：
 
 ``` jsx
 { 
@@ -159,7 +159,7 @@ AppFunc instanceof Function === true;
 
 所以无法通过引用类型区分 ClassComponent 和 FunctionComponent。
 
-React 通过 ClassComponent 实例原型上的`isReactComponent`变量判断是否是 ClassComponent。
+React 通过 ClassComponent 实例原型上的 `isReactComponent` 变量判断是否是 ClassComponent。
 
 ``` javascript
 ClassComponent.prototype.isReactComponent = {};

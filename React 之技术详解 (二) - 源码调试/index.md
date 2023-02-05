@@ -3,7 +3,7 @@
 
 React 16 之后的架构分为三层：
 
-* `调度器 (Scheduler)`：调度任务的优先级，高优任务优先进入`Reconciler`；
+* `调度器 (Scheduler)`：调度任务的优先级，高优任务优先进入 `Reconciler` ；
 * `协调器 (Reconciler)`：负责找出变化的组件；
 * `渲染器 (Renderer)`：负责将变化的组件渲染到页面上。
 
@@ -92,7 +92,7 @@ React将一些辅助功能形成单独的包。包括如下文件夹：
 
 ### 调试源码
 
-即使版本号相同 (当前最新版为 v17.0.2) ，但是`facebook/react`项目`main 分支`的代码和我们使用`create-react-app`创建的项目`node_modules`下的 react 项目代码还是有些区别。
+即使版本号相同 (当前最新版为 v17.0.2) ，但是 `facebook/react` 项目 `main 分支` 的代码和我们使用 `create-react-app` 创建的项目 `node_modules` 下的 react 项目代码还是有些区别。
 
 你可以通过官方文档[如何参与](https://zh-hans.reactjs.org/docs/how-to-contribute.html)了解详情。
 
@@ -104,7 +104,7 @@ React将一些辅助功能形成单独的包。包括如下文件夹：
 
 #### 拉取源码
 
-拉取 `facebook/react`：
+拉取 `facebook/react` ：
 
 ``` bash
 # 拉取代码
@@ -129,13 +129,13 @@ cd react
 yarn
 ```
 
-打包`react`、`scheduler`、`react-dom`三个包为`dev`环境可以使用的`cjs`包。
+打包 `react`、`scheduler`、`react-dom` 三个包为 `dev` 环境可以使用的 `cjs` 包。
 
 ``` bash
 yarn build react/index,react/jsx,react-dom/index,scheduler --type=NODE
 ```
 
-现在源码目录 build/node_modules 下会生成最新代码的包。我们为 react、react-dom 创建`yarn link`。
+现在源码目录 build/node_modules 下会生成最新代码的包。我们为 react、react-dom 创建 `yarn link` 。
 
 ``` bash
 cd build/node_modules/react
@@ -148,13 +148,13 @@ yarn link
 
 #### 创建项目
 
-接下来我们通过`create-react-app`在其他地方创建新项目。这里我们随意起名，比如“react-learning-demo”。
+接下来我们通过 `create-react-app` 在其他地方创建新项目。这里我们随意起名，比如“react-learning-demo”。
 
 ``` bash
 npx create-react-app react-learning-demo
 ```
 
-在新项目中，将`react`与`react-dom` 包指向 facebook/react 下我们刚才生成的包。
+在新项目中，将 `react` 与 `react-dom` 包指向 facebook/react 下我们刚才生成的包。
 
 ``` bash
 # 将项目内的 react react-dom 指向之前申明的包
@@ -167,6 +167,6 @@ success Using linked package for "react-dom".
 
 现在试试在 react/build/node_modules/react-dom/cjs/react-dom.development.js 中随意打印些东西。
 
-在`react-learning-demo`项目下执行`yarn start`，现在浏览器控制台已经可以打印出我们输入的东西了。
+在 `react-learning-demo` 项目下执行 `yarn start`，现在浏览器控制台已经可以打印出我们输入的东西了。
 
 通过以上方法，我们的运行时代码就和 React 最新代码一致了。

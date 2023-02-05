@@ -27,11 +27,11 @@ Gradle 构建有三个不同阶段：`初始化` (Initialization) 、`配置` (C
 
 #### 配置文件
 
-除了`构建脚本文件`，Gradle 还定义了一个`设置文件`。设置文件由 Gradle 通过命名约定确定。此文件的默认名称是`settings.gradle`。
+除了`构建脚本文件`，Gradle 还定义了一个`设置文件`。设置文件由 Gradle 通过命名约定确定。此文件的默认名称是 `settings.gradle` 。
 
 #### 多项目构建
 
-设置文件在`初始化`阶段执行。[多项目构建](https://docs.gradle.org/current/userguide/multi_project_builds.html#multi_project_builds)必须在多项目层次结构的`根项目`中有一个`settings.gradle`文件。这是**必需**的，因为设置文件定义了哪些项目参与了多项目构建。
+设置文件在`初始化`阶段执行。[多项目构建](https://docs.gradle.org/current/userguide/multi_project_builds.html#multi_project_builds)必须在多项目层次结构的`根项目`中有一个 `settings.gradle` 文件。这是**必需**的，因为设置文件定义了哪些项目参与了多项目构建。
 
 一个基本的多项目构建包含`一个根项目`和`一个或多个子项目`。下面是一个多项目构建的结构，其中一个子项目名为 app ：
 
@@ -45,14 +45,14 @@ Gradle 构建有三个不同阶段：`初始化` (Initialization) 、`配置` (C
 
 对于单项目构建，设置文件是可选的。除了定义包含的项目外，你可能还需要将库添加到构建脚本 classpath (请参阅[组织 Gradle 项目](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#organizing_gradle_projects)) ，让我们首先对单项目构建进行审视。
 
-在配置文件`settings.gradle`中：
+在配置文件 `settings.gradle` 中：
 
 ``` groovy
 rootProject.name = 'basic'
 println 'This is executed during the initialization phase.'
 ```
 
-在构建脚本`build.gradle`中：
+在构建脚本 `build.gradle` 中：
 
 ``` groovy
 println 'This is executed during the configuration phase.'
@@ -99,9 +99,9 @@ BUILD SUCCESSFUL in 0s
 2 actionable tasks: 2 executed
 ```
 
-对于 build.gradle 中，`属性访问`和`方法调用`被委托给`Project`对象。查看 API 文档中的 [Project](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html) 类以获取更多信息。
+对于 build.gradle 中，`属性访问`和`方法调用`被委托给 `Project` 对象。查看 API 文档中的 [Project](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html) 类以获取更多信息。
 
-类似地，settings.gradle 中的`属性访问`和`方法调用`被委托给`Settings`对象。查看 API 文档中的 [Settings](https://docs.gradle.org/current/dsl/org.gradle.api.initialization.Settings.html) 类以获取更多信息。
+类似地，settings.gradle 中的`属性访问`和`方法调用`被委托给 `Settings` 对象。查看 API 文档中的 [Settings](https://docs.gradle.org/current/dsl/org.gradle.api.initialization.Settings.html) 类以获取更多信息。
 
 #### 响应生命周期
 
@@ -116,9 +116,9 @@ BUILD SUCCESSFUL in 0s
 
 你可以在项目评估 (Project Evaluation) 之前和之后立即收到通知。一旦应用了构建脚本中的所有定义，或者用于某些自定义日志记录或分析，这可用于执行其他配置等操作。
 
-Gradle 提供了 [ProjectEvaluationListener](https://docs.gradle.org/current/javadoc/org/gradle/api/ProjectEvaluationListener.html) 作为侦听器，并提供了`beforeEvaluate`和`afterEvaluate`方法。
+Gradle 提供了 [ProjectEvaluationListener](https://docs.gradle.org/current/javadoc/org/gradle/api/ProjectEvaluationListener.html) 作为侦听器，并提供了 `beforeEvaluate` 和 `afterEvaluate` 方法。
 
-下面的例子：将名为`test`的 task 添加到具有特定属性集的每个项目。
+下面的例子：将名为 `test` 的 task 添加到具有特定属性集的每个项目。
 
 在 build.gradle 中：
 
@@ -137,13 +137,13 @@ allprojects {
 }
 ```
 
-在项目`project-a`的构建脚本中：
+在项目 `project-a` 的构建脚本中：
 
 ``` groovy
 hasTests = true
 ```
 
-执行命令`gradle -q test`：
+执行命令 `gradle -q test` ：
 
 ``` bash
 > gradle -q test
@@ -167,7 +167,7 @@ tasks.register('a')
 println "source dir is $a.srcDir"
 ```
 
-执行命令`gradle -q a`：
+执行命令 `gradle -q a` ：
 
 ``` bash
 > gradle -q a
@@ -180,7 +180,7 @@ source dir is src/main/java
 
 你可以在执行任何 Task `之前`和`之后`立即收到通知。
 
-下面例子：记录每个任务执行的开始和结束。请注意，`afterTask`无论任务是成功完成还是因异常而失败，都会收到通知。
+下面例子：记录每个任务执行的开始和结束。请注意，`afterTask` 无论任务是成功完成还是因异常而失败，都会收到通知。
 
 ``` groovy
 tasks.register('ok')
@@ -206,7 +206,7 @@ gradle.taskGraph.afterTask { Task task, TaskState state ->
 }
 ```
 
-执行命令`gradle -q broken`：
+执行命令 `gradle -q broken` ：
 
 ``` bash
 > gradle -q broken
@@ -303,7 +303,7 @@ dependencies {
 ./gradlew task-name
 ```
 
-通常 Android Gradle 插件会帮你生成主工程的构建任务，被命名为`assemble`。
+通常 Android Gradle 插件会帮你生成主工程的构建任务，被命名为 `assemble` 。
 
 所以你可以执行以下命令去构建主工程：
 
@@ -313,15 +313,15 @@ dependencies {
 
 ### 增量构建
 
-Gradle 官方文档叫做`Up-to-date checks`，也被叫做`增量构建` (Incremental Build) ，方便理解使用增量构建作为主称。
+Gradle 官方文档叫做 `Up-to-date checks`，也被叫做`增量构建` (Incremental Build) ，方便理解使用增量构建作为主称。
 
 任何一个构建工具，都应该能够避免做一些已完成的事情。一旦你的源文件已经编译过，他们就不应该重复编译。跳过重复编译的步骤，可以节省大量时间。
 
 但他们需要在编译的输入输出发生改变时，重新编译。例如：源文件发生修改或输出文件移除。
 
-Gradle 支持开箱即用的`增量构建`功能。每当一个任务 (Task) 打印`UP-TO-DATE`文本时，表明该任务的构建被略过并使用构建缓存。
+Gradle 支持开箱即用的`增量构建`功能。每当一个任务 (Task) 打印 `UP-TO-DATE` 文本时，表明该任务的构建被略过并使用构建缓存。
 
-构建时，在 android studio 下的 build 日志可以看到下面的一些使用构建缓存的`UP-TO-DATE`标识：
+构建时，在 android studio 下的 build 日志可以看到下面的一些使用构建缓存的 `UP-TO-DATE` 标识：
 
 ``` bash
 > Task :react-native-community_geolocation:preBuild UP-TO-DATE
@@ -386,7 +386,7 @@ Task 类型需要使用[@CacheableTask](https://docs.gradle.org/current/javadoc/
 
 ##### 启用不可缓存任务的缓存
 
-举一个具体的例子：构建脚本使用通用任务通过委托给 NPM (并运行) NpmTask来创建 JavaScript 包。执行一个`npm run **`的 node 任务，默认情况下无法缓存。
+举一个具体的例子：构建脚本使用通用任务通过委托给 NPM (并运行) NpmTask来创建 JavaScript 包。执行一个 `npm run **` 的 node 任务，默认情况下无法缓存。
 
 这个任务的输入和输出很容易弄清楚。输入是包含 JavaScript 文件和 npm 配置文件的目录。输出是此任务生成的捆绑文件。
 
@@ -447,7 +447,7 @@ org.gradle.unsafe.configuration-cache=true
 
 #### 清除构建缓存
 
-Android 插件的`clean`任务可以清除项目的`build/`目录，与之类似，可以运行 cleanBuildCache 任务来清除项目的构建缓存。
+Android 插件的 `clean` 任务可以清除项目的 `build/` 目录，与之类似，可以运行 cleanBuildCache 任务来清除项目的构建缓存。
 
 ``` bash
 ./gradlew cleanBuildCache

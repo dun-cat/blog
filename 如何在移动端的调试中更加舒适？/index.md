@@ -68,9 +68,9 @@
 
 * 第一步：使用一台 Android 设备通过数据线连接到电脑，然后开启 Android 设备的 USB 调试功能；
 
-* 第二步：打开 chrome，在地址栏里输入`chrome://inspect`回车，这样就进入设备侦测面板；
+* 第二步：打开 chrome，在地址栏里输入 `chrome://inspect` 回车，这样就进入设备侦测面板；
 
-* 第三步：开始调试，启用`Discover USB Devices`复选框，就会侦测到Android设备及已打开的网页；
+* 第三步：开始调试，启用 `Discover USB Devices` 复选框，就会侦测到Android设备及已打开的网页；
 
 ![chromedevtool](chromedevtool.png)
 
@@ -78,7 +78,7 @@
 
 #### Android Webview 环境
 
-在 Android webview 环境下的需要原生端做代码支持，通过`setWebContentsDebuggingEnabled`方法开启调试功能。
+在 Android webview 环境下的需要原生端做代码支持，通过 `setWebContentsDebuggingEnabled` 方法开启调试功能。
 
 ``` java
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -101,7 +101,7 @@ AndroidManifest.xml 配置网络权限：
 
 ![webview-debugger](webview-debugger.png)
 
-该方法的局限是只能在 `Android 设备`上并且 App 的 Webview `代码上开启调试功能`才可以远程调试，对于公司内部 App 可以在测试环境开启。
+该方法的局限是只能在 `Android 设备` 上并且 App 的 Webview `代码上开启调试功能`才可以远程调试，对于公司内部 App 可以在测试环境开启。
 
 #### 微信 Android Webview 环境
 
@@ -109,7 +109,7 @@ AndroidManifest.xml 配置网络权限：
 
 > Android 微信的 Webview 使用的是 [X5 内核](https://x5.tencent.com/)。
 
-在微信的聊天框里输入`debugx5.qq.com`，打开链接跳转到X5的调试页面，勾选`打开TBS内核Inspector调试功能`就可以使用 Chrome DevTool 远程调试了，同时它也支持 [vConsole](#vconsole) 功能。
+在微信的聊天框里输入 `debugx5.qq.com`，打开链接跳转到X5的调试页面，勾选`打开TBS内核Inspector调试功能`就可以使用 Chrome DevTool 远程调试了，同时它也支持 [vConsole](#vconsole) 功能。
 
 ![wechat-debugger](wechat-debugger.png)
 

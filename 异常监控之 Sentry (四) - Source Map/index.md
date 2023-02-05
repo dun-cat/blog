@@ -36,7 +36,7 @@ module.exports = {
 };
 ```
 
-`authToken` 的申请可以参考配置篇的[创建内部集成](/blog/sentry-2-setting)。
+ `authToken` 的申请可以参考配置篇的[创建内部集成](/blog/sentry-2-setting)。
 
 打包控制台输出：
 

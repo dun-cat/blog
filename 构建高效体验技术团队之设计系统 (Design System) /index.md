@@ -143,7 +143,7 @@ module.exports = {
 
 ![design-system-type](design-system-type.svg)
 
-<!-- 以`material`设计系统为例，最终设计令牌通过 CLI 工具`格式化`生成对应终端的`属性样式`。 -->
+<!-- 以 `material` 设计系统为例，最终设计令牌通过 CLI 工具`格式化`生成对应终端的`属性样式`。 -->
 **字面量令牌 (Literal Token)**：字面量令牌的命名无特殊含义，无关情境。例如：#FFFFFF 就可用 white 作为字面量令牌，通常`上下文令牌`已字面量令牌为基础值，也可以称为基础令牌。在 Material 中，被叫做[引用令牌](https://m3.material.io/foundations/design-tokens/how-to-read-tokens#bc81aaf5-fcd8-421b-a5ab-4b1f274c1baf) (Reference Tokens) 。这类令牌包含一个设计系统的所有样式可用选项。
 
 **上下文令牌 (Contextual Token)**：上下文令牌是语境相关的，它有两种：`品牌令牌` (也可以叫语义化令牌) 和`组件令牌`。品牌令牌在 Material 中，这一抽象级别的令牌被叫做[系统令牌](https://m3.material.io/foundations/design-tokens/how-to-read-tokens#20829697-fd3d-4802-b295-96ba564f2e50)。
@@ -156,7 +156,7 @@ module.exports = {
 
 ![design-system-design-token-1](design-system-design-token-1.svg)
 
-通过 **category / type / item** 的命名方式方便理解，同时他们的`先后顺序并不严格要求`，你可以命名`button_color_error`或`error_button_color`。
+通过 **category / type / item** 的命名方式方便理解，同时他们的`先后顺序并不严格要求`，你可以命名 `button_color_error` 或 `error_button_color` 。
 
 ![design-token](design-token.png)
 

@@ -11,13 +11,13 @@
 
 ### 添加 code 命令
 
-VSCode 有一个自带的命令行工具叫`code`，默认情况没有设置到系统环境变量。也就说默认未使用，需要手动设置该命令行工具。
+VSCode 有一个自带的命令行工具叫 `code`，默认情况没有设置到系统环境变量。也就说默认未使用，需要手动设置该命令行工具。
 
-通过快捷键`shift + command + p`打开命令控制窗口，然后输入`code`找到`Shell Command: Install 'code' command in PATH`回车安装即可：
+通过快捷键 `shift + command + p` 打开命令控制窗口，然后输入 `code` 找到 `Shell Command: Install 'code' command in PATH` 回车安装即可：
 
 ![code.png](code.png)
 
-个人会经常通过该命令把项目加入到`workspace`里来工作，使用 workspace 来管理多项目是一个不错的选择。
+个人会经常通过该命令把项目加入到 `workspace` 里来工作，使用 workspace 来管理多项目是一个不错的选择。
 
 ``` bash
 code -a path/of/youProject
@@ -54,7 +54,7 @@ code -a path/of/youProject
 
 如果单行文本过长，对于代码阅读会带来麻烦。这意味着你需要通过滚动条来查看视窗之外的文本。所以可以通过调整最大换行列数来控制水平文本长度。
 
-通过`Word Wrap Column`来设置最大换行列数，这项配置只是在视觉上的换行，并不表示真正意义上在源文件插入换行控制符，所以不必担心它会改变源文件。
+通过 `Word Wrap Column` 来设置最大换行列数，这项配置只是在视觉上的换行，并不表示真正意义上在源文件插入换行控制符，所以不必担心它会改变源文件。
 
 你可以根据你的屏幕大小，自行调配列数。
 
@@ -78,9 +78,9 @@ code -a path/of/youProject
 
 #### 显示 Command Center
 
-`Command Center`展示出来可以方便动作的前进和回退，这并`不是撤销`功能，只改变光标焦点之前的位置，这对于较长代码或复杂结构项目的代码阅读会有不错的帮助。
+ `Command Center` 展示出来可以方便动作的前进和回退，这并`不是撤销`功能，只改变光标焦点之前的位置，这对于较长代码或复杂结构项目的代码阅读会有不错的帮助。
 
-你可以通过右击 vscode 窗体顶部，勾选`Command Center`即可。
+你可以通过右击 vscode 窗体顶部，勾选 `Command Center` 即可。
 
 ![command-center.png](command-center.png)
 
@@ -134,20 +134,20 @@ content-type: application/json
 
 #### ES7+ React/Redux/React-Native snippets
 
-[ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)是一个`snippets`插件，在 vscode 通过 snippets 可以通过简写快速生成代码片段。
+[ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)是一个 `snippets` 插件，在 vscode 通过 snippets 可以通过简写快速生成代码片段。
 
 | Prefix | Method |
 |--|--|
-|`imp→` | `import moduleName from 'module'` |
-|`imd→` | `import { destructuredModule } from 'module'` |
-|`ime→` | `import * as alias from 'module'` |
-|`exp→` | `export default moduleName` |
-|`exd→` | `export { destructuredModule } from 'module'` |
+| `imp→` | `import moduleName from 'module'` |
+| `imd→` | `import { destructuredModule } from 'module'` |
+| `ime→` | `import * as alias from 'module'` |
+| `exp→` | `export default moduleName` |
+| `exd→` | `export { destructuredModule } from 'module'` |
 | more... | more... |
 
 **1. React 组件**
 
-`rcc`
+ `rcc` 
 
 ``` ts
 import React, { Component } from 'react'
@@ -159,7 +159,7 @@ export default class FileName extends Component {
 }
 ```
 
-`rfc`
+ `rfc` 
 
 ``` ts
 import React from 'react'
@@ -173,7 +173,7 @@ more...
 
 **2. React Native 组件**
 
-`rnc`
+ `rnc` 
 
 ``` ts
 import React, { Component } from 'react'
@@ -190,7 +190,7 @@ export default class FileName extends Component {
 }
 ```
 
-`rnf`
+ `rnf` 
 
 ``` ts
 import React from 'react'
@@ -217,15 +217,15 @@ Gitlens 可以展示代码文件每一行的最后一次修改由谁修改，哪
 
 ![gitlens.png](gitlens.png)
 
-Gitlens 有项比较不错的收费功能是`Git Graph`，无论 UI 来说，还是功能上来说，都是不错的。
+Gitlens 有项比较不错的收费功能是 `Git Graph`，无论 UI 来说，还是功能上来说，都是不错的。
 
 ![gitlens-graph.png](gitlens-graph.png)
 
 #### Git Graph
 
-上面说到 Gitlens 的`Git Graph`是收费功能，那有没有免费的呢？答案是有的。
+上面说到 Gitlens 的 `Git Graph` 是收费功能，那有没有免费的呢？答案是有的。
 
-[Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)是一款免费的插件，在 UI 和功能上也不输于`Gitlens`。
+[Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)是一款免费的插件，在 UI 和功能上也不输于 `Gitlens` 。
 
 ![git-graph.gif](git-graph.gif)
 
@@ -257,6 +257,6 @@ Gitlens 有项比较不错的收费功能是`Git Graph`，无论 UI 来说，还
 
 个人使用的配置基本都在这了，有些插件并没有列举出来，因为它们并不是通用型插件。
 
-还有技术选项的插件，比如`Docker`、`MongoDB`、`Kubernetes`等插件，在需要使用对应技术才会用到。
+还有技术选项的插件，比如 `Docker`、`MongoDB`、`Kubernetes` 等插件，在需要使用对应技术才会用到。
 
 如果你还有更好的配置或插件，欢迎评论区留言哦。

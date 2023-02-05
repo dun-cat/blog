@@ -12,7 +12,7 @@
 5. DOM 和 CSSOM 会结合形成一颗渲染树 (RenderTree) ;
 6. RenderTree 的构造如下：
     * 起始于 DOM 的根节点，并计算可见元素和他们的[计算样式 (computed style)](https://www.w3.org/TR/1998/REC-CSS2-19980512/cascade.html#computed-value)；
-    * RenderTree 会忽略那些不可见元素，像 (meta，script，link) 以及 `display:none`；
+    * RenderTree 会忽略那些不可见元素，像 (meta，script，link) 以及 `display:none` ；
     * 渲染树会把可见节点匹配符合 CSSOM 规则并应用他们；
 7. 重排：计算可见节点的位置和尺寸；
 8. 重绘：最后，浏览器会绘制 RenderTree 到屏幕上去。
@@ -30,8 +30,8 @@
 ### 如何导致重绘和重排
 
 * 重排会发生在添加、删除以及更新 DOM 节点时；
-* 使用`display:none`隐藏 DOM 元素，会同时导致重排和重绘；
-* 使用`visibility:hidden`只会造成重绘，因为没有布局和位置的改变，所以不发生重排；
+* 使用 `display:none` 隐藏 DOM 元素，会同时导致重排和重绘；
+* 使用 `visibility:hidden` 只会造成重绘，因为没有布局和位置的改变，所以不发生重排；
 * 移动或执行一个 DOM 节点都会触发重绘和重排；
 * 调整浏览器窗口的大小会触发重排；
 * 改变 font-style 意味着改变了元素几何形状，会影响其它元素的位置和尺寸，所以同时会要求浏览器执行重排。一旦这些布局操作完成，那么任何被损坏的像素点都会被重绘；
@@ -63,7 +63,7 @@ el.style.cssText += "; left: " + left + "px; top: " + top + "px;";
 
 #### 批处理 DOM 的改变
 
-* 使用`documentFragment`来作为临时代理节点片段
+* 使用 `documentFragment` 来作为临时代理节点片段
 * 首次读取任何所需的东西，然后一次写入所有的东西
 
 查看下面的反面教材的代码：
@@ -122,7 +122,7 @@ el.style.cssText += "; left: " + left + "px; top: " + top + "px;";
 
 ![chrome_dev_debug2](chrome_dev_debug2.png)
 
-`read` -> `write` -> `read` -> `write`操作变会触发多次重排，而`read`->`write`->`write`只会触发一次。
+ `read` -> `write` -> `read` -> `write` 操作变会触发多次重排，而 `read` -> `write` -> `write` 只会触发一次。
 
 ### 减少重排时间
 

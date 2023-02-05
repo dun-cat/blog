@@ -43,7 +43,7 @@ function add(a, b) {
 
 下面这些函数是不纯 (impure) 的。
 
-1\. `console.log()`改变了函数外部的应用状态：
+1\. `console.log()` 改变了函数外部的应用状态：
 
 ``` ts
 function add(a, b) {

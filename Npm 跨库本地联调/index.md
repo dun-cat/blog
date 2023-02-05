@@ -1,9 +1,9 @@
 ## Npm 跨库本地联调 
 ### link 联调存在的问题
 
-`npm link`或者`yarn link`都能把需要对外发布为 npm 包的项目，生成一个全局的`符号链接` (Symlink) ，作为引用方的项目可以直接把`依赖包`指向该`符号链接`。
+ `npm link` 或者 `yarn link` 都能把需要对外发布为 npm 包的项目，生成一个全局的`符号链接` (Symlink) ，作为引用方的项目可以直接把`依赖包`指向该`符号链接`。
 
-以`yarn`作为包管理工具为例，我们有一个`package.json`的`name`为`@lumin/mobile-ui`的项目，以及一个`business`的业务项目，通常会有以下两个命令。
+以 `yarn` 作为包管理工具为例，我们有一个 `package.json` 的 `name` 为`@lumin/mobile-ui`的项目，以及一个 `business` 的业务项目，通常会有以下两个命令。
 
 对于`@lumin/mobile-ui`项目：
 
@@ -17,7 +17,7 @@ yarn link
 yarn unlink
 ```
 
-对于引用`business`的项目：
+对于引用 `business` 的项目：
 
 ``` bash
 yarn link @lumin/mobile-ui
@@ -49,7 +49,7 @@ yalc publish
 yalc push
 ```
 
-### `bussiness`项目
+### `bussiness` 项目
 
 ``` bash
 yalc push

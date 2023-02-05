@@ -15,10 +15,10 @@ React 中保存着两个优先队列：`任务队列` (taskQueue) 和 `计时器
 function advanceTimers(currentTime) {}
 ```
 
-1. 循环遍历`timerQueue`；
-2. 获取`timerQueue`第 1 个元素，比较`timer`的`开始时间` 和 `当前时间`：
-   1. 若 `timer.startTime` $<$ `currentTime`，则把计时器索引的 task 移交到 `taskQueue`;
-3. 直到`timerQueue`为空，完成。
+1. 循环遍历 `timerQueue` ；
+2. 获取 `timerQueue` 第 1 个元素，比较 `timer` 的`开始时间` 和 `当前时间`：
+   1. 若 `timer.startTime` $<$ `currentTime`，则把计时器索引的 task 移交到 `taskQueue` ;
+3. 直到 `timerQueue` 为空，完成。
 
 #### handleTimeout
 

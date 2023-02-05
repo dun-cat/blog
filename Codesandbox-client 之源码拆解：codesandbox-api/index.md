@@ -5,7 +5,7 @@
 
 在`编辑器` (Editor) 和`沙箱` (sandbox) 之间的`跨域`消息事件派发，通过浏览器的 postmessage 来实现。
 
-codesanbox-api 分为几个模块：`actions`、`dispatcher`、`protocol`。
+codesanbox-api 分为几个模块：`actions`、`dispatcher`、`protocol` 。
 
 #### actions
 
@@ -13,7 +13,7 @@ codesanbox-api 分为几个模块：`actions`、`dispatcher`、`protocol`。
 
 在 codesandbox-api 里的 actions 有：correction、`editor`、error、glyph、notifications。
 
-所有的 action 的接口定义都继承 `Action 接口`：
+所有的 action 的接口定义都继承 `Action 接口` ：
 
 ``` typescript:packages/codesandbox-api/src/actions/index.ts
 export interface Action {
@@ -43,7 +43,7 @@ export function openModule(id: string, lineNumber?: number, column?: number): Op
 }
 ```
 
-在项目编译出现问题后，openModule 会传递具体`错误位置`信息，通过点击`沙箱的错误提示`或沙箱下面的 `DevTools` 的 `Problems`的错误信息，既可以把光标指向编辑器的具体错误代码位置。
+在项目编译出现问题后，openModule 会传递具体`错误位置`信息，通过点击`沙箱的错误提示`或沙箱下面的 `DevTools` 的 `Problems` 的错误信息，既可以把光标指向编辑器的具体错误代码位置。
 
 ![codesandbox-api-action1](codesandbox-api-action1.png)
 

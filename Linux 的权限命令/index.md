@@ -21,15 +21,15 @@ chown lumin test.log
 
 ### chmod 命令 (change mode)
 
-权限有三种类型：`read(r`)可读、`write(w)`可写、`execute(e)`可执行。
+权限有三种类型：`read(r)` 可读、`write(w)` 可写、`execute(e)` 可执行。
 
-权限所要设置的对象也有三种类型：`owner(o)`文件所有者、`group(g)`文件所在用户组、`other(o)`其它用户、`all(a)`前面三项。
+权限所要设置的对象也有三种类型：`owner(o)` 文件所有者、`group(g)` 文件所在用户组、`other(o)` 其它用户、`all(a)` 前面三项。
 
 修改文件权限写法有两种：`数字写法`和`符号写法`。
 
-`x = 1` , `w = 2` , `r = 4` , 无任何权限 = 0。
+ `x = 1` , `w = 2` , `r = 4` , 无任何权限 = 0。
 
-可进行加法运算：`rwx = 4 + 2 + 1 = 7`。
+可进行加法运算：`rwx = 4 + 2 + 1 = 7` 。
 
 ### 修改权限的多种写法
 
@@ -69,7 +69,7 @@ chmod o=x test.log
 
 应用到子目录的文件或文件夹
 
-使用 `-R` 符号。`R = recursive = 递归`
+使用 `-R` 符号。 `R = recursive = 递归` 
 
 ``` bash
 chgrp -R lumin testDir

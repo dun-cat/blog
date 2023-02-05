@@ -3,7 +3,7 @@
 
 #### 获取函数参数类型
 
-获取`foo`函数的第二个参数的类型：
+获取 `foo` 函数的第二个参数的类型：
 
 ``` ts
 // 函数
@@ -18,7 +18,7 @@ type SecondParamType = FooParamsType[1] // number
 
 #### 函数参数设置泛型 T，并 T 是多个可选
 
-`log`函数只允许`A`或者`B`的其中一个：
+ `log` 函数只允许 `A` 或者 `B` 的其中一个：
 
 ``` ts
 type A = {
@@ -38,7 +38,7 @@ const log = <T extends A | B>(obj: T) => {
 
 #### 设置一个 map 的 key 类型
 
-设置`myMap`的`key`的含义为`userName`，对应的 value 类型为`string`类型：
+设置 `myMap` 的 `key` 的含义为 `userName`，对应的 value 类型为 `string` 类型：
 
 ``` ts
 const myMap: {[userName : string ] : string} = {};
@@ -46,7 +46,7 @@ const myMap: {[userName : string ] : string} = {};
 
 #### 获取 array 的元素类型
 
-获取`list`的元素类型
+获取 `list` 的元素类型
 
 ``` ts
 const list = [1, 2, 'hello']
@@ -281,7 +281,7 @@ type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
 
 #### NonNullable\<Type\>
 
-从 Type 中构造类型，并且不包含`null`和`undefined`类型。
+从 Type 中构造类型，并且不包含 `null` 和 `undefined` 类型。
 
 ``` ts
 type Value = string | string[] | number | boolean | null;
@@ -304,7 +304,7 @@ type NonNullable<T> = T & {};
 
 ``` ts
 function getUserInfo(id: number,name: stirng) {
-  return `User ID: ${id}, User Name: ${name}`
+  return `User ID: ${id}, User Name: ${name}` 
 }
 
 type FuncParams = Parameters<typeof getUserInfo>;
@@ -330,7 +330,7 @@ type Parameters<T extends (...args: any) => any> = T extends (...args: infer P) 
 
 ``` ts
 function getUserInfo(id: number,name: stirng) {
-  return `User ID: ${id}, User Name: ${name}`
+  return `User ID: ${id}, User Name: ${name}` 
 }
 
 type FuncReturnType = ReturnType<typeof getUserInfo>;
@@ -400,8 +400,8 @@ type UncapitalizeMethod = Uncapitalize<Method>;
 
 除了上述这些实用类型之外，其他常用的 TypeScript 内置实用类型如下：
 
-`ConstructorParameters<Type>`：根据构造函数类型的类型构造元组或数组类型。它产生一个包含所有参数类型的元组类型 (或者 never 如果 Type 不是函数的类型) 。
+ `ConstructorParameters<Type>` ：根据构造函数类型的类型构造元组或数组类型。它产生一个包含所有参数类型的元组类型 (或者 never 如果 Type 不是函数的类型) 。
 
-`InstanceType<Type>`：构造一个由构造函数的实例类型组成的类型 Type。
+ `InstanceType<Type>` ：构造一个由构造函数的实例类型组成的类型 Type。
 
-`ThisParameterType<Type>`：为函数类型提取此参数的类型，如果函数类型没有参数，则为未知 this。
+ `ThisParameterType<Type>` ：为函数类型提取此参数的类型，如果函数类型没有参数，则为未知 this。

@@ -13,7 +13,7 @@
 Node {id, parentId, data}
 ```
 
-`id` 为当前节点的标识，`parentId` 为父节点的标识。`data` 为绑定的数据。
+ `id` 为当前节点的标识，`parentId`为父节点的标识。 `data` 为绑定的数据。
 
 `线性存储结构：`
 

@@ -12,7 +12,7 @@ wc [OPTION]... --files0-from=F
 
 ### 例子
 
-有如下一个文件`demo.txt`：
+有如下一个文件 `demo.txt` ：
 
 ``` text
 我们是社会主义接班人。

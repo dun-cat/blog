@@ -39,7 +39,7 @@
 
 #### MicroApplication
 
-我们创建了一个`MicroApplication`的 React 组件，让它提供`微应用`的挂载点，并加载我们的微应用。
+我们创建了一个 `MicroApplication` 的 React 组件，让它提供`微应用`的挂载点，并加载我们的微应用。
 
 ``` jsx
 const MicroAppA = ({ history }) => (
@@ -74,12 +74,12 @@ class MicroFrontend extends React.Component {
 
 ##### componentDidMount
 
-我们将在`componentDidMount`里加载`微应用`，它的代码如下：
+我们将在 `componentDidMount` 里加载`微应用`，它的代码如下：
 
 ``` jsx
 componentDidMount() {
   const { name, host } = this.props;
-  const scriptId = `micro-frontend-script-${name}`;
+  const scriptId = `micro-frontend-script-${name}` ;
 
   if (document.getElementById(scriptId)) {
     this.renderMicroApplication();
@@ -100,9 +100,9 @@ componentDidMount() {
 
 首先，我们检查是否已经下载了具有`唯一 ID`的相关脚本。在这种情况下，我们可以`立即渲染`它。
 
-如果没有，根据`asset-manifest.json`从主机上获取`主脚本下载的 URL`。
+如果没有，根据 `asset-manifest.json` 从主机上获取`主脚本下载的 URL`。
 
-在执`react-scripts build`命令后，我们将会在输出文件夹`build 目录`获得该`资产清单文件`：
+在执 `react-scripts build` 命令后，我们将会在输出文件夹 `build 目录` 获得该`资产清单文件`：
 
 ``` json
 {
@@ -124,21 +124,21 @@ componentDidMount() {
 }
 ```
 
-> 我们必须从`资产清单文件` (asset-manifest.json) 中获取脚本的 URL，在`react-scripts`输出的已编译 JavaScript `文件名`包含`哈希值`，用以方便缓存。
+> 我们必须从`资产清单文件` (asset-manifest.json) 中获取脚本的 URL，在 `react-scripts` 输出的已编译 JavaScript `文件名`包含`哈希值`，用以方便缓存。
 
-一旦我们设置了脚本的 URL，剩下的就是把它加到`documet`里去，使用一个`onload 处理程序`来渲染微应用：
+一旦我们设置了脚本的 URL，剩下的就是把它加到 `documet` 里去，使用一个 `onload 处理程序` 来渲染微应用：
 
 ``` jsx
 renderMicroApplication = () => {
   const { name, window, history } = this.props;
-  window[`render${name}`](`${name}-container`, history);
+  window[ `render${name}` ](`${name}-container`, history);
   // 例如：window.renderMicroAppA('MicroAppA-container', history);
 };
 ```
 
-在上面的代码中，我们调用了一个名为`window.renderMicroAppA`的全局函数，它是由我们刚刚下载的脚本放在那里的。
+在上面的代码中，我们调用了一个名为 `window.renderMicroAppA` 的全局函数，它是由我们刚刚下载的脚本放在那里的。
 
-我们将`<main>`微应用应该呈现的`元素的 ID`和一个`history 对象`传递给它，**这个全局函数的签名是容器应用和微应用之间的关键约定** 。
+我们将`<main>`微应用应该呈现的`元素的 ID`和一个 `history 对象` 传递给它，**这个全局函数的签名是容器应用和微应用之间的关键约定** 。
 
 这是`任何通信`或`集成`应该发生的地方，因此保持相当`轻量级`使其`易于维护`，并在未来添加新的微应用。
 
@@ -154,7 +154,7 @@ renderMicroApplication = () => {
 componentWillUnmount() {
   const { name } = this.props;
 
-  window[`unmount${name}`](`${name}-container`);
+  window[ `unmount${name}` ](`${name}-container`);
 }
 ```
 
@@ -183,17 +183,17 @@ window.unmountMicroAppA = containerId => {
 };
 ```
 
-通常在 React.js 应用程序中，调用`ReactDOM.render`发生在顶级范围内，这意味着一旦此脚本文件被加载，它就会立即渲染到硬编码的 DOM 元素上。
+通常在 React.js 应用程序中，调用 `ReactDOM.render` 发生在顶级范围内，这意味着一旦此脚本文件被加载，它就会立即渲染到硬编码的 DOM 元素上。
 
-而这个应用，我们需要能够`控制渲染`发生的`时间`和`地点`，因此我们将它包装在一个函数中，该函数接收`DOM 元素的 ID`作为参数，并将该函数添加到全局的`window 对象`。我们还可以看到相应的用于清理的`卸载函数`。
+而这个应用，我们需要能够`控制渲染`发生的`时间`和`地点`，因此我们将它包装在一个函数中，该函数接收 `DOM 元素的 ID` 作为参数，并将该函数添加到全局的 `window 对象` 。我们还可以看到相应的用于清理的`卸载函数`。
 
 #### 独立开发及运行
 
 虽然我们已经看到了当微应用集成到整个容器应用时如何调用这个函数，但成功的最大标准之一是我们可以`独立开发`和`独立运行`微应用。
 
-因此，每个微应用也有自己`index.html`的`内联脚本`，可以在容器外部以“独立”模式渲染应用。
+因此，每个微应用也有自己 `index.html` 的`内联脚本`，可以在容器外部以“独立”模式渲染应用。
 
-你需要针对 React 项目的`public/index.html`做出修改：
+你需要针对 React 项目的 `public/index.html` 做出修改：
 
 ``` html
 <html lang="en">
@@ -216,7 +216,7 @@ window.unmountMicroAppA = containerId => {
 
 ### 通过路由进行跨应用通信
 
-我们在[上一篇](/blog/micro-frontends-1-concept/#跨应用通信)提到过，跨应用程序通信应该保持在最低限度。对于容器应用，我们创建了一个`<BrowserRouter>`，它将在内部实例化一个`history 对象`。我们使用这个对象来操作客户端历史，我们也可以使用它来将多个`React Router`链接在一起。
+我们在[上一篇](/blog/micro-frontends-1-concept/#跨应用通信)提到过，跨应用程序通信应该保持在最低限度。对于容器应用，我们创建了一个`<BrowserRouter>`，它将在内部实例化一个 `history 对象` 。我们使用这个对象来操作客户端历史，我们也可以使用它来将多个 `React Router` 链接在一起。
 
 在我们的微应用中，会像这样做`初始化路由`：
 
@@ -224,7 +224,7 @@ window.unmountMicroAppA = containerId => {
 <Router history={this.props.history}>
 ```
 
-在这种情况下，我们不是让`React Router`实例化另一个`history 对象`，而是为它提供容器应用程序传入的实例。
+在这种情况下，我们不是让 `React Router` 实例化另一个 `history 对象`，而是为它提供容器应用程序传入的实例。
 
 `<Router>`现在所有实例都已连接，因此在其中任何一个实例中触发`路由更改`都将反映在所有实例中。这为我们提供了一种通过 URL 将`参数`从一个微应用传递到另一个微应用的简单方法。
 
@@ -234,7 +234,7 @@ window.unmountMicroAppA = containerId => {
 <Link to={`/app-a/${id}`}>
 ```
 
-单击此链接时，容器中的路由将被更新。容器将根据新的 URL 并确定应`安装`和`渲染`哪个微应用。然后，该微应用自己的路由逻辑将从 URL 中提取`ID`并渲染正确的信息。
+单击此链接时，容器中的路由将被更新。容器将根据新的 URL 并确定应`安装`和`渲染`哪个微应用。然后，该微应用自己的路由逻辑将从 URL 中提取 `ID` 并渲染正确的信息。
 
 我们使用 URL 作为的通信手段，有以下的一些意图：
 
@@ -254,15 +254,15 @@ window.unmountMicroAppA = containerId => {
 
 #### 选出需要共享依赖项
 
-我们对编译代码的包大小分析表明，大约 50% 的 bundles 是由`react`和`react-dom`贡献的。除此之外，这两个库是我们最“核心”的依赖项，我们所有微应用都可以从提取它们中受益。
+我们对编译代码的包大小分析表明，大约 50% 的 bundles 是由 `react` 和 `react-dom` 贡献的。除此之外，这两个库是我们最“核心”的依赖项，我们所有微应用都可以从提取它们中受益。
 
 最后，这些是`稳定`、`成熟`的库，通常会在两个主要版本之间引入重大更改，因此`跨应用升级`工作应该不会太困难。
 
 #### 提取重复依赖
 
-至于实际的提取，需要做的就是在项目的`webpack 配置`中将库标记为[外部库 (Externals)](https://webpack.docschina.org/configuration/externals/)。
+至于实际的提取，需要做的就是在项目的 `webpack 配置` 中将库标记为[外部库 (Externals)](https://webpack.docschina.org/configuration/externals/)。
 
-我们通过[react-app-rewired](https://github.com/timarney/react-app-rewired/blob/master/README_zh.md)工具来修改 webpack 配置 。扩展的`webpack 配置文件`如下：
+我们通过[react-app-rewired](https://github.com/timarney/react-app-rewired/blob/master/README_zh.md)工具来修改 webpack 配置 。扩展的 `webpack 配置文件` 如下：
 
 ``` js
 module.exports = (config, env) => {
@@ -274,9 +274,9 @@ module.exports = (config, env) => {
 };
 ```
 
-> react-app-rewired 工具可以在不`eject`也不创建额外`react-scripts`的情况下修改`create-react-app`内置的 webpack 配置，然后你将拥有 create-react-app 的一切特性，且可以根据你的需要去配置 webpack 的 plugins, loaders 等。
+> react-app-rewired 工具可以在不 `eject` 也不创建额外 `react-scripts` 的情况下修改 `create-react-app` 内置的 webpack 配置，然后你将拥有 create-react-app 的一切特性，且可以根据你的需要去配置 webpack 的 plugins, loaders 等。
 
-我们需要同时修改`容器应用`以及`微应用`的`package.json`文件：
+我们需要同时修改`容器应用`以及`微应用`的 `package.json` 文件：
 
 修改前：
 
@@ -309,7 +309,7 @@ module.exports = (config, env) => {
 }
 ```
 
-我们注意到在`package.json`添加了自定义字段`config-overrides-path`：
+我们注意到在 `package.json` 添加了自定义字段 `config-overrides-path` ：
 
 ``` json
 {
@@ -317,7 +317,7 @@ module.exports = (config, env) => {
 }
 ```
 
-我们把扩展的`webpack 配置文件`封装到一个[npm 包 (@dun-cat/react-app-rewire-micro-frontends)](https://github.com/dun-cat/react-app-rewire-micro-frontends)里去，并通过`config-overrides-path`指向到文件所在位置。
+我们把扩展的 `webpack 配置文件` 封装到一个[npm 包 (@dun-cat/react-app-rewire-micro-frontends)](https://github.com/dun-cat/react-app-rewire-micro-frontends)里去，并通过 `config-overrides-path` 指向到文件所在位置。
 
 > 把 webpack 配置以 npm 包的形式来管理，是对今后项目构建升级的维护考虑。我们希望项目的构建升级对已有的项目无任何入侵，甚至对于项目开发者来说是无感知的。
 
@@ -339,15 +339,15 @@ module.exports = (config, env) => {
 
 #### 修改 index.html
 
-我们的`共享依赖项`的`script`需要在`容器应用`和`每个微应用`的`index.html`中添加。他们将从`共享资源服务器`中获取我们的依赖库`react`和`react-dom`。
+我们的`共享依赖项`的 `script` 需要在`容器应用`和`每个微应用`的 `index.html` 中添加。他们将从`共享资源服务器`中获取我们的依赖库 `react` 和 `react-dom` 。
 
-你可以在`react`源码的最新稳定版分支，通过下面命令获取这两个依赖库的`UMD`版本。
+你可以在 `react` 源码的最新稳定版分支，通过下面命令获取这两个依赖库的 `UMD` 版本。
 
 ``` bash
 yarn build react/index,react-dom/index --type=UMD
 ```
 
-微应用的`public/index.html`的代码如下：
+微应用的 `public/index.html` 的代码如下：
 
 ``` html
 <body>
@@ -364,7 +364,7 @@ yarn build react/index,react-dom/index --type=UMD
 </body>
 ```
 
-容器应用中`public/index.html`代码如下：
+容器应用中 `public/index.html` 代码如下：
 
 ``` html
 <body>
@@ -375,11 +375,11 @@ yarn build react/index,react-dom/index --type=UMD
 </body>
 ```
 
-> `REACT_APP_CONTENT_HOST`环境变量保存项目`根目录`在`.env`文件中，构建时替换变量。
+> `REACT_APP_CONTENT_HOST` 环境变量保存项目`根目录`在`.env`文件中，构建时替换变量。
 
 ### 共享资源服务器
 
-你可以在`演示代码`里找到`packages/shared-content`的项目，该项目保存了微前端`公共静态资源`。例如我们的`react`和`react-dom`依赖项。
+你可以在`演示代码`里找到 `packages/shared-content` 的项目，该项目保存了微前端`公共静态资源`。例如我们的 `react` 和 `react-dom` 依赖项。
 
 你可以进入该项目，看到它的启动配置：
 
@@ -393,7 +393,7 @@ yarn build react/index,react-dom/index --type=UMD
 
 ### 跨域问题
 
-当我们的容器应用加载微应用的资源文件时 (例如：资产清单) ，我们需要他们符合浏览器的`同源策略`。在本地开发的时候，我们在`src`目录里添加了一个`setupProxy.js`文件用于解决开发跨域问题。
+当我们的容器应用加载微应用的资源文件时 (例如：资产清单) ，我们需要他们符合浏览器的`同源策略`。在本地开发的时候，我们在 `src` 目录里添加了一个 `setupProxy.js` 文件用于解决开发跨域问题。
 
 它的代码如下：
 

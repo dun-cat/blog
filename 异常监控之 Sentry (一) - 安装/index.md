@@ -10,7 +10,7 @@ Sentry 官方维护了一个 Docker 安装配置开源项目：[onpremise](https
 
 #### 安装
 
-中间会提示输入邮箱和密码，这将作为 Sentry 的 `Owner`。没错 Sentry 除了 Memeber、Admin、Manager几个角色外，还有一个`无任何限制(Unrestricted)
+中间会提示输入邮箱和密码，这将作为 Sentry 的 `Owner` 。没错 Sentry 除了 Memeber、Admin、Manager几个角色外，还有一个`无任何限制(Unrestricted)
 的最高权限角色` Owner。
 
 ``` bash

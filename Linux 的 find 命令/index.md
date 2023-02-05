@@ -11,8 +11,8 @@ man find
 
 ### 默认
 
-`path` 路径默认从当前目录向其子目录查找。
-`expression` 表达式默认值 -print 。打印输出。
+ `path` 路径默认从当前目录向其子目录查找。
+ `expression` 表达式默认值 -print 。打印输出。
 
 > mac上必须指定 path。不同 linux 发行版，指令参数也有所不同，但大同小异，可自行 man。
 
@@ -24,9 +24,9 @@ find . -print
 
 ### 组成
 
-`expression`可以由操作符`(operators)`、选项`(options)`、测试集`(tests)`、动作`(actions)`几部分组成。
+ `expression` 可以由操作符`(operators)`、选项`(options)`、测试集`(tests)`、动作`(actions)`几部分组成。
 
-#### 操作符(`operators`)
+#### 操作符( `operators` )
 
 你可以对 `expression` 通过简单逻辑操作符进行条件操作。
 以下都是允许：
@@ -35,13 +35,13 @@ find . -print
 * EXPR1 `-a` EXPR2 =  EXPR1 `-and` EXPR2
 * EXPR1 `-o` EXPR2 =  EXPR1 `-or` EXPR2  = EXPR1 `,` EXPR2
 
-#### 选项(`options`)
+#### 选项( `options` )
 
 -E ：对测试项  [-&#91;i&#93;regex](#regex)，采扩展正则表达式。
 
 > POSIX 定义了两种正则表达式语法基本正则表达式 (BRE) 和扩展正则表 达式 (ERE) 。
 
-#### 测试集(`tests`)
+#### 测试集( `tests` )
 
 测试集就是过滤条件。
 
@@ -96,7 +96,7 @@ find . -size +1G
 
 还有一些过滤条件雷同，不在叙述。
 
-#### 动作(`actions`)
+#### 动作( `actions` )
 
 在查找到文件后，可以对他们执行一些操作。例如：-print 就是默认动作。
 
@@ -110,7 +110,7 @@ find . -size +1G
 %h：输出文件所在的目录名
 %u：输出文件的属主名
 ... ...
-2. `COMMAND`：命令
+2. `COMMAND` ：命令
 
 动作参数如下：
 
@@ -126,7 +126,7 @@ find . -size +1G
 * `-prune`：
 * `-quit`：
 * `-exec COMMAND \;`：执行外部命令
-`\;`：`;`元字符为命令做分割，表示忽略结果继续执行下一条命令。`\`：负责转义。[详情](https://www.cnblogs.com/cynchanpin/p/7399164.html)
+ `\;`：`;`元字符为命令做分割，表示忽略结果继续执行下一条命令。 `\` ：负责转义。[详情](https://www.cnblogs.com/cynchanpin/p/7399164.html)
 * `-exec COMMAND {} \;`：对每一个输出文件结果执行 COMMAND。
 `{}`：{}元字符将命令置于non-named function中运行。
 * `-ok COMMAND {} \;`：对每一个结果执行 COMMAND；每次执行由用户进行确认；

@@ -29,7 +29,7 @@ ${\begin{aligned}\sin 2\theta &=2\sin \theta \cos \theta \ ={\frac  {2\tan \thet
 
 #### 角度 (degree) 与弧度 (radian) 互转
 
-弧度是角的度量单位，弧度定义为`弧长与半径的比值`，单位表示：`rad`。
+弧度是角的度量单位，弧度定义为`弧长与半径的比值`，单位表示：`rad` 。
 
 当`弧长 = 半径`时，则弧度为`1`rad。
 

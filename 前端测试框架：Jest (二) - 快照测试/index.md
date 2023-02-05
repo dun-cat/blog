@@ -33,7 +33,7 @@ it('renders correctly', () => {
 Jest 创建会在 test 文件同级目录创建一个 `__snapshots__` 目录，并生成以 `.snap` 为后缀的快照文件。
 
 ``` javascript
-exports[`renders correctly 1`] = `
+exports[ `renders correctly 1` ] = `
 <a
   className="normal"
   href="http://www.facebook.com"

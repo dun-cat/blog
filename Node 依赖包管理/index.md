@@ -26,7 +26,7 @@ yarn config set registry https://registry.npmjs.org/
 
 #### 安装依赖
 
-yarn 通过`yarn install`来安装依赖：
+yarn 通过 `yarn install` 来安装依赖：
 
 ``` bash
 yarn install
@@ -36,7 +36,7 @@ yarn install
 yarn
 ```
 
-默认安装的是`dependencies`依赖，你可以通过`-D`或者`--dev`来添加`devDependencies`依赖：
+默认安装的是 `dependencies` 依赖，你可以通过`-D`或者`--dev`来添加 `devDependencies` 依赖：
 
 ``` bash
 yarn add -D tailwindcss
@@ -50,10 +50,10 @@ yarn add --dev tailwindcss
 yarn global add nodemon
 ```
 
-对于锁版本文件`yarn.lock`的生成规则如下：
+对于锁版本文件 `yarn.lock` 的生成规则如下：
 
-* 若`yarn.lock`文件已提供，并能够满足在`package.json`下的所有依赖，则`yarn.lock`记录的精确版本号会被安装，并且`yarn.lock`文件不发生改变，Yarn 并不会去检查新的版本号；
-* 若`yarn.lock`文件未提供或不能满足在`package.json`下的所有依赖 (例如：你手动添加了一个依赖至`package.json`) ，则 Yarn 会寻找`最新的可用版本`，并更新`yarn.lock`文件。
+* 若 `yarn.lock` 文件已提供，并能够满足在 `package.json` 下的所有依赖，则 `yarn.lock` 记录的精确版本号会被安装，并且 `yarn.lock` 文件不发生改变，Yarn 并不会去检查新的版本号；
+* 若 `yarn.lock` 文件未提供或不能满足在 `package.json` 下的所有依赖 (例如：你手动添加了一个依赖至 `package.json` ) ，则 Yarn 会寻找`最新的可用版本`，并更新 `yarn.lock` 文件。
 
 ### 切换 node 版本 nvm
 
@@ -73,7 +73,7 @@ yarn global add nrm
 
 #### 列出源
 
-`nrm ls`命令可以列出所有可以切换的依赖源：
+ `nrm ls` 命令可以列出所有可以切换的依赖源：
 
 ``` shell
 $ nrm ls
@@ -88,7 +88,7 @@ $ nrm ls
 
 #### 切换源
 
-`nrm use`命令切换到指定依赖源：
+ `nrm use` 命令切换到指定依赖源：
 
 ``` shell
 $ nrm use cnpm  //switch registry to cnpm

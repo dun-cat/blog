@@ -1,7 +1,7 @@
 ## Linux 的 scp 命令 
 ### 简介
 
-`SCP` --secure copy  (远程文件拷贝程序) 是用于主机之间的文件拷贝，使用 `SSH` (Secure Shell) 来作为数据传输协议 ( [IETF](https://tools.ietf.org/html/rfc4253) 制定) ，这意味你需要通过`key`或者`密码`来做与远程主机认证。
+ `SCP` --secure copy  (远程文件拷贝程序) 是用于主机之间的文件拷贝，使用 `SSH` (Secure Shell) 来作为数据传输协议 ( [IETF](https://tools.ietf.org/html/rfc4253) 制定) ，这意味你需要通过 `key` 或者`密码`来做与远程主机认证。
 
 > 在没有特殊端口指定的情况下。SSH 使用 22 号端口，所以在使用的时候需要开放该端口，该端口已经在 [IANA](https://www.iana.org/) 里注册，并且官方分配给了 SSH。
 
@@ -13,8 +13,8 @@ scp [-346BCpqrTv] [-c cipher] [-F ssh_config] [-i identity_file]
     source ... target
 ```
 
-`source` 和 `target` 可以指定一个本地绝对或相对路径，也可以使用 [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) 格式。
-URI的形式是`scp://[user@]host[:port][/path]`。
+ `source` 和 `target` 可以指定一个本地绝对或相对路径，也可以使用 [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) 格式。
+URI的形式是 `scp://[user@]host[:port][/path]` 。
 
 > 通用的 URI 格式是：`[协议名]://[用户名]:[密码]@[主机名]:[端口]/[路径]?[查询参数]#[片段ID]`。
 
@@ -40,7 +40,7 @@ scp -r -C ./public/* root@101.125.45.5:/remote_dir/
 
 在本地主机直接使用路径名称即可，远程使用 URI 格式，默认会弹出密码提示框让你执行拷贝动作。
 
-如果拷贝指定目录下所有内容，记得加`*`号，不然会连同`public`拷贝到服务器。
+如果拷贝指定目录下所有内容，记得加`*`号，不然会连同 `public` 拷贝到服务器。
 
 ### 自动化环境
 
@@ -56,7 +56,7 @@ scp -r -C ./public/* root@101.125.45.5:/remote_dir/
 ls ~/.ssh/id_*
 ```
 
-通常 ssh 的`秘钥对`存储位置在用户目录下的`.ssh`目录，如果没有该文件，你需要使用`ssh-keygen`生成：
+通常 ssh 的`秘钥对`存储位置在用户目录下的`.ssh`目录，如果没有该文件，你需要使用 `ssh-keygen` 生成：
 
 ``` shell
 ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
@@ -72,7 +72,7 @@ ssh-copy-id remote_username@host
 
 你会被要求输入远程用户的密码做认证。
 
-如果你没有`ssh-copy-id`工具，可以手动拷贝公钥文件内容到远程用户`~/.ssh/authorized_keys`目录。
+如果你没有 `ssh-copy-id` 工具，可以手动拷贝公钥文件内容到远程用户`~/.ssh/authorized_keys`目录。
 
 **3**.验证连接是否可用：
 
@@ -108,7 +108,7 @@ ssh demo@lumin.tech "tar -xzvf ~/temp_dir/upload.tar -C ~/target_dir ."
 ssh demo@lumin.tech "rm -rf ~/temp_dir"
 ```
 
-放在`tmp`的压缩包跟随系统清除规则走，打包时排除不需要的目录(.git)。以上的删除操作无提示，虽然是自动化，但是通常需要通过脚本来做安全性操作检测，否者容易出现人为失误导致的不可逆事故 (例如：误删目录) 。
+放在 `tmp` 的压缩包跟随系统清除规则走，打包时排除不需要的目录(.git)。以上的删除操作无提示，虽然是自动化，但是通常需要通过脚本来做安全性操作检测，否者容易出现人为失误导致的不可逆事故 (例如：误删目录) 。
 
 参考文献：
 

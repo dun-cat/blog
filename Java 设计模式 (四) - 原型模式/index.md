@@ -57,7 +57,7 @@ public class RunMain {
 }
 ```
 
-显然上面的 copy() 函数不太灵活，每次 copy 都要自己手动把原型的值复制过去。但是在java中不用担心这类问题。在基类 Object 类中有个 `native` 的 `clone()` 方法，它是浅拷贝。在 java 的原型接口 (`Cloneable`) 中的没有任何接口函数。
+显然上面的 copy() 函数不太灵活，每次 copy 都要自己手动把原型的值复制过去。但是在java中不用担心这类问题。在基类 Object 类中有个 `native` 的 `clone()` 方法，它是浅拷贝。在 java 的原型接口 ( `Cloneable` ) 中的没有任何接口函数。
 
 #### Java中的原型
 

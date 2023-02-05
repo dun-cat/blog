@@ -1,10 +1,10 @@
 ## 设计模式之谈 
 ### 设计模式的分类
 
-* 创建型模式 (`creational pattern`)
-* 结构型模式 (`Structural pattern`)
-* 行为模式 (`Behavioral pattern`)
-* 并发模式 (`Concurrency pattern`)
+* 创建型模式 ( `creational pattern` )
+* 结构型模式 ( `Structural pattern` )
+* 行为模式 ( `Behavioral pattern` )
+* 并发模式 ( `Concurrency pattern` )
 
 #### 1.创建型模式
 

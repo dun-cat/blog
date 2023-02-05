@@ -5,13 +5,13 @@
 
 因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的得力方式。
 
-loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript 或将`内联图像`转换为`data URL`。loader 甚至允许你直接在`JavaScript`模块中`import CSS`文件！
+loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript 或将`内联图像`转换为 `data URL` 。loader 甚至允许你直接在 `JavaScript` 模块中 `import CSS` 文件！
 
 #### 样式处理
 
 ##### css-loader
 
-css-loader 会对`@import`和`url()`进行处理，就像 js 解析`import/require()`一样。
+css-loader 会对`@import`和 `url()` 进行处理，就像 js 解析 `import/require()` 一样。
 
 ###### 使用
 
@@ -115,10 +115,10 @@ module.exports = {
 };
 ```
 
-这会让 webpack 直接从`./index.ts`进入，然后通过`ts-loader`加载所有的`.ts`和`.tsx`文件，并且在当前目录输出一个`bundle.js`文件。
+这会让 webpack 直接从`./index.ts`进入，然后通过 `ts-loader` 加载所有的`.ts`和`.tsx`文件，并且在当前目录输出一个 `bundle.js` 文件。
 
 {{% notice warning %}}
-`ts-loader` 使用`tsc`，TypeScript 编译器会依赖`tsconfig.json`文件作为编译配置。要避免设置`module`为`CommonJS`，否则 webpack 不会[tree-shake 你的代码](https://webpack.docschina.org/guides/tree-shaking)。
+ `ts-loader` 使用 `tsc`，TypeScript 编译器会依赖 `tsconfig.json` 文件作为编译配置。要避免设置 `module` 为 `CommonJS`，否则 webpack 不会[tree-shake 你的代码](https://webpack.docschina.org/guides/tree-shaking)。
 {{% /notice %}}
 
 ### 插件
@@ -131,7 +131,7 @@ module.exports = {
 
 ###### 基本用法
 
-该插件将为你生成一个 HTML5 文件， 在`body`中使用`script 标签`引入你所有 webpack 生成的`bundle`。 只需添加该插件到你的 webpack 配置中，如下所示：
+该插件将为你生成一个 HTML5 文件， 在 `body` 中使用 `script 标签` 引入你所有 webpack 生成的 `bundle` 。 只需添加该插件到你的 webpack 配置中，如下所示：
 
 ``` ts
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -147,7 +147,7 @@ module.exports = {
 };
 ```
 
-这将会生成一个包含以下内容的`dist/index.html`文件：
+这将会生成一个包含以下内容的 `dist/index.html` 文件：
 
 ``` html
 <!DOCTYPE html>
@@ -168,11 +168,11 @@ module.exports = {
 
 ##### mini-css-extract-plugin
 
-本插件会将 CSS `提取`到`单独的`文件中，为`每个`包含`CSS`的`JS`文件创建一个`CSS`文件，并且支持 CSS 和 SourceMaps 的`按需加载`。
+本插件会将 CSS `提取`到`单独的`文件中，为`每个`包含 `CSS` 的 `JS` 文件创建一个 `CSS` 文件，并且支持 CSS 和 SourceMaps 的`按需加载`。
 
-本插件基于`webpack v5`的新特性构建，并且需要`webpack 5`才能正常工作。
+本插件基于 `webpack v5` 的新特性构建，并且需要 `webpack 5` 才能正常工作。
 
-与`extract-text-webpack-plugin`相比：
+与 `extract-text-webpack-plugin` 相比：
 
 * 异步加载
 * 没有重复的编译（性能）
@@ -181,9 +181,9 @@ module.exports = {
 
 ###### 基本用法
 
-建议`mini-css-extract-plugin`与[css-loader](https://webpack.docschina.org/loaders/css-loader/)一起使用。
+建议 `mini-css-extract-plugin` 与[css-loader](https://webpack.docschina.org/loaders/css-loader/)一起使用。
 
-之后将`loader`与`plugin`添加到你的 webpack 配置文件中。 例如：
+之后将 `loader` 与 `plugin` 添加到你的 webpack 配置文件中。 例如：
 
 style.css
 

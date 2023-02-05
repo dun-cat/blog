@@ -52,7 +52,7 @@ DELETE FROM test;
 DELETE FROM table_name;
 ```
 
-数据库若在`safe update mode`模式下工作，你是删除不了的。此时你可以执行以下脚本关闭它：
+数据库若在 `safe update mode` 模式下工作，你是删除不了的。此时你可以执行以下脚本关闭它：
 
 ``` mysql
 # 查看模式

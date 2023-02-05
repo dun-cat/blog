@@ -3,7 +3,7 @@
 
 [Flipper](https://fbflipper.com/) 是 Facebook 提供的一个移动端`调试工具`，它支持 iOS、Android、React Native，并提供桌面端 GUI 调试界面。
 
-Flipper 是开箱即用的，提供了包括：`网络`、`布局和属性样式`、`持久化存储展示`、`日志`、`Hermes Debugger`等非常有用的分析功能，这些功能都以**插件形式**提供。
+Flipper 是开箱即用的，提供了包括：`网络`、`布局和属性样式`、`持久化存储展示`、`日志`、`Hermes Debugger` 等非常有用的分析功能，这些功能都以**插件形式**提供。
 
 Flippr 由两部分组成：
 
@@ -29,17 +29,17 @@ Flippr 由两部分组成：
 
 React Native 0.62 版本及以上，默认支持 Flipper，并且开箱即用，也就是说你只需设置依赖及是否开启 Flipper 功能，而无需手动实例化他们。下面示例展示如何使用[自动化设置](https://fbflipper.com/docs/getting-started/react-native/)。
 
-> 只有通过`react-native init`创建的模板，会内置 Flipper。如果是其他框架的模板，请参考手动设置。
+> 只有通过 `react-native init` 创建的模板，会内置 Flipper。如果是其他框架的模板，请参考手动设置。
 
 如果低于此版本，请参考[手动 Android 设置](https://fbflipper.com/docs/getting-started/react-native-android/)和[手动 iOS 设置](https://fbflipper.com/docs/getting-started/react-native-ios/)。默认，React Native 可能内置了一个过期的 Flipper SDK，你可以在[这里](https://github.com/facebook/flipper/tags)查看最新发布版本。
 
-最后一个版本的 Flipper 要求`react-native 0.69+`。如果你的`react-native < 0.69.0`，需要降级 `react-native-flipper`到`0.162.0` (查看该 GitHub [issue](https://github.com/facebook/flipper/issues/4240) 详情)
+最后一个版本的 Flipper 要求 `react-native 0.69+` 。如果你的 `react-native < 0.69.0`，需要降级 `react-native-flipper` 到`0.162.0` (查看该 GitHub [issue](https://github.com/facebook/flipper/issues/4240) 详情)
 
 #### Android
 
-1.在`android/gradle.properties`里指定`FLIPPER_VERSION`变量，例如：FLIPPER_VERSION = 0.174.0。
+1.在 `android/gradle.properties` 里指定 `FLIPPER_VERSION` 变量，例如：FLIPPER_VERSION = 0.174.0。
 
-并且你可以在`android/app/build.gradle`里，看到下面几个 Flipper 原生依赖：
+并且你可以在 `android/app/build.gradle` 里，看到下面几个 Flipper 原生依赖：
 
 ``` groovy
 dependencies {
@@ -66,9 +66,9 @@ dependencies {
 ./gradlew clean
 ```
 
-3.在`Application`的 onCreate() 方法中看到[实例化代码](https://github.com/facebook/react-native/blob/a02bd0ded1d193e3fe6f0bfb961138e0f212fccc/template/android/app/src/main/java/com/helloworld/MainApplication.java#L60)。
+3.在 `Application` 的 onCreate() 方法中看到[实例化代码](https://github.com/facebook/react-native/blob/a02bd0ded1d193e3fe6f0bfb961138e0f212fccc/template/android/app/src/main/java/com/helloworld/MainApplication.java#L60)。
 
-当然，也可以手动去实例化 Flipper，下面添加了`Layout`、`Network`、`Shared Preferences Viewer` 3 个插件。
+当然，也可以手动去实例化 Flipper，下面添加了 `Layout`、`Network`、`Shared Preferences Viewer`3 个插件。
 
 ``` Java
 import com.facebook.flipper.android.AndroidFlipperClient;
@@ -102,7 +102,7 @@ public class MyApplication extends Application {
 }
 ```
 
-同时建议把`FlipperDiagnosticActivity`添加到 AndroidManifest.xml 中去，这有助于诊断集成问题和其他问题。
+同时建议把 `FlipperDiagnosticActivity` 添加到 AndroidManifest.xml 中去，这有助于诊断集成问题和其他问题。
 
 ``` xml
 <activity android:name="com.facebook.flipper.android.diagnostics.FlipperDiagnosticActivity"
@@ -111,7 +111,7 @@ public class MyApplication extends Application {
 
 #### iOS
 
-1.若 **react-native 版本 >= 0.69.0**，在 ios/Podfile 里可以指定一个 Flipper  版本，并通过`FlipperConfiguration.enabled`引入 Flipper。
+1.若 **react-native 版本 >= 0.69.0**，在 ios/Podfile 里可以指定一个 Flipper  版本，并通过 `FlipperConfiguration.enabled` 引入 Flipper。
 
 ``` ruby
 use_react_native!(
@@ -131,13 +131,13 @@ use_react_native!(
 
 ---
 
-1.若 **react-native 版本 < 0.69.0**，在 ios/Podfile 里调用`use_flipper`引入 Flipper。
+1.若 **react-native 版本 < 0.69.0**，在 ios/Podfile 里调用 `use_flipper` 引入 Flipper。
 
 ``` ruby
 use_flipper!({ 'Flipper' => '0.174.0' })
 ```
 
-在`node_modules/react-native/scripts/cocoapods/flipper.rb`文件中可以看到定义的 Flipper 依赖引入方法`use_flipper_pods`。
+在 `node_modules/react-native/scripts/cocoapods/flipper.rb` 文件中可以看到定义的 Flipper 依赖引入方法 `use_flipper_pods` 。
 
 ``` ruby
 def use_flipper_pods(versions = {}, configurations: ['Debug'])
@@ -185,7 +185,7 @@ pod install --repo-update
 
 ---
 
-3.最后在 ios 的 AppDelegate.m 里加入 Flipper 的`初始化`，让它只在`DEBUG`下执行，并添加需要使用的插件。下面添加了`Layout`、`Network`、`Shared Preferences Viewer` 3 个插件。
+3.最后在 ios 的 AppDelegate.m 里加入 Flipper 的`初始化`，让它只在 `DEBUG` 下执行，并添加需要使用的插件。下面添加了 `Layout`、`Network`、`Shared Preferences Viewer`3 个插件。
 
 ``` objc
 #import <FlipperKit/FlipperClient.h>

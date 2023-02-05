@@ -1,7 +1,7 @@
 ## 探索 Javascript 里的 Promise 
 ### 介绍
 
-在计算机科学中，`future`、`promise`、`delay`和`deferred`是指用于在某些并发编程语言中同步程序执行的构造。由于某些计算 (或者网络请求) 尚未结束，我们需要一个对象来代理这个未知的结果，于是就有了上述这些构造 (future、promise等) 。
+在计算机科学中，`future`、`promise`、`delay` 和 `deferred` 是指用于在某些并发编程语言中同步程序执行的构造。由于某些计算 (或者网络请求) 尚未结束，我们需要一个对象来代理这个未知的结果，于是就有了上述这些构造 (future、promise等) 。
 
 Promise 一词在1976年就已提出，也有称之为 `eventual`，它的应用起源于[函数式编程](https://zh.wikipedia.org/wiki/函数式编程)和相关范例。
 
@@ -21,34 +21,34 @@ const p = new Promise((resolutionFunc, rejectionFunc) => {
 
 更多用法可以查看文章[Javascript Promise 的使用](/articles/promise-what-you-need-know)。
 
-任何 Promise 对象都存在三个互斥状态：`fulfilled`、`rejected`、以及`pending`，即同时只存在其中一个状态。
+任何 Promise 对象都存在三个互斥状态：`fulfilled`、`rejected`、以及 `pending`，即同时只存在其中一个状态。
 
 假设有一个 Promise 实例 **p** ：
 
-* 如果立即入列 `p.then(f, r)` 任务并且之后再调用 `f` 函数 ，那么 `p` 的状态是 `fulfilled`；
-* 如果立即入列 `p.then(f, r)` 任务并且之后再调用 `r` 函数 ，那么 `p` 的状态是 `rejected`；
+* 如果立即入列 `p.then(f, r)` 任务并且之后再调用 `f` 函数 ，那么 `p` 的状态是 `fulfilled` ；
+* 如果立即入列 `p.then(f, r)` 任务并且之后再调用 `r` 函数 ，那么 `p` 的状态是 `rejected` ；
 * 如果 `p` 的状态不是 `fulfilled` 也不是 `rejected`，那么标记为 `pending` 状态。
 
 ### 解读 Promises/A+ 规范
 
 实现 Promise 代码普遍采用[Promises/A+ 规范](https://promisesaplus.com/)，通过它我们会得到一些基础概念。
 
-Promise 表示一个异步操作的最终结果，能和 promise 进行交互的只有它的`then`方法，`then`方法注册一个回调函数用于接收 promise 的结果值或拒绝 (reject) 的原因 (reason) 。
+Promise 表示一个异步操作的最终结果，能和 promise 进行交互的只有它的 `then` 方法，`then` 方法注册一个回调函数用于接收 promise 的结果值或拒绝 (reject) 的原因 (reason) 。
 
 #### 术语
 
-1. `promise`：是一个对象或函数，它的行为符合本规范；
-2. `thenable`：是一个对象或函数，用于定义`then`方法；
-3. `value`：是一个合法的 Javascript 类的值 (包括undefined，ableable 或 promise) ；
-4. `exception`：是使用`throw`语句引发的值；
-5. `reason`：是表明拒绝承诺 (reject promise) 的原因的值。
+1. `promise` ：是一个对象或函数，它的行为符合本规范；
+2. `thenable` ：是一个对象或函数，用于定义 `then` 方法；
+3. `value` ：是一个合法的 Javascript 类的值 (包括undefined，ableable 或 promise) ；
+4. `exception` ：是使用 `throw` 语句引发的值；
+5. `reason` ：是表明拒绝承诺 (reject promise) 的原因的值。
 
 #### 要求
 
-一个 promise `必须`是这三种状态之一：`pending`、`fulfilled`或`rejected`。
+一个 promise `必须`是这三种状态之一：`pending`、`fulfilled` 或 `rejected` 。
 
 1. 若 promise 进入了 `pending` 状态：
-   * 那么接下来可能进入`fulfilled` 或`rejected`状态。
+   * 那么接下来可能进入 `fulfilled` 或 `rejected` 状态。
 2. 若 promise 进入了 `fulfilled` 状态：
    * 禁止进入其它状态；
    * 必须有一个值且不能发生改变。
@@ -58,7 +58,7 @@ Promise 表示一个异步操作的最终结果，能和 promise 进行交互的
 
 #### then 方法
 
-一个 promise `必须`提供一个 `then`方法来访问最终值 (eventual value) 或原因 (reason) 。
+一个 promise `必须`提供一个 `then` 方法来访问最终值 (eventual value) 或原因 (reason) 。
 
 Promise 的 then 方法接受两个参数：
 
@@ -66,54 +66,54 @@ Promise 的 then 方法接受两个参数：
 promise.then(onFulfilled, onRejected)
 ```
 
-1. `onFulfilled`和`onRejected`都是可选的：
+1. `onFulfilled` 和 `onRejected` 都是可选的：
    * `onFulfilled` 如果不是函数，必须忽略；
    * `onRejected` 如果不是函数，必须忽略。
-2. 若`onFulfilled`是一个函数：
+2. 若 `onFulfilled` 是一个函数：
    * 必须在 **fulfilled** 的时候被调用，并且 promise 的结果值作为其第一个参数；
    * 禁止在 **fulfilled** 之前被调用；
    * 禁止调用超过一次。
-3. 若`onRejected`是一个函数：
+3. 若 `onRejected` 是一个函数：
    * 必须在 **rejected** 的时候被调用，并且 promise 的 reason 作为其第一个参数；
    * 禁止在 **rejected** 之前被调用；
    * 禁止调用超过一次。
-4. 在[执行上下文](https://es5.github.io/#x10.3)堆栈里仅包含[平台代码](/articles/what-is-promise/#注释)之前，`onFulfilled`或`onRejected`禁止被调用。
-5. `onFulfilled` 和 `onRejected` 必须作为函数调用 (即没有`this`值) 。
-6. 同一个 promise，`then`可能被调用多次：
-   * 无论何时，只要 promise 为 **fulfilled**，则所有`onFulfilled`回调必须按照他们原有的次序给`then`做调用；
-   * 无论何时，只要 promise 为 **rejected**，则所有`onRejected`回调必须按照他们原有的次序给`then`做调用；
+4. 在[执行上下文](https://es5.github.io/#x10.3)堆栈里仅包含[平台代码](/articles/what-is-promise/#注释)之前，`onFulfilled` 或 `onRejected` 禁止被调用。
+5. `onFulfilled` 和 `onRejected` 必须作为函数调用 (即没有 `this` 值) 。
+6. 同一个 promise，`then` 可能被调用多次：
+   * 无论何时，只要 promise 为 **fulfilled**，则所有 `onFulfilled` 回调必须按照他们原有的次序给 `then` 做调用；
+   * 无论何时，只要 promise 为 **rejected**，则所有 `onRejected` 回调必须按照他们原有的次序给 `then` 做调用；
 7. `then` 必须返回一个 promise。**promise2 = promise1.then(onFulfilled, onRejected)**：
-   * 若`onFulfilled`或`onRejected` 任一个返回了值`x`，则运行 Promise 解决程序 **[[Resolve]](promise2, x)**；
-   * 若`onFulfilled`或`onRejected` 任一个抛出异常`e`，**promise2** 必须被 rejected 并携带的`e`值作为异常原因；
-   * 若`onFulfilled`不是个函数并且 **promise1** 为 **fulfilled**，则 **promise2** 必须为 **fulfilled** 且和 **promise1** 有相同的值；
-   * 若`onRejected`不是个函数并且 **promise1** 为 **rejected**，则 **promise2** 必须为 **rejected** 且和 **promise1** 有 reason 值；
+   * 若 `onFulfilled` 或 `onRejected` 任一个返回了值 `x`，则运行 Promise 解决程序 **[[Resolve]](promise2, x)**；
+   * 若 `onFulfilled` 或 `onRejected` 任一个抛出异常 `e`，**promise2** 必须被 rejected 并携带的 `e` 值作为异常原因；
+   * 若 `onFulfilled` 不是个函数并且 **promise1** 为 **fulfilled**，则 **promise2** 必须为 **fulfilled** 且和 **promise1** 有相同的值；
+   * 若 `onRejected` 不是个函数并且 **promise1** 为 **rejected**，则 **promise2** 必须为 **rejected** 且和 **promise1** 有 reason 值；
 
 #### Promise 解决程序 (Promise Resolution Procedure)
 
 **Promise Resolution Procedure** 是一个`抽象操作`，用来输入一个 promise 和一个 value，我们表示为`[[Resolve]](promise, x)`。
 
-若`x` 是一个`thenable`，则它尝试使 promise 采用`x`的状态，这建立在`x`的行为看起来像个 promise的假设下。否则，它满足 (fulfills) x 为一个 promise。
+若 `x` 是一个 `thenable`，则它尝试使 promise 采用 `x` 的状态，这建立在 `x` 的行为看起来像个 promise的假设下。否则，它满足 (fulfills) x 为一个 promise。
 
-对于多个 thenables 的处理，只要他们暴露一个兼容`Promises/A+`的 then 方法，就允许 promise 之间的交互。它还允许多个` Promises/A+ `的实现去同化那些不兼容的实现。
+对于多个 thenables 的处理，只要他们暴露一个兼容 `Promises/A+` 的 then 方法，就允许 promise 之间的交互。它还允许多个` Promises/A+ `的实现去同化那些不兼容的实现。
 
 运行`[[Resolve]](promise, x)`的步骤如下:
 
 1. 若 promise 和 x 引用到同一个对象，则 reject promise 并抛出一个 TypeError 作为 reason。
 2. 若 x 是一个 promise，则采用其状态：
-   1. 若 x 为 pending，则 promise 必须保留 x 为 pending，直到 x 被`fulfilled` 或`rejected`为止。
+   1. 若 x 为 pending，则 promise 必须保留 x 为 pending，直到 x 被 `fulfilled` 或 `rejected` 为止。
    2. 无论何时，只要 x 为 fulfilled，则 fulfill promise ，并且他们的值是相同的。
    3. 无论何时，只要 x 为 rejected，则 reject promise ，并且他们的原因是相同的。
 3. 否则，若 x 是一个对象或函数：
-   * 让 `then` 成为 `x.then`；
-   * 若在一个已抛出的异常值`e`里，发现`x.then`的结果属性，则 reject promise，并把`e`作为 reason。
-   * 若`then`是一个函数，则 x 作为 this 来调用它，第一个参数为`resolvePromise`，第二个参数为`rejectPromise`，当:
+   * 让 `then` 成为 `x.then` ；
+   * 若在一个已抛出的异常值 `e` 里，发现 `x.then` 的结果属性，则 reject promise，并把 `e` 作为 reason。
+   * 若 `then` 是一个函数，则 x 作为 this 来调用它，第一个参数为 `resolvePromise`，第二个参数为 `rejectPromise`，当:
      * 无论何时，只要 resolvePromise 被调用时携带一个值 y，则运行`[[Resolve]](promise, y)`；
-     * 无论何时，只要 rejectPromise 被调用时携带一个 reason `r`，则 reject promise，并提供 `r`；
+     * 无论何时，只要 rejectPromise 被调用时携带一个 reason `r`，则 reject promise，并提供 `r` ；
      * 若 resolvePromise 和 rejectPromise 都被调用，或多个调用产生相同参数，则第一个调用获得优先权，并其它调用都被忽略；
-     * 若调用中抛出了异常`e`:
+     * 若调用中抛出了异常 `e` :
        * 若 resolvePromise 或 rejectPromise 已被调用，则忽略它；
        * 否则，reject promise 并返回 e 作为 reason。
-   * 若`then`不是一个函数，则 fulfill promise 并返回 x；
+   * 若 `then` 不是一个函数，则 fulfill promise 并返回 x；
 4. 若 x 不是一个对象或函数，则 fulfill promise 并返回 x。
 
 如果一个 promise 通过参与一个环形的 thenable 链解决 (resolved) ，比如 `[[Resolve]](promise, thenable)`的递归，这最终导致[[Resolve]](promise, thenable) 无限执行。在 promise 的实现中，鼓励对这种递归的检测并抛出 TypeError 作为 reason，但不被要求必须这么做。
@@ -121,8 +121,8 @@ promise.then(onFulfilled, onRejected)
 #### 注释
 
 * `平台代码`：这里的**平台代码** (platform code) 是指引擎 (engine) 、环境 (environment) 和实现 promise 的代码。实际上，此要求是为了在事件循环轮到 then 之后，确保 onFulfilled 和 onRejected 能异步得被执行并且使用新的堆栈。这可以通过`宏任务 (macro-task)`机制 (例如 setTimeout 或 setImmediate ) 或`微任务 (micro-task)`机制 (例如MutationObserver 或 process.nextTick) 来实现。 promise 的实现被视为平台代码，因此它本身可能包含`任务调度队列 (task-scheduling queue)`或`蹦床 (trampoline)`。
-* `x`: 通常，只有`x`来自当前的实现才能知道这是一个真正的 promise。本节允许采用已知符合 promise 的状态。
-* 对于 promise 的实现中，不应该对 thenable 链做任何深度限制。只有在循环的 thenable 才导致`TypeError`，若遇到一个有区别的无限thenables 链，那么递归永远是正确的行为。
+* `x` : 通常，只有 `x` 来自当前的实现才能知道这是一个真正的 promise。本节允许采用已知符合 promise 的状态。
+* 对于 promise 的实现中，不应该对 thenable 链做任何深度限制。只有在循环的 thenable 才导致 `TypeError`，若遇到一个有区别的无限thenables 链，那么递归永远是正确的行为。
 
 > micro-task  (音标：['maikrəu]) 与 macro-task (音标：[ˈmækroʊ])  的区别是`执行顺序`，micro-task 优先于 macro-task 执行，在实现 Promise 的浏览器中，通常采用 micro-task 作为其异步执行机制。
 
@@ -169,7 +169,7 @@ new Promise((resolve, reject) => resolve("done"));
 class Promise {
   constructor(executor) {
     if (typeof executor !== "function") {
-      throw new TypeError(`Promise resolver ${executor} is not a function`);
+      throw new TypeError( `Promise resolver ${executor} is not a function` );
     }
 
     this.state = PENDING
@@ -219,7 +219,7 @@ class Promise {
 
   constructor(executor) {
     if (typeof executor !== "function") {
-      throw new TypeError(`Promise resolver ${executor} is not a function`);
+      throw new TypeError( `Promise resolver ${executor} is not a function` );
     }
 
     this.state = PENDING
@@ -308,7 +308,7 @@ function process(promise) {
 
 只有当 queue 里的 promise 状态为 fulfilled 或 rejected 的时候，才能执行 onFulfilled 或 onRejected。
 
-由于`onFulfilled`和`onRejected`被要求异步执行，所以通过 nextTick 函数来实现。这依赖平台的异步机制，在浏览器环境我们可以通过`setTimeout()`、`setImmediates`或`queueMicrotask()`，在 node 环境可以使用`process.nextTick()`。
+由于 `onFulfilled` 和 `onRejected` 被要求异步执行，所以通过 nextTick 函数来实现。这依赖平台的异步机制，在浏览器环境我们可以通过 `setTimeout()`、`setImmediates` 或 `queueMicrotask()`，在 node 环境可以使用 `process.nextTick()` 。
 
 我们做一些兼容处理来支持 node 和 浏览器环境：
 
@@ -437,7 +437,7 @@ Promise.resolve = (value) => {
 
 ### 使用 Promises-aplus-tests 测试
 
-最后，我们通过官方的测试脚本对我们的库进行合格检验，在`package.json`我们如下配置：
+最后，我们通过官方的测试脚本对我们的库进行合格检验，在 `package.json` 我们如下配置：
 
 #### 安装
 
@@ -454,7 +454,7 @@ Promise.resolve = (value) => {
 
 #### 测试编写
 
-[promises-aplus-tests](https://github.com/promises-aplus/promises-tests) 要求我们提供一个 adpter 对象，该对象包含一个 pending 状态 promise 实例的`deferred`方法，一个静态方法`resolve`以及一个静态方法`reject`。
+[promises-aplus-tests](https://github.com/promises-aplus/promises-tests) 要求我们提供一个 adpter 对象，该对象包含一个 pending 状态 promise 实例的 `deferred` 方法，一个静态方法 `resolve` 以及一个静态方法 `reject` 。
 
 所以我们编写的 test.js 文件如下：
 

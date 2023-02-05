@@ -41,7 +41,7 @@ Sentry.init({
 
 集成分为`公共集成(Public integration)`和`内部集成(Internal integration)`。可在 **Settings - ORGANIZATION - Developer Settings** 里配置。
 
-在使用上不同点是公共集成多了一个 `OAuth 的授权`流程，以此获取 `Access Token`。
+在使用上不同点是公共集成多了一个 `OAuth 的授权` 流程，以此获取 `Access Token` 。
 
 [![sentry_authentication_flow](sentry_authentication_flow.png)](sentry_authentication_flow.png)
 

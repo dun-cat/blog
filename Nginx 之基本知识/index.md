@@ -5,11 +5,11 @@ Nginx 运行态由一个`主进程` (master process) 和多个`工作进程` (wo
 
 `主进程`的工作是读取和评估配置并维护 worker 进程。
 
-真正的请求处理在`worker 进程`上进行，nginx 雇佣基于`事件模型` (event-based model) 和`OS-dependent`机制去高效地在 worker 进程之间分发请求。
+真正的请求处理在 `worker 进程` 上进行，nginx 雇佣基于`事件模型` (event-based model) 和 `OS-dependent` 机制去高效地在 worker 进程之间分发请求。
 
 Worker 进程的`个数`是定义在配置文件里。可以是固定数，也可以是由 CPU 核数来决定。
 
-Nginx 和它的模块 (modules) 的工作方式取决于配置文件，默认 nginx 的配置文件名叫`nginx.conf`。
+Nginx 和它的模块 (modules) 的工作方式取决于配置文件，默认 nginx 的配置文件名叫 `nginx.conf` 。
 
 默认安装，配置文件在这几个位置之一：`/usr/local/nginx/conf`、`/etc/nginx`或`/usr/local/etc/nginx`。
 
@@ -31,10 +31,10 @@ nginx -s reload
 
 Nginx 支持以下几个信号值：
 
-* `stop`：快速关闭 (fast shutdown) ；
-* `quit`：优雅关闭 (graceful shutdown) ；
-* `reload`：重新加载配置文件；
-* `reopen`：重开日志文件。
+* `stop` ：快速关闭 (fast shutdown) ；
+* `quit` ：优雅关闭 (graceful shutdown) ；
+* `reload` ：重新加载配置文件；
+* `reopen` ：重开日志文件。
 
 你可以通过下面的命令关闭 nginx：
 
@@ -42,7 +42,7 @@ Nginx 支持以下几个信号值：
 nginx -s quit
 ```
 
-发送给 nginx 的一个`信号` (signal) 可能来至 Unix 工具，像`kill`套件。
+发送给 nginx 的一个`信号` (signal) 可能来至 Unix 工具，像 `kill` 套件。
 
 如下面这样直接发送信号给一个给定的进程 ID (process ID) ：
 
@@ -50,7 +50,7 @@ nginx -s quit
 kill -s QUIT 1628
 ```
 
-Nginx 主进程 ID 会被写入文件，默认`nginx.pid`在`/usr/local/nginx/logs`或`/var/run`目录。
+Nginx 主进程 ID 会被写入文件，默认 `nginx.pid` 在`/usr/local/nginx/logs`或`/var/run`目录。
 
 通过下面的命令，你可以获取所有 nginx 的进程：
 

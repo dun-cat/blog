@@ -6,7 +6,7 @@
 * `物理备份`由存储数据库内容的目录和文件的原始副本组成。这种类型的备份适用于需要在出现问题时，需要快速恢复的大型、重要的数据库。
 * `逻辑备份`保存以逻辑数据库结构 (CREATE DATABASE、 CREATE TABLE 语句) 和内容 (INSERT 语句或分隔文本文件) 表示的信息。这种类型的备份适用于较小的数据量，您可以在其中编辑数据值或表结构，或者在不同的机器架构上重新创建数据。
 
-简单来讲，物理备份就是拷贝数据库原始文件，而逻辑备份通过工具 (mysqldump) 来把数据库内容通过`sql`语句导出来。
+简单来讲，物理备份就是拷贝数据库原始文件，而逻辑备份通过工具 (mysqldump) 来把数据库内容通过 `sql` 语句导出来。
 
 #### 在线 vs 离线
 
@@ -44,9 +44,9 @@ MySQL 本身不提供获取文件系统快照的能力。它可通过 Veritas、
 
 备份前，我们需要确认 MySQL 是否已经开启了二进制日志功能。若未开启，下面几个步骤将介绍如何开启它。
 
-**1.查看包含`bin`的配置变量状况。**
+**1.查看包含 `bin` 的配置变量状况。**
 
-你可以通过`mysqld --verbose --help`，查看所有配置项，在登录 MySQL 后，也可以通过下面的命令获取想要的配置项。
+你可以通过 `mysqld --verbose --help`，查看所有配置项，在登录 MySQL 后，也可以通过下面的命令获取想要的配置项。
 
 ``` sh
 mysql> show variables like '%bin%';
@@ -86,9 +86,9 @@ mysql> show variables like '%bin%';
 29 rows in set (0.01 sec)
 ```
 
-可以看到`log_bin`的配置为`OFF`，说明 MySQL 并未启动二进制日志。
+可以看到 `log_bin` 的配置为 `OFF`，说明 MySQL 并未启动二进制日志。
 
-如果你执行了`show binary logs;`的命令，会得到下面结果：
+如果你执行了 `show binary logs;` 的命令，会得到下面结果：
 
 ```sh
 mysql> show binary logs;
@@ -110,7 +110,7 @@ mysql> show variables like 'datadir';
 
 **3.启动二进制日志**
 
-通常把自定义的用户配置放在`conf.d`目录下，并命名为`your_config_name.cnf`格式。
+通常把自定义的用户配置放在 `conf.d` 目录下，并命名为 `your_config_name.cnf` 格式。
 
 我们在这个文件里加入下面几行配置：
 
@@ -191,17 +191,17 @@ mysqldump [options] --databases db_name ...
 mysqldump [options] --all-databases
 ```
 
-`mysqldump`允许一张[组]表或者一个[组]数据库以及整个 MySQL 服务器进行备份，也可以叫做`转储`。
+ `mysqldump` 允许一张[组]表或者一个[组]数据库以及整个 MySQL 服务器进行备份，也可以叫做`转储`。
 
 #### 例子
 
-假如有一个数据库叫`publish_system_test`，我们对其进行全量备份，那么可以写如下命令：
+假如有一个数据库叫 `publish_system_test`，我们对其进行全量备份，那么可以写如下命令：
 
 ``` sh
 mysqldump -u root -p -h localhost --flush-logs --master-data=2 --single-transaction --databases publish_system_test > "publish_system_test_backup_$(date +"%Y%m%d_%H%M%S").sql"
 ```
 
-在导出的文件名称命名上，我们使用`date`命令在文件尾部添加备份日期，这方便在恢复时能快速识别备份日期。`.sql`文件也被叫做`转储文件` (dump file) 。
+在导出的文件名称命名上，我们使用 `date` 命令在文件尾部添加备份日期，这方便在恢复时能快速识别备份日期。`.sql`文件也被叫做`转储文件` (dump file) 。
 
 上面的执行，会对所有该数据库的表加上`读锁`，然后导出 SQL 语句，这意味着在备份期间客户端对该数据库只有读取访问能力。
 
@@ -233,13 +233,13 @@ UNLOCK TABLES;
 
 `--master-data`默认参数值为 1，当指定为 2 时，会以注释状态输出。
 
-[--single-transaction](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction)参数，该参数会把`事务隔离模式` (transaction isolation mode) 设置为`可重复读取` (REPEATABLE READ) ，并且在转储之前发送`START TRANSACTION` SQL 语句给服务器，表示即将启动一个事务。
+[--single-transaction](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction)参数，该参数会把`事务隔离模式` (transaction isolation mode) 设置为`可重复读取` (REPEATABLE READ) ，并且在转储之前发送 `START TRANSACTION` SQL 语句给服务器，表示即将启动一个事务。
 
 通过这个参数，能够保证转储时上数据库的`一致性`。该参数只对事务性表起作用，例如：InnoDB 表，而像 MyISAM 或者 MEMORY 表转储时状态可能发生改变。
 
-当有一个包含`--single-transaction`选项的转储进行中，为了确保输出一个有效的转储文件 (正确的表内容和二进制日志坐标) ，不应该有其它数据库连接执行以下语句： `ALTER TABLE`, `CREATE TABLE`, `DROP TABLE`, `RENAME TABLE`, `TRUNCATE TABLE`，一致读不会隔离这些语句。
+当有一个包含`--single-transaction`选项的转储进行中，为了确保输出一个有效的转储文件 (正确的表内容和二进制日志坐标) ，不应该有其它数据库连接执行以下语句：`ALTER TABLE`, `CREATE TABLE` , `DROP TABLE` , `RENAME TABLE` , `TRUNCATE TABLE`，一致读不会隔离这些语句。
 
-[--flush-logs](https://dev.mysql.com/doc/refman/8.0/en/flush.html#flush-logs)参数，该参数会使数据目录包含一个新的二进制日志文件。也就是说日志文件`mysql-bin.000002`是新创建的，后面的对数据库更改的日志都将从该文件开始写入。
+[--flush-logs](https://dev.mysql.com/doc/refman/8.0/en/flush.html#flush-logs)参数，该参数会使数据目录包含一个新的二进制日志文件。也就是说日志文件 `mysql-bin.000002` 是新创建的，后面的对数据库更改的日志都将从该文件开始写入。
 
 #### 增量备份
 
@@ -247,7 +247,7 @@ UNLOCK TABLES;
 
 增量备份的本质是创建一个新的日志文件，后续的更改都将从新的日志文件开始写入。所以我们可以定期执行刷新日志操作来创建增量备份。
 
-通过下面的`mysqladmin`命令执行刷新日志操作：
+通过下面的 `mysqladmin` 命令执行刷新日志操作：
 
 ``` sh
 mysqladmin flush-logs
@@ -269,7 +269,7 @@ show master status;
 
 恢复备份首先要做的是恢复最后一个全量备份，再根据最后一个全量备份的时间点找到`大于`该时间点并`小于`故障发生之前的时间点之间的所有增量备份。
 
-完全备份的恢复方式是把转储文件通过`mysql`命令载入，并且你还可以指定一个 host 使数据载入到另一台远程 SQL 服务器。
+完全备份的恢复方式是把转储文件通过 `mysql` 命令载入，并且你还可以指定一个 host 使数据载入到另一台远程 SQL 服务器。
 
 ``` sh
 mysql --host=host_name -u root -p < publish_system_test_backup_20220105_030044.sql

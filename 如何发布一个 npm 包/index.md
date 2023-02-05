@@ -1,27 +1,27 @@
 ## 如何发布一个 npm 包 
 ### 发布前
 
-`npm` 包的发布需要提供两个关键信息：`registry` 和 `access token`。
+ `npm` 包的发布需要提供两个关键信息：`registry`和 `access token` 。
 
-`registry` 指定发布的仓库的地址；`access token` 规定访问权限，是一串16进制的字符串。
+ `registry` 指定发布的仓库的地址； `access token` 规定访问权限，是一串16进制的字符串。
 
 #### 登录
 
 CLI 里对 token 的操作以及包发布 (automation token 除外) 都必须预先登录。
 
-使用`npm login`，然后输入密码邮箱即可。可以用过 `npm whoami` 来验证登录状态。
+使用 `npm login`，然后输入密码邮箱即可。可以用过 `npm whoami` 来验证登录状态。
 
 #### Access Token
 
-`access token` 的可以通过 `Web` 来生成，也可以通过 `CLI` 生成。每次调用 `npm login` 都会生成一条新的 token。
+ `access token` 的可以通过 `Web` 来生成，也可以通过 `CLI` 生成。每次调用 `npm login` 都会生成一条新的 token。
 
 ##### 类型
 
-Token 分为三种类型：`read only`、`publish`、`automation`；
+Token 分为三种类型：`read only`、`publish`、`automation` ；
 
-* `read only`：只允许安装和分发；
-* `publish`：允许安装、分发、修改、发布以及对帐户所有权；
-* `automation`：主要用于 `CI` 环境的包发布并且`不能在 CLI 里创建 automation token`，可以避免双因子认证 (2FA) 的密码输入；
+* `read only` ：只允许安装和分发；
+* `publish` ：允许安装、分发、修改、发布以及对帐户所有权；
+* `automation` ：主要用于 `CI` 环境的包发布并且`不能在 CLI 里创建 automation token`，可以避免双因子认证 (2FA) 的密码输入；
 
 ##### 查看
 
@@ -66,10 +66,10 @@ npm password:
 
 Token 有几个属性：
 
-* `cidr_whitelist`：可以指定IP范围内的地址可访问；
-* `readonly`：只读权限；
-* `automation`：是否是自动化 token；
-* `create`：token 创建时间；
+* `cidr_whitelist` ：可以指定IP范围内的地址可访问；
+* `readonly` ：只读权限；
+* `automation` ：是否是自动化 token；
+* `create` ：token 创建时间；
 
 > token 生成后只展示一次，后面将永远不再展示；通过 CLI 方式`不能`生成 `automation token`，即 automation 永远是 false；
 
@@ -84,7 +84,7 @@ Removed 1 token
 
 #### Registry
 
-指定一个目标仓库，用于存储发布包，默认`npm registry`的值为：<https://registry.npmjs.org>。
+指定一个目标仓库，用于存储发布包，默认 `npm registry` 的值为：<https://registry.npmjs.org>。
 
 npm 的 `registry` 使用的是[couch database](https://couchdb.apache.org/)数据库，可以直接使用 RESTful API 方式访问数据。
 
@@ -152,7 +152,7 @@ npm --no-git-tag-version version patch
 
 #### 使用 automation token
 
-在 CI/CD 环境直接使用 `automation token`来避免双因子认证的密码输入。
+在 CI/CD 环境直接使用 `automation token` 来避免双因子认证的密码输入。
 
 可以将 token 配置到 `.npmrc` 文件里。如果项目根目录包含 .npmrc 则优先使用它。对于已安装 npm 的用户，用户目录会包含一份作用全局的 `~/.npmrc` 文件，通常使用它作为 CD 会更为方便。
 

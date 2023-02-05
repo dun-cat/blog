@@ -15,7 +15,7 @@ HTTP (HyperTextTransferProtocol) 协议处于网络七层模型 (Open System Int
 
 基于实践理解该协议可概括为三部分组成：`请求行/响应行`、`请求/响应头(header)`、`实体(body)`。
 
-以下是在mac上使用`curl -i www.baidu.com`命令查看http协议的服务器`响应(response)消息`输出。
+以下是在mac上使用 `curl -i www.baidu.com` 命令查看http协议的服务器`响应(response)消息`输出。
 
 ![http_console](http_console.png)
 
@@ -102,7 +102,7 @@ Set-Cookie  字段是由服务器端来设置http协议响应头(respone header)
 * application/zip
 * application/atom+xml
 
-后台会依据这个字段知道处理内容的类型。对了这些类型统称`MIME type(Multipurpose Internet Mail Extensions Type)`，最初是用于邮件附加的类型功能，现在明显已经不只是邮件所使用的附件传输的类型标记了。
+后台会依据这个字段知道处理内容的类型。对了这些类型统称 `MIME type(Multipurpose Internet Mail Extensions Type)`，最初是用于邮件附加的类型功能，现在明显已经不只是邮件所使用的附件传输的类型标记了。
 标记类型不只是让服务器知道这是图片或者其它类型然后做响应处理，客户端也是如此。浏览器下载文件的后缀名可不是靠摇塞子生成的。
 
 ##### Content-Length

@@ -169,7 +169,7 @@ origin  git@github.com:dun-cat/door-cli.git (push)
 
 **3. 同步本地分支到远程仓库**
 
-如果我们只执行`git push`，那么只会同步`当前分支`到远程的一个`新同名分支`。显然，我们更希望同步所有分支到远程仓库里去。
+如果我们只执行 `git push`，那么只会同步`当前分支`到远程的一个`新同名分支`。显然，我们更希望同步所有分支到远程仓库里去。
 
 ``` bash
 ➜  door-cli git:(dev) git push
@@ -184,7 +184,7 @@ To github.com:dun-cat/door-cli.git
  * [new branch]      dev -> dev
 ```
 
-上面只同步了 dev 分支。我们需要同步所有分支，所以我们使用`git push --all -u`命令：
+上面只同步了 dev 分支。我们需要同步所有分支，所以我们使用 `git push --all -u` 命令：
 
 ``` bash
 ➜  door-cli git:(dev) git push --all -u
@@ -199,7 +199,7 @@ Branch 'dev' set up to track remote branch 'dev' from 'origin'.
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-上面使用了`--all`选项表示所有分支，而`-u, --set-stream`对于每个分支保证最新的，并且跟踪 (tracking) 分支引用，这使得后续的`pull`操作无障碍。
+上面使用了`--all`选项表示所有分支，而`-u, --set-stream`对于每个分支保证最新的，并且跟踪 (tracking) 分支引用，这使得后续的 `pull` 操作无障碍。
 
 ### 子模块
 
@@ -217,7 +217,7 @@ git submodule add git@github.com:dun-cat/door-cli.git dep_dir
 git rm -rf dep_dir
 ```
 
-如果远程主仓库包含`dep_dir`目录，那么 git 会给出以下提示：
+如果远程主仓库包含 `dep_dir` 目录，那么 git 会给出以下提示：
 
 ``` bash
 A git directory for 'dep_dir' is found locally with remote(s):
@@ -252,15 +252,15 @@ git submodule set-branch --branch feat/x dep_dir
 
 #### Q & A
 
-`Q`: 直接在主仓库的目录，执行依赖仓库的克隆可以么？
+ `Q` : 直接在主仓库的目录，执行依赖仓库的克隆可以么？
 
-`A`: 这个操作只使用于本地，提交主仓库内容时，只会提交依赖仓库的内容，主仓库不会关联依赖仓库的地址。这意味着拉取主仓库并不会同时拉取子仓库。
+ `A` : 这个操作只使用于本地，提交主仓库内容时，只会提交依赖仓库的内容，主仓库不会关联依赖仓库的地址。这意味着拉取主仓库并不会同时拉取子仓库。
 
 <!-- ---
 
-`Q`: 如何解决 'dep_dir' already exists in the index 问题？
+ `Q` : 如何解决 'dep_dir' already exists in the index 问题？
 
-`A`: 该问题是 dep-dir 已经被仓库索引，所以需要去掉。 -->
+ `A` : 该问题是 dep-dir 已经被仓库索引，所以需要去掉。 -->
 
 ### 默认简写
 
