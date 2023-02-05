@@ -17,9 +17,9 @@
 
 ### 形式定义
 
-#### 自动机 (Automaton)
+#### 自动机
 
-一个自动机可以形式化地表示为一个 5-[元组](https://en.wikipedia.org/wiki/Tuple)(Tuple) ${\displaystyle M=\langle \Sigma ,\Gamma ,Q,\delta ,\lambda \rangle }$， 当：
+一个自动机 (Automaton) 可以形式化地表示为一个 5-[元组](https://en.wikipedia.org/wiki/Tuple)(Tuple) ${\displaystyle M=\langle \Sigma ,\Gamma ,Q,\delta ,\lambda \rangle }$， 当：
 
 * ${\displaystyle \Sigma}$ 是一个`有限的符号集合`，称为自动机的`输入字母表`；
 * ${\displaystyle \Gamma }$ 是另一个`有限的符号集合`，称为自动机的`输出字母表`；
@@ -29,38 +29,38 @@
   
 如果 ${\displaystyle Q}$ 是`有限的`，那么 ${\displaystyle M}$ 是一个`有限自动机`。
 
-#### 输入词 (Input word)
+#### 输入词
 
-一个自动机读取`有限`符号 ${\displaystyle a_{1}a_{2}...a_{n}}$ 组成的字符串，当 ${\displaystyle a_{i}\in \Sigma }$，则这个字符串称为`输入词`。所有`输入词`的`集合`用 ${\displaystyle \Sigma ^{*}}$ 表示。
+一个自动机读取`有限`符号 ${\displaystyle a_{1}a_{2}...a_{n}}$ 组成的字符串，当 ${\displaystyle a_{i}\in \Sigma }$，则这个字符串称为`输入词` (Input word)。所有`输入词`的`集合`用 ${\displaystyle \Sigma ^{*}}$ 表示。
 
-#### 运行 (Run)
+#### 运行
 
-一个状态序列 ${\displaystyle q_{0},q_{1},...,q_{n}}$，当 ${\displaystyle q_{i}\in Q}$ 并且 ${\displaystyle q_{i}=\delta (q_{i-1},a_{i})}$，其中 ${\displaystyle 0<i\leq n}$，则一个从状态 ${\displaystyle q_{0}}$ 开始的输入 ${\displaystyle a_{1}a_{2}...a_{n}\in \Sigma ^{*}}$ 为自动机的一次运行。
+一个状态序列 ${\displaystyle q_{0},q_{1},...,q_{n}}$，当 ${\displaystyle q_{i}\in Q}$ 并且 ${\displaystyle q_{i}=\delta (q_{i-1},a_{i})}$，其中 ${\displaystyle 0<i\leq n}$，则一个从状态 ${\displaystyle q_{0}}$ 开始的输入 ${\displaystyle a_{1}a_{2}...a_{n}\in \Sigma ^{*}}$ 为自动机的一次运行 (Run)。
 
 换句话说，一开始自动机在初始状态 ${\displaystyle q_{0}}$，并接收输入 ${\displaystyle a_{1}}$。为了 ${\displaystyle a_{1}}$ 和每个接下来的 ${\displaystyle a_{i}}$ 处于输入字符串中，自动机会选择下一个状态 ${\displaystyle q_{i}}$ (根据`转移函数` ${\displaystyle \delta (q_{i-1},a_{i})}$ 获取)，直到最后一个符号 ${\displaystyle a_{n}}$ 被读取，使机器处于运行的最终状态 ${\displaystyle q_{n}}$。
 
 类似地，每一步，自动机会根据`输出函数`发出一个`输出符号` ${\displaystyle \lambda (q_{i-1},a_{i})}$。
 
-#### 接受器 (Acceptor)
+#### 接受器
 
-为了用形式语言理论来研究自动机，可以将自动机看作一个`接受器`，代替输出`字母表`和`函数` ${\displaystyle \Gamma }$ 和 ${\displaystyle \lambda }$：
+为了用形式语言理论来研究自动机，可以将自动机看作一个`接受器` (Acceptor)，代替输出`字母表`和`函数` ${\displaystyle \Gamma }$ 和 ${\displaystyle \lambda }$：
 
 * ${\displaystyle q_{0}\in Q}$, 一个指定的开始状态，和
 * ${\displaystyle F}$，一个 ${\displaystyle Q}$ (i.e. ${\displaystyle F\subseteq Q}$) 的状态集合称为`接受状态`。
 
 这允许定义以下内容：
 
-#### 可接受词 (Accepting word)
+#### 接受词
 
-对于自动机的输入单词 ${\displaystyle w=a_{1}a_{2}...a_{n}\in \Sigma ^{*}}$，如果 ${\displaystyle {\overline {\delta }}(q_{0},w)\in F}$，换句话说，如果在消耗了整个字符串 ${\displaystyle w}$ 之后该机器仍然处于`可接受状态`，那么 $w$ 是一个可接受词。
+对于自动机的输入单词 ${\displaystyle w=a_{1}a_{2}...a_{n}\in \Sigma ^{*}}$，如果 ${\displaystyle {\overline {\delta }}(q_{0},w)\in F}$，换句话说，如果在消耗了整个字符串 ${\displaystyle w}$ 之后该机器仍然处于`可接受状态`，那么 $w$ 是一个接受词 (Accepting word)。
 
-#### 已识别语言 (Recognized language)
+#### 已识别语言
 
-语言 ${\displaystyle L\subseteq \Sigma ^{*}}$ 能被自动机识别，该语言由所有已被自动机接受的单词组成的集合。
+语言 ${\displaystyle L\subseteq \Sigma ^{*}}$ 能被自动机识别，则由所有已被自动机接受的单词组成的集合被叫做已识别语言 (Recognized language)。
 
-#### 可识别语言 (Recognizable languages)
+#### 可识别语言
 
-可识别语言是一些自动机识别的语言集合。对于`有限自动机`，可识别的语言是`正则语言` (Regular languages)。对于不同类型的自动机，可识别的语言是不同的。
+可识别语言 (Recognizable languages) 是一些自动机识别的语言集合。对于`有限自动机`，可识别的语言是`正则语言` (Regular languages)。对于不同类型的自动机，可识别的语言是不同的。
 
 ### 确定性和非确定性
 
