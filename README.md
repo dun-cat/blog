@@ -168,5 +168,6 @@
 * #### [React Native 技术详解 (二) - 新架构](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%20(%E4%BA%8C)%20-%20%E6%96%B0%E6%9E%B6%E6%9E%84/index.md)
 * #### [React Native 技术详解 (三) - 打包工具 Metro Bundler](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%20(%E4%B8%89)%20-%20%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7%20Metro%20Bundler/index.md)
 * #### [React Native 技术详解 (四) - 调试工具 Flipper](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%20(%E5%9B%9B)%20-%20%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%20Flipper/index.md)
+* #### [React Native 技术详解 (五) - 拆包 (Code Splitting)](./React%20Native%20%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%20(%E4%BA%94)%20-%20%E6%8B%86%E5%8C%85%20(Code%20Splitting)/index.md)
 * #### [Projects](./Projects/index.md)
 * #### [Npm 跨库本地联调](./Npm%20%E8%B7%A8%E5%BA%93%E6%9C%AC%E5%9C%B0%E8%81%94%E8%B0%83/index.md)
