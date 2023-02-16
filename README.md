@@ -112,6 +112,7 @@
 * #### [如何在移动端的调试中更加舒适？](./%E5%A6%82%E4%BD%95%E5%9C%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%AD%E6%9B%B4%E5%8A%A0%E8%88%92%E9%80%82%EF%BC%9F/index.md)
 * #### [MySQL 数据备份与恢复](./MySQL%20%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/index.md)
 * #### [Nest.js 脚手架搭建](./Nest.js%20%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/index.md)
+* #### [如何使用 NestJS 开发后端应用 - PPT 分享](./%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20NestJS%20%E5%BC%80%E5%8F%91%E5%90%8E%E7%AB%AF%E5%BA%94%E7%94%A8%20-%20PPT%20%E5%88%86%E4%BA%AB/index.md)
 * #### [游戏中的网络同步](./%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5/index.md)
 * #### [Nginx 之基本知识](./Nginx%20%E4%B9%8B%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/index.md)
 * #### [Nginx 常用配置](./Nginx%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/index.md)
