@@ -76,6 +76,6 @@ config      id_rsa      id_rsa.pub  known_hosts
 
 keytool 是 Java 工具，意味着你需要 Java 运行环境。如果你安装了 JDK ，那么可以在其安装目录
 
-参考文献：
+参考资料：
 
 \> [https://zh.wikipedia.org/wiki/公开密钥加密](https://zh.wikipedia.org/wiki/公开密钥加密)

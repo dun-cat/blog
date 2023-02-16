@@ -146,7 +146,7 @@ find . -name "a.*" -exec rm {} \;
 find . -name "a.*" -ok rm {} \;
 ```
 
-参考文献：
+参考资料：
 
 \> [https://blog.csdn.net/MrDongShiYi/article/details/81625172](https://blog.csdn.net/MrDongShiYi/article/details/81625172)
 

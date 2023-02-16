@@ -120,7 +120,6 @@ function createGraph() {
 const graph = createGraph()
 ```
 
-
 ### 贪心算法
 
 我们把地图着色问题，拆解为相邻顶点采用不同颜色的小问题。通过遍历顶点，把当前顶点与其相邻的顶点做比较，选择与他们不同的颜色即可。
@@ -180,6 +179,6 @@ npm run coloring-china-map
 
 最后，祝贺建党 100 周年，祝愿祖国越来越强大。
 
-参考文献：
+参考资料：
 
 \> [https://en.wikipedia.org/wiki/Graph_coloring](https://en.wikipedia.org/wiki/Graph_coloring)

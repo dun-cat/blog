@@ -13,7 +13,7 @@
 
 目前，有很多消息队列有很多开源的实现，包括 JBoss Messaging、JORAM、Apache ActiveMQ、Sun Open Message Queue、RabbitMQ、IBM MQ、Apache Qpid、Apache RocketMQ和HTTPSQS。
 
-参考文献：
+参考资料：
 
 \> [https://www.geeksforgeeks.org/difference-between-message-queues-and-mailboxes/](https://www.geeksforgeeks.org/difference-between-message-queues-and-mailboxes/)
 

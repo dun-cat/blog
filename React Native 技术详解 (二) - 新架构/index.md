@@ -57,7 +57,7 @@ React Native [原生组件](https://reactnative.dev/docs/native-components-andro
 
 Codegen 不算是新架构的主要组成部分，它是一个帮助我们`避免编写重复代码`的工具。主要应用于 `Turbo Modules` 和 `Fabric 组件` 的开发，通过它能快速`生成脚手架代码`。
 
-参考文献：
+参考资料：
 
 \> [https://litslink.com/blog/new-react-native-architecture](https://litslink.com/blog/new-react-native-architecture)
 

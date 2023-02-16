@@ -91,6 +91,6 @@ flush privileges;
 ALTER TABLE test CHANGE project_id p_id int(11) NOT NULL COMMENT '项目 id';
 ```
 
-参考文献：
+参考资料：
 
 \> [https://dev.mysql.com/doc/refman/8.0/en/](https://dev.mysql.com/doc/refman/8.0/en/)

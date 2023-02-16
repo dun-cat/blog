@@ -49,6 +49,6 @@
 
 * 团队成员每天下班前`应该` push 当天所有编写的代码。
 
-参考文献：
+参考资料：
 
 > [https://www.conventionalcommits.org/zh-hans/v1.0.0/](https://www.conventionalcommits.org/zh-hans/v1.0.0/)

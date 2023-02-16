@@ -380,7 +380,7 @@ Task 类型需要使用[@CacheableTask](https://docs.gradle.org/current/javadoc/
 
 所有其他内置任务当前不可缓存。
 
-某些任务，例如 [Copy](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Copy.html)或 [Jar](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html) 
+某些任务，例如 [Copy](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Copy.html)或 [Jar](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html)
 
 将文件从一个位置 Copy 到另一个位置的 Task 使用缓存是没有意义的。不产生输出或没有 Action 的 Task 也是没有缓存意义的。
 
@@ -470,7 +470,7 @@ Could not initialize class org.codehaus.groovy.runtime.InvokerHelper
 
 请确认 Gradle 版本在`6.3-rc-4`以上，你可以在[这里](https://github.com/gradle/gradle/issues/12599)找到该问题的讨论。
 
-参考文献：
+参考资料：
 
 \> [https://docs.gradle.org/current/userguide/build_cache.html](https://docs.gradle.org/current/userguide/build_cache.html)
 

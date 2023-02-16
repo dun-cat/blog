@@ -105,7 +105,7 @@
 
 自动机模拟器是用于教授、学习和研究自动机理论的教学工具。自动机模拟器将自动机的描述作为输入，然后`模拟`其对`任意输入字符串`的工作。可以通过多种方式输入自动机的描述。自动机可以用`符号语言`定义， 或者可以以预先设计的形式输入其规格，或者可以通过单击和拖动鼠标来绘制其`转换图`。众所周知的自动机模拟器包括 Turing's World、JFLAP、VAS、TAGS 和 SimStudio。
 
-参考文献：
+参考资料：
 
 \> [https://cs.stanford.edu/people/eroberts/courses/soco/projects/2004-05/automata-theory/basics.html](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2004-05/automata-theory/basics.html)
 

@@ -70,7 +70,7 @@
 
 #### 工程基础
 
-参考文献：
+参考资料：
 
 \> [https://zh.wikipedia.org/wiki/软件工程](https://zh.wikipedia.org/wiki/软件工程)
 

@@ -18,7 +18,7 @@
    2. 抛硬币来连接他们中的一个。
 2. 完事。
 
-参考文献：
+参考资料：
 
 \> [https://hurna.io/academy/algorithms/maze_generator/index.html](https://hurna.io/academy/algorithms/maze_generator/index.html)
 

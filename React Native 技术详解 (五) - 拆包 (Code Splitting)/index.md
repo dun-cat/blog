@@ -35,14 +35,25 @@
 
 ### 如何拆包？
 
+我们将 React Native 项目分割成 `common.bundle` 的基础包和多个业务包 `order.business.bundle` 和 `vip.business.bundle` 。通常一个 React Native 项目对应只有一个基础包和业务包；
+
 针对于我们已有的目标，给出了以下实现设计方案的用例图：
 
 ![rn-code-splitting.svg](rn-code-splitting.svg)
 
-1. 我们将 React Native 项目分割成 `common.bundle` 的基础包和多个业务包 `order.business.bundle` 和 `vip.business.bundle` 。通常一个 React Native 项目对应只有一个基础包和业务包。
-2. App 启动时，首先让 JS 引擎加载基础包`common.bundle`。
-3. 进入一个 RN 视图时，首先
+1. App 启动时，通过读取包配置文件 `load.config.json`，首先让 JS 引擎加载基础包 `common.bundle` 包；
+2. 当进入一个 order 页时，开始加载 `order.business.bundle` 包；
 
-参考文献：
+`load.config.json` 配置所有包的`模块名`和它所对应的`包路径`，把`模块名`和 `Scheme 路由协议` (URI) 相结合，能够直接通过路由自动匹配对应的包路径进行加载。
+
+#### 拆包原理
+
+React Native 拆包本质是模块过滤的实现的，即在打`公共包`的时候把`业务模块文件`进行过滤，把业务模块排除在公共包之外。而进行`业务包`打包时，对`公共模块文件`进行过滤，把公共模块排除在业务包之外。
+
+网上也有现成拆包的工具：[react-native-multibundler](https://github.com/smallnew/react-native-multibundler)、[携程 moles-packer](https://github.com/ctripcorp/moles-packer)。但都已经很久没有继续维护了，并且都要求版本匹配。对于 React Native 深度开发者来说，更期望 100% 自主控制风险。
+
+拆包是基于打包工具 Metro 来进行的。
+
+参考资料：
 
 \> [https://www.react-native.eu/talks/pawel-trysla-code-splitting-in-react-native](https://www.react-native.eu/talks/pawel-trysla-code-splitting-in-react-native)

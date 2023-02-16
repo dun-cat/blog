@@ -23,6 +23,6 @@ curl 是个多功能命令行工具，它的常见功能有：
 curl -O "https://curl.se/logo/curl-logo.svg"
 ```
 
-参考文献：
+参考资料：
 
 \> [https://everything.curl.dev/](https://everything.curl.dev/)

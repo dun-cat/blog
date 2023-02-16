@@ -170,7 +170,7 @@ const memoize = function(fn, context) {
 * 闭包
 * λ 演算
 
-参考文献：
+参考资料：
 
 \> [https://en.wikipedia.org/wiki/Pure_function](https://en.wikipedia.org/wiki/Pure_function)
 

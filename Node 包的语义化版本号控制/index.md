@@ -56,7 +56,7 @@ npm install lodash@next # 安装即将到来的发行版
 
 可以使用版本查看工具：[https://semver.npmjs.com/](https://semver.npmjs.com/)
 
-参考文献：
+参考资料：
 
 \> [https://semver.org/lang/zh-CN/](https://semver.org/lang/zh-CN/)
 

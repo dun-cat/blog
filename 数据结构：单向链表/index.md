@@ -171,7 +171,7 @@ end ReverseTraversal
 
 $O(n)$
 
-参考文献：
+参考资料：
 
 \> [https://en.wikipedia.org/wiki/Linked_list](https://en.wikipedia.org/wiki/Linked_list)
 

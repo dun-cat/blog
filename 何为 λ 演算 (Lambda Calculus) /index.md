@@ -332,7 +332,7 @@ NOT := $λz.λx.λy.z\ y\ x$
 
 IFTHENELSE := $λz.λy.λx.z\ y\ x$
 
-参考文献：
+参考资料：
 
 \> [http://cgnail.github.io/academic/lambda-index/](http://cgnail.github.io/academic/lambda-index/)
 

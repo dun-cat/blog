@@ -169,7 +169,7 @@ module.exports = {
 }
 ```
 
-参考文献：
+参考资料：
 
 \> [https://developers.google.com/web/tools/chrome-devtools/remote-debugging](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)
 

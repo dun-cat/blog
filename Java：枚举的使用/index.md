@@ -4,22 +4,27 @@
 枚举类型是一个特殊类型，这个类型会有预定义好的常量集合。而定义好的变量，它的赋值操作的值都必须是这个类型里预定义中的值。
 
 #### 基本定义
+
 ``` java
 public enum Fruits {
     APPLE,ORANGE,BANANA
 }
 ```
+
 #### 枚举的使用
 
-1.  使用枚举类型定义变量，并赋值
+1. 使用枚举类型定义变量，并赋值
 
 #### 基本用法
+
 ``` java
 Fruits fruit= Fruits.APPLE;
 ```
-1.  switch语句的使用(JDK1.6之前的switch语句只支持int,char,enum类型)
+
+1. switch语句的使用(JDK1.6之前的switch语句只支持int,char,enum类型)
 
 结合switch
+
 ``` java
 public void usedBySwitch(Fruits fruit) {
     switch (fruit) {
@@ -34,9 +39,11 @@ public void usedBySwitch(Fruits fruit) {
     }
 }
 ```
-1.  枚举的另一种方式的使用
+
+1. 枚举的另一种方式的使用
 
 其他用法
+
 ``` java
 public enum Fruits {
         //与简单定义不同，这里的需要加入";"来结尾。并且预定的方式有所不同。
@@ -107,9 +114,10 @@ public class RunMain {
     }
 }
 ```
+
 还有比如可以实现接口，成为接口成员等类似于普通类的操作。
 
-参考文献：
+参考资料：
 
 \> 概念参考依据 orcale 中 tutorial 里的[Enum Types](http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)文章
 

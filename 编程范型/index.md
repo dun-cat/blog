@@ -117,6 +117,6 @@
 
 ### 文学式
 
-参考文献：
+参考资料：
 
 \> [https://zh.wikipedia.org/wiki/编程范型](https://zh.wikipedia.org/wiki/编程范型)

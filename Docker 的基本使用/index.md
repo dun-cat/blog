@@ -144,6 +144,6 @@ docker-compose -f docker-compose.demo.yml up -d
 docker cp yourContainerName:/dir /dir
 ```
 
-参考文献：
+参考资料：
 
 \> [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)

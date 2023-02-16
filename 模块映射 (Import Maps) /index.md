@@ -49,7 +49,7 @@ Import maps 允许 web 页面去控制 Javascript 的 import 行为。
   * `scopes`，一个有序 map ，它由 URLs 和 说明符 maps 组成。
 * 一个`空 import map`是一个 import map，它的 imports 和 scopes 都是空的maps。
 
-参考文献：
+参考资料：
 
 \> [https://github.com/WICG/import-maps](https://github.com/WICG/import-maps)
 

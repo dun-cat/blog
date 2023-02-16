@@ -223,6 +223,6 @@ module.exports = {
 请使用 html-webpack-plugin `自动生成 link 标签`或者在创建 index.html 文件时使用 link 标签。
 {{% /notice %}}
 
-参考文献：
+参考资料：
 
 \> [https://webpack.docschina.org/plugins/](https://webpack.docschina.org/plugins/)

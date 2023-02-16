@@ -58,7 +58,7 @@ Nginx 主进程 ID 会被写入文件，默认 `nginx.pid` 在`/usr/local/nginx/
 ps -ax | grep nginx
 ```
 
-参考文献：
+参考资料：
 
 \> [https://nginx.org/en/docs/beginners_guide.html#control](https://nginx.org/en/docs/beginners_guide.html#control)
 

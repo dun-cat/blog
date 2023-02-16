@@ -138,7 +138,7 @@ tsconfig.json 的协议可以在这里找到[the JSON Schema Store](http://json.
 
  `include` 和 `exclude` 支持通配符形成 `glob` 匹配模式：
 
-*  `\*`匹配 0 个或多个字符 (不包括目录分割符)；
+* `\*`匹配 0 个或多个字符 (不包括目录分割符)；
 * `?` 匹配任意一个字符 (不包括目录分割符)；
 * `**/`匹配任意包含嵌套层级的目录。
 
@@ -170,8 +170,8 @@ tsconfig.json 的协议可以在这里找到[the JSON Schema Store](http://json.
 
 默认情况下（未设置 `esModuleInterop` 或值为 false），TypeScript 像 `ES6 模块` 一样对待 `CommonJS/AMD/UMD` 。这样的行为有两个被证实的缺陷：
 
-* 形如 `import * as moment from "moment"` 这样的命名空间导入等价于 `const moment = require("moment")` 
-* 形如 `import moment from "moment"` 这样的默认导入等价于 `const moment = require("moment").default` 
+* 形如 `import * as moment from "moment"` 这样的命名空间导入等价于 `const moment = require("moment")`
+* 形如 `import moment from "moment"` 这样的默认导入等价于 `const moment = require("moment").default`
 
 这种错误的行为导致了这两个问题：
 
@@ -236,7 +236,7 @@ fs.readFileSync("file.txt", "utf8");
 lodash_1.default.chunk(["a", "b", "c", "d"], 2);
 ```
 
-参考文献：
+参考资料：
 
 \> [https://www.typescriptlang.org/zh/docs/handbook/tsconfig-json.html](https://www.typescriptlang.org/zh/docs/handbook/tsconfig-json.html)
 

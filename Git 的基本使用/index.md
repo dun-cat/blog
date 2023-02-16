@@ -272,6 +272,6 @@ git submodule set-branch --branch feat/x dep_dir
 * ga =  git add
 * gb = git branch
 
-参考文献：
+参考资料：
 
 \> [https://blog.osteele.com/2008/05/my-git-workflow/](https://blog.osteele.com/2008/05/my-git-workflow/)

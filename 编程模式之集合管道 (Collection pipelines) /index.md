@@ -154,6 +154,6 @@ hello hello
 
 <img src="union.png" width=220 />，返回该集合或提供的集合中的元素，删除重复项。
 
-参考文献：
+参考资料：
 
 \> [https://martinfowler.com/articles/collection-pipeline/#NestedOperatorExpressions](https://martinfowler.com/articles/collection-pipeline/#NestedOperatorExpressions)

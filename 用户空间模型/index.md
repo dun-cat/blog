@@ -120,7 +120,7 @@ scheduler.postTask(async () => {
 
 我们注意到，与从 microtasks 开始的新任务类似，如果在同一个浏览器任务中完成大量工作，非 yieldy 异步任务可能会导致性能问题。
 
-参考文献：
+参考资料：
 
 \> [https://github.com/WICG/scheduling-apis/blob/main/misc/userspace-task-models.md](https://github.com/WICG/scheduling-apis/blob/main/misc/userspace-task-models.md)
 

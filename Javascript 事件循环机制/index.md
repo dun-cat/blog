@@ -30,24 +30,24 @@ Task Queue 也被称为 `Macro Task`，有些地方的示意图还会以 `Callba
 
 这类任务 WebApi 提供的接口有以下一些：
 
-*   setTimeout
-*   setInterval
-*   setImmediate
-*   requestAnimationFrame
-*   I/O
-*   UI rendering
+* setTimeout
+* setInterval
+* setImmediate
+* requestAnimationFrame
+* I/O
+* UI rendering
 
 #### (小任务队列)MicroTask Queue
 
 该队列作用和上面一样，但是执行的优先级却不一样。在同一个执行上下文中，Microtask 的优先级要`大于` Macrotask。
 
 这类任务 WebApi 提供的接口有以下一些:
-- process.nextTick
-- Promises
-- Object.observe
-- MutationObserver
+* process.nextTick
+* Promises
+* Object.observe
+* MutationObserver
 
-参考文献：
+参考资料：
 
 \> [https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 

@@ -82,6 +82,6 @@ tar -czvf /tmp/b.tar -C ./ .
 tar -xzvf /tmp/b.tar  /target_dir/ 
 ```
 
-参考文献：
+参考资料：
 
 \> [https://zh.wikipedia.org/wiki/Tar](https://zh.wikipedia.org/wiki/Tar)

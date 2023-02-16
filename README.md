@@ -84,7 +84,7 @@
 * #### [Chrome Dev Tools 的使用](./Chrome%20Dev%20Tools%20%E7%9A%84%E4%BD%BF%E7%94%A8/index.md)
 * #### [IOS 项目包管理工具 CocoaPods](./IOS%20%E9%A1%B9%E7%9B%AE%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%20CocoaPods/index.md)
 * #### [利用图建模来给中国地图染色](./%E5%88%A9%E7%94%A8%E5%9B%BE%E5%BB%BA%E6%A8%A1%E6%9D%A5%E7%BB%99%E4%B8%AD%E5%9B%BD%E5%9C%B0%E5%9B%BE%E6%9F%93%E8%89%B2/index.md)
-* #### [编译原理](./%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.md)
+* #### [编译原理概述](./%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E6%A6%82%E8%BF%B0/index.md)
 * #### [数据结构：二叉搜索树](./%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/index.md)
 * #### [数据结构：双向链表](./%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/index.md)
 * #### [数据结构：图 (Graph) ](./%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%9B%BE%20(Graph)%20/index.md)

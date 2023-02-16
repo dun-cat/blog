@@ -141,7 +141,7 @@ npm run maze-bt-generator
 
 <img src='maze-bt.svg' style="max-wdith:100%" />
 
-参考文献：
+参考资料：
 
 \> [https://hurna.io/academy/algorithms/maze_generator/index.html](https://hurna.io/academy/algorithms/maze_generator/index.html)
 

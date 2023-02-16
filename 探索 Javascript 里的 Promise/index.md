@@ -500,7 +500,7 @@ npm run test
 
 以上代码已分享至 github 上，源码地址：[https://github.com/dun-cat/promiseAPlus](https://github.com/dun-cat/promiseAPlus)
 
-参考文献：
+参考资料：
 
 \> [https://zh.wikipedia.org/wiki/Future与promise](https://zh.wikipedia.org/wiki/Future与promise)
 

@@ -5,7 +5,7 @@
 
 函数式编程 (英语：functional programming) 是一种编程范式，即如何编写程序的方法论。它以`λ 演算 (英语：lambda calculus，λ-calculus)`为理论基础，换句话来说函数式编程实现了 λ 演算支持。
 
-参考文献：
+参考资料：
 
 \> [https://zh.wikipedia.org/wiki/函数式编程](https://zh.wikipedia.org/wiki/函数式编程)
 

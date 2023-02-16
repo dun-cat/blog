@@ -131,7 +131,7 @@ el.style.cssText += "; left: " + left + "px; top: " + top + "px;";
 * 如果你想进行复杂的渲染更改 (例如动画) ，请在流程外执行此操作。您可以使用 position-absolute 或 position-fixed 来实现此目的。
 * 避免使用不必要且复杂的 CSS 选择器 (尤其是后代选择器) ，因为此类选择器需要耗用更多的 CPU 处理能力来执行选择器匹配。
 
-参考文献：
+参考资料：
 
 \> [https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg)
 

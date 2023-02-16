@@ -217,6 +217,6 @@ pod install --repo-update
 @end
 ```
 
-参考文献：
+参考资料：
 
 \> [https://developers.facebook.com/blog/post/2022/08/25/flipper-and-js-why-we-added-javascript-support-to-a-mobile-debugging-platform/](https://developers.facebook.com/blog/post/2022/08/25/flipper-and-js-why-we-added-javascript-support-to-a-mobile-debugging-platform/)

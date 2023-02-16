@@ -83,7 +83,7 @@ hanoi(4, A, C, B)
 把第 1 层圆盘，从 B 柱移至 C 柱
 ```
 
-参考文献：
+参考资料：
 
 \> [https://www.youtube.com/watch?v=1QgJEcnsqsQ&ab_channel=李永乐老师](https://www.youtube.com/watch?v=1QgJEcnsqsQ&ab_channel=李永乐老师)
 

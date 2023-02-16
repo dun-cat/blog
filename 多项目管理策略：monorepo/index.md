@@ -17,6 +17,6 @@
 * `占用更多的存储空间`：假如只对某一个项目感兴趣，那么你需要签出整个 monorepo 项目。
 * `CI 环境的性能问题` ：如果把整个 monorepo 库放在 CI 里进行构建和测试，可能会导致性能问题。
 
-参考文献：
+参考资料：
 
 \> [https://en.wikipedia.org/wiki/Monorepo](https://en.wikipedia.org/wiki/Monorepo)

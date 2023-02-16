@@ -67,7 +67,7 @@ Kleene 星运算是一元运算，用 $*$ 表示。它用来`重复`集合元素
 
 ![automata](automata.svg)
 
-参考文献：
+参考资料：
 
 \> [https://www.bearnok.com/grva/it/knowledge/software/mathjax](https://www.bearnok.com/grva/it/knowledge/software/mathjax)
 

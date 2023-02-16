@@ -96,7 +96,7 @@ end Reverse Traversal
 
 $O(n)$
 
-参考文献：
+参考资料：
 
 \> [https://en.wikipedia.org/wiki/Doubly_linked_list](https://en.wikipedia.org/wiki/Doubly_linked_list)
 
