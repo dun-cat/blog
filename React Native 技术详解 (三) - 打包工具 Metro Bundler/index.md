@@ -23,11 +23,10 @@
 └── tsconfig.json
 ```
 
-通常你可以直接用 `react-native bundle` 命令打出一个 jsbundle 文件及其资源目录：
+通常你可以直接用 `react-native bundle` 命令打出一个平台的 jsbundle 文件及其资源目录：
 
 ``` bash
 react-native bundle --platform android --dev false --entry-file index.js --bundle-output dist/index.bundle --assets-dest dist/
-# 为 Android 平台打一个 jsbundle 包
 ```
 
 该命令最终会调用 metro 包的 `Server.js` 文件的 [build()](https://github.com/facebook/metro/blob/fa103665c9cd555e3f78e6ed3ef6c54df92687fa/packages/metro/src/Server.js#L179) 方法以及 [getAssets()](https://github.com/facebook/metro/blob/fa103665c9cd555e3f78e6ed3ef6c54df92687fa/packages/metro/src/Server.js#L316) 方法来完成打包工作。
