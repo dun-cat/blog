@@ -83,7 +83,7 @@ require(['app/sub'], function (sub) {
 });
 ```
 
-RequireJS 为了加载速度对依赖的`加载都是无序的`，正式的来说，他们都是`异步加载`的。但一定是在他们加载完成之后，再执行回调函数。RequireJS 保证我们使用依赖时一定是正确的。
+RequireJS 为了加载速度对依赖的`加载都是无序的`，正式的来说，他们都是`异步加载`的。但回调函数一定是在他们加载完成之后再执行的，RequireJS 保证我们使用依赖时一定是正确的。
 
 ##### 如何加载模块？
 
@@ -243,7 +243,7 @@ require(["app/goods"], function(goods) {
 });
 ```
 
-如果我们没有指定 `baseUrl` 和 `paths` 配置，那么依赖模块 `app/goods` 会被解析到 `lib/app/title.js` 的错误文件路径。
+需要注意的是如果我们没有指定 `paths: { app: '../app'}` 配置，那么依赖模块 `app/goods` 会被解析到 `lib/app/goods.js` 的错误文件路径。
 
 #### 循环依赖
 
@@ -298,6 +298,52 @@ define(function(require, exports, module) {
 ### CommonJS 模块
 
 CommonJS 是模块的一种规范，它定义了一种模块格式。在前端领域使用最广的是 Node.js 环境下的对它的实现。
+
+在 Node 环境中，我们**无需**对文件使用类似 RequireJS 的`define`函数包裹模块，每个模块在执行之前，都会被一个[函数包裹器](https://nodejs.org/api/modules.html#the-module-wrapper)包裹，类似下面代码：
+
+``` js
+(function(exports, require, module, __filename, __dirname) {
+// Module code actually lives in here
+});
+```
+
+为此，Node 会做一些事情：
+
+* 保持顶级变量 (var、const、let 定义的) 作用于模块范围，而不是 global 对象；
+* 帮助提供一些全局搜索变量，这些变量可以指向到当前模块。例如：
+  * `module` 和 `export` 对象，可以用于到处模块值；
+  * 便利的 `__filename` 和 `__dirname` 包含模块的绝对路径文件名称和目录路径。
+
+其中 `exports` 为 `module` 对象的一个属性，所以下面的代码是一样：
+
+``` js
+exports = { greeting: 'hello' }
+// same with
+module.exports = { greeting: 'hello' }
+```
+
+如果在 Node 环境编写重写 RequireJS 下的 `app/goods.js`代码会是下面的样子：
+
+``` js
+const myCart = require('./app/my/cart');
+const myInventory = require('./app/my/inventory');
+
+module.exports = {
+  id: 0,
+  color: "black",
+  size: "unisize",
+  addToCart: function () {
+    myInventory.decrement(this);
+    myCart.add(this);
+  }
+}
+```
+
+由于 Node 的[路径解析规则](https://nodejs.org/api/modules.html#all-together)，为了正确引入模块需要添加`./`来解析正确的路径。
+
+#### 模块定义
+
+上面我们了解到 CommonJS 模块定义无需开发者手动包裹，只需要通过 `exports` 来导出。
 
 参考资料：
 
