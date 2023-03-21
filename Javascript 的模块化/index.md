@@ -322,7 +322,7 @@ exports = { greeting: 'hello' }
 module.exports = { greeting: 'hello' }
 ```
 
-如果在 Node 环境编写重写 RequireJS 下的 `app/goods.js`代码会是下面的样子：
+如果在 Node 环境编写重写 RequireJS 下的 `app/goods.js` 代码会是下面的样子：
 
 ``` js
 const myCart = require('./app/my/cart');
