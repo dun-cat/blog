@@ -484,6 +484,38 @@ Node 在实现 CommonJS 标准解决循环依赖的方式和 RequireJS 类似，
 
 ### AMD 模块
 
+[AMD](https://github.com/amdjs/amdjs-api) (Asynchronous Module Definition) 模块规范是一种异步加载规范。RequireJS 便是基于 AMD 规范实现的模块加载库，所以上面的 RequireJS 示例便是 AMD 的模块定义及导入导出语法。
+
+#### 模块定义
+
+语法：
+
+``` js
+define(id?, dependencies?, factory);
+```
+
+建议 define 调用采用 'define(...)' 的文字形式，以便与静态分析工具 (如构建工具) 一起正常工作。
+
+#### 模块导入
+
+[导入](https://github.com/amdjs/amdjs-api/blob/master/require.md#require)有以下几种语法：
+
+``` js
+
+require(String)
+
+require(Array, Function)
+
+require.toUrl(String)
+
+```
+
+由于在 RequireJS 中大篇幅介绍了 AMD 的使用，所以这个小节简单的描述了 AMD 的语法。
+
+### ES 模块
+
+ECMAScript 标准定义了 JavaScript 语言的模块规范，并在很多浏览器已实现该标准。符合 ES 标准的模块也被叫做 ES 模块。
+
 参考资料：
 
 \> [https://zh.wikipedia.org/wiki/模块化编程](https://zh.wikipedia.org/wiki/模块化编程)
