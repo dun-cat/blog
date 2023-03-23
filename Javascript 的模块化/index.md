@@ -389,6 +389,8 @@ b.doSomething();
 
 AMD 规范**强烈要求**模块是基于需要回调的需求，这是因为`动态计算`的`依赖项`可能会`异步加载`，所以上面可以看到 `define` 定义的模块都是通过回调方式来执行的。
 
+顺便提下，如果 CommonJS 返回一个对象，那么可以通过`对象扩展符`
+
 #### 循环依赖
 
 Node 允许循环依赖的存在，即便它是反模式的。
@@ -510,11 +512,54 @@ require.toUrl(String)
 
 ```
 
-由于在 RequireJS 中大篇幅介绍了 AMD 的使用，所以这个小节简单的描述了 AMD 的语法。
+由于在 RequireJS 中大篇幅介绍了 AMD 的使用，所以这个小节简单的描述了 AMD 的语法。注意的是通常 AMD 模块的 `require` 方法在回调里执行的。
 
-### ES 模块
+### ES Modules
 
-ECMAScript 标准定义了 JavaScript 语言的模块规范，并在很多浏览器已实现该标准。符合 ES 标准的模块也被叫做 ES 模块。
+ECMAScript 标准定义了 JavaScript 语言的模块规范，并在很多浏览器已实现该标准。符合 ES 标准的模块也被叫做 [ES 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)。除了浏览器上的支持 ES Modules 外，Node 从 12.0.0 版本开始正式支持 [ES modules](https://nodejs.org/dist/latest-v19.x/docs/api/esm.html)。
+
+#### 导出模块
+
+ES 的模块导出语法如下：
+
+``` js
+
+
+```
+
+也可以通过一个 export 统一导出：
+
+``` js
+const title = "hello world";
+
+function greeting() { console.log("hello wrold") }
+
+export { title, greeting }
+```
+
+#### 模块导入
+
+ES 的模块导入语法如下：
+
+``` js
+import { title, greeting } from "/path/module";
+```
+
+#### 避免命名冲突
+
+为了防止多个模块功能命名冲突，可以使用 `as` 关键字重命名模块的导出或导入：
+
+``` js
+export { title, greeting as newGreeting }
+```
+
+``` js
+import { title as newTitle, newGreeting } from "/path/module";
+```
+
+#### 创建模块对象
+
+<!-- CommonJS  模块默认导出了便是一个 exports 对象，而 ES Module 也可以 -->
 
 参考资料：
 
