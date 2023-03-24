@@ -374,6 +374,24 @@ exports = {}
 
 这里需要注意的是 `module.exports 默认是个空对象`，这意味着如果你给 `exports` 赋值，将`替换该空对象`，因此一个模块 `exports =` 只会出现一次。
 
+由于 CommonJS 导出的模块是可替换的，所以当其导出对象时，可以直接通过 ES6 [解构赋值](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)来使用对象属性。
+
+``` js
+// a.js
+// module export
+exports = {
+  aFunc: () => {},
+  bFunc: () => {}
+}
+
+```
+
+``` js
+// b.js
+// module import
+const { aFunc } = require("./a.js");
+```
+
 #### 模块导入
 
 Node 环境下，CommonJS 的模块导入语法如下：
@@ -496,7 +514,7 @@ Node 在实现 CommonJS 标准解决循环依赖的方式和 RequireJS 类似，
 define(id?, dependencies?, factory);
 ```
 
-建议 define 调用采用 'define(...)' 的文字形式，以便与静态分析工具 (如构建工具) 一起正常工作。
+规范建议定义模块采用 'define(...)' 的文字形式，以便与静态分析工具 (如构建工具) 一起正常工作。
 
 #### 模块导入
 
@@ -512,29 +530,70 @@ require.toUrl(String)
 
 ```
 
-由于在 RequireJS 中大篇幅介绍了 AMD 的使用，所以这个小节简单的描述了 AMD 的语法。注意的是通常 AMD 模块的 `require` 方法在回调里执行的。
+由于在 RequireJS 中大篇幅介绍了 AMD 的使用，所以这个小节简单的描述了 AMD 的语法。注意的是通常 AMD 模块的 `require` 方法在`回调里执行`的。
 
 ### ES Modules
 
-ECMAScript 标准定义了 JavaScript 语言的模块规范，并在很多浏览器已实现该标准。符合 ES 标准的模块也被叫做 [ES 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)。除了浏览器上的支持 ES Modules 外，Node 从 12.0.0 版本开始正式支持 [ES modules](https://nodejs.org/dist/latest-v19.x/docs/api/esm.html)。
+ECMAScript 2015 (ES6) 标准定义了 JavaScript 语言的模块规范，并在很多浏览器已实现该标准。符合 ES 标准的模块也被叫做 [ES 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)。除了浏览器上的支持 ES Modules 外，Node 从 12.0.0 版本开始正式支持 [ES modules](https://nodejs.org/dist/latest-v19.x/docs/api/esm.html)。
 
 #### 导出模块
 
 ES 的模块导出语法如下：
 
 ``` js
+export const title = "hello world";
 
+export function greeting() { console.log("hello wrold") }
 
 ```
 
 也可以通过一个 export 统一导出：
 
 ``` js
-const title = "hello world";
+// modules/a.js
+const title = "It's a title";
 
 function greeting() { console.log("hello wrold") }
 
 export { title, greeting }
+```
+
+##### 导出默认模块
+
+与 CommonJS  的模块导出不同，ES Module **必须**添加 `default` 关键字来导出默认模块。
+
+``` js
+// modules/a.js
+const title = "It's a title"
+
+function greeting() { console.log("hello wrold") }
+
+export { title, greeting }
+export default greeting
+```
+
+我们也可以导出一个对象：
+
+``` js
+// ./modules/b.js
+
+const order = {
+  id: 0,
+  amount: 100
+}
+
+export default order;
+```
+
+ES Modules 是修改 JavaScript 语言标准来实现的，所以它的模块导入导出必须使用语法关键字。一旦模块的语法不正确，那么在 JavaScript 在浏览器的静态分析阶段就会抛出异常。
+
+##### 合并模块导出
+
+合并模块可以将多个子模块组合到一个父模块中。这可以使用父模块中以下表单的导出语法：
+
+``` js
+export * from 'x.js'
+export { name } from 'xx.js'
 ```
 
 #### 模块导入
@@ -542,7 +601,134 @@ export { title, greeting }
 ES 的模块导入语法如下：
 
 ``` js
-import { title, greeting } from "/path/module";
+// index.js
+import { title, greeting } from "./modules/a.js"
+
+greeting();
+
+console.log("title:", title)
+// output: hello wrold
+```
+
+有的同学想在 import 的时候直接使用`解构赋值`语法来获取默认导出对象的属性，这是**不可以**的。
+
+``` js
+// 这是错误的语法，抛出异常，程序终止。
+import { id } from './modules/b.js';
+
+console.log(id) // 执行不到该语句
+```
+
+道理也很简单，这和命名模块的导入是`语法冲突`的。除外，还有一个重要原因是 ES Module 是[静态结构](https://exploringjs.com/es6/ch_modules.html#static-module-structure)的，这意味着编译时 (静态地) 便确定了导入和导出，我们不能在运行时来改变模块结构。
+
+当 JS 引擎运行一个模块时，通常有以下四个步骤的表现：
+
+1. `解析`：实现读取模块的源代码并检查语法错误；
+2. `加载`：实现加载所有导入的模块 (递归)。这是尚未标准化的部分；
+3. `链接`：对于每个新加载的模块，创建一个`模块范围`，并用该模块中声明的所有绑定填充它，包括从其他模块导入的东西。
+   <br>如果您尝试这样做的部分 import {cake} from "paleo"，但 paleo 模块实际上并未导出任何命名的 cake 内容，您将收到错误消息。
+4. `运行时`：最后，运行每个最新已加载的模块​​的语句。到这个时候，import 处理已经完成，所以当执行到一行有 import 声明的代码时，`什么也没有发生！`
+
+> 由于 ES Module 的静态结构，才可以让一些静态分析工具能够在模块打包时，[Tree Shaking](https://webpack.docschina.org/guides/tree-shaking/) 掉未引用的代码 (dead-code)，以此优化代码体积。
+
+因此要想运行正确可以如下修改：
+
+``` js
+// ./modules/b.js
+const order = {
+  id: 0,
+  amount: 100
+}
+export const id = order.id;
+export default order;
+```
+
+然后如下执行导入：
+
+``` js
+import order, { id } from './modules/b.js';
+
+console.log(id)
+console.log(order.id)
+```
+
+##### 导入默认模块
+
+如果模块导出使用了 `default` 关键字：
+
+``` js
+// ./modules/b.js
+export default order;
+```
+
+那么模块的导入可以使用自定义模块别名：
+
+``` js
+import myOrder from './modules/b.js';
+```
+
+##### 创建模块对象
+
+如果依赖的模块没有导出默认模块，我们也可以通过创建模块对象，从而有效地给自己提供命名空间：
+
+```js
+import * as myOrder from './modules/b.js';
+```
+
+而如果模块包含 `export default` 模块的导出，那么创建模块对象之后，默认模块会被指定到 `default` 属性上去：
+
+``` js
+import * as order from './modules/b.js';
+console.log(order)
+// output:
+// Module {
+//    default: { amount: 100,id: 0 },
+//    id: 0
+// }
+console.log(order.default)
+// output: {id: 0, amount: 100}
+```
+
+##### 动态加载模块
+
+ES Modules 的最新内容允许`按需加载模块`。它返回一个 promise，并导出一个 module 对象：
+
+``` js
+import('/modules/mymodule.js')
+  .then((module) => {
+    // Do something with the module.
+  });
+```
+
+#### 循环依赖
+
+ES Modules 也同样支持循环依赖的。因为其静态性，所以并不会像 CommonJS 一样发生循环依赖时只是简单的返回一个空对象。我们看下面一个例子：
+
+``` js
+//------ a.js ------
+import {bar} from 'b'; // (1)
+export function foo() {
+    bar(); // (2)
+}
+
+//------ b.js ------
+import {foo} from 'a'; // (3)
+export function bar() {
+    if (Math.random()) {
+        foo(); // (4)
+    }
+}
+
+```
+
+这段代码有效，因为如上一节所述，导入是导出的视图。这意味着即使是不合格的导入（例如bar第 ii 行和foo第 iv 行）也是引用原始数据的间接。因此，面对循环依赖，无论您是通过非限定导入还是通过其模块访问命名导出都无关紧要：这两种情况都涉及间接寻址，并且它始终有效。
+
+#### HTML 里引入 ES 模块
+
+需要注意在模块如果要在 `html` 里使用模块，**必须**把 script 标签标记为 module，否则会报异常。
+
+``` js
+<script type="module" src="./index.js"></script>
 ```
 
 #### 避免命名冲突
@@ -557,10 +743,6 @@ export { title, greeting as newGreeting }
 import { title as newTitle, newGreeting } from "/path/module";
 ```
 
-#### 创建模块对象
-
-<!-- CommonJS  模块默认导出了便是一个 exports 对象，而 ES Module 也可以 -->
-
 参考资料：
 
 \> [https://zh.wikipedia.org/wiki/模块化编程](https://zh.wikipedia.org/wiki/模块化编程)
@@ -570,3 +752,7 @@ import { title as newTitle, newGreeting } from "/path/module";
 \> [www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html](www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html)
 
 \> [https://reflectoring.io/nodejs-modules-imports/](https://reflectoring.io/nodejs-modules-imports/)
+
+\> [https://hacks.mozilla.org/2015/08/es6-in-depth-modules/](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
+
+\> [https://exploringjs.com/es6/ch_modules.html](https://exploringjs.com/es6/ch_modules.html)
