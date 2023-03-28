@@ -338,9 +338,9 @@ Module {
 其中 `exports` 为 `module` 对象的一个属性，所以下面的代码是一样：
 
 ``` js
-exports = { greeting: 'hello' }
+exports.greeting = 'hello'
 // same with
-module.exports = { greeting: 'hello' }
+module.exports.greeting = 'hello'
 ```
 
 如果在 Node 环境编写重写 RequireJS 下的 `app/goods.js` 代码会是下面的样子：
@@ -368,13 +368,24 @@ module.exports = {
 
 ``` js
 module.exports = {}
-// or
+```
+
+这里需要注意的是 `module.exports 默认是个空对象`，这意味着如果你给 `exports` 赋值，将`替换该空对象`。所以执行以下代码，将并不会导出模块：
+
+``` js
+// 该模块不会正常导出。
 exports = {}
 ```
 
-这里需要注意的是 `module.exports 默认是个空对象`，这意味着如果你给 `exports` 赋值，将`替换该空对象`，因此一个模块 `exports =` 只会出现一次。
+你可以如下进行导出：
 
-由于 CommonJS 导出的模块是可替换的，所以当其导出对象时，可以直接通过 ES6 [解构赋值](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)来使用对象属性。
+``` js
+module.exports = exports = {};
+// 或导出一个函数
+module.exports = exports = () => {}
+```
+
+由于 CommonJS 模块是运行时语法，它导出的都是普通数据类型。当其导出一个对象时，你可以在导入时直接通过 ES6 [解构赋值](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)来使用对象属性。
 
 ``` js
 // a.js
@@ -406,8 +417,6 @@ b.doSomething();
 可以看到相比 RequireJS 的模块导入，CommonJS 模块导入**没有回调**，这是 CommonJS 模块和 AMD 模块很大的一个区别，AMD 支持异步模块加载。
 
 AMD 规范**强烈要求**模块是基于需要回调的需求，这是因为`动态计算`的`依赖项`可能会`异步加载`，所以上面可以看到 `define` 定义的模块都是通过回调方式来执行的。
-
-顺便提下，如果 CommonJS 返回一个对象，那么可以通过`对象扩展符`
 
 #### 循环依赖
 
@@ -532,9 +541,16 @@ require.toUrl(String)
 
 由于在 RequireJS 中大篇幅介绍了 AMD 的使用，所以这个小节简单的描述了 AMD 的语法。注意的是通常 AMD 模块的 `require` 方法在`回调里执行`的。
 
-### ES Modules
+### ES 模块
 
 ECMAScript 2015 (ES6) 标准定义了 JavaScript 语言的模块规范，并在很多浏览器已实现该标准。符合 ES 标准的模块也被叫做 [ES 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)。除了浏览器上的支持 ES Modules 外，Node 从 12.0.0 版本开始正式支持 [ES modules](https://nodejs.org/dist/latest-v19.x/docs/api/esm.html)。
+
+#### ES 模块设计目标
+
+* 默认导出受到青睐
+* 静态模块结构
+* 支持同步和异步加载
+* 支持模块之间的循环依赖
 
 #### 导出模块
 
@@ -675,7 +691,7 @@ import myOrder from './modules/b.js';
 import * as myOrder from './modules/b.js';
 ```
 
-而如果模块包含 `export default` 模块的导出，那么创建模块对象之后，默认模块会被指定到 `default` 属性上去：
+而如果模块包含 `export default` 模块的导出，那么创建模块对象之后，默认模块会被指定到 `default` 上去：
 
 ``` js
 import * as order from './modules/b.js';
@@ -700,6 +716,25 @@ import('/modules/mymodule.js')
   });
 ```
 
+需要注意的是 `import()` 语法是[模块加载 API](https://exploringjs.com/es6/ch_modules.html#sec_module-loader-api) 的一分部，它并不是 ES6 标准，因此，你需要考虑浏览器对它的支持度。
+
+#### ES Module 导出只读视图
+
+ES module 导出的是`实时只读视图`，如下修改导出视图将会`抛出异常`：
+
+``` js
+// 导出 a.js
+export let title = "It's a title"
+```
+
+``` js
+// 导入
+import { title } from "./modules/a.js";
+// ⚠️ 你不能对 title 进行赋值，因为它是一个常量。
+title = "read only";
+// Uncaught TypeError: Assignment to constant variable.
+```
+
 #### 循环依赖
 
 ES Modules 也同样支持循环依赖的。因为其静态性，所以并不会像 CommonJS 一样发生循环依赖时只是简单的返回一个空对象。我们看下面一个例子：
@@ -721,7 +756,7 @@ export function bar() {
 
 ```
 
-这段代码有效，因为如上一节所述，导入是导出的视图。这意味着即使是不合格的导入（例如bar第 ii 行和foo第 iv 行）也是引用原始数据的间接。因此，面对循环依赖，无论您是通过非限定导入还是通过其模块访问命名导出都无关紧要：这两种情况都涉及间接寻址，并且它始终有效。
+这段代码有效，因为如上一节所述，导入是导出的视图。这意味着即使是不合格的导入（例如 bar 第 2 行和 foo 第 4 行）也是引用原始数据的`间接`。因此，面对循环依赖，无论您是通过非限定导入还是通过其模块访问命名导出都无关紧要：这两种情况都涉及`间接寻址`，并且它始终有效。
 
 #### HTML 里引入 ES 模块
 
@@ -756,3 +791,5 @@ import { title as newTitle, newGreeting } from "/path/module";
 \> [https://hacks.mozilla.org/2015/08/es6-in-depth-modules/](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
 
 \> [https://exploringjs.com/es6/ch_modules.html](https://exploringjs.com/es6/ch_modules.html)
+
+\> [https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#sec-ecmascript-language-scripts-and-modules](https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#sec-ecmascript-language-scripts-and-modules)
