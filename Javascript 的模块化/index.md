@@ -541,6 +541,87 @@ require.toUrl(String)
 
 由于在 RequireJS 中大篇幅介绍了 AMD 的使用，所以这个小节简单的描述了 AMD 的语法。注意的是通常 AMD 模块的 `require` 方法在`回调里执行`的。
 
+#### amd 属性
+
+规范定义了 AMD API `全局 define 函数`中应该有 `amd` 的属性，示例：
+
+``` js
+define.amd = {
+  multiverion: true,
+}
+```
+
+最小定义：
+
+``` js
+define.amd = {}
+```
+
+因为这点，可用于区分一个模是否是 AMD 模块。
+
+### UMD 模块
+
+[UMD](https://github.com/umdjs/umd) 是通用模块定义 (Universal Module Definition)，它使同一文件能够被多个模块系统 (例如 CommonJS 和 AMD) 使用。不过，一旦 ES 模块成为唯一的模块标准，UMD 就过时了。
+
+UMD 实现是通过一个 IIFE 来兼容 AMD 或 CommonJS 的导出工作：
+
+``` js
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['exports', 'b'], factory);
+    } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
+        // CommonJS
+        factory(exports, require('b'));
+    } else {
+        // Browser globals
+        factory((root.commonJsStrict = {}), root.b);
+    }
+}(typeof self !== 'undefined' ? self : this, function (exports, b) {
+    // Use b in some fashion.
+
+    // attach properties to the exports object to define
+    // the exported module properties.
+    exports.action = function () {};
+}));
+```
+
+通常这样的包裹行为由一些`打包工具`完成。以 webpack 为例，我们给定一个入口文件 `index.js`：
+
+``` js
+const title = "hello";
+function greeting() {
+  console.log('hello')
+}
+```
+
+然后，当我们设置打包库类型为 `umd` 时，它的输出是这样的：
+
+``` js
+(function webpackUniversalModuleDefinition(root, factory) {
+ if(typeof exports === 'object' && typeof module === 'object')
+  module.exports = factory();
+ else if(typeof define === 'function' && define.amd)
+  define([], factory);
+ else if(typeof exports === 'object')
+  exports["myLib"] = factory();
+ else
+  root["myLib"] = factory();
+})(self, () => {
+return /******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+const title = "hello";
+function greeting() {
+  console.log('hello')
+}
+/******/  return __webpack_exports__;
+/******/ })()
+;
+});
+```
+
+实现上基本是一致的，你可以在[这里](https://github.com/dun-cat/javascript-module-learning/tree/main/examples/webpack)看到 webpack 的示例。
+
 ### ES 模块
 
 ECMAScript 2015 (ES6) 标准定义了 JavaScript 语言的模块规范，并在很多浏览器已实现该标准。符合 ES 标准的模块也被叫做 [ES 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)。除了浏览器上的支持 ES Modules 外，Node 从 12.0.0 版本开始正式支持 [ES modules](https://nodejs.org/dist/latest-v19.x/docs/api/esm.html)。
@@ -645,6 +726,14 @@ console.log(id) // 执行不到该语句
    <br>如果您尝试这样做的部分 import {cake} from "paleo"，但 paleo 模块实际上并未导出任何命名的 cake 内容，您将收到错误消息。
 4. `运行时`：最后，运行每个最新已加载的模块​​的语句。到这个时候，import 处理已经完成，所以当执行到一行有 import 声明的代码时，`什么也没有发生！`
 
+也正是因为静态模块结构，你**不可以**在 import 语句中使用变量：
+
+``` js
+// ⚠️ 不能使用变量
+// Illegal syntax:
+import foo from 'some_module' + SUFFIX;
+```
+
 > 由于 ES Module 的静态结构，才可以让一些静态分析工具能够在模块打包时，[Tree Shaking](https://webpack.docschina.org/guides/tree-shaking/) 掉未引用的代码 (dead-code)，以此优化代码体积。
 
 因此要想运行正确可以如下修改：
@@ -705,6 +794,22 @@ console.log(order.default)
 // output: {id: 0, amount: 100}
 ```
 
+以下也是等价的：
+
+``` js
+import _,{ each, map } from 'lodash'
+// eq
+import {each, map, default as _} from 'lodash'
+```
+
+##### 空导入
+
+只加载模块，不导入任何东西。
+
+``` js
+import 'src/my_lib';
+```
+
 ##### 动态加载模块
 
 ES Modules 的最新内容允许`按需加载模块`。它返回一个 promise，并导出一个 module 对象：
@@ -758,13 +863,17 @@ export function bar() {
 
 这段代码有效，因为如上一节所述，导入是导出的视图。这意味着即使是不合格的导入（例如 bar 第 2 行和 foo 第 4 行）也是引用原始数据的`间接`。因此，面对循环依赖，无论您是通过非限定导入还是通过其模块访问命名导出都无关紧要：这两种情况都涉及`间接寻址`，并且它始终有效。
 
-#### HTML 里引入 ES 模块
+#### 导入被提升 (hoisted)
 
-需要注意在模块如果要在 `html` 里使用模块，**必须**把 script 标签标记为 module，否则会报异常。
+模块导入被提升（内部移动到当前范围的开头）。因此，无论您在模块中的何处提及它们，以下代码都可以正常工作：
 
 ``` js
-<script type="module" src="./index.js"></script>
+foo();
+
+import { foo } from 'my_module';
 ```
+
+虽然如此，但你最好将导入放置开头，以便提高可阅读性。
 
 #### 避免命名冲突
 
@@ -776,6 +885,43 @@ export { title, greeting as newGreeting }
 
 ``` js
 import { title as newTitle, newGreeting } from "/path/module";
+```
+
+#### import.meta 元数据
+
+[import.meta](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/import.meta) 保存了模块导入的元数据，例如当以下模块导入时：
+
+``` js
+import greeting, { title, myObj } from "./modules/a.js?a=1&b=2";
+```
+
+我在本地启的一个服务，可以看到我们能直接在 `a.js` 模块里，使用 `import.meta` 获取元数据：
+
+``` js
+// a.js
+console.log(import.meta.url)
+// output:
+//{ resolve: f(), url: "http://127.0.0.1:5500/examples/es-modules/modules/a.js?a=1&b=2"}
+```
+
+除了 `import.meta.url` 属性外，还提供了一个解析 API 函数 [import.meta.resolve()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import.meta/resolve) 用于解析模块，它返回一个可以用于模块导入的路径字符串。
+
+> 同样在 Node 环境中也支持了 meta。
+
+``` js
+// a.js
+console.log(import.meta.resolve("./b"))
+// output: http://127.0.0.1:5500/examples/es-modules/modules/b
+```
+
+注意的是我们没有指定模块后缀名，解析的 url 也不包含后缀。目前为止，import.meta.resolve() 在 iOS 的 Safari 浏览器上还不被支持的。
+
+#### HTML 里引入 ES 模块
+
+需要注意在模块如果要在 `html` 里使用模块，**必须**把 script 标签标记为 module，否则会报异常。
+
+``` js
+<script type="module" src="./index.js"></script>
 ```
 
 参考资料：
