@@ -1,4 +1,4 @@
-## Javascript 的模块化 
+## JavaScript 的模块化 
 ### 简介
 
 现代软件开发，[模块化编程](https://zh.wikipedia.org/wiki/模块化编程)是一个必然的演进历程。在前端领域模块化编程也是目前研发的主流编程范式。

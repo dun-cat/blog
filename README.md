@@ -99,7 +99,7 @@
 * #### [Javascript 中的函数式编程](./Javascript%20%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/index.md)
 * #### [我的 Hugo 主题定制方案](./%E6%88%91%E7%9A%84%20Hugo%20%E4%B8%BB%E9%A2%98%E5%AE%9A%E5%88%B6%E6%96%B9%E6%A1%88/index.md)
 * #### [模块映射 (Import Maps) ](./%E6%A8%A1%E5%9D%97%E6%98%A0%E5%B0%84%20(Import%20Maps)%20/index.md)
-* #### [Javascript 的模块化](./Javascript%20%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96/index.md)
+* #### [JavaScript 的模块化](./JavaScript%20%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96/index.md)
 * #### [非对称加密及 Keytool 工具](./%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%8F%8A%20Keytool%20%E5%B7%A5%E5%85%B7/index.md)
 * #### [何为 λ 演算 (Lambda Calculus) ](./%E4%BD%95%E4%B8%BA%20%CE%BB%20%E6%BC%94%E7%AE%97%20(Lambda%20Calculus)%20/index.md)
 * #### [Linux 的 curl 命令](./Linux%20%E7%9A%84%20curl%20%E5%91%BD%E4%BB%A4/index.md)
