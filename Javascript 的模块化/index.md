@@ -924,6 +924,36 @@ console.log(import.meta.resolve("./b"))
 <script type="module" src="./index.js"></script>
 ```
 
+### ES 和 CommonJS 互操作性
+
+在 Node.js 环境，ES 模块和 CommonJS 模块可以相互引用。
+
+下面是一个在 Node.js 环境中实现 ES 模块和 CommonJS 模块互操作的例子：
+
+假设我们有一个 CommonJS 模块 "math.js"，它导出一个加法函数：
+
+``` js
+// math.js
+function add(a, b) {
+  return a + b;
+}
+module.exports = { add };
+```
+
+``` js
+// index.js
+import { add } from './math.js'; // 使用 ES 模块的 import 导入 math.js 模块
+const math = require('./math.js'); // 使用 CommonJS 的 require 导入 math.js 模块
+
+console.log(add(2, 3)); // 输出 5
+console.log(math.add(2, 3)); // 输出 5
+
+```
+
+在上面的代码中，我们使用 ES 模块的 import 导入了 "math.js" 模块中的 add 函数。同时，我们也使用了 CommonJS 的 require 导入了 "math.js" 模块，并将其赋值给变量 math。然后，我们分别调用了这两个模块中的 add 函数，输出了它们的结果。
+
+需要注意的是，在上面的代码中，我们使用了 Node.js 特有的 require 函数，而不是 ES6 的 import 函数。这是因为在 Node.js 中，ES6 的 import 函数只能在 .mjs 文件中使用，而不能在 .js 文件中使用。因此，我们需要同时使用 import 和 require 来实现 ES 模块和 CommonJS 模块的互操作。
+
 参考资料：
 
 \> [https://zh.wikipedia.org/wiki/模块化编程](https://zh.wikipedia.org/wiki/模块化编程)
