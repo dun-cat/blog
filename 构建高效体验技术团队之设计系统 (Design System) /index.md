@@ -74,7 +74,7 @@
 
 ### 设计令牌
 
-设计令牌 (Design tokens) 的概念在不同的设计系统有很多不同的描述：
+`设计令牌` (Design tokens) 是定义`设计体系`中`标准元素`的有用机制，设计令牌的概念在不同的设计系统有很多不同的描述：
 
 在 [Material](https://m3.material.io/foundations/design-tokens/overview) 中，令牌描述为存储样式值，比如颜色和字体。这些值可以被用于设计、代码、工具以及平台。
 
@@ -175,3 +175,5 @@ module.exports = {
 \> [https://www.gerireid.com/design-token-taxonomy.html](https://www.gerireid.com/design-token-taxonomy.html)
 
 \> [https://www.youtube.com/watch?v=Ka1I5TphDb0&ab_channel=IntoDesignSystems](https://www.youtube.com/watch?v=Ka1I5TphDb0&ab_channel=IntoDesignSystems)
+
+\> [https://design-tokens.github.io/community-group](https://design-tokens.github.io/community-group)
