@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="518.49799"
+   height="226.679"
+   viewBox="0 0 518.49798 226.679"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="cluster.svg"
+   inkscape:export-filename="cluster.svg"
+   inkscape:export-xdpi="103.27"
+   inkscape:export-ydpi="103.27"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     showguides="true"
+     showborder="true"
+     inkscape:zoom="1.1008054"
+     inkscape:cx="252.08816"
+     inkscape:cy="108.10267"
+     inkscape:window-width="1712"
+     inkscape:window-height="729"
+     inkscape:window-x="642"
+     inkscape:window-y="289"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg16">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="-3.7251439e-07"
+       originy="-4.7448731e-07"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <!-- 样式定义 -->
+  <style
+     id="style1">
+    text { font-family: Arial; font-size: 12px; }
+    .sector { fill: #E0F7FA; stroke: #26C6DA; }
+    .cluster { stroke: #2E7D32; stroke-width: 2; fill: none; }
+    .fat-entry { fill: #FFF3E0; stroke: #FFA726; }
+    .arrow { stroke: #D32F2F; stroke-width: 1.5; marker-end: url(#arrowhead); }
+  </style>
+  <!-- 箭头标记 -->
+  <defs
+     id="defs1" />
+  <!-- 物理磁盘的簇结构 -->
+  <g
+     transform="translate(9.1496536,38.538442)"
+     id="g6">
+    <!-- 标题 -->
+    <text
+       x="0"
+       y="-20"
+       font-weight="bold"
+       id="text1">物理磁盘结构（簇由多个扇区组成）</text>
+    <!-- 簇示例（包含8个扇区） -->
+    <rect
+       x="0.026178733"
+       y="0.026178733"
+       width="337.1944"
+       height="79.947639"
+       class="cluster"
+       id="rect1" />
+    <text
+       x="330"
+       y="40"
+       alignment-baseline="middle"
+       id="text2"
+       style="white-space:pre;inline-size:143.717"
+       transform="translate(-141.94467,-43.935256)"
+       xml:space="preserve"><tspan
+         x="330"
+         y="40"
+         id="tspan1">簇（4KB = 8×512B 扇区）</tspan></text>
+    <!-- 扇区划分 -->
+    <g
+       transform="translate(10,10)"
+       id="g5">
+      <rect
+         x="0"
+         y="0"
+         width="35"
+         height="60"
+         class="sector"
+         id="rect2" />
+      <text
+         x="3.1715181"
+         y="82.856079"
+         id="text3">扇区 0</text>
+      <rect
+         x="40"
+         y="0"
+         width="35"
+         height="60"
+         class="sector"
+         id="rect3" />
+      <!-- 更多扇区... -->
+      <rect
+         x="244.79323"
+         y="0.66333598"
+         width="35"
+         height="60"
+         class="sector"
+         id="rect4" />
+      <rect
+         x="285.63681"
+         y="0.5199843"
+         width="35"
+         height="60"
+         class="sector"
+         id="rect4-9"
+         style="fill:#e0f7fa;stroke:#26c6da" />
+      <rect
+         x="81.036667"
+         y="0.87033534"
+         width="35"
+         height="60"
+         class="sector"
+         id="rect4-0"
+         style="fill:#e0f7fa;stroke:#26c6da" />
+      <rect
+         x="122.37969"
+         y="0.93519723"
+         width="35"
+         height="60"
+         class="sector"
+         id="rect4-2"
+         style="fill:#e0f7fa;stroke:#26c6da" />
+      <rect
+         x="162.67598"
+         y="0.90741616"
+         width="35"
+         height="60"
+         class="sector"
+         id="rect4-7"
+         style="fill:#e0f7fa;stroke:#26c6da" />
+      <rect
+         x="203.33331"
+         y="1.0648028"
+         width="35"
+         height="60"
+         class="sector"
+         id="rect4-79"
+         style="fill:#e0f7fa;stroke:#26c6da" />
+      <text
+         x="288.6055"
+         y="82.015465"
+         id="text5">扇区 7</text>
+    </g>
+  </g>
+  <!-- FAT表与文件簇链 -->
+  <g
+     transform="translate(389.14965,38.538441)"
+     id="g14">
+    <!-- FAT表标题 -->
+    <text
+       x="-20.563414"
+       y="-21.990007"
+       font-weight="bold"
+       id="text6">文件分配表（FAT）与簇链</text>
+    <!-- FAT表结构 -->
+    <rect
+       x="0"
+       y="0"
+       width="120"
+       height="180"
+       class="fat-entry"
+       id="rect6" />
+    <text
+       x="5"
+       y="15"
+       id="text7">FAT表项</text>
+    <line
+       x1="0"
+       y1="25"
+       x2="120"
+       y2="25"
+       stroke="#ffa726"
+       id="line7" />
+    <!-- 示例簇链：2 → 4 → 5 → EOF -->
+    <text
+       x="10"
+       y="50"
+       id="text8">簇 0: <tspan
+   fill="#2e7d32"
+   id="tspan7">空闲</tspan></text>
+    <text
+       x="10"
+       y="70"
+       id="text9">簇 1: <tspan
+   fill="#2e7d32"
+   id="tspan8">空闲</tspan></text>
+    <text
+       x="10"
+       y="90"
+       id="text10">簇 2: <tspan
+   fill="#d32f2f"
+   id="tspan9">→ 4</tspan></text>
+    <text
+       x="10"
+       y="110"
+       id="text11">簇 3: <tspan
+   fill="#2e7d32"
+   id="tspan10">空闲</tspan></text>
+    <text
+       x="10"
+       y="130"
+       id="text12">簇 4: <tspan
+   fill="#d32f2f"
+   id="tspan11">→ 5</tspan></text>
+    <text
+       x="10"
+       y="150"
+       id="text13">簇 5: <tspan
+   fill="#d32f2f"
+   id="tspan12">EOF</tspan></text>
+    <!-- 簇链箭头 -->
+  </g>
+  <!-- 图例 -->
+  <g
+     transform="translate(9.1496536,188.53844)"
+     id="g16">
+    <rect
+       x="0"
+       y="0"
+       width="15"
+       height="15"
+       class="sector"
+       id="rect14" />
+    <text
+       x="20"
+       y="12"
+       id="text14">扇区（512B）</text>
+    <rect
+       x="120"
+       y="0"
+       width="15"
+       height="15"
+       class="cluster"
+       id="rect15" />
+    <text
+       x="140"
+       y="12"
+       id="text15">簇（4KB）</text>
+    <rect
+       x="240"
+       y="0"
+       width="15"
+       height="15"
+       class="fat-entry"
+       id="rect16" />
+    <text
+       x="260"
+       y="12"
+       id="text16">FAT表项</text>
+  </g>
+</svg>

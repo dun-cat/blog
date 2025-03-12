@@ -1,0 +1,23 @@
+@startuml
+title 银行家算法流程
+skinparam backgroundColor transparent
+
+start
+:收到进程 Pi 的资源请求;
+if (Request ≤ Need[i]) then (是)
+  if (Request ≤ Available) then (是)
+    :模拟分配资源\nAvailable -= Request\nAllocation[i] += Request\nNeed[i] -= Request;
+    :执行安全性检查;
+    if (存在安全序列) then (是)
+      :实际分配资源;
+    else (否)
+      :回滚模拟分配\n拒绝请求;
+    endif
+  else (否)
+    :拒绝请求（资源不足）;
+  endif
+else (否)
+  :拒绝请求（超过最大需求）;
+endif
+stop
+@enduml

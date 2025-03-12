@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="177.1609mm"
+   height="58.212944mm"
+   viewBox="0 0 177.1609 58.212944"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch1">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-21.261752,-109.29647)">
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
+       id="path1"
+       cx="82.430084"
+       cy="138.43221"
+       rx="61.036015"
+       ry="28.944914" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
+       id="path1-0"
+       cx="137.25435"
+       cy="138.37367"
+       rx="61.036015"
+       ry="28.944914" />
+    <path
+       id="ellipse24"
+       style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
+       d="m 82.430111,109.48737 a 61.036015,28.944914 0 0 0 -61.036068,28.94501 61.036015,28.944914 0 0 0 61.036068,28.94448 61.036015,28.944914 0 0 0 27.536819,-3.18068 61.036015,28.944914 0 0 1 -33.748843,-25.82271 61.036015,28.944914 0 0 1 33.629993,-25.7943 61.036015,28.944914 0 0 0 -27.417969,-3.0918 z" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
+       x="39.766811"
+       y="142.39082"
+       id="text24"><tspan
+         id="tspan25"
+         x="39.766811"
+         y="142.39082">A - B</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="669px" preserveAspectRatio="none" style="width:597px;height:669px;background:#00000000;" version="1.1" viewBox="0 0 597 669" width="597px" zoomAndPan="magnify"><defs/><g><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="233.75" y="11"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="243.75" y="32.6016">构造增广矩阵</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="152" x="203.75" y="65.1328"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="132" x="213.75" y="86.7344">从左上角开始处理每一列</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="116" x="221.75" y="175.4004"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="96" x="231.75" y="197.002">找到当前列的主元</text><polygon fill="#F1F1F1" points="244.25,229.5332,315.25,229.5332,327.25,241.5332,315.25,253.5332,244.25,253.5332,232.25,241.5332,244.25,229.5332" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="71" x="244.25" y="245.6904">存在非零主元?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="11" x="221.25" y="239.2129">是</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="11" x="327.25" y="239.2129">否</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="208" x="40" y="263.5332"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="188" x="50" y="285.1348">将主元置为1（归一化主元所在行）</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="212" x="38" y="332.666"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="192" x="48" y="354.2676">使用行减法清除当前列的其他非零项</text><polygon fill="#F1F1F1" points="336,263.5332,495,263.5332,507,275.5332,495,287.5332,336,287.5332,324,275.5332,336,263.5332" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="159" x="336" y="279.6904">当前列在增广部分是否有非零项?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="11" x="313" y="273.2129">是</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="11" x="507" y="273.2129">否</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="68" x="280" y="297.5332"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="290" y="319.1348">系统无解</text><ellipse cx="314" cy="377.666" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="314" cy="377.666" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"/><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="80" x="477" y="297.5332"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="60" x="487" y="319.1348">处理下一列</text><polygon fill="#F1F1F1" points="279.75,398.666,291.75,410.666,279.75,422.666,267.75,410.666,279.75,398.666" style="stroke:#181818;stroke-width:0.5;"/><polygon fill="#F1F1F1" points="233.25,119.2656,326.25,119.2656,338.25,131.2656,326.25,143.2656,233.25,143.2656,221.25,131.2656,233.25,119.2656" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="11" x="283.75" y="153.9004">否</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="233.25" y="135.4229">所有列都处理完毕?</text><polygon fill="#F1F1F1" points="233.25,464.666,326.25,464.666,338.25,476.666,326.25,488.666,233.25,488.666,221.25,476.666,233.25,464.666" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="233.25" y="480.8232">每个变量都有主元?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="11" x="210.25" y="474.3457">是</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="11" x="338.25" y="474.3457">否</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="165.25" y="498.666"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="175.25" y="520.2676">系统有唯一解</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="104" x="296.25" y="498.666"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="84" x="306.25" y="520.2676">系统有无穷多解</text><polygon fill="#F1F1F1" points="279.75,538.7988,291.75,550.7988,279.75,562.7988,267.75,550.7988,279.75,538.7988" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="116" x="221.75" y="582.7988"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="96" x="231.75" y="604.4004">从矩阵中读取解集</text><ellipse cx="279.75" cy="647.9316" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="279.75" cy="647.9316" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="279.75" y1="45.1328" y2="65.1328"/><polygon fill="#454645" points="275.75,55.1328,279.75,65.1328,283.75,55.1328,279.75,59.1328" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="144" x2="144" y1="297.666" y2="332.666"/><polygon fill="#454645" points="140,322.666,144,332.666,148,322.666,144,326.666" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="314" x2="314" y1="331.666" y2="366.666"/><polygon fill="#454645" points="310,356.666,314,366.666,318,356.666,314,360.666" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="324" x2="314" y1="275.5332" y2="275.5332"/><line style="stroke:#454645;stroke-width:1.0;" x1="314" x2="314" y1="275.5332" y2="297.5332"/><polygon fill="#454645" points="310,287.5332,314,297.5332,318,287.5332,314,291.5332" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="507" x2="517" y1="275.5332" y2="275.5332"/><line style="stroke:#454645;stroke-width:1.0;" x1="517" x2="517" y1="275.5332" y2="297.5332"/><polygon fill="#454645" points="513,287.5332,517,297.5332,521,287.5332,517,291.5332" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="517" x2="517" y1="331.666" y2="410.666"/><line style="stroke:#454645;stroke-width:1.0;" x1="517" x2="291.75" y1="410.666" y2="410.666"/><polygon fill="#454645" points="301.75,406.666,291.75,410.666,301.75,414.666,297.75,410.666" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="232.25" x2="144" y1="241.5332" y2="241.5332"/><line style="stroke:#454645;stroke-width:1.0;" x1="144" x2="144" y1="241.5332" y2="263.5332"/><polygon fill="#454645" points="140,253.5332,144,263.5332,148,253.5332,144,257.5332" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="327.25" x2="415.5" y1="241.5332" y2="241.5332"/><line style="stroke:#454645;stroke-width:1.0;" x1="415.5" x2="415.5" y1="241.5332" y2="263.5332"/><polygon fill="#454645" points="411.5,253.5332,415.5,263.5332,419.5,253.5332,415.5,257.5332" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="144" x2="144" y1="366.7988" y2="410.666"/><line style="stroke:#454645;stroke-width:1.0;" x1="144" x2="267.75" y1="410.666" y2="410.666"/><polygon fill="#454645" points="257.75,406.666,267.75,410.666,257.75,414.666,261.75,410.666" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="279.75" y1="209.5332" y2="229.5332"/><polygon fill="#454645" points="275.75,219.5332,279.75,229.5332,283.75,219.5332,279.75,223.5332" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="279.75" y1="143.2656" y2="175.4004"/><polygon fill="#454645" points="275.75,165.4004,279.75,175.4004,283.75,165.4004,279.75,169.4004" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="279.75" y1="422.666" y2="432.666"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="571" y1="432.666" y2="432.666"/><polygon fill="#454645" points="567,284.0557,571,274.0557,575,284.0557,571,280.0557" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="571" x2="571" y1="131.2656" y2="432.666"/><line style="stroke:#454645;stroke-width:1.0;" x1="571" x2="338.25" y1="131.2656" y2="131.2656"/><polygon fill="#454645" points="348.25,127.2656,338.25,131.2656,348.25,135.2656,344.25,131.2656" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="221.25" x2="24" y1="131.2656" y2="131.2656"/><polygon fill="#454645" points="20,270.0557,24,280.0557,28,270.0557,24,274.0557" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="24" x2="24" y1="131.2656" y2="444.666"/><line style="stroke:#454645;stroke-width:1.0;" x1="24" x2="279.75" y1="444.666" y2="444.666"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="279.75" y1="444.666" y2="464.666"/><polygon fill="#454645" points="275.75,454.666,279.75,464.666,283.75,454.666,279.75,458.666" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="279.75" y1="99.2656" y2="119.2656"/><polygon fill="#454645" points="275.75,109.2656,279.75,119.2656,283.75,109.2656,279.75,113.2656" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="221.25" x2="211.25" y1="476.666" y2="476.666"/><line style="stroke:#454645;stroke-width:1.0;" x1="211.25" x2="211.25" y1="476.666" y2="498.666"/><polygon fill="#454645" points="207.25,488.666,211.25,498.666,215.25,488.666,211.25,492.666" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="338.25" x2="348.25" y1="476.666" y2="476.666"/><line style="stroke:#454645;stroke-width:1.0;" x1="348.25" x2="348.25" y1="476.666" y2="498.666"/><polygon fill="#454645" points="344.25,488.666,348.25,498.666,352.25,488.666,348.25,492.666" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="211.25" x2="211.25" y1="532.7988" y2="550.7988"/><line style="stroke:#454645;stroke-width:1.0;" x1="211.25" x2="267.75" y1="550.7988" y2="550.7988"/><polygon fill="#454645" points="257.75,546.7988,267.75,550.7988,257.75,554.7988,261.75,550.7988" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="348.25" x2="348.25" y1="532.7988" y2="550.7988"/><line style="stroke:#454645;stroke-width:1.0;" x1="348.25" x2="291.75" y1="550.7988" y2="550.7988"/><polygon fill="#454645" points="301.75,546.7988,291.75,550.7988,301.75,554.7988,297.75,550.7988" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="279.75" y1="562.7988" y2="582.7988"/><polygon fill="#454645" points="275.75,572.7988,279.75,582.7988,283.75,572.7988,279.75,576.7988" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="279.75" x2="279.75" y1="616.9316" y2="636.9316"/><polygon fill="#454645" points="275.75,626.9316,279.75,636.9316,283.75,626.9316,279.75,630.9316" style="stroke:#454645;stroke-width:1.0;"/><!--MD5=[c9de373051c91d16296f423ed462e8fd]
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+!theme vibrant
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+:构造增广矩阵;
+:从左上角开始处理每一列;
+
+while (所有列都处理完毕?) is (否)
+  :找到当前列的主元;
+  if (存在非零主元?) then (是)
+    :将主元置为1（归一化主元所在行）;
+    :使用行减法清除当前列的其他非零项;
+  else (否)
+    if (当前列在增广部分是否有非零项?) then (是)
+      :系统无解;
+      stop
+    else (否)
+      :处理下一列;
+    endif
+  endif
+endwhile
+
+if (每个变量都有主元?) then (是)
+  :系统有唯一解;
+else (否)
+  :系统有无穷多解;
+endif
+
+:从矩阵中读取解集;
+
+
+stop
+@enduml
+
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFFFFF
+    BorderThickness 1.5
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 454645
+    FontColor 454645
+    BorderThickness 1.5
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF5F42
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam queue {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFF
+    BorderThickness 1.5
+}
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+:构造增广矩阵;
+:从左上角开始处理每一列;
+
+while (所有列都处理完毕?) is (否)
+  :找到当前列的主元;
+  if (存在非零主元?) then (是)
+    :将主元置为1（归一化主元所在行）;
+    :使用行减法清除当前列的其他非零项;
+  else (否)
+    if (当前列在增广部分是否有非零项?) then (是)
+      :系统无解;
+      stop
+    else (否)
+      :处理下一列;
+    endif
+  endif
+endwhile
+
+if (每个变量都有主元?) then (是)
+  :系统有唯一解;
+else (否)
+  :系统有无穷多解;
+endif
+
+:从矩阵中读取解集;
+
+
+stop
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 01:01:30 CST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: CN
+--></g></svg>

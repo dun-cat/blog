@@ -1,0 +1,19 @@
+@startuml
+
+!theme vibrant
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+start
+:Set currentIndex = index of the newly added element;
+:Set parentIndex = (currentIndex - 1) / 2;
+
+while (currentIndex > 0 and heap[currentIndex] < heap[parentIndex]) is (yes)
+  :Swap heap[currentIndex] with heap[parentIndex];
+  :currentIndex = parentIndex;
+  :parentIndex = (currentIndex - 1) / 2;
+endwhile (no)
+
+stop
+@enduml

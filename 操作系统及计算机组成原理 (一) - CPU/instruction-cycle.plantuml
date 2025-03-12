@@ -1,0 +1,40 @@
+@startuml
+skinparam backgroundColor transparent
+
+title CPU指令周期（Instruction Cycle）
+
+start
+:PC指向下一条指令地址;
+fork
+  :**取指阶段（Fetch）**;
+  :1. 通过地址总线发送PC值到内存;
+  :2. 内存返回指令到IR（指令寄存器）;
+  :3. PC递增;
+fork again
+  :**解码阶段（Decode）**;
+  :控制单元解析IR中的指令;
+  :生成控制信号（如ALU操作类型）;
+fork again
+  :**执行阶段（Execute）**;
+  if (需要操作数?) then (是)
+    :从内存/寄存器读取数据;
+  else (否)
+    :ALU执行运算;
+  endif
+fork again
+  :**写回阶段（Write-back）**;
+  :将结果写入寄存器或内存;
+end fork
+
+if (有中断请求?) then (是)
+  :**中断处理**;
+    :1. 保存当前PC和状态到栈;
+    :2. 跳转到中断处理程序;
+    :3. 处理完成后恢复上下文;
+else (否)
+  :继续下一条指令;
+endif
+
+stop
+
+@enduml
