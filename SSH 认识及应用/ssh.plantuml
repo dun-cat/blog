@@ -1,0 +1,28 @@
+@startuml
+!theme sketchy-outline
+
+participant 用户 as User
+participant 客户端 as Client
+participant "SSH 服务器" as SSHServer
+
+User -> Client: 输入 SSH 连接命令
+Client -> SSHServer: 请求连接
+
+SSHServer -> Client: 发送公钥和认证请求
+note right of Client: 客户端检查服务器公钥\n如果是第一次连接，提示用户确认
+
+Client -> User: 显示安全警告，请求确认
+User -> Client: 确认继续
+note right of Client: 客户端保存服务器公钥到 known_hosts 文件
+
+Client -> SSHServer: 请求密码认证
+SSHServer -> User: 提示输入密码
+User -> SSHServer: 提供密码
+SSHServer -> SSHServer: 验证密码
+alt 密码正确
+    SSHServer -> Client: 认证成功，允许登录
+    note right of User: 用户现在可以选择手动添加公钥到\n~/.ssh/authorized_keys
+else 密码错误
+    SSHServer -> Client: 认证失败，拒绝登录
+end
+@enduml

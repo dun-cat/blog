@@ -1,0 +1,105 @@
+@startuml
+
+!define RECTANGLE class
+
+' 系统表
+RECTANGLE System {
+  +Integer id AUTO_INCREMENT
+  +String name
+  +String description
+}
+
+' 用户表
+RECTANGLE User {
+  +Integer id AUTO_INCREMENT
+  +String username
+  +String email
+  +List<Role> roles
+}
+
+' 角色表
+RECTANGLE Role {
+  +Integer id AUTO_INCREMENT
+  +Integer system_id
+  +String name
+  +List<Frontend_Permission> frontend_permissions
+  +List<API_Permission> api_permissions
+}
+
+' 权限类型表
+RECTANGLE Permission_Type {
+  +Integer id AUTO_INCREMENT
+  +String name // 权限类型名称，如可见、可用、创建、读取、更新、删除
+  +String key // 权限类型唯一键
+}
+
+' 前端资源表
+RECTANGLE Frontend_Resource {
+  +Integer id AUTO_INCREMENT
+  +Integer system_id
+  +Integer parent_id NULLABLE
+  +String name
+  +String key // 资源唯一键，反映父子级关系
+  +String type // 资源类型，如 "MENU", "BUTTON"
+  +String path // UI路径
+  --
+  {field} parent_id 指向父资源的ID，NULL表示顶级资源
+  {field} key 是由父级资源key逐级附加形成的唯一标识符
+}
+
+' API资源表
+RECTANGLE API_Resource {
+  +Integer id AUTO_INCREMENT
+  +Integer system_id
+  +Integer parent_id NULLABLE
+  +String name
+  +String key // 资源唯一键，反映父子级关系
+  +String method // HTTP方法
+  --
+  {field} parent_id 指向父资源的ID，NULL表示顶级资源
+  {field} key 是由父级资源key逐级附加形成的唯一标识符
+}
+
+' 前端权限表
+RECTANGLE Frontend_Permission {
+  +Integer id AUTO_INCREMENT
+  +Integer system_id
+  +Integer frontend_resource_id
+  +Integer permission_type_id
+  +String code // 权限码，格式为：“FRONTEND_[系统名称]_[完整资源KEY]_[权限类型KEY]”
+}
+
+' API权限表
+RECTANGLE API_Permission {
+  +Integer id AUTO_INCREMENT
+  +Integer system_id
+  +Integer api_resource_id
+  +Integer permission_type_id
+  +String code // 权限码，格式为：“API_[系统名称]_[完整资源KEY]_[权限类型KEY]”
+}
+
+' 关系
+System "1" -- "*" User : 包含 >
+System "1" -- "*" Role : 包含 >
+Permission_Type "1" -- "*" Frontend_Permission : 使用 >
+Permission_Type "1" -- "*" API_Permission : 使用 >
+System "1" -- "*" Frontend_Resource : 包含 >
+Frontend_Resource "1" -- "0..1" Frontend_Resource : 父级 <
+System "1" -- "*" API_Resource : 包含 >
+API_Resource "1" -- "0..1" API_Resource : 父级 <
+
+Role "1" *-- "*" Frontend_Permission : 拥有 >
+Frontend_Resource "1" -- "*" Frontend_Permission : 对应 >
+
+Role "1" *-- "*" API_Permission : 拥有 >
+API_Resource "1" -- "*" API_Permission : 对应 >
+
+note right of Frontend_Permission
+  权限码设计说明：
+  - 前端权限码格式：“FRONTEND_[系统名称]_[完整资源KEY]_[权限类型KEY]”
+  - API权限码格式：“API_[系统名称]_[完整资源KEY]_[权限类型KEY]”
+  - 完整资源KEY由从根资源到当前资源的父子级关系的key串联组成，确保层级结构的清晰表达。
+end note
+
+' 版本标记为9
+@enduml

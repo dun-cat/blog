@@ -1,0 +1,27 @@
+@startuml
+!theme sketchy-outline
+
+entity "学生" as Student {
+  *学号 : int
+  --
+  姓名 : string
+  年龄 : int
+}
+
+entity "课程" as Course {
+  *课程号 : int
+  --
+  课程名 : string
+}
+
+entity "选课" as Enrollment #FFEB3B {
+  *选课ID : int
+  --
+  学号 : int
+  课程号 : int
+  选课日期 : date
+}
+
+Student ||--o{ Enrollment : "选修"
+Course ||--o{ Enrollment : "被选修"
+@enduml

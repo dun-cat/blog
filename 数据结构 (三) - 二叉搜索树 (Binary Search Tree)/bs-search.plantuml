@@ -1,0 +1,23 @@
+@startuml
+!theme sketchy-outline
+
+start
+:输入查找值 value;
+:从根节点开始;
+
+while (当前节点不为空?) is (是)
+  if (当前节点的值 == value) then (是)
+    :找到节点;
+    stop
+  else (否)
+    if (当前节点的值 > value) then (是)
+      :移动到左子节点;
+    else (否)
+      :移动到右子节点;
+    endif
+  endif
+endwhile
+
+:未找到节点;
+stop
+@enduml

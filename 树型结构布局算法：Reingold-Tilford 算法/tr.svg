@@ -1,0 +1,60 @@
+<svg viewBox="-5 -4.5 10 7.5"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+  <g stroke-width="0.05" transform="scale(1, -1)">
+    <g>
+      <rect stroke-width="0" fill="transparent" fill-opacity="1" width="16" height="9" x="-8" y="-4.5" />
+      <g stroke-width="0.1" stroke="#000000" fill-opacity="0">
+        <g>
+          <g>
+            <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cy="3.5" r="0.35" />
+            <g>
+              <g>
+                <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="-1.099223" y1="1.187767" x2="-1.600777" y2="1.912233" />
+                <g>
+                  <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="-1.600777" y1="-0.112233" x2="-1.099223" y2="0.612233" />
+                  <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="-1.8" cy="-0.4" r="0.35" />
+                </g>
+                <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="-0.9" cy="0.9" r="0.35" />
+              </g>
+              <g>
+                <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="-2.500777" y1="1.187767" x2="-1.999223" y2="1.912233" />
+                <g>
+                  <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="-3.400777" y1="-0.112233" x2="-2.899223" y2="0.612233" />
+                  <g>
+                    <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="-2.899223" y1="-1.412233" x2="-3.400777" y2="-0.687767" />
+                    <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="-2.7" cy="-1.7" r="0.35" />
+                  </g>
+                  <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="-3.6" cy="-0.4" r="0.35" />
+                </g>
+                <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="-2.7" cy="0.9" r="0.35" />
+              </g>
+              <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="-1.8" cy="2.2" r="0.35" />
+            </g>
+            <g>
+              <g>
+                <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="2.500777" y1="1.187767" x2="1.999223" y2="1.912233" />
+                <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="2.7" cy="0.9" r="0.35" />
+              </g>
+              <g>
+                <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="1.099223" y1="1.187767" x2="1.600777" y2="1.912233" />
+                <g>
+                  <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="1.600777" y1="-0.112233" x2="1.099223" y2="0.612233" />
+                  <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="1.8" cy="-0.4" r="0.35" />
+                </g>
+                <g>
+                  <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="0.199223" y1="-0.112233" x2="0.700777" y2="0.612233" />
+                  <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cy="-0.4" r="0.35" />
+                </g>
+                <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="0.9" cy="0.9" r="0.35" />
+              </g>
+              <circle stroke-width="0.1" stroke="#000000" fill-opacity="0" stroke-opacity="1" cx="1.8" cy="2.2" r="0.35" />
+            </g>
+            <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="-0.283738" y1="3.295078" x2="-1.516262" y2="2.404922" />
+            <line stroke-width="0.1" stroke="#000000" stroke-opacity="1" x1="0.283738" y1="3.295078" x2="1.516262" y2="2.404922" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

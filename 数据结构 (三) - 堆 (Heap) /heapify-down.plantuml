@@ -1,0 +1,35 @@
+@startuml
+
+!theme vibrant
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+start
+:Set currentIndex = index of the node to heapify;
+:Set heapSize = size of the heap;
+:Set smallest = currentIndex;
+:Set leftChildIndex = 2 * currentIndex + 1;
+:Set rightChildIndex = 2 * currentIndex + 2;
+
+repeat 
+  :leftChildIndex = 2 * currentIndex + 1;
+  :rightChildIndex = 2 * currentIndex + 2;
+  if (leftChildIndex < heapSize AND heap[leftChildIndex] < heap[smallest]) then (yes)
+    :smallest = leftChildIndex;
+  endif
+  if (rightChildIndex < heapSize AND heap[rightChildIndex] < heap[smallest]) then (yes)
+    :smallest = rightChildIndex;
+  endif
+  if (smallest != currentIndex) then (yes)
+    :Swap heap[currentIndex] with heap[smallest];
+    :currentIndex = smallest;
+    :Update leftChildIndex and rightChildIndex;
+  else (no)
+    :Heap property is maintained;
+    stop
+  endif
+repeat while (smallest != currentIndex)
+
+stop
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+skinparam nodesep 50
+skinparam ranksep 50
+skinparam classFontSize 13
+skinparam backgroundColor transparent
+
+package "根节点 (Root Block)" {
+  class Root {
+    - 哈希范围: 0x0000 ~ 0xFFFF
+    - 指针1 --> Internal1
+    - 指针2 --> Internal2
+  }
+}
+
+package "中间节点层 (Internal Nodes)" {
+  class Internal1 {
+    - 哈希范围: 0x0000 ~ 0x7FFF
+    - 指针1 --> Leaf1
+    - 指针2 --> Leaf2
+  }
+
+  class Internal2 {
+    - 哈希范围: 0x8000 ~ 0xFFFF
+    - 指针1 --> Leaf3
+    - 指针2 --> Leaf4
+  }
+}
+
+package "叶子节点层 (Leaf Blocks)" {
+  class Leaf1 {
+    - 哈希值: 0x0000 ~ 0x3FFF
+    - 目录项1: "file1.txt (inode 1001)"
+    - 目录项2: "file2.txt (inode 1002)"
+  }
+
+  class Leaf2 {
+    - 哈希值: 0x4000 ~ 0x7FFF
+    - 目录项1: "file3.txt (inode 1003)"
+    - 目录项2: "file4.txt (inode 1004)"
+  }
+
+  class Leaf3 {
+    - 哈希值: 0x8000 ~ 0xBFFF
+    - 目录项1: "file5.txt (inode 1005)"
+    - 目录项2: "file6.txt (inode 1006)"
+  }
+
+  class Leaf4 {
+    - 哈希值: 0xC000 ~ 0xFFFF
+    - 目录项1: "file7.txt (inode 1007)"
+    - 目录项2: "file8.txt (inode 1008)"
+  }
+}
+
+' 连接关系
+Root --> Internal1 : 指针1 (哈希低半区)
+Root --> Internal2 : 指针2 (哈希高半区)
+Internal1 --> Leaf1 : 指针1 (子范围1)
+Internal1 --> Leaf2 : 指针2 (子范围2)
+Internal2 --> Leaf3 : 指针1 (子范围1)
+Internal2 --> Leaf4 : 指针2 (子范围2)
+
+@enduml

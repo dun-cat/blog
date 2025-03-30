@@ -1,0 +1,27 @@
+@startuml
+
+!theme reddress-lightorange
+
+skinparam backgroundColor transparent
+
+actor User as user
+participant "Client" as client
+participant "Resource Server" as resource
+participant "Redis" as redis
+participant "Auth Server" as auth
+
+user -> client : 请求访问资源
+client -> resource : 携带过期 access_token
+resource -> redis : 检查令牌状态\n(是否在黑名单或缓存中失效？)
+redis --> resource : 返回「令牌已失效」
+resource --> client : 401 Unauthorized\n(令牌过期或无效)
+client -> auth : 用 refresh_token 请求新令牌
+auth -> auth : 验证 refresh_token\n并生成新 access_token
+auth -> redis : 1. 旧 access_token 加入黑名单\n2. 缓存新 access_token 状态
+auth --> client : 返回新 access_token\n（可选新 refresh_token）
+client -> resource : 重试请求（携带新 access_token）
+resource -> redis : 检查新令牌有效性
+redis --> resource : 返回「令牌有效」
+resource --> client : 返回受保护资源
+client --> user : 显示请求结果
+@enduml

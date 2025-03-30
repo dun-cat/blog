@@ -1,0 +1,35 @@
+@startuml
+!theme sketchy-outline
+start
+:输入插入值 value;
+:创建新节点 newNode;
+
+if (根节点是否为空?) then (是)
+    :将 newNode 设为根节点;
+    stop
+else (否)
+    :设置当前节点 current 为根节点;
+endif
+
+while (true) is (true)
+    if (value < current.value) then (是)
+        if (current.left 是否为空?) then (是)
+            :将 newNode 设为 current.left;
+            stop
+        else (否)
+            :移动到左子节点;
+            :设置 current = current.left;
+        endif
+    else (否)
+        if (current.right 是否为空?) then (是)
+            :将 newNode 设为 current.right;
+            stop
+        else (否)
+            :移动到右子节点;
+            :设置 current = current.right;
+        endif
+    endif
+
+endwhile
+-[hidden]->
+@enduml

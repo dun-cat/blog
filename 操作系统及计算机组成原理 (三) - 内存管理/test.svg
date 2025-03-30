@@ -1,0 +1,52 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <!-- 标题 -->
+  <text x="10" y="30" font-size="20" font-weight="bold">64-bit Virtual to Physical Address Translation</text>
+
+  <!-- 虚拟地址 -->
+  <rect x="50" y="50" width="700" height="50" fill="lightblue" stroke="black" />
+  <text x="60" y="80" font-size="14">Virtual Address</text>
+  <line x1="200" y1="50" x2="200" y2="100" stroke="black" />
+  <line x1="350" y1="50" x2="350" y2="100" stroke="black" />
+  <line x1="500" y1="50" x2="500" y2="100" stroke="black" />
+  <line x1="650" y1="50" x2="650" y2="100" stroke="black" />
+  <text x="210" y="80" font-size="12">Level 4</text>
+  <text x="360" y="80" font-size="12">Level 3</text>
+  <text x="510" y="80" font-size="12">Level 2</text>
+  <text x="660" y="80" font-size="12">Level 1</text>
+  <text x="710" y="80" font-size="12">Offset</text>
+
+  <!-- 箭头 -->
+  <line x1="400" y1="100" x2="400" y2="130" stroke="black" />
+  <polygon points="395,130 405,130 400,140" fill="black" />
+
+  <!-- 页表 Level 4 -->
+  <rect x="50" y="150" width="150" height="50" fill="lightgreen" stroke="black" />
+  <text x="60" y="180" font-size="14">Level 4 Table</text>
+  <line x1="100" y1="200" x2="100" y2="230" stroke="black" />
+  <polygon points="95,230 105,230 100,240" fill="black" />
+
+  <!-- 页表 Level 3 -->
+  <rect x="250" y="150" width="150" height="50" fill="lightgreen" stroke="black" />
+  <text x="260" y="180" font-size="14">Level 3 Table</text>
+  <line x1="300" y1="200" x2="300" y2="230" stroke="black" />
+  <polygon points="295,230 305,230 300,240" fill="black" />
+
+  <!-- 页表 Level 2 -->
+  <rect x="450" y="150" width="150" height="50" fill="lightgreen" stroke="black" />
+  <text x="460" y="180" font-size="14">Level 2 Table</text>
+  <line x1="500" y1="200" x2="500" y2="230" stroke="black" />
+  <polygon points="495,230 505,230 500,240" fill="black" />
+
+  <!-- 页表 Level 1 -->
+  <rect x="650" y="150" width="150" height="50" fill="lightgreen" stroke="black" />
+  <text x="660" y="180" font-size="14">Level 1 Table</text>
+  <line x1="700" y1="200" x2="700" y2="230" stroke="black" />
+  <polygon points="695,230 705,230 700,240" fill="black" />
+
+  <!-- 物理地址 -->
+  <rect x="50" y="250" width="700" height="50" fill="lightcoral" stroke="black" />
+  <text x="60" y="280" font-size="14">Physical Address</text>
+  <line x1="650" y1="250" x2="650" y2="300" stroke="black" />
+  <text x="660" y="280" font-size="12">PFN</text>
+  <text x="710" y="280" font-size="12">Offset</text>
+</svg>

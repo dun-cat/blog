@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="395px" preserveAspectRatio="none" style="width:433px;height:395px;background:#00000000;" version="1.1" viewBox="0 0 433 395" width="433px" zoomAndPan="magnify"><defs/><g><ellipse cx="215" cy="20" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="329" x="50.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="309" x="60.5" y="71.6016">Set currentIndex = index of the newly added element</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="255" x="87.5" y="104.1328"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="235" x="97.5" y="125.7344">Set parentIndex = (currentIndex - 1) / 2</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="302" x="64" y="219.2207"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="282" x="74" y="240.8223">Swap heap[currentIndex] with heap[parentIndex]</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="181" x="124.5" y="273.3535"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="161" x="134.5" y="294.9551">currentIndex = parentIndex</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="234" x="98" y="327.4863"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="214" x="108" y="349.0879">parentIndex = (currentIndex - 1) / 2</text><polygon fill="#F1F1F1" points="47,158.2656,383,158.2656,395,170.2656,383,182.2656,47,182.2656,35,170.2656,47,158.2656" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="18" x="219" y="192.9004">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="336" x="47" y="174.4229">currentIndex &gt; 0 and heap[currentIndex] &lt; heap[parentIndex]</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="21" y="167.9453">no</text><ellipse cx="24" cy="217.2656" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="24" cy="217.2656" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="215" x2="215" y1="30" y2="50"/><polygon fill="#454645" points="211,40,215,50,219,40,215,44" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="215" x2="215" y1="84.1328" y2="104.1328"/><polygon fill="#454645" points="211,94.1328,215,104.1328,219,94.1328,215,98.1328" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="215" x2="215" y1="253.3535" y2="273.3535"/><polygon fill="#454645" points="211,263.3535,215,273.3535,219,263.3535,215,267.3535" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="215" x2="215" y1="307.4863" y2="327.4863"/><polygon fill="#454645" points="211,317.4863,215,327.4863,219,317.4863,215,321.4863" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="215" x2="215" y1="182.2656" y2="219.2207"/><polygon fill="#454645" points="211,209.2207,215,219.2207,219,209.2207,215,213.2207" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="215" x2="215" y1="361.6191" y2="371.6191"/><line style="stroke:#454645;stroke-width:1.0;" x1="215" x2="407" y1="371.6191" y2="371.6191"/><polygon fill="#454645" points="403,281.9424,407,271.9424,411,281.9424,407,277.9424" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="407" x2="407" y1="170.2656" y2="371.6191"/><line style="stroke:#454645;stroke-width:1.0;" x1="407" x2="395" y1="170.2656" y2="170.2656"/><polygon fill="#454645" points="405,166.2656,395,170.2656,405,174.2656,401,170.2656" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="35" x2="24" y1="170.2656" y2="170.2656"/><line style="stroke:#454645;stroke-width:1.0;" x1="24" x2="24" y1="170.2656" y2="206.2656"/><polygon fill="#454645" points="20,196.2656,24,206.2656,28,196.2656,24,200.2656" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="215" x2="215" y1="138.2656" y2="158.2656"/><polygon fill="#454645" points="211,148.2656,215,158.2656,219,148.2656,215,152.2656" style="stroke:#454645;stroke-width:1.0;"/><!--MD5=[611226f53511fd57f8d229fee2ba3874]
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+!theme vibrant
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+start
+:Set currentIndex = index of the newly added element;
+:Set parentIndex = (currentIndex - 1) / 2;
+
+while (currentIndex > 0 and heap[currentIndex] < heap[parentIndex]) is (yes)
+  :Swap heap[currentIndex] with heap[parentIndex];
+  :currentIndex = parentIndex;
+  :parentIndex = (currentIndex - 1) / 2;
+endwhile (no)
+
+stop
+@enduml
+
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFFFFF
+    BorderThickness 1.5
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 454645
+    FontColor 454645
+    BorderThickness 1.5
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF5F42
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam queue {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFF
+    BorderThickness 1.5
+}
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+start
+:Set currentIndex = index of the newly added element;
+:Set parentIndex = (currentIndex - 1) / 2;
+
+while (currentIndex > 0 and heap[currentIndex] < heap[parentIndex]) is (yes)
+  :Swap heap[currentIndex] with heap[parentIndex];
+  :currentIndex = parentIndex;
+  :parentIndex = (currentIndex - 1) / 2;
+endwhile (no)
+
+stop
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 01:01:30 CST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: CN
+--></g></svg>

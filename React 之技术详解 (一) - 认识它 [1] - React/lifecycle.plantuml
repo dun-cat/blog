@@ -1,0 +1,35 @@
+@startuml
+
+!theme vibrant
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+start
+
+:constructor();
+
+if (Initial Render?) then (yes)
+    :render();
+    :componentDidMount();
+else (no)
+    :static getDerivedStateFromProps(props, state);
+    if (shouldComponentUpdate(nextProps, nextState)?) then (yes)
+        :render();
+        :static getSnapshotBeforeUpdate(prevProps, prevState);
+        :componentDidUpdate(prevProps, prevState, snapshot);
+    else (no)
+    endif
+endif
+
+if (Error Caught?) then (yes)
+    :static getDerivedStateFromError(error);
+    :componentDidCatch(error, info);
+endif
+
+if (Component Unmounting?) then (yes)
+    :componentWillUnmount();
+endif
+
+stop
+@enduml

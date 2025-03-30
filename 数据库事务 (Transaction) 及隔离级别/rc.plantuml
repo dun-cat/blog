@@ -1,0 +1,34 @@
+@startuml
+!theme sketchy-outline
+actor 事务A
+actor 事务B
+participant 数据库
+
+note over 数据库: 初始数据: account_id=1, balance=100.00
+
+skinparam sequence {
+  ArrowColor Black
+}
+
+事务A -> 数据库: START TRANSACTION;
+事务A -> 数据库: SELECT balance FROM accounts WHERE account_id = 1;
+数据库 -> 事务A: 100.00
+
+skinparam sequence {
+  ArrowColor DeepSkyBlue
+}
+
+事务B -> 数据库: START TRANSACTION;
+事务B -> 数据库: UPDATE accounts SET balance = balance + 50 WHERE account_id = 1;
+
+事务B -> 数据库: COMMIT;
+
+skinparam sequence {
+  ArrowColor Black
+}
+
+事务A -> 数据库: SELECT balance FROM accounts WHERE account_id = 1;
+数据库 -> 事务A: <font color=red><b>150.00
+
+事务A -> 数据库: COMMIT;
+@enduml

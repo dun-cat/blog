@@ -1,0 +1,14 @@
+@startuml
+
+!theme sketchy-outline
+
+participant Client
+participant Server
+
+Client -> Server: 请求软件更新
+Server --> Client: 返回可用更新版本信息
+Client -> Server: 请求下载更新
+Server --> Client: 返回更新文件
+Client -> Server: 确认接收更新
+Server --> Client: 确认接收
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+!theme sketchy-outline
+participant Browser
+participant Server
+
+== 第一次请求 ==
+Browser -> Server: GET /resource
+activate Server
+Server --> Browser: 200 OK\nLast-Modified: [时间戳]\nETag: "[标签]"
+deactivate Server
+
+note right of Browser: 浏览器缓存资源\n并记录 Last-Modified 和 ETag
+
+== 再次请求（资源可能已更新） ==
+Browser -> Server: GET /resource\nIf-Modified-Since: [上次的时间戳]\nIf-None-Match: "[上次的标签]"
+activate Server
+Server --> Browser: 304 Not Modified
+deactivate Server
+
+note right of Browser: 浏览器收到 304 响应\n继续使用缓存资源
+@enduml

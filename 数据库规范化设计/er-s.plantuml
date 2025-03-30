@@ -1,0 +1,33 @@
+@startuml
+
+skinparam BackgroundColor Transparent
+
+entity "Person" as Person {
+}
+
+entity "Passport" as Passport {
+}
+
+entity "Customer" as Customer {
+}
+
+entity "Order" as Order {
+}
+
+entity "Employee" as Employee {
+}
+
+entity "Department" as Department {
+}
+
+entity "Student" as Student {
+}
+
+entity "Course" as Course {
+}
+
+Person ||--|| Passport : 一对一 (1:1)
+Customer ||--o{ Order : 一对多 (1:N)
+Employee }o--|| Department : 多对一 (N:1)
+Student }o--o{ Course : 多对多 (M:N)
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+title 安全序列检测流程
+
+skinparam backgroundColor transparent
+
+start
+:初始化 Work = Available\nFinish = [false, false, ...];
+repeat
+  :查找进程 Pi，满足：\n1. Finish[i] == false\n2. Need[i] ≤ Work;
+  if (找到 Pi) then (是)
+    :Work = Work + Allocation[i]\nFinish[i] = true;
+  else (否)
+    if (所有 Finish[i] == true) then (是)
+      :系统安全，存在安全序列;
+    else (否)
+      :系统不安全，无安全序列;
+    endif
+  endif
+repeat while (还有未检查的进程?)
+stop
+@enduml

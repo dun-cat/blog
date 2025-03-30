@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="177.16087mm"
+   height="58.212944mm"
+   viewBox="0 0 177.16087 58.212944"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="intersection.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:export-filename="intersection.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0726423"
+     inkscape:cx="334.68753"
+     inkscape:cy="110.00871"
+     inkscape:window-width="1712"
+     inkscape:window-height="861"
+     inkscape:window-x="389"
+     inkscape:window-y="323"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch1">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-21.261778,-109.29647)">
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
+       id="path1"
+       cx="82.430084"
+       cy="138.43221"
+       rx="61.036015"
+       ry="28.944914" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
+       id="path1-0"
+       cx="137.25435"
+       cy="138.37367"
+       rx="61.036015"
+       ry="28.944914" />
+    <path
+       id="ellipse21"
+       style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
+       d="m 109.84808,112.57917 a 61.036015,28.944914 0 0 0 -33.629993,25.7943 61.036015,28.944914 0 0 0 33.748843,25.82271 61.036015,28.944914 0 0 0 33.49925,-25.7638 61.036015,28.944914 0 0 0 -33.6181,-25.85321 z" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
+       x="96.698372"
+       y="141.23949"
+       id="text23"
+       inkscape:label="text23"><tspan
+         sodipodi:role="line"
+         id="tspan1">A ∩ B</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+@startuml
+!theme sketchy-outline
+|用户|
+start
+:执行操作;
+
+|客户端|
+:在本地应用操作 (apply operation locally);
+
+if (是否 <font color=green>Synchronized</font>?) then (yes)
+  :发送操作到服务器 (Send operation to server);
+  :状态变为 <font color=#fa930c>Awaiting Confirm</font>;
+else (no)
+  if (是否在 <font color=#fa930c>Awaiting Confirm</font>?) then (yes)
+    :组合操作与待确认操作;
+  else (Awaiting With Buffer)
+    :组合操作与缓冲区;
+  endif
+endif
+
+|服务器|
+:接收操作 (Receive operation);
+
+if (接收到冲突操作?) then (yes)
+  :转换操作 (Transform operation);
+endif
+
+:应用操作 (Apply operation);
+
+:发送确认到客户端 (Send ack to client);
+
+|客户端|
+if (有缓冲的操作?) then (yes)
+  :发送缓冲的操作到服务器;
+  :状态变为 <font color=#fa930c>Awaiting Confirm</font>;
+else (no)
+  :状态变为 <font color=green>Synchronized</font>;
+endif
+
+stop
+@enduml

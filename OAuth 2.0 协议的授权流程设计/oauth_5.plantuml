@@ -1,0 +1,20 @@
+@startuml
+
+!theme sketchy-outline
+
+!$client = "客户端(Client)"
+!$authServer = "授权服务器(Authorization Server)"
+
+"$client" -> "$authServer": refresh token
+note left
+client_id
+client_secret
+refresh_token
+scope
+grant_type: Refresh token
+end note
+
+"$client" <- "$authServer": access token
+
+
+@enduml

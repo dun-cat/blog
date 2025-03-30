@@ -1,0 +1,36 @@
+@startuml
+
+!theme vibrant
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+:构造增广矩阵;
+:从左上角开始处理每一列;
+
+while (所有列都处理完毕?) is (否)
+  :找到当前列的主元;
+  if (存在非零主元?) then (是)
+    :将主元置为1（归一化主元所在行）;
+    :使用行减法清除当前列的其他非零项;
+  else (否)
+    if (当前列在增广部分是否有非零项?) then (是)
+      :系统无解;
+      stop
+    else (否)
+      :处理下一列;
+    endif
+  endif
+endwhile
+
+if (每个变量都有主元?) then (是)
+  :系统有唯一解;
+else (否)
+  :系统有无穷多解;
+endif
+
+:从矩阵中读取解集;
+
+
+stop
+@enduml

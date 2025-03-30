@@ -1,0 +1,18 @@
+@startuml
+
+!theme sketchy-outline
+
+participant "客户端" as Client
+participant "服务器" as Server
+
+Client -> Server: 1. SSH请求连接
+Server --> Client: 2. 服务器发送其公钥
+note right of Client: 3. 客户端检查公钥\n（可选的）
+Client -> Server: 4. 客户端发送自己的公钥认证请求
+Server --> Client: 5. 服务器检查公钥是否存在于authorized_keys
+note right of Server: 6. 如果存在，服务器请求公钥的加密挑战
+Client -> Server: 7. 客户端使用私钥对挑战进行签名
+Client -> Server: 8. 客户端发送签名的挑战回应
+Server --> Client: 9. 服务器用公钥验证签名并授权登录
+Server --> Client: 10. 登录成功，开始加密会话
+@enduml
