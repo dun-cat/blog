@@ -1,0 +1,24 @@
+@startuml
+!theme sketchy-outline
+left to right direction
+
+entity "**员工**" as Employees {
+    + 员工ID : INT
+    员工姓名 : VARCHAR
+    部门ID : INT
+}
+
+entity "**部门**" as Departments {
+    + 部门ID : INT
+    部门名称 : VARCHAR
+    经理ID : INT
+}
+
+entity "**经理**" as Managers {
+    + 经理ID : INT
+    经理姓名 : VARCHAR
+}
+
+Employees }o--|| Departments : "属于"
+Departments }o--|| Managers : "管理"
+@enduml

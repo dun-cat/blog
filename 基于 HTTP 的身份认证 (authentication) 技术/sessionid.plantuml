@@ -1,0 +1,25 @@
+@startuml
+!theme toy
+
+skinparam backgroundColor transparent
+
+title Session ID 认证流程
+
+actor 用户 as Client
+participant "Web 服务器" as Server
+database "Session 存储\n(Redis/DB)" as SessionStore
+
+Client -> Server: 1. 提交用户名/密码
+Server -> Server: 2. 验证凭证
+Server -> SessionStore: 3. 生成 Session ID\n并存储用户数据
+Server --> Client: 4. 返回 Set-Cookie:\nSESSION_ID=abc123
+
+note right: Cookie 属性：HttpOnly, Secure, SameSite
+
+Client -> Server: 5. 携带 Cookie\n(SESSION_ID=abc123)
+Server -> SessionStore: 6. 查询 Session ID\n对应的用户数据
+SessionStore --> Server: 7. 返回用户信息
+Server --> Client: 8. 返回受保护资源
+
+note over Server,SessionStore: Session ID 有效期管理\n自动过期或手动删除
+@enduml

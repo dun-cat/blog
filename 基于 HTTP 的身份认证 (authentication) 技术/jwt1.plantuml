@@ -1,0 +1,20 @@
+@startuml
+
+!theme reddress-lightorange
+
+skinparam backgroundColor transparent
+actor User
+participant "Auth Service" as Auth
+participant "Service B" as B
+participant "Service C" as C
+
+User -> Auth: 登录获取 JWT
+Auth -> User: 返回 JWT（含用户角色、权限）
+User -> B: 请求携带 JWT
+B -> B: 验证签名和过期时间（无需查库）
+B -> User: 返回数据
+User -> C: 请求携带同一 JWT
+C -> C: 验证签名和过期时间（无需查库）
+C -> User: 返回数据
+
+@enduml

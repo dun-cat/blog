@@ -1,0 +1,68 @@
+@startuml
+
+skinparam backgroundColor transparent
+
+' 组件定义
+class Client #F0F8FF {
+    + 创建命令并绑定接收者
+    + 设置调用者的命令
+}
+
+class Invoker #FFFACD {
+    - command: Command
+    + setCommand(cmd: Command)
+    + executeCommand()
+    + undoCommand()
+}
+
+interface Command <<interface>> #D3D3D3 {
+    + execute()
+    + undo()
+}
+
+class ConcreteCommandA #E6E6FA {
+    - receiver: Receiver
+    + execute()
+    + undo()
+}
+
+class ConcreteCommandB #E6E6FA {
+    - receiver: Receiver
+    + execute()
+    + undo()
+}
+
+class Receiver #6ce66c {
+    + actionA()
+    + actionB()
+    + undoActionA()
+    + undoActionB()
+}
+
+' 关系连接
+Client --> Invoker : 配置命令
+Client --> Receiver : 创建
+Client --> ConcreteCommandA : 创建
+Client --> ConcreteCommandB : 创建
+
+Invoker o--> Command : 持有
+
+Command <|.. ConcreteCommandA : 实现
+Command <|.. ConcreteCommandB : 实现
+
+ConcreteCommandA --> Receiver : 调用方法
+ConcreteCommandB --> Receiver : 调用方法
+
+' 添加注释
+note right of Invoker
+  触发命令执行：
+  - executeCommand()
+  - undoCommand()
+end note
+
+note left of Receiver
+  实际执行操作：
+  - actionA() / undoActionA()
+  - actionB() / undoActionB()
+end note
+@enduml

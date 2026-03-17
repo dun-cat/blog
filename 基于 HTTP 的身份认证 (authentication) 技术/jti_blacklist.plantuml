@@ -1,0 +1,51 @@
+@startuml
+!theme toy
+
+skinparam backgroundColor transparent
+
+== 用户登录 ==
+
+actor 用户 as User
+participant "前端应用" as Frontend
+participant "API 服务" as API
+participant "数据库" as Database
+participant "Redis" as Redis
+
+User -> Frontend: 输入用户名/密码并提交
+Frontend -> API: POST /login {username, password}
+API -> Database: 查询用户信息（校验密码）
+Database --> API: 返回用户数据（校验成功）
+API -> API: 生成 JWT（含 jti 和 exp）
+API --> Frontend: 200 OK（返回 JWT）
+Frontend -> User: 登录成功（存储 JWT）
+
+User -> Frontend: 访问受保护资源
+Frontend -> API: GET /resource (Header: Authorization: Bearer <JWT>)
+API -> API: 解析 JWT，提取 jti
+API -> Redis: EXISTS jti:<jti>
+
+Redis --> API: 返回 0
+note right: 令牌有效（未在黑名单） 
+API -> Database: 查询资源数据
+Database --> API: 返回数据
+API --> Frontend: 200 OK（返回资源）
+Frontend --> User: 显示资源
+
+== 用户注销 ==
+User -> Frontend: 点击注销
+Frontend -> API: POST /logout (Header: Authorization: Bearer <JWT>)
+API -> API: 解析 JWT，提取 jti 和 exp
+API -> Redis: SET jti:<jti> 1 EX <剩余有效期>
+Redis --> API: 操作成功
+API --> Frontend: 200 OK
+Frontend -> User: 清除 JWT，提示注销成功
+
+User -> Frontend: 再次访问资源（携带旧 JWT）
+Frontend -> API: GET /resource (Header: Authorization: Bearer <旧 JWT>)
+API -> API: 解析 JWT，提取 jti
+API -> Redis: EXISTS jti:<jti>
+Redis --> API: 返回 1
+note right: 令牌无效（存在黑名单） 
+API --> Frontend: 401 Unauthorized
+Frontend --> User: 提示重新登录
+@enduml

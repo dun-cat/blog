@@ -1,0 +1,29 @@
+@startuml
+!theme reddress-lightorange
+
+skinparam sequenceArrowThickness 2
+skinparam backgroundColor transparent
+
+skinparam actor {
+    FontSize 12
+    Height 10  // 设置高度
+}
+
+actor "客户端" as Client
+participant "认证服务" as AuthServer
+participant "资源服务" as ResourceServer
+
+== 登录阶段 ==
+Client -> AuthServer: 1. 发送用户名/密码
+AuthServer --> Client: 2. 返回 JWT（通常存于 localStorage 或 Cookie）
+
+== 请求资源阶段 ==
+Client -> ResourceServer: 3. 请求 API（携带 Authorization 头）\n**Header**: Bearer <JWT>
+ResourceServer -> ResourceServer: 4. 验证 JWT：\n- 签名有效性\n- 过期时间 (exp)\n- 签发者 (iss)
+alt 验证成功
+  ResourceServer --> Client: 5. 返回请求数据
+else 验证失败
+  ResourceServer --> Client: 5. 返回401未授权
+end
+
+@enduml

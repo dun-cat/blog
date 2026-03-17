@@ -1,0 +1,47 @@
+@startuml
+!theme sketchy-outline
+
+<style>
+activityDiagram {
+  diamond {
+    LineColor #18a2b8
+  }
+}
+</style>
+
+start
+:输入删除值 value;
+:从根节点开始;
+
+while (当前节点不为空?) is (是)
+  if (value < 当前节点的值) then (是)
+    :移动到左子节点;
+    :设置当前节点 = 左子节点;
+  else (否)
+    if (value > 当前节点的值) then (是)
+      :移动到右子节点;
+      :设置当前节点 = 右子节点;
+    else (否)
+      :找到要删除的节点;
+
+      if (当前节点没有左子节点) then (是)
+        :用右子节点替代当前节点;
+        stop
+      else (否)
+        if (当前节点没有右子节点) then (是)
+          :用左子节点替代当前节点;
+          stop
+        else (否)
+          :找到右子树中的最小值节点;
+          :用最小值节点替代当前节点的值;
+          :删除最小值节点;
+          stop
+        endif
+      endif
+    endif
+  endif
+endwhile
+
+:节点未找到;
+stop
+@enduml

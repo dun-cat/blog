@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="872px" preserveAspectRatio="none" style="width:559px;height:872px;background:#00000000;" version="1.1" viewBox="0 0 559 872" width="559px" zoomAndPan="magnify"><defs/><g><ellipse cx="220" cy="20" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="174" y="50"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="184" y="71.6016">constructor()</text><polygon fill="#F1F1F1" points="182.5,104.1328,257.5,104.1328,269.5,116.1328,257.5,128.1328,182.5,128.1328,170.5,116.1328,182.5,104.1328" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="75" x="182.5" y="120.29">Initial Render?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="18" x="152.5" y="113.8125">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="269.5" y="113.8125">no</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="67" x="51" y="138.1328"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="47" x="61" y="159.7344">render()</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="147" x="11" y="192.2656"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="127" x="21" y="213.8672">componentDidMount()</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="285" x="213" y="138.1328"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="265" x="223" y="159.7344">static getDerivedStateFromProps(props, state)</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="67" x="322" y="240.7432"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="47" x="332" y="262.3447">render()</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="332" x="189.5" y="294.876"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="312" x="199.5" y="316.4775">static getSnapshotBeforeUpdate(prevProps, prevState)</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="335" x="188" y="349.0088"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="315" x="198" y="370.6104">componentDidUpdate(prevProps, prevState, snapshot)</text><polygon fill="#F1F1F1" points="224.5,192.2656,486.5,192.2656,498.5,204.2656,486.5,216.2656,224.5,216.2656,212.5,204.2656,224.5,192.2656" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="18" x="359.5" y="226.9004">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="262" x="224.5" y="208.4229">shouldComponentUpdate(nextProps, nextState)?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="498.5" y="201.9453">no</text><polygon fill="#F1F1F1" points="355.5,403.1416,367.5,415.1416,355.5,427.1416,343.5,415.1416,355.5,403.1416" style="stroke:#181818;stroke-width:0.5;"/><polygon fill="#F1F1F1" points="220,433.1416,232,445.1416,220,457.1416,208,445.1416,220,433.1416" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="240" x="100" y="525.6191"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="220" x="110" y="547.2207">static getDerivedStateFromError(error)</text><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="202" x="119" y="594.752"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="182" x="129" y="616.3535">componentDidCatch(error, info)</text><polygon fill="#F1F1F1" points="182.5,477.1416,257.5,477.1416,269.5,489.1416,257.5,501.1416,182.5,501.1416,170.5,489.1416,182.5,477.1416" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="18" x="224" y="511.7764">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="75" x="182.5" y="493.2988">Error Caught?</text><polygon fill="#F1F1F1" points="220,648.8848,232,660.8848,220,672.8848,208,660.8848,220,648.8848" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#F1F1F1" height="34.1328" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="162" x="139" y="741.3623"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="142" x="149" y="762.9639">componentWillUnmount()</text><polygon fill="#F1F1F1" points="151,692.8848,289,692.8848,301,704.8848,289,716.8848,151,716.8848,139,704.8848,151,692.8848" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="18" x="224" y="727.5195">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="138" x="151" y="709.042">Component Unmounting?</text><polygon fill="#F1F1F1" points="220,795.4951,232,807.4951,220,819.4951,208,807.4951,220,795.4951" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="220" cy="850.4951" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="220" cy="850.4951" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="30" y2="50"/><polygon fill="#454645" points="216,40,220,50,224,40,220,44" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="84.5" x2="84.5" y1="172.2656" y2="192.2656"/><polygon fill="#454645" points="80.5,182.2656,84.5,192.2656,88.5,182.2656,84.5,186.2656" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="355.5" x2="355.5" y1="274.876" y2="294.876"/><polygon fill="#454645" points="351.5,284.876,355.5,294.876,359.5,284.876,355.5,288.876" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="355.5" x2="355.5" y1="329.0088" y2="349.0088"/><polygon fill="#454645" points="351.5,339.0088,355.5,349.0088,359.5,339.0088,355.5,343.0088" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="355.5" x2="355.5" y1="216.2656" y2="240.7432"/><polygon fill="#454645" points="351.5,230.7432,355.5,240.7432,359.5,230.7432,355.5,234.7432" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="498.5" x2="533" y1="204.2656" y2="204.2656"/><polygon fill="#454645" points="529,301.9424,533,311.9424,537,301.9424,533,305.9424" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="533" x2="533" y1="204.2656" y2="415.1416"/><line style="stroke:#454645;stroke-width:1.0;" x1="533" x2="367.5" y1="415.1416" y2="415.1416"/><polygon fill="#454645" points="377.5,411.1416,367.5,415.1416,377.5,419.1416,373.5,415.1416" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="355.5" x2="355.5" y1="383.1416" y2="403.1416"/><polygon fill="#454645" points="351.5,393.1416,355.5,403.1416,359.5,393.1416,355.5,397.1416" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="355.5" x2="355.5" y1="172.2656" y2="192.2656"/><polygon fill="#454645" points="351.5,182.2656,355.5,192.2656,359.5,182.2656,355.5,186.2656" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="170.5" x2="84.5" y1="116.1328" y2="116.1328"/><line style="stroke:#454645;stroke-width:1.0;" x1="84.5" x2="84.5" y1="116.1328" y2="138.1328"/><polygon fill="#454645" points="80.5,128.1328,84.5,138.1328,88.5,128.1328,84.5,132.1328" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="269.5" x2="355.5" y1="116.1328" y2="116.1328"/><line style="stroke:#454645;stroke-width:1.0;" x1="355.5" x2="355.5" y1="116.1328" y2="138.1328"/><polygon fill="#454645" points="351.5,128.1328,355.5,138.1328,359.5,128.1328,355.5,132.1328" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="84.5" x2="84.5" y1="226.3984" y2="445.1416"/><line style="stroke:#454645;stroke-width:1.0;" x1="84.5" x2="208" y1="445.1416" y2="445.1416"/><polygon fill="#454645" points="198,441.1416,208,445.1416,198,449.1416,202,445.1416" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="355.5" x2="355.5" y1="427.1416" y2="445.1416"/><line style="stroke:#454645;stroke-width:1.0;" x1="355.5" x2="232" y1="445.1416" y2="445.1416"/><polygon fill="#454645" points="242,441.1416,232,445.1416,242,449.1416,238,445.1416" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="84.1328" y2="104.1328"/><polygon fill="#454645" points="216,94.1328,220,104.1328,224,94.1328,220,98.1328" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="559.752" y2="594.752"/><polygon fill="#454645" points="216,584.752,220,594.752,224,584.752,220,588.752" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="501.1416" y2="525.6191"/><polygon fill="#454645" points="216,515.6191,220,525.6191,224,515.6191,220,519.6191" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="269.5" x2="350" y1="489.1416" y2="489.1416"/><polygon fill="#454645" points="346,567.252,350,577.252,354,567.252,350,571.252" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="350" x2="350" y1="489.1416" y2="660.8848"/><line style="stroke:#454645;stroke-width:1.0;" x1="350" x2="232" y1="660.8848" y2="660.8848"/><polygon fill="#454645" points="242,656.8848,232,660.8848,242,664.8848,238,660.8848" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="628.8848" y2="648.8848"/><polygon fill="#454645" points="216,638.8848,220,648.8848,224,638.8848,220,642.8848" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="457.1416" y2="477.1416"/><polygon fill="#454645" points="216,467.1416,220,477.1416,224,467.1416,220,471.1416" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="716.8848" y2="741.3623"/><polygon fill="#454645" points="216,731.3623,220,741.3623,224,731.3623,220,735.3623" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="301" x2="313" y1="704.8848" y2="704.8848"/><polygon fill="#454645" points="309,748.4287,313,758.4287,317,748.4287,313,752.4287" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="313" x2="313" y1="704.8848" y2="807.4951"/><line style="stroke:#454645;stroke-width:1.0;" x1="313" x2="232" y1="807.4951" y2="807.4951"/><polygon fill="#454645" points="242,803.4951,232,807.4951,242,811.4951,238,807.4951" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="775.4951" y2="795.4951"/><polygon fill="#454645" points="216,785.4951,220,795.4951,224,785.4951,220,789.4951" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="672.8848" y2="692.8848"/><polygon fill="#454645" points="216,682.8848,220,692.8848,224,682.8848,220,686.8848" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="220" x2="220" y1="819.4951" y2="839.4951"/><polygon fill="#454645" points="216,829.4951,220,839.4951,224,829.4951,220,833.4951" style="stroke:#454645;stroke-width:1.0;"/><!--MD5=[6d79283c8c88f89be3cb3a9ad8c0813d]
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+!theme vibrant
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+start
+
+:constructor();
+
+if (Initial Render?) then (yes)
+    :render();
+    :componentDidMount();
+else (no)
+    :static getDerivedStateFromProps(props, state);
+    if (shouldComponentUpdate(nextProps, nextState)?) then (yes)
+        :render();
+        :static getSnapshotBeforeUpdate(prevProps, prevState);
+        :componentDidUpdate(prevProps, prevState, snapshot);
+    else (no)
+    endif
+endif
+
+if (Error Caught?) then (yes)
+    :static getDerivedStateFromError(error);
+    :componentDidCatch(error, info);
+endif
+
+if (Component Unmounting?) then (yes)
+    :componentWillUnmount();
+endif
+
+stop
+@enduml
+
+@startuml
+skinparamlocked roundcorner 10
+skinparamlocked sequenceMessageAlign center
+skinparamlocked arrowColor #5ac7c3
+skinparamlocked arrowFontColor #white
+skinparamlocked participantBackgroundColor #394248
+skinparamlocked participantFontColor #57cc8a
+skinparamlocked participantBorderColor #394248
+skinparamlocked actorFontColor #white
+skinparamlocked actorBorderColor #57cc8a
+skinparamlocked actorBackgroundColor #transparent
+skinparamlocked sequenceLifeLineBorderColor #afbac4
+skinparamlocked noteBackgroundColor #f43655
+skinparamlocked noteFontColor #white
+
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFFFFF
+    BorderThickness 1.5
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 454645
+    FontColor 454645
+    BorderThickness 1.5
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF5F42
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam queue {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFF
+    BorderThickness 1.5
+}
+skinparam backgroundColor transparent
+
+skinparam defaultFontColor Black
+
+start
+
+:constructor();
+
+if (Initial Render?) then (yes)
+    :render();
+    :componentDidMount();
+else (no)
+    :static getDerivedStateFromProps(props, state);
+    if (shouldComponentUpdate(nextProps, nextState)?) then (yes)
+        :render();
+        :static getSnapshotBeforeUpdate(prevProps, prevState);
+        :componentDidUpdate(prevProps, prevState, snapshot);
+    else (no)
+    endif
+endif
+
+if (Error Caught?) then (yes)
+    :static getDerivedStateFromError(error);
+    :componentDidCatch(error, info);
+endif
+
+if (Component Unmounting?) then (yes)
+    :componentWillUnmount();
+endif
+
+stop
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 01:01:30 CST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: CN
+--></g></svg>

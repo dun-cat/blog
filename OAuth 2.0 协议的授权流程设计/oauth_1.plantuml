@@ -1,0 +1,47 @@
+@startuml
+
+!theme sketchy-outline
+
+participant "用户代理 (User Agent)" as userAgent order 1
+participant "客户端 (Client)" as client order 2
+participant "授权服务器 (Authorization Server)" as authServer order 3
+
+
+userAgent -> authServer: 重定向到授权端点 (endpoint)，启动授权流程
+note left
+response_type: code (R)
+client_id (R)
+redirect_uri
+scope
+state (RE)
+end note
+
+userAgent -> authServer: 资源所有者身份认证，并决定是否授予访问
+
+userAgent <- authServer: 返回包含 Authorization Code 的重定向 URI
+note right
+redirect_uri: client.abc.com/callback
+
+code (R)
+state (R)
+end note
+
+userAgent -> client: 重定向回 client.abc.com/callback?code=<Authorization Code>&state=<State>
+
+
+client -> authServer: 请求获取访问令牌(access token)
+note left
+code (R)
+client_id (R)
+client_secret (R)
+redirect_uri (R)
+grant_type: authorization_code (R)
+end note
+
+client <- authServer: 返回访问令牌(access token)
+note right
+access token (R)
+refresh token
+end note
+
+@enduml

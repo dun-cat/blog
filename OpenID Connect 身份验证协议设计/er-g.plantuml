@@ -1,0 +1,33 @@
+@startuml
+
+!theme sketchy-outline
+
+actor EndUser
+participant Client
+participant IdP
+
+== EndUser 请求访问 Client 应用 ==
+EndUser -> Client : 1. 请求访问
+
+== Client 重定向到 IdP 进行认证 ==
+Client -> IdP : 2. 重定向进行身份认证
+
+== IdP 认证 EndUser ==
+IdP -> EndUser : 3. 提示 EndUser 登录
+EndUser -> IdP : 4. 提供认证凭证
+IdP -> EndUser : 5. 认证成功
+
+== IdP 返回 Authoration Code ==
+IdP -> Client : 6. 返回 Authoration Code
+
+== Client 请求令牌 ==
+Client -> IdP : 7. 使用 Authoration Code 请求令牌
+IdP -> Client : 8. 返回 Access Token 和 ID Token
+
+== Client 使用令牌提供访问权限 ==
+Client -> EndUser : 9. 使用令牌提供访问
+
+== 可选：Client 验证令牌 ==
+Client -> IdP : 10. 验证令牌 (可选)
+
+@enduml

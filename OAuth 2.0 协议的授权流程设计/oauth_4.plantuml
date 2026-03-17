@@ -1,0 +1,23 @@
+@startuml
+
+!theme sketchy-outline
+
+!$client = "客户端 (Client)"
+!$resServer = "授权服务器 (Authorization Server)"
+
+"$client" -> "$resServer": 请求 Access Token
+note left
+username (R)
+password (R)
+grant_type: password (R)
+scope
+end note
+
+"$client" <- "$resServer" : 返回 Access Token
+note right
+access_token (R)
+refresh_token
+end note
+
+
+@enduml

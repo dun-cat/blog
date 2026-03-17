@@ -1,0 +1,24 @@
+@startuml
+!theme sketchy-outline
+entity "End User" {
+  +UserID
+  +Credentials
+}
+
+entity "Client" {
+  +ClientID
+  +RedirectURI
+}
+
+entity "Identity Provider" {
+  +ProviderID
+  +authenticateUser()
+  +issueAuthorizationCode()
+  +issueTokens()
+  +validateToken()
+}
+
+"End User" ||..|| Client : "Access Request"
+Client ||..|| "Identity Provider" : "Authentication and Authorization"
+"Identity Provider" ||..|| "End User" : "Identity Verification"
+@enduml

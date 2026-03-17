@@ -1,0 +1,29 @@
+@startuml
+
+!theme sketchy-outline
+
+participant Browser
+participant Server
+
+== 第一次请求 ==
+Browser -> Server: GET /resource
+activate Server
+Server --> Browser: 200 OK\nCache-Control: max-age=3600\nContent: [资源内容]
+deactivate Server
+
+note right of Browser: 浏览器缓存资源\n并记录缓存时间
+
+== 再次请求（在3600秒内） ==
+note right of Browser: 检查缓存\n资源仍在 max-age 内
+Browser -> Server: [资源从缓存加载]
+note right of Browser: 无需向服务器请求
+
+== 再次请求（超过3600秒后） ==
+note right of Browser: 检查缓存\n资源超过 max-age
+Browser -> Server: GET /resource
+activate Server
+Server --> Browser: 200 OK\nCache-Control: max-age=3600\nContent: [新资源内容]
+deactivate Server
+
+note right of Browser: 浏览器缓存新资源\n并更新缓存时间
+@enduml

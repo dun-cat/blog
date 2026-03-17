@@ -1,0 +1,36 @@
+@startuml
+
+skinparam backgroundColor transparent
+
+start
+:调试器设置断点;
+if (类型为软件断点?) then (是)
+  :替换目标指令为 INT3（0xCC）;
+else (硬件断点)
+  :配置调试寄存器 DR0-DR3;
+endif
+
+:程序执行到断点位置;
+:CPU 检测到中断/异常;
+note right
+**触发的中断类型：**
+- 软件断点：INT3（软中断）
+- 硬件断点：调试异常（#DB）
+- 内存断点：缺页异常（#PF）
+end note
+
+:CPU 保存上下文并跳转至处理程序;
+:调试器捕获中断信号（如 SIGTRAP）;
+:调试器暂停程序，展示调试界面;
+
+if (用户选择继续执行?) then (是)
+  if (软件断点?) then (是)
+    :恢复原指令;
+    :单步执行后重新插入断点;
+  else (硬件/内存断点)
+    :直接恢复执行;
+  endif
+else (否)
+  :终止程序;
+endif
+@enduml
